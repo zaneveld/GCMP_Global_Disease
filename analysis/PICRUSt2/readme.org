@@ -1,0 +1,16 @@
+This folder holds workflows for generating PICRUST2 functional predictions from the 16S rRNA gene amplicon data for the global GCMP dataset
+
+
+~all.tar.gz~ contains larger intermediate files that could not be included.
+
+Files that are *NOT present* are:
+| file                            | description                                                       |
+|---------------------------------+-------------------------------------------------------------------|
+| ~output/16S_predicted~          | hsp '16S' trait output                                            |
+| ~output/EC_predicted~           | hsp 'EC' trait output (very large)                                |
+| ~output/KO_predicted~           | hsp 'KO' trait output (VERY large)                                |
+| ~working/query_align.stockholm~ | stockholm sequence alignment or something (intermediate for tree) |
+
+Descriptions of process (not executable file, even with org/babel)
+[[Setup.org]] ([[Setup.html][HTML]])
+[[procedure/Procedure.org][Procedure.org]] ([[procedure/Procedure.html][HTML]])

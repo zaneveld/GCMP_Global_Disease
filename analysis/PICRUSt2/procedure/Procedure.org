@@ -1,0 +1,80 @@
+#+OPTIONS: ^:nil
+#+AUTHOR: Yttria
+
+This file contains the procedure used to run PICRUSt2 metagenome predictions for the Global Coral Microbiome Project data.
+
+** Make input directory (if necessary)
+#+BEGIN_SRC sh
+ # copy input files
+# mdkir ../inpput
+# cp ../../1_canonical_starting_files/all.biom ../input/all.biom
+# cp ../../1_canonical_starting_files/all.seqs.fa ../input/all.seqs.fa
+#+END_SRC
+
+** PICRUSt2 Pipeline
+
+The first step in the PICRUSt2 pipeline is to place sequences into a reference phylogeny by MSA + tree placement.
+I had trouble with the ~place_seqs.py~ wrapper and instead called each
+step manually.
+
+This is the only really disgusting part.
+#+BEGIN_SRC bash
+# copied straight from the PICRUSt2 verbose output.
+# BE CAREFUL!! This needs to be adjusted for your own conda install
+hmmalign --trim --dna --mapali ~/miniconda/envs/picrust2/lib/python3.6/site-packages/picrust2/default_files/prokaryotic/pro_ref/pro_ref.fna.gz --informat FASTA -o ../working/query_align.stockholm ~/miniconda/envs/picrust2/lib/python3.6/site-packages/picrust2/default_files/prokaryotic/pro_ref/pro_ref.hmm ../input/all.seqs.fa
+
+#(the above will work correctly if you just call place_seqs.py, but the next # step I found it useful to call directly
+# note: --ref-msa arg comes from output of above
+epa-ng --tree ~/miniconda/envs/picrust2/lib/python3.6/site-packages/picrust2/default_files/prokaryotics/pro_ref/pro_ref.tre                         \
+--ref-msa ../working/ref_seqs_hmmalign.fasta \
+--query output/intermediate/place_seqs/study_seqs_hmmalign.fasta    \
+--chunk-size 2000 -T 8                                              \
+-m ~/miniconda/envs/picrust2/lib/python3.6/site-packages/picrust2/default_files/prokaryotic/pro_ref/pro_ref.model                                   \
+-w ../working/epa_out --filter-acc-lwr 0.5 --filter-max 20
+# EPA-NG elapsed time (8cpu, 32gb EC2 instance): 22949s
+#+END_SRC
+
+Then, the .jplace output from EPA-NG needs to be converted.
+#+BEGIN_SRC bash
+gappa analyze graft --jplace-path ../working/epa_out/epa_result.jplace --fully-resolve --out-dir ../working/epa_out/epa_result.newick
+# picrust does this in two steps that I replicate here...
+mv ../working/epa_out/epa_result.newick ../working/out.tre
+#+END_SRC
+
+The next steps (hidden state prediction, metagenome prediction) aren't
+so bad.
+
+#+BEGIN_SRC bash
+hsp.py -i 16S -t ../working/out.tre -o ../output/16S_predicted -p 8 -n
+hsp.py -i EC  -t ../working/out.tre -o ../output/EC_predicted -p 8 -n --chunk_size 150
+# KO had to be done on Atmosphere:
+hsp.py -i KO  -t ../working/out.tre -o ../output/KO_predicted -p 4 --chunk_size 150
+#+END_SRC
+
+Metagenome prediction is also straightforward although I think the
+wiki argument list might have been slightly wrong.
+#+BEGIN_SRC bash
+metagenome_pipeline.py -i ../output/16S_predicted -o ../output/picrust_EC_metagenome
+#+END_SRC
+There are a bunch of stratification and NSTI options and things.
+Unfortunately, I couldn't get this step to run on the larger KO
+predictions, not even on Atmosphere. 
+
+** Converting to QIIME2 format
+Converting the final metagenome files to qza table format is a
+two-step process:
+
+#+BEGIN_SRC bash
+# convert from tsv to HDF5 BIOM
+biom convert -i ../output/picrust_EC_metagenome/pred_metagenome_unstrat.tsv \
+-o ../output/picrust_EC_metagenome/pred_metagenome_unstrat.biom             \
+--table-type "Function table" --to-hdf5
+
+# then from BIOM to qiime table
+qiime tools import \
+--input-path ../output/picrust_EC_metagenome/pred_metagenome_unstrat.biom \
+--output-path ../output/picrust_EC_metagenome/ec_metagenome.qza           \
+--type "FeatureTable[Frequency]"
+#+END_SRC
+
+Same process with KO predictions, if available.
