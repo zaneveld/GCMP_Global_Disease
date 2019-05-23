@@ -1,0 +1,89 @@
+#+OPTIONS: ^:nil
+#+AUTHOR: Yttria
+
+* Installing PICRUSt2 and Prerequisites
+The PICRUSt2 pipeline needs two input files: the FASTA sequences to be studied and a BIOM table.
+
+These come from the canonical starting files:
+| ~all.seqs.fa~ |
+| ~all.biom~    |
+It's possible that starting with filtered tables is desirable but I don't know enough at this point to be sure.
+
+** New PICRUSt2 Setup
+Now that PICRUSt2 is available on bioconda, the setup process is much easier:
+#+BEGIN_SRC sh
+conda create -n picrust2 -c bioconda -c conda-forge picrust2
+conda activate picrust2
+#+END_SRC
+(https://github.com/picrust/picrust2/wiki/Installation#install-from-bioconda)
+
+However, this wasn't always the case.
+
+** Old PICRUSt2 Setup
+This is the process I used to set up a PICRUSt2 environment on Atmosphere in autumn/winter:
+
+*** Miniconda install
+On Atmosphere instances, this has to be done in ~/scratch~ or you'll run out of space
+on the main drive.
+#+BEGIN_SRC sh
+curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o Miniconda3.sh
+bash Miniconda3.sh
+# prompts:
+#q
+#yes
+#
+#yes
+
+# close session and reconnect
+exit
+#+END_SRC
+
+*** Build PICRUSt
+Then PICRUSt2 could be installed from source.  I think in more recent versions 
+this process is much simplified, so refer to those instructions: https://github.com/picrust/picrust2/wiki/Installation#install-from-source.
+I only include this for documentation purposes.
+
+#+BEGIN_SRC sh
+# Make sure /tmp/ has enough space for build
+# processes.  On Atmosphere this meant installing Miniconda in /scratch/
+git clone https://github.com/picrust/picrust2.git
+cd picrust2/placement_tools
+sudo apt-get install autotools-dev libtool flex bison cmake automake autoconf
+sudo apt-get install libboost-all-dev
+# updating gcc on Ubuntu needs an 'unstable' repo
+# (maybe this could be done in conda?)
+sudo apt-add-repository ppa:ubuntu-toolchain-r/test
+sudo apt-get update
+sudo apt-get install gcc-4.9
+sudo apt-get install g++-4.9
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 20
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 20
+
+# build epa-ng and gappa
+tar -xzf epa-ng-0.2.1-beta-dev.tar.gz
+cd epa-ng-0.2.1-beta-dev
+make clean
+make
+ln -s $PWD/bin/epa-ng ~/bin/
+cd ../
+tar -xzf gappa-0.0.0-dev.tar.gz
+cd gappa-0.0.0-dev
+make clean
+make
+ln -s $PWD/bin/gappa ~/bin/
+# add that to path
+export PATH=~/bin/:$PATH
+
+# PaPaRa
+tar -xzf papara_nt-2.5-dev.tar.gz
+cd papara_nt-2.5-dev
+sh build_papara2.sh
+ln -s $PWD/papara ~/bin/
+
+cd ../../
+conda env create -f picrust2-env.yaml
+source activate picrust2
+pip install --upgrade pip
+pip install --editable .
+#+END_SRC
+
