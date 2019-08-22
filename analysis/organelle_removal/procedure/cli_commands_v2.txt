@@ -1,0 +1,110 @@
+#full CLI command file rev.2 8/21/19
+#to do: add back in GG+ workflow/files
+#provenence of zaneveld taxonomy (vsearch using GG?)
+
+
+mkdir -p organelle_removal
+cd organelle_removal
+mkdir -p input
+mkdir -p output
+
+#order of commands:
+#
+#wget everything
+	#all.biom
+wget \
+-O "input/all.biom" \
+"https://www.dropbox.com/s/mwyfj2lu5bv1mrv/all.biom?dl=0"
+	#all.seqs.fa
+wget \
+-O "input/all.seqs.fa" \
+"https://www.dropbox.com/s/5bcyx5mxqae24eg/caps_all.seqs.fa?dl=0"
+	#GCMP metadata
+wget \
+-O "input/GCMP_EMP_map_r28.txt" \
+"https://www.dropbox.com/s/knclovtru3eon3v/GCMP_EMP_map_r28.txt?dl=0"
+
+#zaneveld taxonomy
+wget \
+-O "input/gcmp_taxonomy.qza" \
+"https://www.dropbox.com/s/gofgqw2ottkia1k/gcmp_taxonomy.qza?dl=0"
+
+	#expanded reference taxonomy
+wget \
+-O "input/taxonomy.txt" \
+"https://www.dropbox.com/s/gi5pc4dt7azcpjr/taxonomy.txt?dl=0"
+	#expanded reference OTUs
+wget \
+-O "input/OTUs.fasta" \
+"https://www.dropbox.com/s/14rrmjal875azf3/OTUs.fasta?dl=0"
+
+
+qiime tools import --input-path input/all.biom --type 'FeatureTable[Frequency]' --input-format BIOMV210Format --output-path input/gcmp_feature_table.qza
+
+qiime tools import --input-path input/all.seqs.fa --output-path input/seqs_GCMP.qza --type 'FeatureData[Sequence]'
+
+qiime tools import --input-path input/OTUs.fasta --output-path input/OTUs.qza --type 'FeatureData[Sequence]'
+
+qiime tools import --input-path input/taxonomy.txt --output-path input/taxonomy.qza --type 'FeatureData[Taxonomy]' --input-format HeaderlessTSVTaxonomyFormat
+
+#now ready for vsearch, which will take a long time - 16 gigs of ram, 4 cores took ~90 minutes. this will assign taxonomy to the GCMP sequences using the reference sequences and taxonomy.
+
+qiime feature-classifier classify-consensus-vsearch --i-query input/seqs_GCMP.qza --i-reference-reads input/OTUs.qza --i-reference-taxonomy input/taxonomy.qza --p-strand plus --p-threads 16 --o-classification output/classificationtaxonomy.qza
+
+#filter taxonomy
+#
+#filter feature table to remove chloroplasts and mitochondria
+
+#requires a taxonomy file and a feature table. the feature table MUST match the sequences used to generate the taxonomy artifact, otherwise the command will fail. specifically with the GCMP data, the sequence artifact must contain the same mix of upper and lowercase sequence data as the feature table - it cannot be all uppercase.
+
+#this command ran out of memory on 6 gigs of ram but ran successfully on 16 gigs
+
+qiime taxa filter-table --i-table input/gcmp_feature_table.qza --i-taxonomy output/classificationtaxonomy.qza --p-exclude Chloroplast,Mitochondria --o-filtered-table output/GCMP_ft_no_chloro_no_mito.qza
+
+#taxa bar plot
+
+#start with all.biom file. 2 samples in feature table not in metadata, have to be filtered before we can go further
+
+#this filters the feature table to only samples present in the metadata file
+qiime feature-table filter-samples --i-table input/gcmp_feature_table.qza --m-metadata-file input/GCMP_EMP_map_r28.txt --o-filtered-table input/GCMP_ft.qza
+
+qiime feature-table filter-samples --i-table output/GCMP_ft_no_chloro_no_mito.qza --m-metadata-file input/GCMP_EMP_map_r28.txt --o-filtered-table output/GCMP_filtered_ft.qza 
+
+
+#these commands give us the first two taxa bar plots, one for each of the taxonomies used
+qiime taxa barplot --i-table input/GCMP_ft.qza --i-taxonomy input/gcmp_taxonomy.qza --m-metadata-file input/GCMP_EMP_map_r28.txt --o-visualization output/zaneveld_tbp.qzv
+
+qiime taxa barplot --i-table output/GCMP_filtered_ft.qza --i-taxonomy output/classificationtaxonomy.qza --m-metadata-file input/GCMP_EMP_map_r28.txt --o-visualization output/filtered_tbp.qzv
+
+#unfortunately these TBPs are quite large, and tend to crash whatever browser I use to view them. might need to come up with a better way of visualizing the data contained within them. as an alternative, I've simply been splitting up the samples by compartment and comparing tissue to tissue, etc. to do that, we need to filter using the metadata again. these commands split up the feature tables into new tables containing only samples from one compartment.
+
+#tissue
+
+qiime feature-table filter-samples --i-table output/GCMP_ft_no_chloro_no_mito.qza --m-metadata-file input/GCMP_EMP_map_r28.txt --p-where "tissue_compartment='T'" --o-filtered-table output/filtered_T.qza
+
+qiime feature-table filter-samples --i-table input/GCMP_ft.qza --m-metadata-file input/GCMP_EMP_map_r28.txt --p-where "tissue_compartment='T'" --o-filtered-table output/GCMP_T_ft.qza
+
+#mucus
+qiime feature-table filter-samples --i-table output/GCMP_ft_no_chloro_no_mito.qza --m-metadata-file input/GCMP_EMP_map_r28.txt --p-where "tissue_compartment='M'" --o-filtered-table output/filtered_M.qza
+
+qiime feature-table filter-samples --i-table input/GCMP_ft.qza --m-metadata-file input/GCMP_EMP_map_r28.txt --p-where "tissue_compartment='M'" --o-filtered-table output/GCMP_M_ft.qza
+
+#skeleton
+qiime feature-table filter-samples --i-table output/GCMP_ft_no_chloro_no_mito.qza --m-metadata-file input/GCMP_EMP_map_r28.txt --p-where "tissue_compartment='S'" --o-filtered-table output/filtered_S.qza
+
+qiime feature-table filter-samples --i-table input/GCMP_ft.qza --m-metadata-file input/GCMP_EMP_map_r28.txt --p-where "tissue_compartment='S'" --o-filtered-table output/GCMP_S_ft.qza
+
+#then we make taxa bar plots of each sub-table, which are much more browser-friendly.
+
+qiime taxa barplot --i-table output/GCMP_M_ft.qza --i-taxonomy input/gcmp_taxonomy.qza --m-metadata-file input/GCMP_EMP_map_r28.txt --o-visualization output/zaneveld_M_tbp.qzv
+
+qiime taxa barplot --i-table output/GCMP_T_ft.qza --i-taxonomy input/gcmp_taxonomy.qza --m-metadata-file input/GCMP_EMP_map_r28.txt --o-visualization output/zaneveld_T_tbp.qzv
+
+qiime taxa barplot --i-table output/GCMP_S_ft.qza --i-taxonomy input/gcmp_taxonomy.qza --m-metadata-file input/GCMP_EMP_map_r28.txt --o-visualization output/zaneveld_S_tbp.qzv
+
+qiime taxa barplot --i-table output/filtered_T.qza --i-taxonomy output/classificationtaxonomy.qza --m-metadata-file input/GCMP_EMP_map_r28.txt --o-visualization output/filtered_T.qzv
+
+qiime taxa barplot --i-table output/filtered_M.qza --i-taxonomy output/classificationtaxonomy.qza --m-metadata-file input/GCMP_EMP_map_r28.txt --o-visualization output/filtered_M.qzv
+
+qiime taxa barplot --i-table output/filtered_S.qza --i-taxonomy output/classificationtaxonomy.qza --m-metadata-file input/GCMP_EMP_map_r28.txt --o-visualization output/filtered_S.qzv
+
