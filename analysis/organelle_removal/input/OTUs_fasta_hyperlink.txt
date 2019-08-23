@@ -1,0 +1,7 @@
+#the combined OTU fasta file is ~250 MB, too large for github. Look into github's large file storage (git-lfs.github.com)?
+#the CLI file will download the OTU file from drobox on its own, but here's the link
+
+
+#https://www.dropbox.com/s/14rrmjal875azf3/OTUs.fasta?dl=0
+
+
