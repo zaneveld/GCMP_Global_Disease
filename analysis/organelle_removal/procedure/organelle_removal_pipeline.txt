@@ -1,0 +1,53 @@
+#cd ../
+
+#this workflow takes a fasta file called 'test_seqs.qza' and a feature table called 'test_ft.qza' and runs the organelle removal process on them, using the extended taxonomy
+#'test_seqs.qza' and 'test_ft.qza' must be in the folder 'input' which itself is in the working directory
+#if running from the 'procedure' folder, un-comment "cd ../" at the beginning of this file
+#'test_seqs.qza' must be a qiime2 FeatureData[Sequence] file
+#'test_ft.qza' must be a qiime2 FeatureTable[Frequency] feature table file
+#'test.qza' and 'test_ft.qza' must match
+#taxa barplot requires a TSV metadata file. If taxa CSVs are desired, the metadata file must be named 'test_metadata.txt' in the 'input' folder
+#qzv files are placed in the folder 'output' in the working directory
+
+
+#filenames used:
+#	in 'input' folder:
+#		test_seqs.qza
+#		test_ft.qza
+#		test_metadata.txt
+#		extended_seqs.qza
+#		extended_taxonomy.qza
+#		test_classification_taxonomy.qza
+#		test_ft_no_chloro_no_mito.qza
+#
+#	in 'output' folder:
+#		test_tbp_pre_removal.qzv
+#		test_tbp_post_removal.qzv
+
+
+#get extended taxonomy and sequences
+
+#sequences
+
+wget \
+-O "input/extended_seqs.qza" \
+"https://www.dropbox.com/s/h6ogdyo7z4nks71/extended_seqs.qza?dl=0"
+
+#taxonomy
+wget \
+-O "input/extended_taxonomy.qza" \
+"https://www.dropbox.com/s/olnsze2hr0jzkk2/extended_taxonomy.qza?dl=0"
+
+#vsearch using the extended taxonomy
+#currently set for my computer with 16 threads
+qiime feature-classifier classify-consensus-vsearch --i-query input/test_seqs.qza --i-reference-reads input/extended_seqs.qza --i-reference-taxonomy input/extended_taxonomy.qza --p-threads 16 --o-classification input/test_classification_taxonomy.qza
+
+#as a point of comparison, a taxa barplot file is created before removal of organelles
+qiime taxa barplot --i-table input/test_ft.qza --i-taxonomy input/test_classification_taxonomy.qza --m-metadata-file input/test_metadata.txt --o-visualization output/test_tbp_pre_removal
+
+#filter taxonomy
+#filter feature table to remove chloroplasts and mitochondria
+qiime taxa filter-table --i-table input/test_ft.qza --i-taxonomy input/test_classification_taxonomy.qza --p-exclude Chloroplast,Mitochondria --o-filtered-table input/test_ft_no_chloro_no_mito.qza
+
+#taxa barplot 
+qiime taxa barplot --i-table input/test_ft_no_chloro_no_mito.qza --i-taxonomy input/test_classification_taxonomy.qza --m-metadata-file input/test_metadata.txt --o-visualization output/test_tbp_post_removal
