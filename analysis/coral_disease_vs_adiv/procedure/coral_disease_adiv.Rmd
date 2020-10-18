@@ -1,0 +1,74 @@
+---
+title: "coral_disease_adiv"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+library(phytools)
+```
+```{r}
+coraltree <- read.tree("../reference_materials/example_input_data/pruned_tree.newick")
+X <- read.table("../reference_materials/example_input_data/trait_table_r11_adiv_rank.txt", sep="\t", header=TRUE, row.names = 1)
+```
+```{r}
+plotTree(coraltree,fsize=0.6,lwd=1)
+```
+```{r}
+#dotTree(coraltree, X, standardize = TRUE, length = 10, fsize=0.5, labels=TRUE)
+```
+
+
+```{r}
+phylomorphospace(coraltree,X[,1:2],xlab="alpha div",ylab="disease resistance (rank)", fsize=0.5)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+```{r}
+X$clade <- as.factor(X$clade)
+```
+
+```{r}
+#colors = setNames(c("lightgoldenrod","red","blue","green","magenta3","orange2","lightsteelblue1","olivedrab2", "lightpink1","mediumseagreen","mistyrose","lightsalmon3"),
+#    levels(X$clade))
+#tip.col <- X$clade
+colors = setNames(c("turquoise1", "orange"), levels(X$clade))
+```
+
+
+```{r}
+obj <- phylomorphospace(coraltree,X[,1:2],xlab="alpha div",ylab="disease resistance (rank)", fsize=0.5, colors=colors, node.by.map=TRUE)
+obj$tip.color <- colors
+```
+```{r}
+obj$tip.color <- colors
+obj$tip.color
+```
+
+
+```{r}
+plotTree(coraltree,fsize=0.75, pts=F,node.numbers=T)
+```
+```{r}
+coraltree <- paintSubTree(coraltree, node=61, state=1)
+coraltree <- paintSubTree(coraltree, node=39, state=2)
+coraltree <- paintSubTree(coraltree, node=38, state=3)
+cols <- c("deepskyblue", "sandybrown", "black"); names(cols)<- 1:3
+```
+```{r}
+plot(coraltree, cols, fsize=0.5)
+```
+```{r}
+phylomorphospace(coraltree, X, colors=cols, node.size=1.25, node.by.map=TRUE, fsize=0.01, label="off")
+```
+
+```{r}
+coraltree
+```
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.

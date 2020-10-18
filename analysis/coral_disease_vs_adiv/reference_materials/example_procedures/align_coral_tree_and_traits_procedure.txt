@@ -1,0 +1,38 @@
+#Goal: Prepare a MATCHING tree and trait table. This is needed because to do ancestral state reconstruction or phylogenetic independent contrasts we need a tree that exactly matches the trait table.
+
+#qiime fragment-insertion filter-features can filter out features (bacteria!) that don't match the tree.
+
+#However this doesn't filter the tree to match the trait table.
+
+#Set up environment for PICRUST1 
+
+#Activate a virtual environment for PICRUST1 (se we can install it's required programs without messing anything else up)
+#NOTE: if we close the terminal window and want to run PICRUSt scripts we'll hav e to rerun this command to access the picrust1 environment
+
+conda activate picrust1
+
+#Actually install picrust
+conda install -c bioconda picrust
+
+#Collapse table to L4
+
+qiime taxa collapse --i-table ./gcmp_feature_table2_1000_tissue3_grouped.qza   --p-level 4 --output-dir taxa_for_asr_L4 --i-taxonomy  ../../outputs/gcmp_taxonomy.qza 
+
+#We need to get the coral species on the y-axis as features to use PICRUSt's format_tree_and_trait_table.py script.
+
+qiime feature-table transpose --i-table ./taxa_for_asr_L4/collapsed_table.qza --o-transposed-feature-table ./taxa_for_asr_L4/collapsed_table_transposed.qza
+
+#Convert qza file to a BIOM file
+#WARNING: output is a folder not a biom file!
+ qiime tools export --input-path ./taxa_for_asr_L4/collapsed_table_transposed.qza --output-path ./gcmp_feature_table2_1000_tissue3_grouped_L4_transposed/
+
+
+#Convert the BIOM file to a tsv
+ biom convert -i ./gcmp_feature_table2_1000_tissue3_grouped.biom -o ./gcmp_feature_table2_1000_tissue3_grouped.tsv --to-tsv
+#***********
+#NOTE: I had to manually remove the # sign at the start of both lines before format_tree_and_trait_table_would_work
+#***********
+
+#Instead we will use PICRUSt1.1's format_tree_and_trait_table.py script 
+
+format_tree_and_trait_table.py -i ../outputs/coral_asr/gcmp_feature_table2_1000_tissue3_grouped_L4_transposed_oceanospirallales_only.txt -t ../inputs/huang_roy_molecular.newick -o ../outputs/coral_asr/formated_tree_and_trait_table/

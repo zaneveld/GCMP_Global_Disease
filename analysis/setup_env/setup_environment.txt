@@ -1,0 +1,11 @@
+#Setup and install a QIIME2 virtual environment
+#(Assumes Anaconda Python already installed)
+
+#Download QIIME2
+wget https://data.qiime2.org/distro/core/qiime2-2020.6-py36-osx-conda.yml
+
+#Create the virtual environment
+conda env create -n qiime2-2020.6 --file qiime2-2020.6-py36-osx-conda.yml
+
+# OPTIONAL CLEANUP
+rm qiime2-2020.6-py36-osx-conda.yml
