@@ -19,7 +19,9 @@ The analysis folder will be organized into subdirectories by analytical step. Ea
         
  
 **input folder:** Typically, necessary data files cannot be checked in to GitHub. Therefore, scripts at each analytical step should download the files they need as a first step (e.g. with wget or curl). 
+
 **output folder:** The output folder holds all results of the analysis. *All files in output should be able to be regenerated (deleted and then recreated) from the data in input using the scripts in procedure*. This is essential to ensure outputs stay up-to-date if upstream QC steps change (which is common).
+
 **procedure:**. The procedure should be written using Jupyter Notebooks when possible, but R markdown or bash scripts may be more convenient for some steps. If there is more than one procedure file, please create an index file that explains what order to run them in and what each is doing.
 
 
