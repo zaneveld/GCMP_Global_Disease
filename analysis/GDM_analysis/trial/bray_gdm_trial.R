@@ -3,7 +3,7 @@
 
 #Set working directory
 
-setwd("~/Documents/OSU_Documents/Projects/Disease_LHS/gdm_analysis/trial/")
+setwd("~/Documents/OSU_Documents/Projects/Disease_LHS/gdm_analysis/gdm_disease/")
 
 #Load libraries
 library(phyloseq)
