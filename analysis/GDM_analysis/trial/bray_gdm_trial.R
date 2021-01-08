@@ -3,7 +3,7 @@
 
 #Set working directory
 
-setwd("~/Documents/OSU_Documents/Projects/Disease_LHS/gdm_analysis/gdm_disease/")
+setwd("~/Documents/OSU_Documents/Projects/Disease_LHS/GCMP_Global_Disease/analysis/GDM_analysis/trial/")
 
 #Load libraries
 library(phyloseq)
@@ -67,17 +67,20 @@ metadata_ord_filt$depth <- as.numeric(metadata_ord_filt$depth)
 metadata_ord_filt$latitude <- as.numeric(metadata_ord_filt$latitude)
 metadata_ord_filt$longitude <- as.numeric(metadata_ord_filt$longitude)
 
+#rename the rownames as sample ID
+rownames(metadata_ord_filt) <- metadata_ord_filt$SampleID
+View(metadata_ord_filt)
+
 #Make sure the distance matrix only includes samples in metadata
-bray_dm_filt <- subset(bray_dm, rownames(bray_dm) %in% rownames(metadata_ord_filt))
-match_bray <- match(rownames(bray_dm_filt), colnames(bray_dm_filt))
-match_bray
-bray_dm_filt_2  <- bray_dm_filt[,match_bray]
+bray_dm_filt <- subset(bray_dm, rownames(bray_dm) %in% rownames(metadata_ord_filt), colnames(bray_dm) 
+                       %in% rownames(metadata_ord_filt), drop = FALSE)
+
 
 #Double check the number of columns and rows match and all rownames are the same for metadata and matrix
-nrow(bray_dm_filt_2) == ncol(bray_dm_filt_2)
-nrow(bray_dm_filt_2) == nrow(metadata_ord_filt)
-all(rownames(bray_dm_filt_2) == colnames(bray_dm_filt_2))
-all(rownames(bray_dm_filt_2) == rownames(metadata_ord_filt))
+nrow(bray_dm_filt) == ncol(bray_dm_filt)
+nrow(bray_dm_filt) == nrow(metadata_ord_filt)
+all(rownames(bray_dm_filt) == colnames(bray_dm_filt))
+all(rownames(bray_dm_filt) == rownames(metadata_ord_filt))
 
 #Next make site-pair table
 # we'll need the helper scripts provided from epiphyte workflow
@@ -97,7 +100,7 @@ predictor_list <- list(
 
 
 # 4. make site-pair table from predictor_list
-spt <- site_pair_from_list(responseMat=bray_dm_filt_2, predList=predictor_list )
+spt <- site_pair_from_list(responseMat=bray_dm_filt, predList=predictor_list )
 
 # 5. run GDM
 # make geo=F if you didn't include location in predictor_list
@@ -111,5 +114,6 @@ plot_gdm_jld(fit1, pred_colors="auto")
 
 # 7. look at how much beta div our model explained (like an R^2)
 fit1$explained
-# wow it works pretty well when you make fake data!
+
+#[1] 0.789285
 
