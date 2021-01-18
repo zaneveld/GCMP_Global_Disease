@@ -1,0 +1,7 @@
+Old		New			
+Genus	Species	Genus	Species	Reference	Note
+Pocillopera	damicornis	Pocillopera	acuta	"Schmidt-Roach, Lundgren, Miller et al. (2013); Schmidt-Roach, Miller, Lundgren et al. (2014)"	May be Pocillopora damicornis but many are finding that these are actually P. acuta especially in Hawaii
+Turbinaria	peltata	Duncanopsammia	peltata	"Arrigoni, Kitano, Stolarski et al. (2014)"	Proposed change but not everyone is on board
+Homophyllia	hillae	Acanthastrea	hillae		May be called as both
+Danafungia	scruposa	Fungia	scruposa		May be called as both
+Aiptasia		Exaiptasia		"Grajales and Rodríguez, 2014"	
