@@ -1,0 +1,199 @@
+﻿Species,Huang_Roy_tree_name,Specificity
+Acanthastrea,MUS_Acanthastrea,Genus
+Acropora,ACR_Acropora,Genus
+Acropora cervicornis,ACR_Acropora_cervicornis,Species
+Acropora palmata,ACR_Acropora_palmata,Species
+Acropora prolifera,ACR_Acropora,Genus
+Acropora_cytherea,ACR_Acropora_cytherea,Species
+Acropora_humilis,ACR_Acropora_humilis,Species
+Acropora_nasuta,ACR_Acropora_nasuta,Species
+Acropora_paniculata,ACR_Acropora,Genus
+Acropora_valida,ACR_Acropora_valida,Species
+Agaricia fragilis,AGA_Agaricia_fragilis,Species
+Agaricia lamarcki,AGA_Agaricia_lamarcki,Species
+Agaricia sp.,AGA_Agaricia,Genus
+Alveopora,POR_Alveopora,Genus
+Anacropora,ACR_Anacropora,Genus
+Astreopora,ACR_Astreopora,Genus
+Australogyra,,
+Barabattoia,FAV_Barabattoia,Genus
+Blastomussa,MUS_Blastomussa,Genus
+Cataphyllia,,
+Caulastrea,,
+Cirrhipathes_anguina,,
+Cladacora arbuscula,,
+Coeloseris,,
+Colpophyllia natans,FAV_Colpophyllia_natans,
+Coscinaria,,
+Ctenactis,FUN_Ctenactis,Genus
+Cycloseris,FUN_Cycloseris,Genus
+Cycloseris_vaughani,FUN_Cycloseris_vaughani,Species
+Cynaria,,
+Cyphastrea,FAV_Cyphastrea,Genus
+Cyphastrea_agassizi,FAV_Cyphastrea,Genus
+Cyphastrea_ocellina,FAV_Cyphastrea_ocellina,Species
+Dendrogyra cylindrus,MEA_Dendrogyra_cylindus,Species
+Dichocoenia stokesi,MEA_Dichocoenia,Genus
+Diploastrea,FAV_Diploastrea,Genus
+Diploria labyrinthiformis,FAV_Diploria_labyrinthiformis,Species
+Diploria sp.,FAV_Diploria,Genus
+Echinophyllia,PEC_Echinophyllia,Genus
+Echinopora,FAV_Echinopora,Genus
+Euphyllia,EUP_Euphyllia,Genus
+Eusmilia fastigiata,MEA_Eusmilia_fastigiata,Species
+Favia,FAV_Favia,Genus
+Favia fragum,FAV_Favia_fragum,Species
+Favites,FAV_Favites,Genus
+Fungia,FUN_Fungia,Genus
+Fungia_granulosa,FUN_Fungia,Genus
+Fungia_scutaria,FUN_Fungia,Genus
+Fungia_sp.,FUN_Fungia,Genus
+Galaxea,OCU_Galaxea,Genus
+Gardineroseris_planulata,AGA_Gardineroseris_planulata,Species
+Goniastrea,FAV_Goniastrea,Genus
+Goniopora,POR_Goniopora,Genus
+Halomitra,FUN_Halomitra,Genus
+Heliofungia,FUN_Heliofungia,Genus
+Helioseris cucullata,AGA_Helioseris_cucullata,Species
+Herpolitha,FUN_Herpolitha,Genus
+Hydnophora,MER_Hydnopora,Genus
+Isophyllia rigida,MUS_Isophyllia,Genus
+Isophyllia sinuosa,MUS_Isophyllia_sinuosa,Species
+Isophyllia sp.,MUS_Isophyllia,Genus
+Leptastrea,FAV_Leptastrea,Genus
+Leptastrea_bewickensis,FAV_Leptastrea,Genus
+Leptastrea_pruinosa,FAV_Leptastrea_pruinosa,Species
+Leptastrea_purpurea,FAV_Leptastrea_purpurea,Species
+Leptastrea_sp.,FAV_Leptastrea,Genus
+Leptastrea_transversa,FAV_Leptastrea_transversa,Species
+Leptoria,FAV_Leptoria,Genus
+Leptoseris,AGA_Leptoseris,Genus
+Leptoseris_incrustans,AGA_Leptoseris,Genus
+Leptoseris_mycetoseroides,AGA_Leptoseris,Genus
+Leptoseris_papyracea,AGA_Leptoseris,Genus
+Leptoseris_tubulifera,AGA_Leptoseris,Genus
+Lithophyllon,FUN_Lithophyllon,Genus
+Lobophyllia,MUS_Lobophyllia,Genus
+Madracis auretenra (mirabilis),AST_Madracis_auretenra,Species
+Madracis decactis,AST_Madracis_decactis,Species
+Madracis formosa,AST_Madracis_formosa,Species
+Madracis sp.,AST_Madracis,Genus
+Manicina areolata,FAV_Manicina_areolata,Species
+Meandrina jacksoni,MEA_Meandrina,Genus
+Meandrina meandrites,MEA_Meandrina_meandrites,Species
+Meandrina sp.,MEA_Meandrina,Genus
+Merulina,MER_Merulina,Genus
+Micromussa,MUS_Micromussa,Genus
+Millepora alcicornis,,
+Millepora complanata,,
+Millepora sp.,,
+Montastraea cavernosa,FAV_Montastraea_cavernosa,Species
+Montastrea,FAV_Montastraea,Genus
+Montipora,ACR_Montipora,Genus
+Montipora_capitata,ACR_Montipora_captitata,Species
+Montipora_dilitata,ACR_Montipora,Genus
+Montipora_ehrenbergi,ACR_Montipora,Genus
+Montipora_flabellata,ACR_Montipora_flabellata,Species
+Montipora_incrassata,ACR_Montipora_incrassata,Species
+Montipora_patula,ACR_Montipora_patula,Species
+Montipora_sp.,ACR_Montipora,Genus
+Montipora_studeri,ACR_Montipora,Genus
+Montipora_tuberculosa,ACR_Montipora,Genus
+Montipora_verrilli,ACR_Montipora_verrilli,Species
+Moseleya,FAV_Moseleya,Genus
+Mussa angulosa,MUS_Mussa_angulosa,Species
+Mycedium,PEC_Mycedium,Genus
+Mycetophyllia aliciae,MUS_Mycetophyllia_aliciae,Species
+Mycetophyllia danaana,MUS_Mycetophyllia_danaana,Species
+Mycetophyllia ferox,MUS_Mycetophyllia,Genus
+Mycetophyllia lamarckiana,MUS_Mycetophyllia_lamarckiana,Species
+Mycetophyllia sp.,MUS_Mycetophyllia,Genus
+Oculina diffusa,OCU_Oculina_diffusa,Species
+Oculina sp.,OCU_Oculina,Genus
+Orbicella annularis,FAV_Montastraea_annularis,Species
+Orbicella faveolata,FAV_Montastraea_faveolata,Species
+Orbicella franksi,FAV_Montastraea_franksi,Species
+Orbicella sp.,FAV_Montastraea,Genus
+Oulophyllia,FAV_Oulophyllia,Genus
+Oxypora,PEC_Oxypora,Genus
+Pachyseris,AGA_Pachyseris,Genus
+Palauastrea,,
+Palythoa_caesia,,
+Palythoa_sp.,,
+Paraclavarina,,
+Pavona,AGA_Pavona,Genus
+Pavona_chiriquiensis,AGA_Pavona,Genus
+Pavona_clavus,AGA_Pavona_clavus,Species
+Pavona_duerdeni,AGA_Pavona,Genus
+Pavona_maldivensis,AGA_Pavona,Genus
+Pavona_sp.,AGA_Pavona,Genus
+Pavona_varians,AGA_Pavona_varians,Species
+Pectinia,PEC_Pectinia,Genus
+Physogyra,EUP_Physogyra,Genus
+Platygyra,FAV_Platygyra,Genus
+Plerogyra,EUP_Plerogyra,Genus
+Pocillopora,POC_Pocillopora,Genus
+Pocillopora_capitata,POC_Pocillopora,Genus
+Pocillopora_damicornis,POC_Pocillopora_damicornis,Species
+Pocillopora_eydouxi,POC_Pocillopora_eydouxi,Species
+Pocillopora_ligulata,POC_Pocillopora,Genus
+Pocillopora_meandrina,POC_Pocillopora_meandrina,Species
+Pocillopora_molokensis,POC_Pocillopora,Genus
+Pocillopora_sp.,POC_Pocillopora,Genus
+Podabacia,FUN_Podabacia,Genus
+Polyphyllia,FUN_Polyphyllia,Genus
+Porites,POR_Porites,Genus
+Porites astreoides,POR_Porites_astreoides,Species
+Porites cf. branneri,POR_Porites_branneri,Species
+Porites divaricata,POR_Porites_divaricata,Species
+Porites furcata,POR_Porites_furcata,Species
+Porites porites,POR_Porites_porites,Species
+Porites sp.,POR_Porites_porites,Species
+Porites_annae,POR_Porites_annae,Species
+Porites_bernardi,POR_Porites,Genus
+Porites_brighami,POR_Porites,Genus
+Porites_compressa,POR_Porites_compressa,Species
+Porites_duerdeni,POR_Porites_duerdeni,Species
+Porites_evermanni,POR_Porites_evermanni,Species
+Porites_lichen,POR_Porites_lichen,Species
+Porites_lobata,POR_Porites_lobata,Species
+Porites_lutea,POR_Porites_lutea,Species
+Porites_monticulosa,POR_Porites,Genus
+Porites_rus,POR_Porites_rus,Species
+Porites_solida,POR_Porites_solida,Species
+Porites_sp.,POR_Porites,Genus
+Psammocora,SID_Psammocora,Genus
+Psammocora_digitata,SID_Psammocora_digitata,Species
+Psammocora_haimeana,SID_Psammocora_haimeana,Species
+Psammocora_nierstraszi,SID_Psammocora_nierstraszi,Species
+Psammocora_stellata,SID_Psammocora,Species
+Pseudodiploria clivosa,FAV_Diploria_clivosa,Species
+Pseudodiploria sp.,FAV_Diploria,Genus
+Pseudodiploria strigosa,FAV_Diploria_strigosa,Species
+Sandolitha,,
+Sarcothelia_edmondsoni,,
+Scolymia,MUS_Scolymia,Genus
+Scolymia cubensis,MUS_Scolymia_cubensis,Species
+Scolymia lacera,MUS_Scolymia,Genus
+Scolymia sp.,MUS_Scolymia,Genus
+Seriatopora,POC_Seriatopora,Genus
+Siderastrea radians,SID_Siderastrea_radians,Species
+Siderastrea siderea,SID_Siderastrea_siderea,Species
+Siderastrea sp.,SID_Siderastrea,Genus
+Sinularia_densa,,
+Solenastrea bournoni,FAV_Solenastrea_bournoni,Species
+Solenastrea hyades,FAV_Solenastrea_hyades,Species
+Solenastrea sp.,FAV_Solenastrea,Genus
+Sponge,,
+Stephanocoenia intersepta,AST_Stephanocoenia_intersepta,Species
+Stylocoeniella,AST_Stylocoeniella,Genus
+Stylophora,POC_Stylophora,Genus
+Symphyllia,MUS_Symphyllia,Genus
+Trachyphyllia,TRC_Trachyphyllia,Genus
+Tubastrea,DEN_Tubastraea,Genus
+Turbinaria,DEN_Turbinaria,Genus
+Undaria agaricites,AGA_Agaricia_agaricites,Species
+Undaria humilis,AGA_Agaricia_humilis,Species
+Undaria sp.,AGA_Agaricia,Genus
+Undaria tenuifolia,AGA_Agaricia_tenuifolia,Species
+Zoanthus/Palythoa_sp.,,
