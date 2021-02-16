@@ -1,0 +1,20 @@
+#convert fast file to qza file for qiime
+
+qiime tools import
+--input-path ../input/all_seqs.fna
+--output-path ../output/all_seqs.qza
+--type 'featureData[Sequence]'
+
+#get the sepp green genes reference sequence phylogeny from online
+
+wget \
+  -O "../output/sepp-refs-gg-13-8.qza" \
+  "https://data.qiime2.org/2019.10/common/sepp-refs-gg-13-8.qza"
+
+#create a sepp tree using qza file and reference phylogeny 
+
+qiime fragment-insertion sepp \
+  --i-representative-sequences ../output/all_seqs.qza \
+  --i-reference-database ../output/sepp-refs-gg-13-8.qza \
+  --o-tree ../output/insertion-tree_GCMP.qza \
+  --o-placements ../output/insertion-placements_GCMP.qza
