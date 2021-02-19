@@ -1,0 +1,218 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 778.7265625 5022" shape-rendering="crispEdges">
+<svg width="778.7265625">
+<style>
+text {
+font-family: Arial,Helvetica,sans-serif;
+font-size: 30pt;
+}
+.btext { font-weight: bold; }
+.blackborder { stroke: #000000; stroke-width: 1; }
+</style>
+<rect class="blackborder" x="0" y="0" width="778.7265625" height="3186" style="fill:#ffffff;" />
+"<text x="50%" y="27" text-anchor="middle" dominant-baseline="middle" class="btext">Level 2</text>
+<rect class="blackborder" x="0" y="54" width="54" height="54" style="fill:#008080;"/>
+<text dominant-baseline="middle" x="64" y="81">D_1__Acetothermia</text>
+<rect class="blackborder" x="0" y="108" width="54" height="54" style="fill:#808000;"/>
+<text dominant-baseline="middle" x="64" y="135">D_1__Acidobacteria</text>
+<rect class="blackborder" x="0" y="162" width="54" height="54" style="fill:#a54700;"/>
+<text dominant-baseline="middle" x="64" y="189">D_1__Actinobacteria</text>
+<rect class="blackborder" x="0" y="216" width="54" height="54" style="fill:#00b6ff;"/>
+<text dominant-baseline="middle" x="64" y="243">D_1__AncK6</text>
+<rect class="blackborder" x="0" y="270" width="54" height="54" style="fill:#ed008a;"/>
+<text dominant-baseline="middle" x="64" y="297">D_1__Armatimonadetes</text>
+<rect class="blackborder" x="0" y="324" width="54" height="54" style="fill:#c0c0c0;"/>
+<text dominant-baseline="middle" x="64" y="351">D_1__Asgardaeota</text>
+<rect class="blackborder" x="0" y="378" width="54" height="54" style="fill:#c49c6b;"/>
+<text dominant-baseline="middle" x="64" y="405">D_1__Bacteroidetes</text>
+<rect class="blackborder" x="0" y="432" width="54" height="54" style="fill:#fff899;"/>
+<text dominant-baseline="middle" x="64" y="459">D_1__BRC1</text>
+<rect class="blackborder" x="0" y="486" width="54" height="54" style="fill:#a287bf;"/>
+<text dominant-baseline="middle" x="64" y="513">D_1__Caldiserica</text>
+<rect class="blackborder" x="0" y="540" width="54" height="54" style="fill:#80c99b;"/>
+<text dominant-baseline="middle" x="64" y="567">D_1__Calditrichaeota</text>
+<rect class="blackborder" x="0" y="594" width="54" height="54" style="fill:#fcc688;"/>
+<text dominant-baseline="middle" x="64" y="621">D_1__Chlamydiae</text>
+<rect class="blackborder" x="0" y="648" width="54" height="54" style="fill:#7da9d8;"/>
+<text dominant-baseline="middle" x="64" y="675">D_1__Chloroflexi</text>
+<rect class="blackborder" x="0" y="702" width="54" height="54" style="fill:#f79679;"/>
+<text dominant-baseline="middle" x="64" y="729">D_1__Cloacimonetes</text>
+<rect class="blackborder" x="0" y="756" width="54" height="54" style="fill:#808080;"/>
+<text dominant-baseline="middle" x="64" y="783">D_1__Crenarchaeota</text>
+<rect class="blackborder" x="0" y="810" width="54" height="54" style="fill:#6b440b;"/>
+<text dominant-baseline="middle" x="64" y="837">D_1__Cyanobacteria</text>
+<rect class="blackborder" x="0" y="864" width="54" height="54" style="fill:#5da09e;"/>
+<text dominant-baseline="middle" x="64" y="891">D_1__Dadabacteria</text>
+<rect class="blackborder" x="0" y="918" width="54" height="54" style="fill:#f49ac2;"/>
+<text dominant-baseline="middle" x="64" y="945">D_1__Deferribacteres</text>
+<rect class="blackborder" x="0" y="972" width="54" height="54" style="fill:#7cecf4;"/>
+<text dominant-baseline="middle" x="64" y="999">D_1__Deinococcus-Thermus</text>
+<rect class="blackborder" x="0" y="1026" width="54" height="54" style="fill:#ffff00;"/>
+<text dominant-baseline="middle" x="64" y="1053">D_1__Dependentiae</text>
+<rect class="blackborder" x="0" y="1080" width="54" height="54" style="fill:#91278d;"/>
+<text dominant-baseline="middle" x="64" y="1107">D_1__Diapherotrites</text>
+<rect class="blackborder" x="0" y="1134" width="54" height="54" style="fill:#008000;"/>
+<text dominant-baseline="middle" x="64" y="1161">D_1__Elusimicrobia</text>
+<rect class="blackborder" x="0" y="1188" width="54" height="54" style="fill:#f27304;"/>
+<text dominant-baseline="middle" x="64" y="1215">D_1__Entotheonellaeota</text>
+<rect class="blackborder" x="0" y="1242" width="54" height="54" style="fill:#0000ff;"/>
+<text dominant-baseline="middle" x="64" y="1269">D_1__Epsilonbacteraeota</text>
+<rect class="blackborder" x="0" y="1296" width="54" height="54" style="fill:#ff0000;"/>
+<text dominant-baseline="middle" x="64" y="1323">D_1__Euryarchaeota</text>
+<rect class="blackborder" x="0" y="1350" width="54" height="54" style="fill:#008080;"/>
+<text dominant-baseline="middle" x="64" y="1377">D_1__FBP</text>
+<rect class="blackborder" x="0" y="1404" width="54" height="54" style="fill:#808000;"/>
+<text dominant-baseline="middle" x="64" y="1431">D_1__FCPU426</text>
+<rect class="blackborder" x="0" y="1458" width="54" height="54" style="fill:#a54700;"/>
+<text dominant-baseline="middle" x="64" y="1485">D_1__Fibrobacteres</text>
+<rect class="blackborder" x="0" y="1512" width="54" height="54" style="fill:#00b6ff;"/>
+<text dominant-baseline="middle" x="64" y="1539">D_1__Firmicutes</text>
+<rect class="blackborder" x="0" y="1566" width="54" height="54" style="fill:#ed008a;"/>
+<text dominant-baseline="middle" x="64" y="1593">D_1__Fusobacteria</text>
+<rect class="blackborder" x="0" y="1620" width="54" height="54" style="fill:#c0c0c0;"/>
+<text dominant-baseline="middle" x="64" y="1647">D_1__Gemmatimonadetes</text>
+<rect class="blackborder" x="0" y="1674" width="54" height="54" style="fill:#c49c6b;"/>
+<text dominant-baseline="middle" x="64" y="1701">D_1__Hadesarchaeaeota</text>
+<rect class="blackborder" x="0" y="1728" width="54" height="54" style="fill:#fff899;"/>
+<text dominant-baseline="middle" x="64" y="1755">D_1__Halanaerobiaeota</text>
+<rect class="blackborder" x="0" y="1782" width="54" height="54" style="fill:#a287bf;"/>
+<text dominant-baseline="middle" x="64" y="1809">D_1__Hydrogenedentes</text>
+<rect class="blackborder" x="0" y="1836" width="54" height="54" style="fill:#80c99b;"/>
+<text dominant-baseline="middle" x="64" y="1863">D_1__Kiritimatiellaeota</text>
+<rect class="blackborder" x="0" y="1890" width="54" height="54" style="fill:#fcc688;"/>
+<text dominant-baseline="middle" x="64" y="1917">D_1__Latescibacteria</text>
+<rect class="blackborder" x="0" y="1944" width="54" height="54" style="fill:#7da9d8;"/>
+<text dominant-baseline="middle" x="64" y="1971">D_1__LCP-89</text>
+<rect class="blackborder" x="0" y="1998" width="54" height="54" style="fill:#f79679;"/>
+<text dominant-baseline="middle" x="64" y="2025">D_1__Lentisphaerae</text>
+<rect class="blackborder" x="0" y="2052" width="54" height="54" style="fill:#808080;"/>
+<text dominant-baseline="middle" x="64" y="2079">D_1__Margulisbacteria</text>
+<rect class="blackborder" x="0" y="2106" width="54" height="54" style="fill:#6b440b;"/>
+<text dominant-baseline="middle" x="64" y="2133">D_1__Marinimicrobia (SAR406 clade)</text>
+<rect class="blackborder" x="0" y="2160" width="54" height="54" style="fill:#5da09e;"/>
+<text dominant-baseline="middle" x="64" y="2187">D_1__Nanoarchaeaeota</text>
+<rect class="blackborder" x="0" y="2214" width="54" height="54" style="fill:#f49ac2;"/>
+<text dominant-baseline="middle" x="64" y="2241">D_1__Nitrospinae</text>
+<rect class="blackborder" x="0" y="2268" width="54" height="54" style="fill:#7cecf4;"/>
+<text dominant-baseline="middle" x="64" y="2295">D_1__Nitrospirae</text>
+<rect class="blackborder" x="0" y="2322" width="54" height="54" style="fill:#ffff00;"/>
+<text dominant-baseline="middle" x="64" y="2349">D_1__Omnitrophicaeota</text>
+<rect class="blackborder" x="0" y="2376" width="54" height="54" style="fill:#91278d;"/>
+<text dominant-baseline="middle" x="64" y="2403">D_1__Patescibacteria</text>
+<rect class="blackborder" x="0" y="2430" width="54" height="54" style="fill:#008000;"/>
+<text dominant-baseline="middle" x="64" y="2457">D_1__PAUC34f</text>
+<rect class="blackborder" x="0" y="2484" width="54" height="54" style="fill:#f27304;"/>
+<text dominant-baseline="middle" x="64" y="2511">D_1__Planctomycetes</text>
+<rect class="blackborder" x="0" y="2538" width="54" height="54" style="fill:#0000ff;"/>
+<text dominant-baseline="middle" x="64" y="2565">D_1__Poribacteria</text>
+<rect class="blackborder" x="0" y="2592" width="54" height="54" style="fill:#ff0000;"/>
+<text dominant-baseline="middle" x="64" y="2619">D_1__Proteobacteria</text>
+<rect class="blackborder" x="0" y="2646" width="54" height="54" style="fill:#008080;"/>
+<text dominant-baseline="middle" x="64" y="2673">D_1__Rokubacteria</text>
+<rect class="blackborder" x="0" y="2700" width="54" height="54" style="fill:#808000;"/>
+<text dominant-baseline="middle" x="64" y="2727">D_1__Spirochaetes</text>
+<rect class="blackborder" x="0" y="2754" width="54" height="54" style="fill:#a54700;"/>
+<text dominant-baseline="middle" x="64" y="2781">D_1__Synergistetes</text>
+<rect class="blackborder" x="0" y="2808" width="54" height="54" style="fill:#00b6ff;"/>
+<text dominant-baseline="middle" x="64" y="2835">D_1__Tenericutes</text>
+<rect class="blackborder" x="0" y="2862" width="54" height="54" style="fill:#ed008a;"/>
+<text dominant-baseline="middle" x="64" y="2889">D_1__Thaumarchaeota</text>
+<rect class="blackborder" x="0" y="2916" width="54" height="54" style="fill:#c0c0c0;"/>
+<text dominant-baseline="middle" x="64" y="2943">D_1__Verrucomicrobia</text>
+<rect class="blackborder" x="0" y="2970" width="54" height="54" style="fill:#c49c6b;"/>
+<text dominant-baseline="middle" x="64" y="2997">D_1__WPS-2</text>
+<rect class="blackborder" x="0" y="3024" width="54" height="54" style="fill:#fff899;"/>
+<text dominant-baseline="middle" x="64" y="3051">D_1__WS2</text>
+<rect class="blackborder" x="0" y="3078" width="54" height="54" style="fill:#a287bf;"/>
+<text dominant-baseline="middle" x="64" y="3105">D_1__Zixibacteria</text>
+<rect class="blackborder" x="0" y="3132" width="54" height="54" style="fill:#80c99b;"/>
+<text dominant-baseline="middle" x="64" y="3159">Unspecified</text>
+</svg>
+<svg width="498.4921875">
+<style>
+text {
+font-family: Arial,Helvetica,sans-serif;
+font-size: 30pt;
+}
+.btext { font-weight: bold; }
+.blackborder { stroke: #000000; stroke-width: 1; }
+</style>
+<rect class="blackborder" x="0" y="3186" width="498.4921875" height="1620" style="fill:#ffffff;" />
+"<text x="50%" y="3213" text-anchor="middle" dominant-baseline="middle" class="btext">oz_disease_mean</text>
+<rect class="blackborder" x="0" y="3240" width="54" height="54" style="fill:#fff5f0;"/>
+<text dominant-baseline="middle" x="64" y="3267">Missing: Not collected</text>
+<rect class="blackborder" x="0" y="3294" width="54" height="54" style="fill:#ffefe7;"/>
+<text dominant-baseline="middle" x="64" y="3321">Unknown</text>
+<rect class="blackborder" x="0" y="3348" width="54" height="54" style="fill:#fee9df;"/>
+<text dominant-baseline="middle" x="64" y="3375">0</text>
+<rect class="blackborder" x="0" y="3402" width="54" height="54" style="fill:#fee3d6;"/>
+<text dominant-baseline="middle" x="64" y="3429">0.037094548</text>
+<rect class="blackborder" x="0" y="3456" width="54" height="54" style="fill:#fedbcb;"/>
+<text dominant-baseline="middle" x="64" y="3483">0.051245745</text>
+<rect class="blackborder" x="0" y="3510" width="54" height="54" style="fill:#fdd0bd;"/>
+<text dominant-baseline="middle" x="64" y="3537">0.071428571</text>
+<rect class="blackborder" x="0" y="3564" width="54" height="54" style="fill:#fdc6af;"/>
+<text dominant-baseline="middle" x="64" y="3591">0.078431373</text>
+<rect class="blackborder" x="0" y="3618" width="54" height="54" style="fill:#fcbba1;"/>
+<text dominant-baseline="middle" x="64" y="3645">0.083333333</text>
+<rect class="blackborder" x="0" y="3672" width="54" height="54" style="fill:#fcaf94;"/>
+<text dominant-baseline="middle" x="64" y="3699">0.090909091</text>
+<rect class="blackborder" x="0" y="3726" width="54" height="54" style="fill:#fca486;"/>
+<text dominant-baseline="middle" x="64" y="3753">0.155462185</text>
+<rect class="blackborder" x="0" y="3780" width="54" height="54" style="fill:#fc9879;"/>
+<text dominant-baseline="middle" x="64" y="3807">0.159326209</text>
+<rect class="blackborder" x="0" y="3834" width="54" height="54" style="fill:#fc8c6c;"/>
+<text dominant-baseline="middle" x="64" y="3861">0.25</text>
+<rect class="blackborder" x="0" y="3888" width="54" height="54" style="fill:#fc8161;"/>
+<text dominant-baseline="middle" x="64" y="3915">0.258673969</text>
+<rect class="blackborder" x="0" y="3942" width="54" height="54" style="fill:#fb7555;"/>
+<text dominant-baseline="middle" x="64" y="3969">0.277777778</text>
+<rect class="blackborder" x="0" y="3996" width="54" height="54" style="fill:#fb6a4a;"/>
+<text dominant-baseline="middle" x="64" y="4023">0.291126819</text>
+<rect class="blackborder" x="0" y="4050" width="54" height="54" style="fill:#f85d41;"/>
+<text dominant-baseline="middle" x="64" y="4077">0.44973545</text>
+<rect class="blackborder" x="0" y="4104" width="54" height="54" style="fill:#f44f39;"/>
+<text dominant-baseline="middle" x="64" y="4131">0.46822174</text>
+<rect class="blackborder" x="0" y="4158" width="54" height="54" style="fill:#f14230;"/>
+<text dominant-baseline="middle" x="64" y="4185">0.472734632</text>
+<rect class="blackborder" x="0" y="4212" width="54" height="54" style="fill:#ea362a;"/>
+<text dominant-baseline="middle" x="64" y="4239">0.702661735</text>
+<rect class="blackborder" x="0" y="4266" width="54" height="54" style="fill:#e02c26;"/>
+<text dominant-baseline="middle" x="64" y="4293">0.973956011</text>
+<rect class="blackborder" x="0" y="4320" width="54" height="54" style="fill:#d52221;"/>
+<text dominant-baseline="middle" x="64" y="4347">1.150843254</text>
+<rect class="blackborder" x="0" y="4374" width="54" height="54" style="fill:#cb181d;"/>
+<text dominant-baseline="middle" x="64" y="4401">1.174393091</text>
+<rect class="blackborder" x="0" y="4428" width="54" height="54" style="fill:#c0151b;"/>
+<text dominant-baseline="middle" x="64" y="4455">1.216836426</text>
+<rect class="blackborder" x="0" y="4482" width="54" height="54" style="fill:#b51318;"/>
+<text dominant-baseline="middle" x="64" y="4509">1.333333333</text>
+<rect class="blackborder" x="0" y="4536" width="54" height="54" style="fill:#aa1016;"/>
+<text dominant-baseline="middle" x="64" y="4563">1.578324463</text>
+<rect class="blackborder" x="0" y="4590" width="54" height="54" style="fill:#9c0d14;"/>
+<text dominant-baseline="middle" x="64" y="4617">1.825396825</text>
+<rect class="blackborder" x="0" y="4644" width="54" height="54" style="fill:#8a0912;"/>
+<text dominant-baseline="middle" x="64" y="4671">2.948461297</text>
+<rect class="blackborder" x="0" y="4698" width="54" height="54" style="fill:#79040f;"/>
+<text dominant-baseline="middle" x="64" y="4725">3.135283206</text>
+<rect class="blackborder" x="0" y="4752" width="54" height="54" style="fill:#67000d;"/>
+<text dominant-baseline="middle" x="64" y="4779">3.190353051</text>
+</svg>
+<svg width="498.4921875">
+<style>
+text {
+font-family: Arial,Helvetica,sans-serif;
+font-size: 30pt;
+}
+.btext { font-weight: bold; }
+.blackborder { stroke: #000000; stroke-width: 1; }
+</style>
+<rect class="blackborder" x="0" y="4806" width="498.4921875" height="216" style="fill:#ffffff;" />
+"<text x="50%" y="4833" text-anchor="middle" dominant-baseline="middle" class="btext">binary_turf_contact</text>
+<rect class="blackborder" x="0" y="4860" width="54" height="54" style="fill:#ff0000;"/>
+<text dominant-baseline="middle" x="64" y="4887">Missing: Not collected</text>
+<rect class="blackborder" x="0" y="4914" width="54" height="54" style="fill:#0000ff;"/>
+<text dominant-baseline="middle" x="64" y="4941">n</text>
+<rect class="blackborder" x="0" y="4968" width="54" height="54" style="fill:#f27304;"/>
+<text dominant-baseline="middle" x="64" y="4995">y</text>
+</svg>
+</svg>
