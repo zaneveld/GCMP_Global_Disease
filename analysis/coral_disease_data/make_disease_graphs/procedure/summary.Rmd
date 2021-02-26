@@ -13,20 +13,31 @@ library(RColorBrewer)
 ```
 ```{r}
 ctree <- read.tree('../input/pruned_tree.newick')
+tree <- read.tree('../../../coral_disease_vs_adiv/input/huang_roy_molecular.newick')
 ```
 
 Lamb Data
 
 ```{r}
-preX <- read.table("../input/trait_table_r11_by_disease_adiv_rank.txt", sep="\t", header=TRUE, row.names = 1)
+#preX <- read.table("../input/trait_table_r11_by_disease_adiv_rank.txt", sep="\t", header=TRUE, row.names = 1)
 preY <- read.table('../input/trait_table_r11_by_disease_adiv_rank_zeroed.txt', sep="\t", header = TRUE, row.names = 1)
-X <- preX[,c(1:6)]
-x <- preX[,c(11,7)]
+#X <- preX[,c(1:6)]
+#x <- preX[,c(11,7)]
 Y <- preY[,c(1:6)] 
 disease_color <- "lightcoral"
 disease_ramp_color_palette <- colorRampPalette(c("lemonchiffon1", "red"))(100)
 ```
 
+Merged Disease Data
+
+```{r}
+# X <- read.table("../output/merged_disease_table.tsv", sep="\t",header=TRUE, row.names = 1)
+X <- read.table("../input/HICORDIS_disease_prevalence_by_species.csv", header=TRUE, row.names = 1)
+```
+
+```{r}
+preY
+```
 
 ```{r}
 plotTree(ctree, lwd=1, fsize=0.75)
@@ -42,7 +53,7 @@ dotTree(ctree, Y, standardize = TRUE, fsize=0.7, colors=disease_color)
 ```
 
 ```{r}
-phylo.heatmap(ctree, X, standardize=FALSE, fsize=0.6, colors=disease_ramp_color_palette,length=1)
+phylo.heatmap(tree, X, standardize=FALSE, fsize=0.6, colors=disease_ramp_color_palette,length=1)
 ```
 ```{r}
 phylo.heatmap(ctree, X, standardize=TRUE, fsize=0.6, colors=disease_ramp_color_palette,length=1)
@@ -50,6 +61,49 @@ phylo.heatmap(ctree, X, standardize=TRUE, fsize=0.6, colors=disease_ramp_color_p
 
 ```{r}
 plotTree.barplot(ctree, x, args.barplot = list(col=disease_color, xlab = "Total Disease Prevalence"), args.plotTree = list(fsize=0.5))
+```
+```{r}
+adivs <- preY[,c(7,8)]
+plotTree.barplot(ctree, adivs, args.barplot = list(col=disease_color, xlab = "Observed alpha diversity"), args.plotTree = list(fsize=0.5))
+#adivs
+```
+
+
+Skeletal Eroding Band
+```{r}
+phy <- preY[,c(8,4)]
+rawpicX <- pic(phy[,1], ctree)
+rawpicY <- pic(phy[,2], ctree)
+pos_result <- PositivizeContrasts(rawpicX, rawpicY)
+picX <- pos_result[,1]
+picY <- pos_result[,2]
+pic_fitXY <- lm(picY ~ picX)
+summary(pic_fitXY)
+```
+```{r}
+phy <- preY[,c(8,6)]
+rawpicX <- pic(phy[,1], ctree)
+rawpicY <- pic(phy[,2], ctree)
+pos_result <- PositivizeContrasts(rawpicX, rawpicY)
+picX <- pos_result[,1]
+picY <- pos_result[,2]
+pic_fitXY <- lm(picY ~ picX)
+summary(pic_fitXY)
+```
+```{r}
+ctree <- paintSubTree(ctree, node=61, state=1)
+ctree <- paintSubTree(ctree, node=39, state=2)
+ctree <- paintSubTree(ctree, node=38, state=3)
+cols <- c("deepskyblue", "sandybrown", "black"); names(cols)<- 1:3
+```
+```{r}
+plot(ctree, cols, fsize=0.5)
+
+```
+
+```{r}
+phylomorphospace(ctree, phy, colors=cols, node.size=1.25, node.by.map=TRUE, fsize=0.01, label="off")
+
 ```
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
