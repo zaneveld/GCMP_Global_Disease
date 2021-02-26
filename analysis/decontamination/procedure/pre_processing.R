@@ -12,7 +12,7 @@ library(vegan)
 library(decontam)
 
 #Set working directory
-setwd("~/Documents/OSUDocs/Projects/Disease_LHS/GCMP_Global_Disease/")
+setwd("~/Documents/OSUDocs/Projects/Disease_LHS/GCMP_Global_Disease/analysis")
 
 #use qiime2R to upload data into a phyloseq object
 #mapping file has "#" in it - I replaced all "#" with "." in order to upload
@@ -90,8 +90,10 @@ source("phyloseq2QIIME2.R")
 setwd("~/Documents/OSUDocs/Projects/Disease_LHS/Decontamination/output/")
 phyloseq2qiime2(physeq.noncont)
 #Saves output into working directory. 
-#this is currently having issues writing a newick file, so try the following code:
-
+#this code is currently having issues writing a newick file (getting a C stack error)
+#Try the following code instead from the castor package:
 library(castor)
 write_tree(phy_tree(physeq.noncont),"physeq.noncont_tree-rooted.newick", append = FALSE)
-
+#worked!
+#Now just need to use QIIME2 to convert biom and newick back to qza files
+#See biom_tre-to-qza.sh 
