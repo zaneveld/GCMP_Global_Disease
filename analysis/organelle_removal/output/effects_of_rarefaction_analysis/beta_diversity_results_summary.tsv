@@ -1,0 +1,17 @@
+Method	method name	test statistic name	sample size	number of groups	test statistic	p-value	number of permutations	Diversity Type	Taxonomy Scheme	Compartment	Metric	Rarefaction Depth
+bdiv__greengenes__all__braycurtis__1000	PERMANOVA	pseudo-F	1098	31	6.83575	0.001	999	bdiv	greengenes	all	braycurtis	1000
+bdiv__greengenes_metaxa2__all__braycurtis__1000	PERMANOVA	pseudo-F	1098	31	3.61683	0.001	999	bdiv	greengenes_metaxa2	all	braycurtis	1000
+bdiv__silva__all__braycurtis__1000	PERMANOVA	pseudo-F	1097	31	6.9519	0.001	999	bdiv	silva	all	braycurtis	1000
+bdiv__silva_metaxa2__all__braycurtis__1000	PERMANOVA	pseudo-F	1097	31	3.61168	0.001	999	bdiv	silva_metaxa2	all	braycurtis	1000
+bdiv__greengenes__mucus__braycurtis__1000	PERMANOVA	pseudo-F	312	24	2.97668	0.001	999	bdiv	greengenes	mucus	braycurtis	1000
+bdiv__greengenes_metaxa2__mucus__braycurtis__1000	PERMANOVA	pseudo-F	312	24	1.96929	0.001	999	bdiv	greengenes_metaxa2	mucus	braycurtis	1000
+bdiv__silva__mucus__braycurtis__1000	PERMANOVA	pseudo-F	312	24	3.00256	0.001	999	bdiv	silva	mucus	braycurtis	1000
+bdiv__silva_metaxa2__mucus__braycurtis__1000	PERMANOVA	pseudo-F	312	24	1.97825	0.001	999	bdiv	silva_metaxa2	mucus	braycurtis	1000
+bdiv__greengenes__skeleton__braycurtis__1000	PERMANOVA	pseudo-F	364	22	3.2725	0.001	999	bdiv	greengenes	skeleton	braycurtis	1000
+bdiv__greengenes_metaxa2__skeleton__braycurtis__1000	PERMANOVA	pseudo-F	364	22	2.34464	0.001	999	bdiv	greengenes_metaxa2	skeleton	braycurtis	1000
+bdiv__silva__skeleton__braycurtis__1000	PERMANOVA	pseudo-F	364	22	3.29714	0.001	999	bdiv	silva	skeleton	braycurtis	1000
+bdiv__silva_metaxa2__skeleton__braycurtis__1000	PERMANOVA	pseudo-F	364	22	2.35088	0.001	999	bdiv	silva_metaxa2	skeleton	braycurtis	1000
+bdiv__greengenes__tissue__braycurtis__1000	PERMANOVA	pseudo-F	361	28	5.12274	0.001	999	bdiv	greengenes	tissue	braycurtis	1000
+bdiv__greengenes_metaxa2__tissue__braycurtis__1000	PERMANOVA	pseudo-F	361	28	2.27757	0.001	999	bdiv	greengenes_metaxa2	tissue	braycurtis	1000
+bdiv__silva__tissue__braycurtis__1000	PERMANOVA	pseudo-F	360	28	5.19946	0.001	999	bdiv	silva	tissue	braycurtis	1000
+bdiv__silva_metaxa2__tissue__braycurtis__1000	PERMANOVA	pseudo-F	360	28	2.27872	0.001	999	bdiv	silva_metaxa2	tissue	braycurtis	1000
