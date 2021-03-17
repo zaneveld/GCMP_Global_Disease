@@ -1,0 +1,3 @@
+#Make empress community plot
+qiime empress community-plot --i-tree ../input/insertion-tree_silva_GCMP.qza --m-feature-metadata-file ../input/silva_metaxa2_reference_taxonomy.qza --m-sample-metadata-file ../input/GCMP_EMP_map_r28_no_empty_samples.txt --o-visualization ../output/empress_community_plot_silva.qzv --i-feature-table ../input/feature_table_silva_metaxa2_tissue_1000.qza --p-filter-missing-features --p-filter-extra-samples --p-ignore-missing-samples 
+
