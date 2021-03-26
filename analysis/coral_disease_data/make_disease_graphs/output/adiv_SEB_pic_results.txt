@@ -1,0 +1,23 @@
+
+> print(summary(pic_fitXY))
+
+Call:
+lm(formula = picY ~ picX)
+
+Residuals:
+       Min         1Q     Median         3Q        Max 
+-0.0029696 -0.0007114 -0.0001366  0.0006869  0.0034200 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  5.497e-04  2.573e-04   2.136   0.0399 *  
+picX        -4.618e-05  7.712e-06  -5.988 8.91e-07 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.00129 on 34 degrees of freedom
+Multiple R-squared:  0.5133,	Adjusted R-squared:  0.499 
+F-statistic: 35.86 on 1 and 34 DF,  p-value: 8.915e-07
+
+
+> sink()
