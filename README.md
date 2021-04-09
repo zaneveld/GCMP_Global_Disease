@@ -27,14 +27,29 @@ The analysis folder will be organized into subdirectories by analytical step. Ea
 
 #### Workflow
 
+Each step is labelled with **output** that is used in later steps, and **products** that are used in Figures or Supp. Figures in the paper
 To recreate the analysis we will run the procedures in the following analysis folders in order:
 
 1. coral_disease_data
+      **input**: raw data from the FRRP, HICORDIS and Lamb et al, disease datasets; the Huang & Roy coral phylogeny
+      **output**: merged_disease_table.tsv
+      **products**: disease prevalence graphs
 2. metadata
+      **input**:  GCMP_EMP_map_r28_no_empty_samples.txt
+      **output**: one_hot_encoding_metadata.tsv
 3. organelle_removal
-4. phylogeny_insertion
-5. decontamination
-6. PICRUSt2
-7. core_analysis
-8. coral_disease_vs_adiv 
-9. GDM
+      **input**: 
+         GCMP_EMP_map_r28_no_empty_samples.txt -- the sample metadata
+         all.seqs.fa -- the sequences from QIITA
+         all.biom -- the feature table from QIITA
+      **output**:
+         silva_metaxa2_reference_taxonomy.qza -- taxonomic annotations that better detect mitochondrial sequences
+         effects_of_rarefaction/
+             feature_table_silva_metaxa_2_all.qza 
+         
+7. phylogeny_insertion
+8. decontamination
+9. PICRUSt2
+10. core_analysis
+11. coral_disease_vs_adiv 
+12. GDM
