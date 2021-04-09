@@ -25,3 +25,16 @@ The analysis folder will be organized into subdirectories by analytical step. Ea
 **procedure:**. The procedure should be written using Jupyter Notebooks when possible, but R markdown or bash scripts may be more convenient for some steps. If there is more than one procedure file, please create an index file that explains what order to run them in and what each is doing.
 
 
+#### Workflow
+
+To recreate the analysis we will run the procedures in the following analysis folders in order:
+
+1. coral_disease_data
+2. metadata
+3. organelle_removal
+4. phylogeny_insertion
+5. decontamination
+6. PICRUSt2
+7. core_analysis
+8. coral_disease_vs_adiv 
+9. GDM
