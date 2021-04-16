@@ -27,14 +27,83 @@ The analysis folder will be organized into subdirectories by analytical step. Ea
 
 #### Workflow
 
+Each step is labelled with **output** that is used in later steps, and **products** that are used in Figures or Supp. Figures in the paper
 To recreate the analysis we will run the procedures in the following analysis folders in order:
 
 1. coral_disease_data
+      - **input**: raw data from the FRRP, HICORDIS and Lamb et al, disease datasets; the Huang & Roy coral phylogeny
+      - **output**: merged_disease_table.tsv
+      - **products**: disease prevalence graphs
 2. metadata
+      - **input**:  GCMP_EMP_map_r28_no_empty_samples.txt
+      - **output**: one_hot_encoding_metadata.tsv
 3. organelle_removal
+      - **input**: 
+         GCMP_EMP_map_r28_no_empty_samples.txt -- the sample metadata
+         all.seqs.fa -- the sequences from QIITA
+         all.biom -- the feature table from QIITA
+      - **output**:
+         silva_metaxa2_reference_taxonomy.qza -- taxonomic annotations that better detect mitochondrial sequences
+         GCMP_seqs.qza
+         effects_of_rarefaction/
+             feature_table_silva_metaxa_2_all.qza 
+         
 4. phylogeny_insertion
-5. decontamination
-6. PICRUSt2
-7. core_analysis
-8. coral_disease_vs_adiv 
-9. GDM
+      - **input**: 
+         all.seqs.fa
+         (large reference phylogenies are downloaded automatically by the script)
+      - **output**:
+         insertion-tree_GCMP.qza
+         
+         insertion-tree_SILVA_GCMP.qza
+6. decontamination
+      - **input**:
+         feature_table_silva_metaxa_2_all.qza
+         insertion-tree_SILVA_GCMP.qza 
+         silva_metaxa2_reference_taxonomy.qza
+         GCMP_EMP_map_r28_no_empty_samples.txt --currently the # in #SampleID is removed manually in this version
+      - **output**:
+         physeq.noncton-rooted-tree.qza -- the tree of microbes, excluding contaminants
+         physeq.noncont-feature-table.qza
+7. PICRUSt2
+      - **inputs**:
+         physeq.noncont-feature-table.qza
+         GCMP_seqs.qza
+      - **output**:
+         EC_metagenome.qza
+         KO_metagenome.qza
+         pathway_abundance.qza
+8. core_analysis
+       - **input**:
+         GCMP_EMP_map_r28_no_empty_samples.txt
+         insertion-tree_silva_GCMP.qza
+         Copied via the setup_input_data.py script:
+           physeq.noncton-rooted-tree.qza --> physeq_rooted_tree.qza
+           physeq.noncont-feature-table.qza --> physeq_feature_table.qza
+           physeq.noncont_sample-metadata.txt --> physeq_metadata.txt
+           physeq.noncont_tax.txt --> physeq_taxonomy.txt
+       - **output**:
+           alpha_diversity_phylogenetic/ -- faith's pd .qza and .qzv files 
+           beta_diversity_phylogenetic/ -- weighted and unweighted UniFrac bdeta diversity distance matrix .qza files
+           adiv_trait_table_all.txt -- a tsv file with alpha diversity and most abundant taxa calculated separately for each species (by Huang Roy tree name)
+           adiv_trait_table_mucus.txt -- same but only for mucus
+           adiv_trait_table_tissue.txt -- same but only for tissue
+           adiv_trait_table_skeleton.txt -- same but only for skeleton
+9. coral_disease_vs_adiv 
+       - **input**:
+       - **output**:
+       - **products**:
+           phytools contmap plots of adiv (rightwards) vs. disease (leftwards)
+           phylomorphospace plots for adiv vs. disease
+           PIC results for corelations of adiv vs. disease
+           PIC plots for correlations of adiv vs. disease
+           heatmap of adiv vs. disease
+10. GDM
+       - **input**:
+           combined_meta.tsv --> merged by the R script from one_hot_encoding_metadata.tsv and GCMP_EMP_map_r28_no_empty_samples.txt
+           physeq.noncton-rooted-tree.qza --> physeq_rooted_tree.qza
+           physeq.noncont-feature-table.qza --> physeq_feature_table.qza
+           physeq.noncont_tax.txt --> physeq_taxonomy.txt
+       - **output**:
+       - **products**:
+       
