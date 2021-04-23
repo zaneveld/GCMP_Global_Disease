@@ -74,8 +74,13 @@ sample_data(physeq.noncont) #1383 samples total, 171 variables
 #Count Sequences
 sum(sample_sums(physeq.noncont)) #37,469,008
 
-saveRDS(physeq.noncont, "output/physeq_noncont.RDS")
-physeq.noncont <- readRDS("output/physeq_noncont.RDS")
+#Make another phyloseq object that is rarefied
+#Rarefy to 1000 reads
+physeq_rare <- rarefy_even_depth(physeq.noncont, sample.size = 1000, rngseed = 711) 
+
+saveRDS(physeq.noncont, "decontamination/output/GCMP_phyloseq_decontaminated.RDS")
+saveRDS(physeq_rare, "decontamination/output/GCMP_phyloseq_decontaminated_1000.RDS")
+
 #Using function phyloseq2qiime2 written by Dr. Christian Edwardson
 #To go from a phyloseq object to biom, newick and text files
 #This function uses the following packages that must be installed or you will get an error:
@@ -84,16 +89,23 @@ physeq.noncont <- readRDS("output/physeq_noncont.RDS")
 #(ape)
 #(Biostrings)
 #(dada2)
+setwd("~/Documents/OSUDocs/Projects/Disease_LHS/GCMP_Global_Disease/analysis/decontamination/procedure")
 source("phyloseq2QIIME2.R")
 
 #could set your working directory to your output folder for this
-setwd("~/Documents/OSUDocs/Projects/Disease_LHS/Decontamination/output/")
-phyloseq2qiime2(physeq.noncont)
+setwd("~/Documents/OSUDocs/Projects/Disease_LHS/GCMP_Global_Disease/analysis/decontamination/output")
+
+#Change the names of the objects so the files that are saved are better!
+
+GCMP_decontaminated <- physeq.noncont
+GCMP_decontaminated_1000 <- physeq_rare
+phyloseq2qiime2(GCMP_decontaminated)
+phyloseq2qiime2(GCMP_decontaminated_1000)
 #Saves output into working directory. 
-#this code is currently having issues writing a newick file (getting a C stack error)
+#this code is currently having issues writing a newick file (getting a C stack error) for non rarefied
 #Try the following code instead from the castor package:
 library(castor)
-write_tree(phy_tree(physeq.noncont),"physeq.noncont_tree-rooted.newick", append = FALSE)
+write_tree(phy_tree(GCMP_decontaminated),"GCMP_decontaminated_tree-rooted.newick", append = FALSE)
 #worked!
 #Now just need to use QIIME2 to convert biom and newick back to qza files
 #See biom_tre-to-qza.sh 
