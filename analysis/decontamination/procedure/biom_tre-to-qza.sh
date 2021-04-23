@@ -31,3 +31,4 @@ qiime tools import \
     --output-path GCMP_decontaminated_1000_tax.qza \
     --input-format HeaderlessTSVTaxonomyFormat \
     --type 'FeatureData[Taxonomy]'
+
