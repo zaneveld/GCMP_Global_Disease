@@ -1,0 +1,183 @@
+[1] "Analyzing observed_features_tissue vs. Total_Disease"
+
+Phylogenetic tree with 476 tips and 475 internal nodes.
+
+Tip labels:
+  COR_Discosoma, COR_Ricordea_florida, MIC_Letepsammia, MIC_Rhombopsammia, MIC_Stephanophyllia, GAR_Gardineria_hawaiiensis, ...
+
+Rooted; includes branch lengths.
+                EUP_Plerogyra          ACR_Acropora_humilis 
+                    115.00000                     205.00000 
+ AGA_Gardineroseris_planulata             AGA_Pavona_clavus 
+                    272.00000                     164.33333 
+    FAV_Leptastrea_transversa       SID_Psammocora_digitata 
+                    306.00000                      16.00000 
+           AGA_Pavona_varians            POR_Porites_lobata 
+                    323.36364                     162.42857 
+        ACR_Acropora_cytherea                DEN_Tubastraea 
+                     26.25000                     264.00000 
+               AGA_Pachyseris                DEN_Turbinaria 
+                     91.12500                     214.92308 
+                POR_Alveopora     FAV_Diploastrea_heliopora 
+                    251.33333                     274.08000 
+               POC_Stylophora    POC_Pocillopora_damicornis 
+                     48.71429                      85.35714 
+    FAV_Montastraea_cavernosa FAV_Diploria_labyrinthiformis 
+                     49.75000                     315.66667 
+    FAV_Montastraea_faveolata AST_Stephanocoenia_intersepta 
+                    131.33333                     138.20000 
+    FAV_Montastraea_annularis       SID_Siderastrea_siderea 
+                     71.80000                     402.33333 
+                EUP_Plerogyra          ACR_Acropora_humilis 
+                  0.000000000                   0.000000000 
+ AGA_Gardineroseris_planulata             AGA_Pavona_clavus 
+                  0.000000000                   0.000000000 
+    FAV_Leptastrea_transversa       SID_Psammocora_digitata 
+                  0.000000000                   0.000000000 
+           AGA_Pavona_varians            POR_Porites_lobata 
+                  0.000187371                   0.021719095 
+        ACR_Acropora_cytherea                DEN_Tubastraea 
+                  0.002870264                   0.001826484 
+               AGA_Pachyseris                DEN_Turbinaria 
+                  0.005903022                   0.001248050 
+                POR_Alveopora     FAV_Diploastrea_heliopora 
+                  0.001498127                   0.001408451 
+               POC_Stylophora    POC_Pocillopora_damicornis 
+                  0.007597765                   0.000000000 
+    FAV_Montastraea_cavernosa FAV_Diploria_labyrinthiformis 
+                  0.092250000                   0.110375000 
+    FAV_Montastraea_faveolata AST_Stephanocoenia_intersepta 
+                  0.153875000                   0.199625000 
+    FAV_Montastraea_annularis       SID_Siderastrea_siderea 
+                  0.224000000                   0.288375000 
+[1] "Fitting raw linear regression before PIC for observed_features_tissue (x) vs.  Total_Disease (y)"
+
+Call:
+lm(formula = Y ~ X)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.06539 -0.05579 -0.03827  0.02740  0.21462 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)
+(Intercept) 0.0320842  0.0366878   0.875    0.392
+X           0.0001036  0.0001757   0.589    0.562
+
+Residual standard error: 0.08919 on 20 degrees of freedom
+Multiple R-squared:  0.01708,	Adjusted R-squared:  -0.03207 
+F-statistic: 0.3475 on 1 and 20 DF,  p-value: 0.5621
+
+[1] "Summary lm pic.Y ~ pic.X +0 INCLUDING zero change PICs for observed_features_tissue (x) vs.  Total_Disease (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.045823  0.004306  0.006996  0.012436  0.035174 
+
+Coefficients:
+        Estimate Std. Error t value Pr(>|t|)    
+pic.X -0.0007270  0.0001376  -5.283  3.6e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.01779 on 20 degrees of freedom
+Multiple R-squared:  0.5826,	Adjusted R-squared:  0.5617 
+F-statistic: 27.91 on 1 and 20 DF,  p-value: 3.598e-05
+
+null device 
+          1 
+null device 
+          1 
+null device 
+          1 
+[1] "FastAnc ML modelfit for"  "observed_features_tissue"
+Ancestral character estimates using fastAnc:
+      23       24       25       26       27       28       29       30 
+177.2292 137.9847  78.9307 146.8040 156.8705 154.8486 175.1349 169.0313 
+      31       32       33       34       35       36       37       38 
+177.6673 101.7058 201.5401 201.5240 238.3266 206.7120 219.8436 204.8424 
+      39       40       41       42       43 
+253.3596 250.6695 191.1433 187.9177 119.6767 
+
+Variances on ancestral states:
+         23          24          25          26          27          28 
+91113.75863 27810.31736 13854.82867 21642.85631 16723.55074 17403.19910 
+         29          30          31          32          33          34 
+11445.97794 10254.47379 10345.66901    68.16819 38731.24779 37163.82417 
+         35          36          37          38          39          40 
+ 3011.35837 31365.57086 27105.01667 23443.53609  1874.17270  1573.73896 
+         41          42          43 
+22588.58480 23287.03855  4149.79117 
+
+Lower & upper 95% CIs:
+         lower    upper
+23 -414.397918 768.8563
+24 -188.873283 464.8426
+25 -151.774109 309.6355
+26 -141.541618 435.1496
+27  -96.595862 410.3368
+28 -103.716874 413.4142
+29  -34.557389 384.8272
+30  -29.446871 367.5095
+31  -21.691463 377.0261
+32   85.523259 117.8884
+33 -184.192918 587.2731
+34 -176.323232 579.3713
+35  130.769933 345.8832
+36 -140.410386 553.8345
+37 -102.842982 542.5302
+38  -95.258741 504.9435
+39  168.507819 338.2113
+40  172.915541 328.4234
+41 -103.434865 485.7215
+42 -111.180109 487.0155
+43   -6.584307 245.9377
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "Total_Disease"          
+Ancestral character estimates using fastAnc:
+      23       24       25       26       27       28       29       30 
+0.057207 0.030071 0.008204 0.032231 0.009376 0.045633 0.072876 0.087360 
+      31       32       33       34       35       36       37       38 
+0.100992 0.188777 0.074018 0.037322 0.002608 0.089650 0.088352 0.055052 
+      39       40       41       42       43 
+0.001006 0.000748 0.042515 0.028597 0.002957 
+
+Variances on ancestral states:
+      23       24       25       26       27       28       29       30 
+0.082667 0.025232 0.012570 0.019637 0.015173 0.015790 0.010385 0.009304 
+      31       32       33       34       35       36       37       38 
+0.009387 0.000062 0.035141 0.033719 0.002732 0.028458 0.024592 0.021270 
+      39       40       41       42       43 
+0.001700 0.001428 0.020495 0.021128 0.003765 
+
+Lower & upper 95% CIs:
+       lower    upper
+23 -0.506330 0.620745
+24 -0.281268 0.341410
+25 -0.211548 0.227955
+26 -0.242424 0.306887
+27 -0.232056 0.250808
+28 -0.200656 0.291922
+29 -0.126861 0.272612
+30 -0.101695 0.276415
+31 -0.088901 0.290886
+32  0.173362 0.204191
+33 -0.293401 0.441436
+34 -0.322585 0.397230
+35 -0.099842 0.105058
+36 -0.240991 0.420292
+37 -0.219014 0.395718
+38 -0.230801 0.340905
+39 -0.079818 0.081829
+40 -0.073315 0.074810
+41 -0.238077 0.323107
+42 -0.256300 0.313495
+43 -0.117309 0.123224
+
+null device 
+          1 

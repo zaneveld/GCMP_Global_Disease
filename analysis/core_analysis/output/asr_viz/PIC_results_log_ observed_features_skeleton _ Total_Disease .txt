@@ -1,0 +1,197 @@
+[1] "Analyzing observed_features_skeleton vs. Total_Disease"
+
+Phylogenetic tree with 476 tips and 475 internal nodes.
+
+Tip labels:
+  COR_Discosoma, COR_Ricordea_florida, MIC_Letepsammia, MIC_Rhombopsammia, MIC_Stephanophyllia, GAR_Gardineria_hawaiiensis, ...
+
+Rooted; includes branch lengths.
+                EUP_Plerogyra          FUN_Herpolitha_limax 
+                    197.50000                      83.00000 
+         ACR_Acropora_humilis  AGA_Gardineroseris_planulata 
+                    205.00000                     300.75000 
+            AGA_Pavona_clavus     FAV_Leptastrea_transversa 
+                    129.25000                     359.00000 
+      SID_Psammocora_digitata            AGA_Pavona_varians 
+                    345.00000                     219.00000 
+           POR_Porites_lobata         ACR_Acropora_cytherea 
+                    178.23077                      42.75000 
+                  PEC_Oxypora                DEN_Tubastraea 
+                    276.00000                     243.60000 
+               AGA_Pachyseris            POR_Porites_lichen 
+                    115.33333                      71.00000 
+               DEN_Turbinaria                 POR_Alveopora 
+                    262.33333                     173.00000 
+    FAV_Diploastrea_heliopora                POC_Stylophora 
+                    316.28000                      68.27273 
+   POC_Pocillopora_damicornis     FAV_Montastraea_cavernosa 
+                     98.46154                      32.50000 
+FAV_Diploria_labyrinthiformis     FAV_Montastraea_faveolata 
+                    217.50000                      68.75000 
+AST_Stephanocoenia_intersepta     FAV_Montastraea_annularis 
+                     63.20000                      54.50000 
+      SID_Siderastrea_siderea 
+                    238.00000 
+                EUP_Plerogyra          FUN_Herpolitha_limax 
+                  0.000000000                   0.000000000 
+         ACR_Acropora_humilis  AGA_Gardineroseris_planulata 
+                  0.000000000                   0.000000000 
+            AGA_Pavona_clavus     FAV_Leptastrea_transversa 
+                  0.000000000                   0.000000000 
+      SID_Psammocora_digitata            AGA_Pavona_varians 
+                  0.000000000                   0.000187371 
+           POR_Porites_lobata         ACR_Acropora_cytherea 
+                  0.021719095                   0.002870264 
+                  PEC_Oxypora                DEN_Tubastraea 
+                  0.001963534                   0.001826484 
+               AGA_Pachyseris            POR_Porites_lichen 
+                  0.005903022                   0.007217848 
+               DEN_Turbinaria                 POR_Alveopora 
+                  0.001248050                   0.001498127 
+    FAV_Diploastrea_heliopora                POC_Stylophora 
+                  0.001408451                   0.007597765 
+   POC_Pocillopora_damicornis     FAV_Montastraea_cavernosa 
+                  0.000000000                   0.092250000 
+FAV_Diploria_labyrinthiformis     FAV_Montastraea_faveolata 
+                  0.110375000                   0.153875000 
+AST_Stephanocoenia_intersepta     FAV_Montastraea_annularis 
+                  0.199625000                   0.224000000 
+      SID_Siderastrea_siderea 
+                  0.288375000 
+[1] "Fitting raw linear regression before PIC for observed_features_skeleton (x) vs.  Total_Disease (y)"
+
+Call:
+lm(formula = Y ~ X)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.072075 -0.052456 -0.023519 -0.002677  0.258047 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)  
+(Intercept)  0.0847143  0.0330591   2.563   0.0174 *
+X           -0.0002285  0.0001646  -1.388   0.1784  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.08206 on 23 degrees of freedom
+Multiple R-squared:  0.0773,	Adjusted R-squared:  0.03719 
+F-statistic: 1.927 on 1 and 23 DF,  p-value: 0.1784
+
+[1] "Summary lm pic.Y ~ pic.X +0 INCLUDING zero change PICs for observed_features_skeleton (x) vs.  Total_Disease (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.109669 -0.002968  0.001631  0.009063  0.020490 
+
+Coefficients:
+        Estimate Std. Error t value Pr(>|t|)
+pic.X -0.0004127  0.0002721  -1.516    0.143
+
+Residual standard error: 0.02465 on 23 degrees of freedom
+Multiple R-squared:  0.0909,	Adjusted R-squared:  0.05137 
+F-statistic:   2.3 on 1 and 23 DF,  p-value: 0.143
+
+null device 
+          1 
+null device 
+          1 
+null device 
+          1 
+[1] "FastAnc ML modelfit for"    "observed_features_skeleton"
+Ancestral character estimates using fastAnc:
+       26        27        28        29        30        31        32        33 
+169.99964 176.84271  99.03884 193.59886 252.03377 234.98975 191.13611 186.76839 
+       34        35        36        37        38        39        40        41 
+171.34260 173.21871 195.06673  61.82904 165.76053 179.53381 250.76983 125.63647 
+       42        43        44        45        46        47        48        49 
+160.33297 168.40489 165.97560 219.78474 206.87043 158.67945 154.97992 125.61829 
+
+Variances on ancestral states:
+         26          27          28          29          30          31 
+39106.80080 11815.27706  5948.41670  9101.25888  6088.64192  4316.61197 
+         32          33          34          35          36          37 
+ 7330.18880  4614.00040  3968.70621  3719.61370  3808.15398    29.28312 
+         38          39          40          41          42          43 
+16617.82585 15861.77414  1293.60798   818.85689 13466.12831 11640.66409 
+         44          45          46          47          48          49 
+10070.06308   805.15758   676.08931  9703.38446 10003.91446  1782.77886 
+
+Lower & upper 95% CIs:
+         lower     upper
+26 -217.598980 557.59825
+27  -36.205562 389.89099
+28  -52.128083 250.20576
+29    6.613849 380.58388
+30   99.095460 404.97208
+31  106.215927 363.76357
+32   23.327726 358.94449
+33   53.632577 319.90420
+34   47.867171 294.81803
+35   53.680984 292.75644
+36   74.114656 316.01880
+37   51.222717  72.43536
+38  -86.903358 418.42442
+39  -67.315524 426.38314
+40  180.274979 321.26469
+41   69.549743 181.72319
+42  -67.112586 387.77852
+43  -43.063256 379.87303
+44  -30.709820 362.66102
+45  164.169149 275.40032
+46  155.907067 257.83380
+47  -34.391836 351.75074
+48  -41.058441 351.01828
+49   42.861277 208.37530
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "Total_Disease"          
+Ancestral character estimates using fastAnc:
+      26       27       28       29       30       31       32       33 
+0.054450 0.025624 0.007458 0.026867 0.006738 0.003038 0.037729 0.060043 
+      34       35       36       37       38       39       40       41 
+0.071918 0.081091 0.073686 0.188740 0.072307 0.034413 0.002521 0.014839 
+      42       43       44       45       46       47       48       49 
+0.088557 0.087627 0.054607 0.000998 0.000742 0.042178 0.028374 0.002945 
+
+Variances on ancestral states:
+      26       27       28       29       30       31       32       33 
+0.073269 0.022137 0.011145 0.017052 0.011407 0.008087 0.013734 0.008645 
+      34       35       36       37       38       39       40       41 
+0.007436 0.006969 0.007135 0.000055 0.031135 0.029718 0.002424 0.001534 
+      42       43       44       45       46       47       48       49 
+0.025230 0.021810 0.018867 0.001509 0.001267 0.018180 0.018743 0.003340 
+
+Lower & upper 95% CIs:
+       lower    upper
+26 -0.476088 0.584988
+27 -0.265993 0.317241
+28 -0.199457 0.214373
+29 -0.229075 0.282809
+30 -0.202601 0.216078
+31 -0.173226 0.179301
+32 -0.191965 0.267422
+33 -0.122191 0.242277
+34 -0.097093 0.240929
+35 -0.082530 0.244713
+36 -0.091871 0.239244
+37  0.174223 0.203258
+38 -0.273535 0.418149
+39 -0.303470 0.372296
+40 -0.093971 0.099013
+41 -0.061931 0.091610
+42 -0.222767 0.399880
+43 -0.201827 0.377081
+44 -0.214613 0.323826
+45 -0.075128 0.077124
+46 -0.069016 0.070500
+47 -0.222095 0.306450
+48 -0.239960 0.296708
+49 -0.110331 0.116221
+
+null device 
+          1 
