@@ -1,10 +1,34 @@
 qiime tools import \
-  --input-path physeq.noncont_feature-table.biom \
+  --input-path GCMP_decontaminated_feature-table.biom \
   --type 'FeatureTable[Frequency]' \
   --input-format BIOMV100Format \
-  --output-path physeq.noncont-feature-table.qza
+  --output-path GCMP_decontaminated_feature-table.qza
   
 qiime tools import \
-  --input-path physeq.noncont_tree-rooted.newick \
-  --output-path physeq.noncton-rooted-tree.qza \
+  --input-path GCMP_decontaminated_1000_feature-table.biom \
+  --type 'FeatureTable[Frequency]' \
+  --input-format BIOMV100Format \
+  --output-path GCMP_decontaminated_1000_feature-table.qza  
+
+qiime tools import \
+  --input-path GCMP_decontaminated_tree-rooted.newick \
+  --output-path GCMP_decontaminated_tree-rooted.qza \
   --type 'Phylogeny[Rooted]'
+
+qiime tools import \
+  --input-path GCMP_decontaminated_1000_tree-rooted.newick \
+  --output-path GCMP_decontaminated_1000_tree-rooted.qza \
+  --type 'Phylogeny[Rooted]'
+
+qiime tools import \
+    --input-path GCMP_decontaminated_tax.txt \
+    --output-path GCMP_decontaminated_tax.qza \
+    --input-format HeaderlessTSVTaxonomyFormat \
+    --type 'FeatureData[Taxonomy]'
+
+qiime tools import \
+    --input-path GCMP_decontaminated_1000_tax.txt \
+    --output-path GCMP_decontaminated_1000_tax.qza \
+    --input-format HeaderlessTSVTaxonomyFormat \
+    --type 'FeatureData[Taxonomy]'
+

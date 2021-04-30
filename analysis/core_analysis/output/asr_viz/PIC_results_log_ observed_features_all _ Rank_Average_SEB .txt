@@ -1,0 +1,273 @@
+[1] "Analyzing observed_features_all vs. Rank_Average_SEB"
+
+Phylogenetic tree with 476 tips and 475 internal nodes.
+
+Tip labels:
+  COR_Discosoma, COR_Ricordea_florida, MIC_Letepsammia, MIC_Rhombopsammia, MIC_Stephanophyllia, GAR_Gardineria_hawaiiensis, ...
+
+Rooted; includes branch lengths.
+               EUP_Plerogyra         FUN_Herpolitha_limax 
+                   161.72727                     86.00000 
+        ACR_Acropora_humilis AGA_Gardineroseris_planulata 
+                   166.33333                    282.87500 
+           AGA_Pavona_clavus           AGA_Pavona_varians 
+                   135.00000                    219.97222 
+   FAV_Leptastrea_transversa      SID_Psammocora_digitata 
+                   350.00000                    191.66667 
+          POR_Porites_lobata        ACR_Acropora_cytherea 
+                   154.43243                     37.30000 
+     ACR_Acropora_hyacinthus                  PEC_Oxypora 
+                    44.15789                    248.00000 
+              DEN_Tubastraea               AGA_Pachyseris 
+                   210.84000                    101.00000 
+           FAV_Favia_pallida           FAV_Favites_abdita 
+                   138.25000                    142.70000 
+          POR_Porites_lichen               DEN_Turbinaria 
+                    55.50000                    211.02857 
+               POR_Alveopora   MUS_Lobophyllia_hemprichii 
+                   160.42857                    155.58824 
+      MUS_Symphyllia_radians        ACR_Montipora_hispida 
+                   154.00000                     35.00000 
+     FAV_Goniastrea_edwardsi       FAV_Platygyra_daedalea 
+                   348.00000                    116.50000 
+   PEC_Mycedium_elephantotus    FAV_Diploastrea_heliopora 
+                    38.33333                    243.14493 
+        OCU_Galaxea_astreata     OCU_Galaxea_fascicularis 
+                   219.65000                    193.69565 
+        MER_Hydnophora_exesa    MER_Hydnophora_microconos 
+                    57.72727                    198.22222 
+        ACR_Isopora_palifera       FAV_Echinopora_horrida 
+                   141.30000                     79.66667 
+    FAV_Echinopora_lamellosa   FAV_Echinopora_mammiformis 
+                   133.58824                     81.91667 
+        FAV_Leptoria_phrygia       POR_Porites_cylindrica 
+                   158.50000                     98.23077 
+              POC_Stylophora   POC_Pocillopora_damicornis 
+                    69.12000                     78.91892 
+     POC_Seriatopora_hystrix    POC_Pocillopora_verrucosa 
+                    87.50000                     79.00000 
+               EUP_Plerogyra         FUN_Herpolitha_limax 
+                          68                           68 
+        ACR_Acropora_humilis AGA_Gardineroseris_planulata 
+                          68                           68 
+           AGA_Pavona_clavus           AGA_Pavona_varians 
+                          68                           68 
+   FAV_Leptastrea_transversa      SID_Psammocora_digitata 
+                          68                           68 
+          POR_Porites_lobata        ACR_Acropora_cytherea 
+                          66                           62 
+     ACR_Acropora_hyacinthus                  PEC_Oxypora 
+                          61                           58 
+              DEN_Tubastraea               AGA_Pachyseris 
+                          55                           44 
+           FAV_Favia_pallida           FAV_Favites_abdita 
+                          42                           42 
+          POR_Porites_lichen               DEN_Turbinaria 
+                          38                           36 
+               POR_Alveopora   MUS_Lobophyllia_hemprichii 
+                          34                           27 
+      MUS_Symphyllia_radians        ACR_Montipora_hispida 
+                          27                           23 
+     FAV_Goniastrea_edwardsi       FAV_Platygyra_daedalea 
+                          23                           23 
+   PEC_Mycedium_elephantotus    FAV_Diploastrea_heliopora 
+                          21                           19 
+        OCU_Galaxea_astreata     OCU_Galaxea_fascicularis 
+                          17                           17 
+        MER_Hydnophora_exesa    MER_Hydnophora_microconos 
+                          15                           15 
+        ACR_Isopora_palifera       FAV_Echinopora_horrida 
+                          14                           10 
+    FAV_Echinopora_lamellosa   FAV_Echinopora_mammiformis 
+                          10                           10 
+        FAV_Leptoria_phrygia       POR_Porites_cylindrica 
+                          10                            9 
+              POC_Stylophora   POC_Pocillopora_damicornis 
+                           7                            6 
+     POC_Seriatopora_hystrix    POC_Pocillopora_verrucosa 
+                           2                            1 
+[1] "Fitting raw linear regression before PIC for observed_features_all (x) vs.  Rank_Average_SEB (y)"
+
+Call:
+lm(formula = Y ~ X)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-29.810 -21.495  -4.227  16.519  38.752 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)   
+(Intercept) 21.51456    7.71030    2.79  0.00819 **
+X            0.08993    0.04636    1.94  0.05983 . 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 23.02 on 38 degrees of freedom
+Multiple R-squared:  0.09011,	Adjusted R-squared:  0.06617 
+F-statistic: 3.764 on 1 and 38 DF,  p-value: 0.05983
+
+[1] "Summary lm pic.Y ~ pic.X +0 INCLUDING zero change PICs for observed_features_all (x) vs.  Rank_Average_SEB (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-11.1225  -1.2726  -0.1963   1.1489  14.2299 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X  0.03491    0.03609   0.967     0.34
+
+Residual standard error: 3.756 on 38 degrees of freedom
+Multiple R-squared:  0.02403,	Adjusted R-squared:  -0.001656 
+F-statistic: 0.9355 on 1 and 38 DF,  p-value: 0.3395
+
+null device 
+          1 
+null device 
+          1 
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "observed_features_all"  
+Ancestral character estimates using fastAnc:
+       41        42        43        44        45        46        47        48 
+154.79237 154.02400  89.73874  81.71529  79.24356 167.30526 197.23549 208.63954 
+       49        50        51        52        53        54        55        56 
+172.75126 181.44706 172.01625 193.27284 156.74621 147.66347 105.79856 106.41732 
+       57        58        59        60        61        62        63        64 
+151.65562 141.97008 129.95299 141.44861 139.02480 154.82137 171.61350 155.26836 
+       65        66        67        68        69        70        71        72 
+157.35289 209.33133 107.05439  95.96024 153.68342 215.19542 204.52980 146.59818 
+       73        74        75        76        77        78        79 
+152.08307 204.72023 132.41532 107.27972 111.66129  95.16903  62.42556 
+
+Variances on ancestral states:
+        41         42         43         44         45         46         47 
+32978.1657  9597.5603  4231.2976  2143.3067   277.1778  7437.3347  4951.1309 
+        48         49         50         51         52         53         54 
+ 3508.8817  6100.7554  4163.0165  3097.9700  2117.2247   246.1291  1803.0506 
+        55         56         57         58         59         60         61 
+ 1134.0068   523.1508  1217.7970  1056.6107   511.6143  1021.9790   854.4670 
+        62         63         64         65         66         67         68 
+ 1220.6709  1337.3299 16326.7912 13347.1516  1051.7998   507.1818   394.7260 
+        69         70         71         72         73         74         75 
+ 8911.4866   654.6148   549.6088  7554.5103  6657.2841   598.2190  6871.3718 
+        76         77         78         79 
+ 5678.4252  4458.9954  1172.5786   703.1618 
+
+Lower & upper 95% CIs:
+         lower    upper
+41 -201.141497 510.7262
+42  -37.991590 346.0396
+43  -37.756173 217.2337
+44   -9.024598 172.4552
+45   46.612195 111.8749
+46   -1.725103 336.3356
+47   59.321513 335.1495
+48   92.537348 324.7417
+49   19.660891 325.8416
+50   54.985037 307.9091
+51   62.923803 281.1087
+52  103.086749 283.4589
+53  125.996745 187.4957
+54   64.437273 230.8897
+55   39.795522 171.8016
+56   61.587232 151.2474
+57   83.257597 220.0536
+58   78.259204 205.6810
+59   85.619963 174.2860
+60   78.790537 204.1067
+61   81.731516 196.3181
+62   86.342695 223.3001
+63   99.937237 243.2898
+64  -95.173250 405.7100
+65  -69.085661 383.7914
+66  145.765664 272.8970
+67   62.913821 151.1950
+68   57.019520 134.9010
+69  -31.341899 338.7087
+70  165.047955 265.3429
+71  158.580076 250.4795
+72  -23.758522 316.9549
+73   -7.837603 312.0037
+74  156.781540 252.6589
+75  -30.056404 294.8870
+76  -40.416722 254.9762
+77  -19.219101 242.5417
+78   28.052876 162.2852
+79   10.451858 114.3993
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "Rank_Average_SEB"       
+Ancestral character estimates using fastAnc:
+       41        42        43        44        45        46        47        48 
+39.705805 36.751939  8.887846  5.807395  3.642004 42.278695 61.548938 65.091919 
+       49        50        51        52        53        54        55        56 
+41.468020 32.313536 30.878290 39.341085 27.626085 24.085098 12.745583 10.696044 
+       57        58        59        60        61        62        63        64 
+25.094646 23.750992 16.236956 24.533046 19.602049 25.658894 26.959823 41.535645 
+       65        66        67        68        69        70        71        72 
+42.152350 45.399850 39.679872 33.733934 42.041047 67.553282 67.679631 39.313829 
+       73        74        75        76        77        78        79 
+33.234913 17.580699 37.117735 35.433990 38.376980 61.325349 61.430394 
+
+Variances on ancestral states:
+        41         42         43         44         45         46         47 
+1672.29769  486.68498  214.56588  108.68545   14.05547  377.14158  251.06808 
+        48         49         50         51         52         53         54 
+ 177.93272  309.36467  211.10340  157.09570  107.36285   12.48102   91.43133 
+        55         56         57         58         59         60         61 
+  57.50462   26.52858   61.75356   53.57993   25.94357   51.82378   43.32937 
+        62         63         64         65         66         67         68 
+  61.89929   67.81498  827.91916  676.82390   53.33597   25.71880   20.01625 
+        69         70         71         72         73         74         75 
+ 451.89471   33.19502   27.87024  383.08347  337.58581   30.33523  348.44203 
+        76         77         78         79 
+ 287.94862  226.11226   59.46057   35.65680 
+
+Lower & upper 95% CIs:
+        lower     upper
+41 -40.445919 119.85753
+42  -6.487499  79.99138
+43 -19.822366  37.59806
+44 -14.626058  26.24085
+45  -3.706159  10.99017
+46   4.215233  80.34216
+47  30.492488  92.60539
+48  38.947200  91.23664
+49   6.994040  75.94200
+50   3.835916  60.79116
+51   6.312077  55.44450
+52  19.032340  59.64983
+53  20.701701  34.55047
+54   5.343631  42.82657
+55  -2.117450  27.60862
+56   0.600887  20.79120
+57   9.692293  40.49700
+58   9.404124  38.09786
+59   6.253729  26.22018
+60  10.423254  38.64284
+61   6.700339  32.50376
+62  10.238378  41.07941
+63  10.819252  43.10039
+64 -14.860580  97.93187
+65  -8.838695  93.14340
+66  31.085680  59.71402
+67  29.739985  49.61976
+68  24.964986  42.50288
+69   0.375729  83.70637
+70  56.260719  78.84585
+71  57.332345  78.02692
+72   0.951693  77.67597
+73  -2.777163  69.24699
+74   6.785523  28.37588
+75   0.531195  73.70427
+76   2.174655  68.69333
+77   8.904401  67.84956
+78  46.211656  76.43904
+79  49.726585  73.13420
+
+null device 
+          1 
