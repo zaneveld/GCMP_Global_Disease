@@ -1,17 +1,23 @@
-setwd("~/Documents/OSUDocs/Projects/Disease_LHS/GCMP_Global_Disease/")
+#install.packages("tidyr",repos='http://cran.us.r-project.org')
+#install.packages("phytools",repos='http://cran.us.r-project.org')
+#install.packages("dplyr",repos='http://cran.us.r-project.org')
+
+library(dplyr)
 library(tidyr)
 library(phytools)
 
-map <- read.delim("metadata/input/GCMP_EMP_map_r28_no_empty_samples.txt")
-coral_tree <- read.tree("analysis/coral_disease_vs_adiv/input/huang_roy_molecular.newick") 
+map <- read.table("../input/GCMP_EMP_map_r29.txt",sep="\t",header=TRUE,fill=TRUE)
+coral_tree <- read.tree("../input/huang_roy_molecular.newick") 
+
+
 
 map <- map %>% filter(sample_type_EMP != "control blank" )
 map <- map %>% filter(sample_type_EMP != "" )
 map <- map %>% filter(host_species_id != "Missing: Not collected" )
 map <- map %>% filter(host_species_id != "Not applicable" )
 
-#head(map)
-map <- map %>% separate(host_scientific_name, into = c("Genus", "Species"), sep = " ", remove = FALSE, extra = "merge")
+print(map)
+map <- map %>% separate("host_scientific_name", into = c("Genus", "Species"), sep = " ", remove = FALSE, extra = "merge")
 #View(map$Genus)
 
 unique_genera <- unique(map$Genus)
