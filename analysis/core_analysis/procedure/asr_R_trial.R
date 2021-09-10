@@ -20,9 +20,15 @@ print(map)
 map <- map %>% separate("host_scientific_name", into = c("Genus", "Species"), sep = " ", remove = FALSE, extra = "merge")
 #View(map$Genus)
 
-unique_genera <- unique(map$Genus)
+mrca_full <- mrca(coral_tree, full = FALSE)
+write.csv(mrca_full, "../output/huang_roy_full_mrca_table.csv")
 
+unique_genera <- unique(map$Genus)
+#make a vector mapping genus to node number
+genus_mrcas = c()
+genus_names = c()
 for (unique_genus in unique_genera) {
+  print("************") 
   print(unique_genus)
   genus_map <- map %>% filter(Genus == unique_genus)
   species_in_genus <- unique(genus_map$Huang_Roy_tree_name)
@@ -30,13 +36,28 @@ for (unique_genus in unique_genera) {
     print("Skipping!")
     next
   }
-  print(paste("Species in genus:", species_in_genus))
-  print(paste("Tree label:", coral_tree$tip.label))
-  genus_MRCA <- findMRCA(coral_tree, tips = species_in_genus)
-  print(paste("Genus MRCA:", genus_MRCA))
+  print(length(species_in_genus))
+  if (length(species_in_genus) == 1){
+    print("only 1 species in this genus!")
+    print(paste("Species in genus:",species_in_genus))
+    genus_MRCA <- coral_tree$tip.label[match(species_in_genus,coral_tree$tip.label)]
+    print(paste("Genus MRCA:", genus_MRCA))
+    
+  }
+  else{
+    genus_MRCA <- findMRCA(coral_tree, tips = species_in_genus,type="node")
+    print(paste("Genus MRCA:", genus_MRCA))
+  }
+  genus_mrcas <- c(genus_mrcas,genus_MRCA)
+  genus_names <- c(genus_names,unique_genus)
 }
 
+i <- 1
+for (genus_name in genus_names) {
+    print(paste("Genus:",genus_name))
+    print(paste("Genus MRCA node name:",genus_mrcas[i]))
+    i <- i + 1
+}
 
-trial_MRCA <- findMRCA(coral_tree, c("POC_Pocillopora"))
-coral_tree$tip.label$POC_Pocillopora
-View(coral_tree$tip.label)
+df <- data.frame(genus_mrcas,row.names=genus_names)
+write.csv(df,'../output/genus_to_mrca_mapping.csv')
