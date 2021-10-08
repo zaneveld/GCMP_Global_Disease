@@ -1,0 +1,142 @@
+Species	Unknown_disease_FRRP	Black_band_disease_FRRP	Dark_spots_FRRP	Red_band_FRRP	White_band_FRRP	White_plague_FRRP	White_spot_FRRP	Yellow_band_FRRP	Algal_infection_HICORDIS	Algal_overgrowth_HICORDIS	Black_band_disease_HICORDIS	Bleaching_HICORDIS	Ciliates_HICORDIS	Corallophila_huysmansii_HICORDIS	Cyanobacteria_HICORDIS	Discoloration_HICORDIS	Endolithic_fungal_infection_HICORDIS	Endolithic_hypermycosis_HICORDIS	Gear_entanglement_HICORDIS	Growth_anomalies_HICORDIS	Macroalgal_overgrowth_HICORDIS	No_Disease_HICORDIS	Pigmentation_response_HICORDIS	Predation_HICORDIS	Recently_denuded_skeleton_HICORDIS	Swollen_patches_HICORDIS	Tissue_loss_HICORDIS	Trematodiasis_HICORDIS	White_syndrome_HICORDIS	Total_diseased_Lamb_et_al	Total_compromised_or_bleached_Lamb_et_al	White_syndrome_Lamb_et_al	Black_band_disease_Lamb_et_al	Brown_band_Lamb_et_al	Skeletal_eroding_band_Lamb_et_al	Growth_anomalies_Lamb_et_al
+ACR_Acropora	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0.913043478	0.043478261	0.043478261	0	0	0	0	0	0.032283546	0.108321599	0.004979909	0.006147611	0.005460727	0.014493251	0.001030326
+ACR_Acropora_cervicornis	0.948	0	0	0	2.212	0	0	0																												
+ACR_Acropora_cytherea									0	0.016073479	0	0.035017222	0	0	0.001722158	0.003444317	0	0	0	0.013777268	0.001148106	0.897244546	0.001722158	0.001722158	0.001148106	0	0.023536165	0	0.003444317							
+ACR_Acropora_humilis									0	0	0	0.166666667	0	0	0	0	0	0	0	0	0	0.833333333	0	0	0	0	0	0	0							
+ACR_Acropora_nasuta									0	0.428571429	0	0	0	0	0	0	0	0	0	0	0	0.571428571	0	0	0	0	0	0	0							
+ACR_Acropora_palmata	0	0	0	0	5.479	0	5.479	0																												
+ACR_Acropora_valida									0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0							
+ACR_Anacropora																														0	0.3	0	0	0	0	0
+ACR_Astreopora																														0.001680672	0.194957983	0	0	0	0.001680672	0
+ACR_Montipora									0	0	0	0.323571429	0	0	0	0	0	0	0	0.025	0	0.604285714	0	0	0	0	0.047142857	0	0	0.02675643	0.221128949	0.008631107	0.005351286	0.001208355	0.009321595	0.000690489
+ACR_Montipora_captitata									0.000235922	0.004010671	0.003883636	0.053282035	1.81E-05	0	0.000272217	0.002141444	0	0	0	0.002776618	0.000617026	0.909551204	0.00016333	0.001234053	0	0	0.014028274	0	0.00778542							
+ACR_Montipora_flabellata									0.000838574	0.004472397	0.000139762	0.260097834	0	0	0	0.004192872	0	0	0	0.001257862	0.001257862	0.718937806	0	0.001677149	0	0	0.006149546	0	0.000978337							
+ACR_Montipora_incrassata									0	0.005617978	0	0.129213483	0	0	0	0	0	0	0	0	0	0.859550562	0	0.005617978	0	0	0	0	0							
+ACR_Montipora_patula									0.000327678	0.00054613	0.001128668	0.034697444	0	0	0	0.005461298	0.000182043	0	0	0.002621423	0.00080099	0.946078788	0.00054613	0.001820433	0	0	0.003313187	0	0.002475788							
+ACR_Montipora_verrilli									0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0							
+AGA_Agaricia	0	0	1.402	0	0	0	0	0																												
+AGA_Agaricia_agaricites	0.113	0	0.243	0	0	0.081	0	0.016																												
+AGA_Agaricia_fragilis	0	0	0	0	0	0	0	0																												
+AGA_Agaricia_humilis	0	0	0	0	0	0	0	0																												
+AGA_Agaricia_lamarcki	0	0	0.716	0	0	0	0	0																												
+AGA_Agaricia_tenuifolia	0	0	0	0	0	0	0	0																												
+AGA_Gardineroseris_planulata									0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0							
+AGA_Helioseris_cucullata	1.136	0	0	0	0	0	0	0																												
+AGA_Leptoseris									0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0.09	0	0	0	0	0
+AGA_Pachyseris																														0.029515109	0.108222066	0.005621926	0.011946592	0	0.011243851	0.000702741
+AGA_Pavona									0.000369004	0.007907889	0	0.039819702	0	0	0	0	0	0	0	0.000553506	0.004428044	0.939910785	0.000369004	0.004797048	0.000184502	0	0.001476015	0.000184502	0	0.015473888	0.077852998	0.001934236	0.000483559	0.000483559	0.012572534	0
+AGA_Pavona_clavus									0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0							
+AGA_Pavona_varians									0.000749485	0.005246393	0	0.005995878	0	0	0	0.000374742	0.004496908	0.009930673	0	0.000749485	0.004496908	0.962338392	0	0.003934795	0	0	0.001311598	0.000374742	0							
+AST_Madracis	0	0	0	0	0	0	0	0																												
+AST_Madracis_auretenra	0	0	0	0	0	0.398	0	0																												
+AST_Madracis_decactis	0	0.168	0.168	0	0	0	0	0																												
+AST_Madracis_formosa	5.556	0	0	0	0	0	0	0																												
+AST_Stephanocoenia_intersepta	0.229	0	1.206	0.007	0	0.148	0	0.007																												
+AST_Stylocoeniella																														0	0	0	0	0	0	0
+DEN_Tubastraea																														0.00913242	0.01369863	0.00456621	0	0	0.00456621	0
+DEN_Turbinaria																														0.018720749	0.159126365	0.003120125	0	0	0.001560062	0.001560062
+EUP_Euphyllia																														0	0	0	0	0	0	0
+EUP_Physogyra																														0	0	0	0	0	0	0
+EUP_Plerogyra																														0	0.035714286	0	0	0	0	0
+FAV_Barabattoia																														0	0	0	0	0	0	0
+FAV_Colpophyllia_natans	0.156	0.469	0.052	0	0	0.156	0	0.052																												
+FAV_Cyphastrea									0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0.010810811	0.052972973	0.007567568	0.001081081	0	0.002162162	0
+FAV_Cyphastrea_ocellina									0	0.012674271	0	0.299112801	0	0	0	0.027883397	0	0	0	0	0.001267427	0.657794677	0.001267427	0	0	0	0	0	0							
+FAV_Diploastrea_heliopora																														0.007042254	0.024647887	0.007042254	0	0	0	0
+FAV_Diploria	0	0	0	0	0	0	0	0																												
+FAV_Diploria_clivosa	0.391	0	0	0	0	0.26	0	0																												
+FAV_Diploria_labyrinthiformis	0.442	0.147	0.147	0	0	0.147	0	0																												
+FAV_Diploria_strigosa	0.15	0.301	0	0	0	0.15	0	0																												
+FAV_Echinopora																														0.018768046	0.062078922	0.00481232	0.003368624	0.000481232	0.010105871	0
+FAV_Favia																														0.004838109	0.061034611	0.002605136	0.000372162	0.000372162	0	0.000372162
+FAV_Favia_fragum	0.752	0	0	0	0	0	0	0																												
+FAV_Favites																														0.005855291	0.061480552	0.003764115	0.000418235	0	0.000418235	0.001254705
+FAV_Goniastrea																														0.002880184	0.052995392	0.001152074	0	0	0.000576037	0
+FAV_Leptastrea									0	0	0	0.022653722	0	0	0	0	0	0	0	0	0.002427184	0.974919094	0	0	0	0	0	0	0	0.006535948	0.050653595	0	0.001633987	0	0.004901961	0
+FAV_Leptastrea_pruinosa									0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0							
+FAV_Leptastrea_purpurea									0	0.023972603	0	0.087328767	0	0	0	0	0	0	0	0.001712329	0.003424658	0.880136986	0.003424658	0	0	0	0	0	0							
+FAV_Leptastrea_transversa									0	0.018518519	0	0.055555556	0	0	0	0	0	0	0	0	0	0.925925926	0	0	0	0	0	0	0							
+FAV_Leptoria																														0.037234043	0.063829787	0.010638298	0	0.010638298	0.015957447	0
+FAV_Manicina_areolata	0	0	0	0	0	0	0	0																												
+FAV_Montastraea	0	0	0	0	0	6.25	0	0																						0.002386635	0.064439141	0.001193317	0	0	0.001193317	0
+MER_Orbicella_annularis	0.256	0	0	0	0	1.024	0	0.512																												
+FAV_Montastraea_cavernosa	0.2	0.188	0.025	0	0	0.325	0	0																												
+MER_Orbicella_faveolata	0.228	0.046	0.091	0	0	0.547	0	0.319																												
+MER_Orbicella_franksi	0.393	0.098	0	0	0	1.668	0	0.196																												
+FAV_Moseleya																														0	0.020408163	0	0	0	0	0
+FAV_Oulophyllia																														0	0.017094017	0	0	0	0	0
+FAV_Platygyra																														0.012297735	0.051132686	0.009708738	0	0	0.001941748	0
+FAV_Solenastrea	0	0	0	0	0	0	0	0																												
+FAV_Solenastrea_bournoni	0.348	0.07	0.07	0	0	0.348	0	0																												
+FAV_Solenastrea_hyades	0.617	0	0	0	0	0	0	0																												
+FUN_Ctenactis																														0	0.046875	0	0	0	0	0
+FUN_Cycloseris																														0	0	0	0	0	0	0
+FUN_Cycloseris_vaughani									0	0.005780347	0	0.023121387	0	0	0	0	0	0	0	0	0	0.971098266	0	0	0	0	0	0	0							
+FUN_Fungia									0	0.017834209	0	0.029509632	0	0	0	0.001167542	0	0	0	0.001167542	0	0.947402218	0	0.001167542	0	0	0.001751313	0	0	0.022982063	0.098654709	0.003923767	0	0	0.000560538	0.001121076
+FUN_Halomitra																														0	0	0	0	0	0	0
+FUN_Heliofungia																														0	0	0	0	0	0	0
+FUN_Herpolitha_limax																														0	0.064516129	0	0	0	0	0
+FUN_Lithophyllon																														0	0	0	0	0	0	0
+FUN_Podabacia																														0	0.123076923	0	0	0	0	0
+FUN_Polyphyllia																														0	0	0	0	0	0	0
+MEA_Dendrogyra_cylindus	0	0	0	0	0	0	0	0																												
+MEA_Dichocoenia	0.142	0.118	0.047	0	0	0.402	0	0																												
+MEA_Eusmilia_fastigiata	0	0	0.281	0	0	0.141	0	0																												
+MEA_Meandrina	0	0	0	0	0	0	0	0																												
+MEA_Meandrina_meandrites	0.237	0	0.394	0	0	0.158	0	0																												
+MER_Hydnopora																														0.031096563	0.070376432	0.004909984	0	0	0.026186579	0
+MER_Merulina																														0.013114754	0.133333333	0.003278689	0	0	0.009836066	0
+MUS_Acanthastrea																														0	0.091743119	0	0	0	0	0
+MUS_Blastomussa																														0	0	0	0	0	0	0
+MUS_Cynarina_lacrymalis																																				
+MUS_Isophyllia	0	0	0	0	0	0	0	0																												
+MUS_Isophyllia_sinuosa	0	0	0	0	0	0	0	0																												
+MUS_Lobophyllia																														0.031543052	0.05541347	0.02685422	0.000426257	0.000426257	0.003836317	0
+MUS_Micromussa																																				
+MUS_Mussa_angulosa	0	0	0	0	0	0.847	0	0																												
+MUS_Mycetophyllia	0	0	0	0	0	0	0	0																												
+MUS_Mycetophyllia_aliciae	0	0	0	0	0	0	0	0																												
+MUS_Mycetophyllia_danaana	0	0	0	0	0	0	0	0																												
+MUS_Mycetophyllia_lamarckiana	0	0	0	0	0	0	0	0																												
+MUS_Scolymia	0	0	1.053	0	0	0	0	0																						0	0.013761468	0	0	0	0	0
+MUS_Scolymia_cubensis	0	0	0	0	0	0	0	0																												
+MUS_Symphyllia																														0.003496503	0.024475524	0	0	0	0.003496503	0
+OCU_Galaxea																														0.03649635	0.106502986	0.020238885	0.000331785	0	0.01592568	0
+OCU_Oculina	0	0	0	0	0	0	0	0																												
+OCU_Oculina_diffusa	0	0	0	0	0	0.885	0	0																												
+PEC_Echinophyllia																														0.005535055	0.086715867	0.005535055	0	0	0	0
+PEC_Mycedium																														0.012048193	0.040160643	0.006024096	0	0	0.002008032	0.004016064
+PEC_Oxypora																														0.011220196	0.040673212	0.005610098	0.001402525	0.001402525	0.001402525	0
+PEC_Pectinia																														0.038461538	0.097713098	0.032224532	0	0	0.006237006	0
+POC_Pocillopora									0	0.01062387	0	0.208092224	0	0	0	0.050904159	0	0	0	0.00022604	0.000904159	0.417209162	0.000904159	0.030937312	0	0	0.280198915	0	0	0.037294016	0.185602775	0.004770165	0.003035559	0.000867303	0.028187337	0.000433651
+POC_Pocillopora_damicornis									0	0.003835827	0	0.14269275	0	0	0	0.002685079	0	0	0	0	0.001917913	0.83429229	0	0.006520905	0	0	0.008055236	0	0							
+POC_Pocillopora_eydouxi									0	0.001160093	0	0.01450116	0	0	0	0.000580046	0.000580046	0	0	0	0.000580046	0.978538283	0	0.001160093	0	0	0.002900232	0	0							
+POC_Pocillopora_meandrina									0.000484986	0.010346361	0	0.009295558	0.001091218	0	4.04E-05	0.00088914	8.08E-05	0	4.04E-05	0.000202077	0.002627006	0.960392838	0.000242493	0.008366003	4.04E-05	4.04E-05	0.005577335	0.000242493	0							
+POC_Seriatopora																														0.051219512	0.146341463	0.006097561	0.003658537	0.000609756	0.040853659	0
+POC_Stylophora																														0.036871508	0.166480447	0.003351955	0.004469274	0	0.029050279	0.001117318
+POR_Alveopora																														0.007490637	0.011235955	0.003745318	0	0	0.003745318	0
+POR_Goniopora																														0.001471257	0.046839472	0.000909504	2.68E-05	0	0.000535003	0
+POR_Porites									0.00032175	0.015654817	0	0.111425033	0	0	0	0.003539254	0	0	0	0.244354111	0.00032175	0.53667404	0.025862069	0.00862069	0	0	0.041643473	0.011583012	0	0.013955865	0.107654968	0.007983904	0.001916137	0.000415163	0.003385175	0.000127742
+POR_Porites_annae									0	0.082644628	0	0.008264463	0	0	0	0	0	0	0	0.090909091	0.008264463	0.636363636	0.049586777	0.033057851	0	0.008264463	0.008264463	0.074380165	0							
+POR_Porites_astreoides	0.173	0.006	0	0	0	0	0	0																												
+POR_Porites_branneri	0	0	0	0	0	0	0	0																												
+POR_Porites_compressa									0.00345903	0.029515169	0	0.006833003	0.000198469	8.51E-05	0	0.001502694	0.000113411	0	0	0.053246385	0.005330309	0.819875248	0.006407712	0.005528778	0	0.00031188	0.016359512	0.05120499	2.84E-05							
+POR_Porites_divaricata	0.089	0	0	0	0	0	0	0																												
+POR_Porites_duerdeni									0	0.069892473	0	0.146505376	0	0	0	0.02016129	0	0	0	0.005376344	0	0.698924731	0.024193548	0.014784946	0	0	0.014784946	0.005376344	0							
+POR_Porites_evermanni									0.011732229	0.051069703	0	0.011387164	0	0.002760524	0	0.008626639	0.000345066	0	0	0.038302277	0.008971705	0.768461008	0.020358868	0.014147688	0	0.000345066	0.021048999	0.042443064	0							
+POR_Porites_furcata	0	0	0	0	0	0	0	0																												
+POR_Porites_lichen									0	0.034120735	0	0.047244094	0	0	0	0.006999125	0	0	0	0.00656168	0.001749781	0.789151356	0.028871391	0.010498688	0	0	0.038057743	0.036745407	0							
+POR_Porites_lobata									0.002725546	0.055996694	0	0.004722968	0.000137753	0.00040342	0	0.009072035	0.001397211	5.90E-05	0	0.067410534	0.00529366	0.740699196	0.028613317	0.010577481	0.000108235	0.00204662	0.010016629	0.060719662	0							
+POR_Porites_lutea									0.003676471	0.125	0	0.007352941	0	0	0	0.003676471	0	0	0	0.007352941	0	0.691176471	0.047794118	0.047794118	0	0	0.058823529	0.007352941	0							
+POR_Porites_porites	0.381	0	0	0	0	0	0	0																												
+POR_Porites_rus									0.016	0.008	0	0	0	0	0	0.008	0	0	0	0.008	0	0.8	0.136	0.008	0	0	0.016	0	0							
+POR_Porites_solida									0.048076923	0.105769231	0	0	0	0	0	0.009615385	0.009615385	0	0	0	0	0.692307692	0.086538462	0.009615385	0	0	0.028846154	0.009615385	0							
+SID_Coscinaraea																														0	0.029411765	0	0	0	0	0
+SID_Psammocora									0	0.068522484	0	0.096359743	0	0	0	0	0	0	0	0	0	0.824411135	0.004282655	0.006423983	0	0	0	0	0	0.007874016	0.106299213	0.003937008	0.003937008	0	0	0
+SID_Psammocora_digitata									0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0							
+SID_Psammocora_haimeana									0.009708738	0.009708738	0	0.009708738	0	0	0	0	0	0	0	0	0	0.970873786	0	0	0	0	0	0	0							
+SID_Psammocora_nierstraszi									0	0.014925373	0	0	0	0	0	0.014925373	0	0	0	0	0	0.970149254	0	0	0	0	0	0	0							
+SID_Siderastrea	0	0	0	0	0	0	0	0																												
+SID_Siderastrea_radians	0.261	0.029	0.696	0.087	0	0.029	0	0																												
+SID_Siderastrea_siderea	0.267	0.045	1.942	0.006	0	0.041	0	0.006																												
+TRC_Trachyphyllia																														0	0	0	0	0	0	0
