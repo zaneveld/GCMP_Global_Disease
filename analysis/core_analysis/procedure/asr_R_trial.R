@@ -1,3 +1,4 @@
+
 #install.packages("tidyr",repos='http://cran.us.r-project.org')
 #install.packages("phytools",repos='http://cran.us.r-project.org')
 #install.packages("dplyr",repos='http://cran.us.r-project.org')
@@ -49,3 +50,4 @@ findMRCA(coral_tree, tips = c("FAV_Cyphastrea_serailia", "FAV_Cyphastrea_micropt
 trial_MRCA <- findMRCA(coral_tree, c("POC_Pocillopora"))
 coral_tree$tip.label$POC_Pocillopora
 View(coral_tree$tip.label)
+
