@@ -1,0 +1,22 @@
+﻿Disease_Type,disease_name,disease_category
+No_Disease,healthy,healthy
+Black_band_disease,black band disease,black band
+Algal_Infection ,compromised,compromised
+Algal_overgrowth,compromised,compromised
+Bleaching,compromised,compromised
+Corallophila_huysmansii,compromised,compromised
+Cyanobacteria,compromised,compromised
+Discoloration,compromised,compromised
+Macroalgal_overgrowth,compromised,compromised
+Pigmentation_response,compromised,compromised
+Predation,compromised,compromised
+Recently_denuded_skeleton,compromised,compromised
+Swollen_patches,compromised,compromised
+Gear_entanglement,compromised,compromised
+Tissue_Loss,rapid tissue loss,tissue loss
+Growth_anomalies,growth anomaly,growth anomaly
+White_Syndrome,white syndrome,white disease
+Ciliates,other ciliate disease,ciliate disease
+Endolithic_fungal_infection,fungal infection,fungal infection
+Endolithic_hypermycosis,fungal infection,fungal infection
+Trematodiasis,trematodiasis,trematodiasis
