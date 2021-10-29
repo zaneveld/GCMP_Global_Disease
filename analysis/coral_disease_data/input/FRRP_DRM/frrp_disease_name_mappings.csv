@@ -1,0 +1,26 @@
+﻿Disease.Conditions,disease_name,disease_category
+NA,healthy,healthy
+BB/RB,black band disease,black band
+"BB/RB,DC",black band disease,black band
+"DC,BB/RB",black band disease,black band
+DC,compromised,compromised
+"DC,DSD",dark spot disease,dark spot
+DSD,dark spot disease,dark spot
+"DSD,DC",dark spot disease,dark spot
+"DSD,UNK",dark spot disease,dark spot
+"DC,STL",stony coral tissue loss disease,tissue loss
+"STL,DC",stony coral tissue loss disease,tissue loss
+"UNK,STL",stony coral tissue loss disease,tissue loss
+STL,stony coral tissue loss disease,tissue loss
+RTL,rapid tissue loss,tissue loss
+WBD,white band disease,white disease
+WPL,white plague,white disease
+WPX,white pox,white disease
+YB,yellow band disease,yellow band
+"DC,UNK",unknown disease,unknown disease
+UNK,unknown disease,unknown disease
+"UNK,DC",unknown disease,unknown disease
+"UNK,DC,DSD",unknown disease,unknown disease
+"UNK,DSD",unknown disease,unknown disease
+"DSD,STL",dark spot disease/stony coral tissue loss disease,tissue loss/dark spot
+"STL,BB/RB",stony coral tissue loss disease/black band disease,tissue loss/black band
