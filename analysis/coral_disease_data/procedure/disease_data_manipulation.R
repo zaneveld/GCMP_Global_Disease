@@ -10,19 +10,28 @@ library(dplyr)
 ##We start with the FRRP and the HICRODIS since their data format is the same
 
 #First fix up the frrp datasheet and get the host genus & species names
-frrp <- read.csv("input/FRRP_DRM/FRRP_DRM_2005_2020_downloaded_10082021.csv")
-frrp_name_map <- read.csv("input/FRRP_DRM/FRRP_DRM_name_mappings.csv")
-frrp_disease_map <- read.csv("input/FRRP_DRM/frrp_disease_name_mappings.csv")
+frrp <- read.csv("input/FRRP_DRM/FRRP_DRM_2005_2020_downloaded_10082021.csv", fileEncoding="UTF-8-BOM"
+)
+frrp_name_map <- read.csv("input/FRRP_DRM/FRRP_DRM_name_mappings.csv", fileEncoding="UTF-8-BOM"
+)
+frrp_disease_map <- read.csv("input/FRRP_DRM/frrp_disease_name_mappings.csv", fileEncoding="UTF-8-BOM"
+)
 
 #make a corresponding column named species_code
+#frrp <-rename(frrp, Species = species_code)
 frrp <- rename(frrp, species_code = Species)
+#frrp_name_map_read <- colnames (frrp_name_map)[1]
+#frrp_name_map_read
+frrp_name_map <- rename(frrp_name_map, species_code = species_code)
+#frrp_name_map <- rename(frrp_name_map, species_code = ï..species_code)
 
 #merge with mapping data to incorporate the host_genus and host_species names 
 #according to their species code
-frrp <- merge(frrp, frrp_name_map, by = "species_code")
+frrp <- merge(x = frrp, y = frrp_name_map, by.x = "species_code", by.y= "species_code")
 #merge with mapping data to incorporate centralized disease names
 frrp$Disease.Conditions <- na_if(frrp$Disease.Conditions, "" ) #changes all empty cells to NAs
-frrp <- merge(frrp, frrp_disease_map, by = "Disease.Conditions")
+frrp <- merge(x=frrp, y=frrp_disease_map, by = "Disease.Conditions")
+#frrp <- merge(x=frrp, y=frrp_disease_map, by.x = "Disease.Conditions", by.y = "ï..Disease.Conditions")
 
 ##let's change the diseases to a binary - yes or no/diseased vs healthy
 frrp$disease_binary <- ifelse(frrp$disease_name != "healthy", "diseased", "healthy")
@@ -34,8 +43,8 @@ frrp$wd <- ifelse(frrp$disease_category == "white disease", 1, 0)
 
 
 #Now bring in the HICORDIS data
-hicordis <- read.csv("input/HICORDIS/inputs/Caldwell_et_al_HICORDIS_data.csv")
-hicordis_disease_map <- read.csv("input/HICORDIS/inputs/hicordis_disease_name_mappings.csv")
+hicordis <- read.csv("input/HICORDIS/inputs/Caldwell_et_al_HICORDIS_data.csv", fileEncoding="UTF-8-BOM")
+hicordis_disease_map <- read.csv("input/HICORDIS/inputs/hicordis_disease_name_mappings.csv", fileEncoding="UTF-8-BOM")
 
 #add centralized disease names 
 hicordis <- merge(hicordis, hicordis_disease_map, by = "Disease_Type")
@@ -82,6 +91,11 @@ View(sum_frrp_hicordis_genus)
 lamb <- read.csv("../../../joleahs_private_disease_data/Australia_Disease_Data.csv") #this is hidden & not on github
 lamb_ex <- select(lamb, "Genus", "TotalCorals", "TotalDiseased", "TotalHealthy", "TotalBBD", "TotalWS")
 str(lamb_ex)
+#Two species names are miss spelled or in the case of the Pacific Montastraea the genus name has changed
+lamb_ex <- lamb_ex %>%
+  mutate(Genus = case_when(Genus == "Montastrea" ~ "Paramontastraea", 
+                               Genus == "Tubastrea" ~ "Tubastraea",
+                               TRUE~Genus))
 #It is not easy to change the names of the diseases for Lamb data bc they are column names
 #For reference (or to change in the future):
 #TotalBBD = black band disease
@@ -107,6 +121,7 @@ sum_lamb_genus <- ddply(lamb_ex, "host_genus", summarise,
 #Combine the FRRP/HICORDIS with the Lamb
 sum_dis_genus <- rbind(sum_frrp_hicordis_genus, sum_lamb_genus)
 
+
 #Sum the columns
 sum_dis_genus <- ddply(sum_dis_genus, "host_genus", summarise,
                        sum_total = sum(sum_total),
@@ -125,5 +140,4 @@ View(sum_dis_genus)
 #Write your CSV by genus - it will include counts for total healthy, total diseased
 #plus total black band and total white disease (includes white plague, white syndrome, white band, white pox)
 write.csv(sum_dis_genus, "output/disease_by_genus.csv")
-
 
