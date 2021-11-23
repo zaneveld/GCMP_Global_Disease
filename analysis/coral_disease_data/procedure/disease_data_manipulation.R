@@ -3,7 +3,7 @@
 #Trial with combing FRRP & HICORDIS on just disease vs. not diseased, summarised by genus
 
 #Make sure you're in the working folder "coral_disease_data"
-setwd("~/Documents/OSUDocs/Projects/Disease_LHS/GCMP_Global_Disease/analysis/coral_disease_data")
+setwd("../") #should be 'coral disease data' using relative path to make it not system-specific
 library(plyr)
 library(dplyr)
 
@@ -83,13 +83,12 @@ sum_frrp_hicordis_genus <- ddply(disease_data, "host_genus", summarise,
              sum_bbd = sum(bbd),
              sum_wd = sum(wd)) #can add here specific diseases??
 
-View(sum_frrp_hicordis_genus)
 
 ##let's bring in Lamb data (non-public dataset)
 #This is in a different format than the others, each line is a reef and each species has the
 #total number + total diseased number so we can add it in here
 lamb <- read.csv("../../../joleahs_private_disease_data/Australia_Disease_Data.csv") #this is hidden & not on github
-lamb_ex <- select(lamb, "Genus", "TotalCorals", "TotalDiseased", "TotalHealthy", "TotalBBD", "TotalWS")
+lamb_ex <- select(lamb, "Genus", "TotalCorals", "TotalDiseased", "TotalHealthy", "TotalBBD", "TotalWS","TotalSEB")
 str(lamb_ex)
 #Two species names are miss spelled or in the case of the Pacific Montastraea the genus name has changed
 lamb_ex <- lamb_ex %>%
@@ -105,20 +104,25 @@ lamb_ex <- lamb_ex %>%
 #TotalBrB = brown band
 #TotalSEB = skeletal eroding band
 #TotalAtN = atramentous necrosis
-
+print(lamb_ex)
 #rename the columns to match with the other two data sets, both with total counts & with individual diseases
 lamb_ex <- rename(lamb_ex, c("host_genus" = "Genus", "count_total" = "TotalCorals", "count_disease" = "TotalDiseased",
-                              "count_healthy" = "TotalHealthy", "bbd" = "TotalBBD", "wd" = "TotalWS"))
+                              "count_healthy" = "TotalHealthy", "bbd" = "TotalBBD", "wd" = "TotalWS","seb" = "TotalSEB"))
 
 sum_lamb_genus <- ddply(lamb_ex, "host_genus", summarise,
                       sum_total = sum(count_total),
                       sum_dis = sum(count_disease),
                       sum_healthy = sum(count_healthy),
                       sum_bbd = sum(bbd),
-                      sum_wd = sum(wd))
+                      sum_wd = sum(wd),
+		      sum_seb = sum(seb))
 
 
 #Combine the FRRP/HICORDIS with the Lamb
+
+# fill in non-overlapping columns (i.e. SEB) with 0.0
+sum_frrp_hicordis_genus[setdiff(names(sum_lamb_genus), names(sum_frrp_hicordis_genus))] <- 0
+
 sum_dis_genus <- rbind(sum_frrp_hicordis_genus, sum_lamb_genus)
 
 
@@ -128,14 +132,15 @@ sum_dis_genus <- ddply(sum_dis_genus, "host_genus", summarise,
                        sum_dis = sum(sum_dis),
                        sum_healthy = sum(sum_healthy),
                        sum_bbd = sum(sum_bbd),
-                       sum_wd = sum(sum_wd))
+                       sum_wd = sum(sum_wd),
+		       sum_seb = sum(sum_seb))
 
 #Check the percentage of diseased observations
-sum_dis_genus$perc_healthy <- (sum_dis_genus$sum_healthy/sum_dis_genus$sum_total)*100
-sum_dis_genus$perc_dis <- (sum_dis_genus$sum_dis/sum_dis_genus$sum_total)*100
-sum_dis_genus$perc_bbd <- (sum_dis_genus$sum_bbd/sum_dis_genus$sum_total)*100
-sum_dis_genus$perc_wd <- (sum_dis_genus$sum_wd/sum_dis_genus$sum_total)*100
-View(sum_dis_genus)
+sum_dis_genus$percent_healthy <- (sum_dis_genus$sum_healthy/sum_dis_genus$sum_total)*100
+sum_dis_genus$percent_diseased <- (sum_dis_genus$sum_dis/sum_dis_genus$sum_total)*100
+sum_dis_genus$percent_black_band_disease <- (sum_dis_genus$sum_bbd/sum_dis_genus$sum_total)*100
+sum_dis_genus$percent_white_disease <- (sum_dis_genus$sum_wd/sum_dis_genus$sum_total)*100
+sum_dis_genus$percent_skeletal_eroding_band <- (sum_dis_genus$sum_seb/sum_dis_genus$sum_total)*100
 
 #Write your CSV by genus - it will include counts for total healthy, total diseased
 #plus total black band and total white disease (includes white plague, white syndrome, white band, white pox)
