@@ -24,7 +24,7 @@ preY <- read.table('../input/trait_table_r11_by_disease_adiv_rank_zeroed.txt', s
 #X <- preX[,c(1:6)]
 #x <- preX[,c(11,7)]
 Y <- preY[,c(1:6)] 
-disease_color <- "lightcoral"
+disease_color <- c("lightcoral","deepskyblue")
 disease_ramp_color_palette <- colorRampPalette(c("lemonchiffon1", "red"))(100)
 ```
 
@@ -51,24 +51,32 @@ dotTree(ctree, Y, standardize=FALSE, fsize=0.7, colors=disease_color)
 dotTree(ctree, Y, standardize = TRUE, fsize=0.7, colors=disease_color)
 
 ```
+```{r}
+phylo.heatmap(ctree, Y, standardize=TRUE, fsize=0.6, colors=disease_ramp_color_palette,length=1)
+```
 
 ```{r}
-phylo.heatmap(tree, X, standardize=FALSE, fsize=0.6, colors=disease_ramp_color_palette,length=1)
+phylo.heatmap(ctree, preY[,c(4,8)], standardize=TRUE, fsize=0.6, colors=disease_ramp_color_palette,length=1)
 ```
 ```{r}
 phylo.heatmap(ctree, X, standardize=TRUE, fsize=0.6, colors=disease_ramp_color_palette,length=1)
+```
+```{r}
+
 ```
 
 ```{r}
 plotTree.barplot(ctree, x, args.barplot = list(col=disease_color, xlab = "Total Disease Prevalence"), args.plotTree = list(fsize=0.5))
 ```
 ```{r}
-adivs <- preY[,c(7,8)]
-plotTree.barplot(ctree, adivs, args.barplot = list(col=disease_color, xlab = "Observed alpha diversity"), args.plotTree = list(fsize=0.5))
+adivs <- preY[,c(8,11)]
+plotTree.barplot(ctree, preY[,c(4,11)], args.barplot = list(col=disease_color, xlab = "Observed SEB"), args.plotTree = list(fsize=0.5))
 #adivs
 ```
 
-
+```{r}
+plotTree.barplot(ctree, adivs, args.barplot = list(col=disease_color, xlab = "Observed alpha diversity"), args.plotTree = list(fsize=0.5))
+```
 Skeletal Eroding Band
 ```{r}
 phy <- preY[,c(8,4)]
@@ -102,7 +110,7 @@ plot(ctree, cols, fsize=0.5)
 ```
 
 ```{r}
-phylomorphospace(ctree, phy, colors=cols, node.size=1.25, node.by.map=TRUE, fsize=0.01, label="off")
+phylomorphospace(ctree, phy, colors=cols, node.size=1.25, node.by.map=TRUE, fsize=0.5)
 
 ```
 
