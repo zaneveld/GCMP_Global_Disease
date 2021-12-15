@@ -10,7 +10,22 @@ tree_fp <- args[2]
 x_trait <-args[3]
 y_trait <-args[4]
 
-output_dir <- paste0("../output/phyl_corr_tests_",x_trait,"_vs_",y_trait,"/")
+
+#Example of how to filter results to just genera
+#with Gammaproteobacteria as the dominant class
+
+#filter_column <- "most_abundant_class_tissue"
+#filter_value <- "D_0__Bacteria;D_1__Proteobacteria;D_2__Gammaproteobacteria"
+filter_column <- NA
+filter_value <- NA
+
+
+output_dir <- paste0("../output/phyl_corr_tests_",x_trait,"_vs_",y_trait)
+if (!is.na(filter_column)){
+    output_dir <- paste0(output_dir,"_",filter_column,"_is_",gsub("\\;","_",filter_value))
+}
+output_dir <- paste0(output_dir,"/")
+
 print(paste("Outputting results to:",output_dir))
 dir.create(output_dir)
 
@@ -23,6 +38,10 @@ tree <- read.tree(tree_fp)
 print(tree)
 #Filter table to tree tips
 trait_table <- trait_table[rownames(trait_table) %in% tree$tip.label,]
+
+if (!is.na(filter_column)){
+    trait_table <- subset(trait_table,trait_table[[filter_column]] == filter_value)
+}
 
 #Coerce trait columns to numeric, possibly inducing NAs
 trait_table[,x_trait]<-as.numeric(trait_table[,x_trait])

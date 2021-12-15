@@ -1,0 +1,122 @@
+[1] "Analyzing simpson_e_tissue vs. percent_black_band_disease"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+  Alveopora  Cyphastrea     Galaxea  Hydnophora Lobophyllia   Platygyra 
+ 0.04326466  0.12959240  0.12367291  0.08999947  0.09382853  0.08503974 
+Pocillopora     Porites  Psammocora  Stylophora 
+ 0.17083703  0.10812633  0.08592042  0.10155928 
+  Alveopora  Cyphastrea     Galaxea  Hydnophora Lobophyllia   Platygyra 
+ 0.00000000  0.03938559  0.03317850  0.00000000  0.04262575  0.00000000 
+Pocillopora     Porites  Psammocora  Stylophora 
+ 0.02051943  0.02856180  0.07283321  0.44692737 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for simpson_e_tissue (x) vs.  percent_black_band_disease (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+       Min         1Q     Median         3Q        Max 
+-0.0298884  0.0002593  0.0035154  0.0137506  0.0206776 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X   -2.321      1.341  -1.731    0.122
+
+Residual standard error: 0.01525 on 8 degrees of freedom
+Multiple R-squared:  0.2725,	Adjusted R-squared:  0.1815 
+F-statistic: 2.996 on 1 and 8 DF,  p-value: 0.1217
+
+[1] "Summary Spearman lm rank(pic.Y) ~ rank(pic.X) -1 PICs simpson_e_tissue (x) vs.  percent_black_band_disease (y)"
+
+Call:
+lm(formula = pic_df$rank.pic.Y ~ pic_df$rank.pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.75624 -0.27054 -0.04982  0.11328  0.49378 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)
+pic_df$rank.pic.X   0.1800     0.3451   0.522    0.616
+
+Residual standard error: 0.3789 on 8 degrees of freedom
+Multiple R-squared:  0.03289,	Adjusted R-squared:  -0.088 
+F-statistic: 0.2721 on 1 and 8 DF,  p-value: 0.6161
+
+null device 
+          1 
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+          pic.X         pic.Y  rank.pic.X  rank.pic.Y
+11 0.0007290383  0.0041791079 0.008021546  0.11471951
+12 0.0030173376  0.0136733214 0.264889768 -0.00213401
+13 0.0077961963 -0.0479859734 0.450141463 -0.67521219
+14 0.0010857179 -0.0032500702 0.166847081 -0.24050249
+15 0.0013914584 -0.0029707769 0.070387262 -0.44564718
+16 0.0052997396  0.0049612429 0.755795746  0.62982979
+17 0.0008606817  0.0000000000 0.347068334  0.00000000
+18 0.0012524325  0.0006081224 0.126982685  0.05079307
+19 0.0050295519  0.0020753216 0.437851352  0.25020077
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "simpson_e_tissue"       
+Ancestral character estimates using fastAnc:
+      11       12       13       14       15       16       17       18 
+0.101417 0.108877 0.131618 0.104809 0.102100 0.103659 0.092417 0.096797 
+      19 
+0.088730 
+
+Variances on ancestral states:
+      11       12       13       14       15       16       17       18 
+0.001835 0.000578 0.000252 0.000500 0.000216 0.000166 0.000098 0.001105 
+      19 
+0.000728 
+
+Lower & upper 95% CIs:
+      lower    upper
+11 0.017463 0.185372
+12 0.061752 0.156002
+13 0.100493 0.162742
+14 0.060998 0.148620
+15 0.073270 0.130931
+16 0.078400 0.128917
+17 0.072982 0.111851
+18 0.031635 0.161958
+19 0.035864 0.141597
+
+pdf 
+  2 
+[1] "FastAnc ML modelfit for"    "percent_black_band_disease"
+Ancestral character estimates using fastAnc:
+      11       12       13       14       15       16       17       18 
+0.065454 0.108214 0.212681 0.090273 0.038889 0.029674 0.009004 0.038966 
+      19 
+0.025423 
+
+Variances on ancestral states:
+      11       12       13       14       15       16       17       18 
+0.036287 0.011433 0.004987 0.009882 0.004279 0.003284 0.001945 0.021860 
+      19 
+0.014389 
+
+Lower & upper 95% CIs:
+       lower    upper
+11 -0.307910 0.438819
+12 -0.101362 0.317789
+13  0.074264 0.351098
+14 -0.104565 0.285110
+15 -0.089328 0.167105
+16 -0.082655 0.142002
+17 -0.077427 0.095434
+18 -0.250820 0.328752
+19 -0.209684 0.260530
+
+pdf 
+  2 

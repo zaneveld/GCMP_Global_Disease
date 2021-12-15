@@ -1,0 +1,124 @@
+[1] "Analyzing dominance_tissue vs. percent_black_band_disease"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+  Alveopora  Cyphastrea     Galaxea  Hydnophora Lobophyllia   Platygyra 
+  0.1710693   0.5824093   0.1190586   0.3905789   0.1515940   0.3055044 
+Pocillopora     Porites  Psammocora  Stylophora 
+  0.2313010   0.3232168   0.3914385   0.5364840 
+  Alveopora  Cyphastrea     Galaxea  Hydnophora Lobophyllia   Platygyra 
+ 0.00000000  0.03938559  0.03317850  0.00000000  0.04262575  0.00000000 
+Pocillopora     Porites  Psammocora  Stylophora 
+ 0.02051943  0.02856180  0.07283321  0.44692737 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for dominance_tissue (x) vs.  percent_black_band_disease (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.019729 -0.007129 -0.003646  0.001561  0.031402 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)  
+pic.X   0.4829     0.2429   1.988    0.082 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.01462 on 8 degrees of freedom
+Multiple R-squared:  0.3307,	Adjusted R-squared:  0.2471 
+F-statistic: 3.953 on 1 and 8 DF,  p-value: 0.08199
+
+[1] "Summary Spearman lm rank(pic.Y) ~ rank(pic.X) -1 PICs dominance_tissue (x) vs.  percent_black_band_disease (y)"
+
+Call:
+lm(formula = pic_df$rank.pic.Y ~ pic_df$rank.pic.X - 1)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.6793 -0.1215 -0.0018  0.1830  0.4783 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)
+pic_df$rank.pic.X   0.3500     0.3235   1.082    0.311
+
+Residual standard error: 0.3598 on 8 degrees of freedom
+Multiple R-squared:  0.1277,	Adjusted R-squared:  0.01864 
+F-statistic: 1.171 on 1 and 8 DF,  p-value: 0.3107
+
+null device 
+          1 
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+         pic.X         pic.Y rank.pic.X  rank.pic.Y
+11 0.006670299  0.0041791079 0.12907616  0.11471951
+12 0.001539519  0.0136733214 0.01124188  0.00213401
+13 0.034343885  0.0479859734 0.56267683  0.67521219
+14 0.003497541  0.0032500702 0.16424038  0.24050249
+15 0.034703256 -0.0029707769 0.66760574 -0.44564718
+16 0.029522352  0.0049612429 0.50386383  0.62982979
+17 0.014763325  0.0000000000 0.34706833  0.00000000
+18 0.009048929  0.0006081224 0.20317230  0.05079307
+19 0.003253283 -0.0020753216 0.12510039 -0.25020077
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "dominance_tissue"       
+Ancestral character estimates using fastAnc:
+      11       12       13       14       15       16       17       18 
+0.289470 0.357719 0.379504 0.359183 0.344916 0.389267 0.360550 0.247192 
+      19 
+0.185382 
+
+Variances on ancestral states:
+      11       12       13       14       15       16       17       18 
+0.051467 0.016216 0.007074 0.014016 0.006070 0.004658 0.002758 0.031004 
+      19 
+0.020408 
+
+Lower & upper 95% CIs:
+       lower    upper
+11 -0.155183 0.734124
+12  0.108127 0.607310
+13  0.214658 0.544351
+14  0.127144 0.591222
+15  0.192218 0.497614
+16  0.255491 0.523043
+17  0.257617 0.463483
+18 -0.097924 0.592309
+19 -0.094615 0.465380
+
+pdf 
+  2 
+[1] "FastAnc ML modelfit for"    "percent_black_band_disease"
+Ancestral character estimates using fastAnc:
+      11       12       13       14       15       16       17       18 
+0.065454 0.108214 0.212681 0.090273 0.038889 0.029674 0.009004 0.038966 
+      19 
+0.025423 
+
+Variances on ancestral states:
+      11       12       13       14       15       16       17       18 
+0.036287 0.011433 0.004987 0.009882 0.004279 0.003284 0.001945 0.021860 
+      19 
+0.014389 
+
+Lower & upper 95% CIs:
+       lower    upper
+11 -0.307910 0.438819
+12 -0.101362 0.317789
+13  0.074264 0.351098
+14 -0.104565 0.285110
+15 -0.089328 0.167105
+16 -0.082655 0.142002
+17 -0.077427 0.095434
+18 -0.250820 0.328752
+19 -0.209684 0.260530
+
+pdf 
+  2 

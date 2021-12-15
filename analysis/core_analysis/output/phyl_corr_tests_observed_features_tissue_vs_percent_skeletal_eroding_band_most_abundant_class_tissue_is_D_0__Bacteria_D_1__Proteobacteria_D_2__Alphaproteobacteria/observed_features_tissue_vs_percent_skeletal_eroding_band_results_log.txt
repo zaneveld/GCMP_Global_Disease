@@ -1,0 +1,135 @@
+[1] "Analyzing observed_features_tissue vs. percent_skeletal_eroding_band"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+  Acanthastrea    Diploastrea  Echinophyllia        Favites Gardineroseris 
+      148.0000       272.4000       139.4000       122.6667       261.2500 
+    Goniastrea       Leptoria       Merulina    Montastraea         Pavona 
+      336.8571       173.5000        80.0000        48.5000       268.7083 
+Stephanocoenia     Tubastraea     Turbinaria 
+      142.4000       271.1429       208.6923 
+  Acanthastrea    Diploastrea  Echinophyllia        Favites Gardineroseris 
+    0.00000000     0.00000000     0.00000000     0.04182350     0.00000000 
+    Goniastrea       Leptoria       Merulina    Montastraea         Pavona 
+    0.05760369     1.59574468     0.98360656     0.00000000     0.28120268 
+Stephanocoenia     Tubastraea     Turbinaria 
+    0.00000000     0.45454545     0.15600624 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for observed_features_tissue (x) vs.  percent_skeletal_eroding_band (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.13962 -0.00530  0.01107  0.07921  0.38670 
+
+Coefficients:
+        Estimate Std. Error t value Pr(>|t|)
+pic.X -0.0003018  0.0025141   -0.12    0.907
+
+Residual standard error: 0.1338 on 11 degrees of freedom
+Multiple R-squared:  0.001308,	Adjusted R-squared:  -0.08948 
+F-statistic: 0.01441 on 1 and 11 DF,  p-value: 0.9066
+
+[1] "Summary Spearman lm rank(pic.Y) ~ rank(pic.X) -1 PICs observed_features_tissue (x) vs.  percent_skeletal_eroding_band (y)"
+
+Call:
+lm(formula = pic_df$rank.pic.Y ~ pic_df$rank.pic.X - 1)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.7502 -0.1534  0.1739  0.4621  1.7425 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)
+pic_df$rank.pic.X   0.2230     0.3128   0.713    0.491
+
+Residual standard error: 0.7855 on 11 degrees of freedom
+Multiple R-squared:  0.04415,	Adjusted R-squared:  -0.04274 
+F-statistic: 0.5081 on 1 and 11 DF,  p-value: 0.4908
+
+null device 
+          1 
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+       pic.X         pic.Y rank.pic.X  rank.pic.Y
+14  2.242052 -0.0006981529 0.07787692  0.07309848
+15 16.256574 -0.0260565634 0.86655924 -0.25595058
+16 12.364554  0.0384975335 0.50715616  0.37815677
+17  3.238573  0.0871642162 0.10808296  0.85620390
+18  1.056414  0.0000000000 0.24567771  0.00000000
+19 23.231004 -0.0763586591 1.00260560 -0.44793189
+20 37.427202 -0.1509152824 1.58611842 -0.39652960
+21 12.526505  0.3829219805 0.98569216  1.47853824
+22  1.911147  0.0125424411 0.11939288  0.26014179
+23 15.896395  0.0759912794 0.76363113  0.50908742
+24  6.229569  0.0071454696 0.22869350  0.16516753
+25  2.070418  0.0780612712 0.27759789  1.80438629
+null device 
+          1 
+[1] "FastAnc ML modelfit for"  "observed_features_tissue"
+Ancestral character estimates using fastAnc:
+      14       15       16       17       18       19       20       21 
+195.7551 166.2003 153.7731 154.4771 149.5659 164.9186 202.7545 169.1952 
+      22       23       24       25 
+209.4910 239.3885 208.2227 264.0200 
+
+Variances on ancestral states:
+        14         15         16         17         18         19         20 
+31348.3274  3737.6425  2945.1455  2552.6256  2537.1883  1813.2192  1166.8419 
+        21         22         23         24         25 
+  770.1177 16277.1617   899.2506 14881.4678   756.5758 
+
+Lower & upper 95% CIs:
+        lower    upper
+14 -151.27189 542.7821
+15   46.37327 286.0274
+16   47.40544 260.1407
+17   55.45106 253.5032
+18   50.83973 248.2921
+19   81.45809 248.3792
+20  135.80276 269.7063
+21  114.80327 223.5872
+22  -40.56971 459.5517
+23  180.61298 298.1640
+24  -30.87691 447.3224
+25  210.10840 317.9316
+
+pdf 
+  2 
+[1] "FastAnc ML modelfit for"       "percent_skeletal_eroding_band"
+Ancestral character estimates using fastAnc:
+      14       15       16       17       18       19       20       21 
+0.163033 0.172236 0.191553 0.234032 0.127382 0.554431 0.521232 0.703881 
+      22       23       24       25 
+0.158756 0.302728 0.137682 0.140552 
+
+Variances on ancestral states:
+      14       15       16       17       18       19       20       21 
+2.182507 0.260219 0.205044 0.177717 0.176642 0.126238 0.081237 0.053616 
+      22       23       24       25 
+1.133235 0.062607 1.036065 0.052674 
+
+Lower & upper 95% CIs:
+       lower    upper
+14 -2.732535 3.058602
+15 -0.827592 1.172065
+16 -0.695971 1.079077
+17 -0.592234 1.060299
+18 -0.696382 0.951147
+19 -0.141958 1.250820
+20 -0.037409 1.079873
+21  0.250038 1.157724
+22 -1.927733 2.245245
+23 -0.187691 0.793147
+24 -1.857348 2.132713
+25 -0.309283 0.590387
+
+pdf 
+  2 
