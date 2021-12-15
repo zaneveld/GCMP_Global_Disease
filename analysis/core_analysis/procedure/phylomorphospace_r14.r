@@ -1,7 +1,8 @@
 #Output results to a log file as well as to the screen
-print("Usage: asr_viz_phytools.r <treefile> <trait_table>")
+print("Usage: Rscript phylomorphospace_r14.r <path_to_trait_table> <path_to_tree> <x_trait_column> <y_trait_column>")
 
 library(ggplot2)
+library(phytools)
 
 args <- commandArgs(trailingOnly=TRUE)
 trait_table_fp <-args[1]
@@ -9,8 +10,11 @@ tree_fp <- args[2]
 x_trait <-args[3]
 y_trait <-args[4]
 
-sink(paste("PIC_results_log_",x_trait,"_",y_trait,".txt",sep=""),append=FALSE,split=TRUE)
-library(phytools)
+output_dir <- paste0("../output/phyl_corr_tests_",x_trait,"_vs_",y_trait,"/")
+print(paste("Outputting results to:",output_dir))
+dir.create(output_dir)
+
+sink(paste0(output_dir,x_trait,"_vs_",y_trait,"_results_log.txt"),append=FALSE,split=TRUE)
 
 print(paste("Analyzing",x_trait,"vs.",y_trait))
 
@@ -46,18 +50,24 @@ tree <- drop.tip(filtered_tree,tree$tip.label[!tree$tip.label %in% names(X)])
 #Dichotomize tree
 tree <- multi2di(tree)
 
-print(paste("Fitting raw linear regression before PIC for",x_trait,"(x) vs. ",y_trait,"(y)"))
-#Note for raw regression we don't force the regression through the origin
-raw_fitYX <-lm(Y ~ X)
-print(summary(raw_fitYX))
+#Record the filtered tree and trait table
 
-#print("Calculating PIC")
+write.tree(tree,paste0(output_dir,x_trait,"_vs_",y_trait,"_filtered_tree.newick"))
+write.table(trait_table,paste0(output_dir,x_trait,"_vs_",y_trait,"_filtered_table.csv"))
+
+print("Calculating PICs")
+raw.pic.X <- pic(X,tree)
+raw.pic.Y <- pic(Y,tree)
+rank.pic.X <- pic(rank(X),tree)
+rank.pic.Y <- pic(rank(Y),tree)
+
 #****POSITIVIZE PIC VALUES (negative signs are arbitrary)
-#NOTE: this is not just the absolute value since the difference x=-1 y=2
+#Note: this is not just the absolute value since the difference x=-1 y=2
 #has a different interpretation than x=1 y=2
 
 #Code snippet from:https://github.com/bomeara/ComparativeMethodsInR/blob/master/ContinuousTrait_Answers.R
 #for contrasts, you should positivize them, since the order doesn't matter. This is NOT taking absolute value.
+
 PositivizeContrasts <- function(x, y) {
     #Cache the sign of x so it doesn't
     #change as we reflect points about x-axis!
@@ -66,17 +76,16 @@ PositivizeContrasts <- function(x, y) {
     y.positivized <- y * sign_of_x
     return(cbind(x.positivized, y.positivized))
 }
-
-raw.pic.X <- pic(X,tree)
-raw.pic.Y <- pic(Y,tree)
-
 positivized.results <- PositivizeContrasts(raw.pic.X, raw.pic.Y)
 pic.X <-positivized.results[,1]
 pic.Y <-positivized.results[,2]
 
+positivized.results <- PositivizeContrasts(rank.pic.X, rank.pic.Y)
+rank.pic.X <-positivized.results[,1]
+rank.pic.Y <-positivized.results[,2]
 pic_df <- data.frame(pic.X,pic.Y)
-pic_df$rank.pic.X <- rank(pic.X)
-pic_df$rank.pic.Y <- rank(pic.Y)
+pic_df$rank.pic.X <- rank.pic.X
+pic_df$rank.pic.Y <- rank.pic.Y
 
 
 # regress through origin (e.g. expect that 0 change in one trait is on average correlated with zero change in the other)
@@ -93,21 +102,23 @@ print(summary(rank.fitYX))
 ## this is a projection of the tree into morphospace
 ##This code snippit is adapted from a phytools tutorial (http://www.phytools.org/Cordoba2017/ex/3/PICs.html)
 
-pdf(paste(x_trait,"_",y_trait,"_phylomorphospace.pdf",sep=""))
+pdf(paste0(output_dir,x_trait,"_vs_",y_trait,"_phylomorphospace.pdf"))
 phylomorphospace(tree,cbind(X,Y),xlab=x_trait,ylab=y_trait,label="off",node.size=c(0,0))
-points(X,Y,pch=21,bg="grey",cex=1.4)
+points(X,Y,pch=21,bg="firebrick",cex=1.4)
 dev.off()
 
-pdf(paste(x_trait,"_",y_trait,"_rank_phylomorphospace.pdf",sep=""))
+pdf(paste0(output_dir,x_trait,"_vs_",y_trait,"_rank_phylomorphospace.pdf",sep=""))
 phylomorphospace(tree,cbind(rank(X),rank(Y)),xlab=paste("rank ",x_trait),ylab=paste("rank ",y_trait),label="off",node.size=c(0,0))
-points(rank(X),rank(Y),pch=21,bg="grey",cex=1.4)
+points(rank(X),rank(Y),pch=21,bg= "firebrick",cex=1.4)
 dev.off()
 
 
 #Save raw PIC contrasts as a pdf
-pdf(paste(x_trait,"_",y_trait,"_pic_scatter_YX.pdf",sep=""))
+pdf(paste0(output_dir,x_trait,"_vs_",y_trait,"_pic_scatter_YX.pdf"))
 
+print("Dataframe for PIC analysis:")
 print(pic_df)
+
 ggplot(pic_df, aes(pic.X,pic.Y)) + 
     geom_smooth(method = "lm", se = TRUE, col = "black",formula = y ~ x -1) +
     geom_point(size = 3, col = "firebrick") + 
@@ -117,18 +128,12 @@ dev.off()
 
 #Save rank PIC contrasts as a pdf
 
-pdf(paste(x_trait,"_",y_trait,"_pic_rank_scatter_YX.pdf",sep=""))
+pdf(paste0(output_dir,x_trait,"_vs_",y_trait,"_pic_rank_scatter_YX.pdf"))
 ggplot(pic_df, aes(rank.pic.X,rank.pic.Y)) + 
     geom_smooth(method = "lm", se = TRUE, col = "black",formula = y ~ x -1) +
     geom_point(size = 3, col = "firebrick") + 
     labs(x = paste("Contrast in ",x_trait), y = paste("Contrast in ",y_trait)) + 
     theme_classic()
-
-#Save raw data as pdf
-pdf(paste(x_trait,"_",y_trait,"_raw_scatter.pdf",sep=""))
-plot(X,Y,xlab=x_trait,ylab=y_trait,bg='gray', pch=16)
-abline(raw_fitYX,col="red")
-dev.off()
 
 #Build contmap for trait X
 fit<-fastAnc(tree,X,vars=TRUE,CI=TRUE)
@@ -141,7 +146,7 @@ inverse_green_colorscheme <-c('black','springgreen3','yellow','white')
 obj <- setMap(obj,colors=inverse_green_colorscheme)
 
 #Write contmap for trait X to file
-pdf(paste("asr_contmap_",x_trait,".pdf",sep=""))
+pdf(paste0(output_dir,x_trait,"_asr_contmap.pdf"))
 par(mai=c(12.12,1,1.1,1.1))
 plot(obj,direction=tree_direction,legend=0.7*max(nodeHeights(tree)),fsize=c(0.222,0.9))
 axis(1)
@@ -159,9 +164,10 @@ inverse_green_colorscheme <-c('black','springgreen3','yellow','white')
 obj <- setMap(obj,colors=inverse_green_colorscheme)
 
 #Write contmap for trait X to file
-pdf(paste("asr_contmap_",y_trait,"_leftwards.pdf",sep=""))
+pdf(paste0(output_dir,y_trait,"_asr_contmap_leftwards.pdf"))
 par(mai=c(12.12,1,1.1,1.1))
 plot(obj,direction=tree_direction,legend=0.7*max(nodeHeights(tree)),fsize=c(0.222,0.9))
 axis(1)
 title(xlab="time from the root (mya)")
 dev.off()
+
