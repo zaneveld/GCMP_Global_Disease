@@ -1,0 +1,8 @@
+[1] "Analyzing simpsons_e_tissue vs. percent_black_band_disease"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.

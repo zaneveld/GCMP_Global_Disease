@@ -1,0 +1,108 @@
+[1] "Analyzing dominance_tissue vs. percent_diseased"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+Acanthastrea     Acropora   Echinopora    Goniopora     Leptoria  Montastraea 
+  0.06619133   0.15956209   0.12437822   0.11268533   0.02788900   0.11373850 
+   Orbicella       Pavona 
+  0.07328175   0.05065292 
+Acanthastrea     Acropora   Echinopora    Goniopora     Leptoria  Montastraea 
+   0.0000000    3.6431133    1.8768046    0.1471257    3.7234043    2.0548549 
+   Orbicella       Pavona 
+   3.3152385    4.3694571 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for dominance_tissue (x) vs.  percent_diseased (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.19288 -0.06949  0.03173  0.05673  0.36749 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X   -13.06      12.00  -1.088    0.318
+
+Residual standard error: 0.1779 on 6 degrees of freedom
+Multiple R-squared:  0.1649,	Adjusted R-squared:  0.02571 
+F-statistic: 1.185 on 1 and 6 DF,  p-value: 0.3182
+
+[1] "Summary Spearman lm rank(pic.Y) ~ rank(pic.X) -1 PICs dominance_tissue (x) vs.  percent_diseased (y)"
+
+Call:
+lm(formula = pic_df$rank.pic.Y ~ pic_df$rank.pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.25647 -0.08054  0.04400  0.11418  0.52768 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)
+pic_df$rank.pic.X  -0.4573     0.2890  -1.582    0.165
+
+Residual standard error: 0.2592 on 6 degrees of freedom
+Multiple R-squared:  0.2944,	Adjusted R-squared:  0.1768 
+F-statistic: 2.503 on 1 and 6 DF,  p-value: 0.1647
+
+null device 
+          1 
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+          pic.X        pic.Y   rank.pic.X  rank.pic.Y
+9  0.0009976294  0.018697836 2.714312e-02  0.05149771
+10 0.0047752204  0.009900269 2.682144e-01  0.04178944
+11 0.0010539475  0.353720283 1.183850e-01  0.47353987
+12 0.0003806941 -0.068765087 0.000000e+00  0.00000000
+13 0.0123721753 -0.236777268 7.693403e-01 -0.51289357
+14 0.0003886978 -0.197952031 5.385613e-10 -0.25647039
+15 0.0064429948 -0.042970016 3.549560e-01 -0.11831868
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "dominance_tissue"       
+Ancestral character estimates using fastAnc:
+       9       10       11       12       13       14       15 
+0.098325 0.085093 0.081303 0.078410 0.077825 0.104344 0.104754 
+
+Variances on ancestral states:
+       9       10       11       12       13       14       15 
+0.004323 0.000485 0.000391 0.000302 0.000289 0.002413 0.001722 
+
+Lower & upper 95% CIs:
+       lower    upper
+9  -0.030544 0.227193
+10  0.041916 0.128269
+11  0.042570 0.120037
+12  0.044373 0.112446
+13  0.044496 0.111155
+14  0.008068 0.200621
+15  0.023429 0.186080
+
+pdf 
+  2 
+[1] "FastAnc ML modelfit for" "percent_diseased"       
+Ancestral character estimates using fastAnc:
+       9       10       11       12       13       14       15 
+2.254570 2.006569 1.995484 2.457966 2.545784 2.367389 3.247667 
+
+Variances on ancestral states:
+       9       10       11       12       13       14       15 
+4.472473 0.502054 0.404042 0.311997 0.299171 2.496298 1.781191 
+
+Lower & upper 95% CIs:
+       lower    upper
+9  -1.890482 6.399621
+10  0.617796 3.395341
+11  0.749624 3.241343
+12  1.363174 3.552757
+13  1.473732 3.617837
+14 -0.729347 5.464126
+15  0.631826 5.863508
+
+pdf 
+  2 

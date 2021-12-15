@@ -1,0 +1,126 @@
+[1] "Analyzing dominance_tissue vs. percent_diseased"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+  Alveopora  Cyphastrea     Galaxea  Hydnophora Lobophyllia   Platygyra 
+  0.1710693   0.5824093   0.1190586   0.3905789   0.1515940   0.3055044 
+Pocillopora     Porites  Psammocora  Stylophora 
+  0.2313010   0.3232168   0.3914385   0.5364840 
+  Alveopora  Cyphastrea     Galaxea  Hydnophora Lobophyllia   Platygyra 
+  0.7490637  21.6620717   3.6496350   3.1096563   3.1543052   1.2297735 
+Pocillopora     Porites  Psammocora  Stylophora 
+  5.8304508  16.5166782  12.3816460   3.6871508 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for dominance_tissue (x) vs.  percent_diseased (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-1.2423 -0.2763 -0.1413  0.2105  1.5948 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)  
+pic.X    29.15      12.69   2.298   0.0506 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.7638 on 8 degrees of freedom
+Multiple R-squared:  0.3976,	Adjusted R-squared:  0.3223 
+F-statistic:  5.28 on 1 and 8 DF,  p-value: 0.05064
+
+[1] "Summary Spearman lm rank(pic.Y) ~ rank(pic.X) -1 PICs dominance_tissue (x) vs.  percent_diseased (y)"
+
+Call:
+lm(formula = pic_df$rank.pic.Y ~ pic_df$rank.pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.42090 -0.16150 -0.01725  0.11160  0.66861 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)  
+pic_df$rank.pic.X   0.5480     0.2849   1.924   0.0906 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.3169 on 8 degrees of freedom
+Multiple R-squared:  0.3163,	Adjusted R-squared:  0.2308 
+F-statistic: 3.701 on 1 and 8 DF,  p-value: 0.09059
+
+null device 
+          1 
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+         pic.X       pic.Y rank.pic.X  rank.pic.Y
+11 0.006670299 -0.01102309 0.12907616  0.03967115
+12 0.001539519 -0.36913406 0.01124188 -0.01108718
+13 0.034343885 -0.24119705 0.56267683 -0.11253537
+14 0.003497541  0.31246080 0.16424038  0.20161188
+15 0.034703256  0.87024296 0.66760574  0.20436175
+16 0.029522352  2.45537339 0.50386383  0.94474468
+17 0.014763325  0.32622390 0.34706833  0.17353417
+18 0.009048929  0.72722114 0.20317230  0.30475844
+19 0.003253283 -0.18143130 0.12510039 -0.25020077
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "dominance_tissue"       
+Ancestral character estimates using fastAnc:
+      11       12       13       14       15       16       17       18 
+0.289470 0.357719 0.379504 0.359183 0.344916 0.389267 0.360550 0.247192 
+      19 
+0.185382 
+
+Variances on ancestral states:
+      11       12       13       14       15       16       17       18 
+0.051467 0.016216 0.007074 0.014016 0.006070 0.004658 0.002758 0.031004 
+      19 
+0.020408 
+
+Lower & upper 95% CIs:
+       lower    upper
+11 -0.155183 0.734124
+12  0.108127 0.607310
+13  0.214658 0.544351
+14  0.127144 0.591222
+15  0.192218 0.497614
+16  0.255491 0.523043
+17  0.257617 0.463483
+18 -0.097924 0.592309
+19 -0.094615 0.465380
+
+pdf 
+  2 
+[1] "FastAnc ML modelfit for" "percent_diseased"       
+Ancestral character estimates using fastAnc:
+      11       12       13       14       15       16       17       18 
+8.062197 7.949413 5.293725 8.490965 8.027847 9.129162 4.281380 8.132064 
+      19 
+4.541481 
+
+Variances on ancestral states:
+        11         12         13         14         15         16         17 
+109.987506  34.654446  15.116752  29.951693  12.970761   9.955383   5.893981 
+        18         19 
+ 66.256909  43.612274 
+
+Lower & upper 95% CIs:
+        lower     upper
+11 -12.493289 28.617683
+12  -3.588721 19.487546
+13  -2.326808 12.914257
+14  -2.235751 19.217680
+15   0.968918 15.086776
+16   2.944941 15.313384
+17  -0.477014  9.039775
+18  -7.822012 24.086140
+19  -8.402279 17.485240
+
+pdf 
+  2 

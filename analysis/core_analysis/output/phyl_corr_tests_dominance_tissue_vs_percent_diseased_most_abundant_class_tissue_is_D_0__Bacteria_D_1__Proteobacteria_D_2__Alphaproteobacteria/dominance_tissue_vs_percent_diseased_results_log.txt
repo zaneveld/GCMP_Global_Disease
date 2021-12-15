@@ -1,0 +1,135 @@
+[1] "Analyzing dominance_tissue vs. percent_diseased"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+  Acanthastrea    Diploastrea  Echinophyllia        Favites Gardineroseris 
+    0.06619133     0.03906024     0.18236880     0.36144689     0.02357450 
+    Goniastrea       Leptoria       Merulina    Montastraea         Pavona 
+    0.02732171     0.02788900     0.13479400     0.11373850     0.05065292 
+Stephanocoenia     Tubastraea     Turbinaria 
+    0.43779840     0.16594314     0.18898031 
+  Acanthastrea    Diploastrea  Echinophyllia        Favites Gardineroseris 
+     0.0000000      0.7042254      0.5535055      0.5855291      0.0000000 
+    Goniastrea       Leptoria       Merulina    Montastraea         Pavona 
+     0.2880184      3.7234043      1.3114754      2.0548549      4.3694571 
+Stephanocoenia     Tubastraea     Turbinaria 
+     2.1113244      0.9090909      1.8720749 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for dominance_tissue (x) vs.  percent_diseased (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.40229  0.04040  0.09023  0.17126  1.24688 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X   -4.513      4.730  -0.954    0.361
+
+Residual standard error: 0.4409 on 11 degrees of freedom
+Multiple R-squared:  0.07643,	Adjusted R-squared:  -0.00753 
+F-statistic: 0.9103 on 1 and 11 DF,  p-value: 0.3605
+
+[1] "Summary Spearman lm rank(pic.Y) ~ rank(pic.X) -1 PICs dominance_tissue (x) vs.  percent_diseased (y)"
+
+Call:
+lm(formula = pic_df$rank.pic.Y ~ pic_df$rank.pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-2.09944 -0.19865  0.09662  0.27388  3.00488 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)
+pic_df$rank.pic.X   0.1689     0.4041   0.418    0.684
+
+Residual standard error: 1.177 on 11 degrees of freedom
+Multiple R-squared:  0.01562,	Adjusted R-squared:  -0.07386 
+F-statistic: 0.1746 on 1 and 11 DF,  p-value: 0.6841
+
+null device 
+          1 
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+          pic.X        pic.Y rank.pic.X  rank.pic.Y
+14 0.0048820768  0.035437259  0.1034479  0.10593286
+15 0.0091948179  0.050790792  0.3433990  0.03323005
+16 0.0014500115 -0.144431379  0.0198684 -0.60089043
+17 0.0005417237  0.135378835  0.2150637 -0.52484695
+18 0.0142711070  0.067991986  0.4913554  0.30709714
+19 0.0016189707 -0.009594797  0.4426907  0.28486635
+20 0.0331788672  0.370050988  1.0904564  1.09045641
+21 0.0821963491 -0.773244744  2.2178074 -1.72496128
+22 0.0031205808  0.040548681  0.1092656 -0.05936016
+23 0.0058639655  0.245121514  0.5090874  0.50908742
+24 0.0203631079 -0.003730456  0.5082078  0.19057792
+25 0.0075169114  1.212952062  1.1103916  3.19237574
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "dominance_tissue"       
+Ancestral character estimates using fastAnc:
+      14       15       16       17       18       19       20       21 
+0.167765 0.103409 0.109160 0.114248 0.118819 0.124311 0.124448 0.167552 
+      22       23       24       25 
+0.197675 0.177813 0.206813 0.039982 
+
+Variances on ancestral states:
+      14       15       16       17       18       19       20       21 
+0.096233 0.011474 0.009041 0.007836 0.007789 0.005566 0.003582 0.002364 
+      22       23       24       25 
+0.049968 0.002761 0.045683 0.002323 
+
+Lower & upper 95% CIs:
+       lower    upper
+14 -0.440255 0.775785
+15 -0.106537 0.313356
+16 -0.077205 0.295524
+17 -0.059254 0.287750
+18 -0.054157 0.291796
+19 -0.021919 0.270541
+20  0.007143 0.241753
+21  0.072252 0.262851
+22 -0.240452 0.635802
+23  0.074834 0.280793
+24 -0.212109 0.625736
+25 -0.054476 0.134439
+
+pdf 
+  2 
+[1] "FastAnc ML modelfit for" "percent_diseased"       
+Ancestral character estimates using fastAnc:
+      14       15       16       17       18       19       20       21 
+1.532712 1.065578 1.095579 1.007375 0.674426 1.247004 1.323109 1.833429 
+      22       23       24       25 
+1.749817 1.396830 1.845397 2.178994 
+
+Variances on ancestral states:
+       14        15        16        17        18        19        20        21 
+25.644392  3.057566  2.409266  2.088167  2.075538  1.483298  0.954531  0.629992 
+       22        23        24        25 
+13.315476  0.735629 12.173734  0.618914 
+
+Lower & upper 95% CIs:
+       lower     upper
+14 -8.392785 11.458209
+15 -2.361658  4.492813
+16 -1.946696  4.137854
+17 -1.824921  3.839671
+18 -2.149293  3.498144
+19 -1.140094  3.634102
+20 -0.591813  3.238031
+21  0.277737  3.389121
+22 -5.402297  8.901931
+23 -0.284239  3.077898
+24 -4.993215  8.684009
+25  0.637040  3.720948
+
+pdf 
+  2 
