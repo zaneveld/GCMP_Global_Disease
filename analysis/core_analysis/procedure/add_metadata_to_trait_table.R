@@ -1,7 +1,7 @@
 ###Adding host taxonomy and other host-associated metadata to trait table for easy subsetting downstream###
 
 #Set working directory (unnecessary if working from command line in the core analysis/procedure directory)
-#setwd("~/Documents/OSUDocs/Projects/Disease_LHS/GCMP_Global_Disease/analysis/core_analysis/procedure")
+setwd("~/Documents/OSUDocs/Projects/Disease_LHS/GCMP_Global_Disease/analysis/core_analysis/procedure")
 
 #Load libraries
 library(plyr)
@@ -50,7 +50,7 @@ map$genus_in_turfcontact <- ifelse(map$binary_turf_contact == c("y", "y "), 1, 0
 
 
 #Extract host genus ID & taxonomy columns & other metadata necessary for subset
-map.meta <- map %>% select("host_genus_id", "Huang_Roy_tree_name", 
+map.meta <- map %>% select("host_genus_id", 
                           "host_clade_sensu_fukami_numeric","host_clade_sensu_fukami",
                           "taxonomy_string_to_family", "taxonomy_string_to_order", "taxonomy_string_to_subclass", 
                           "taxonomy_string_to_class", "complex_robust", "functional_group_sensu_darling",
@@ -66,14 +66,9 @@ map.meta <- map %>% select("host_genus_id", "Huang_Roy_tree_name",
 map.genus.unique <- map.meta[!duplicated(map.meta$host_genus_id), ]  
 
 #Load the trait data
-trait.table <- read.delim("../output/GCMP_trait_table.tsv")
-trait.table$Huang_Roy_tree_name <- trait.table$X #Column "X" is actually HR tree name, so here I assigned a new column with the same data called HR tree name
-#I did not just rename the column because I want to use "X" to split & extract the genus name, while preserving a column with HR tree names
-
-#Split column X (which is HR tree name) into 3, the code the genus name and the species name
-trait.table <- trait.table %>% separate(X,into=c('HR_Code','host_genus_id', 'host_species_name'),sep="_")
-#remove HR_Code and host_species_name just to clean up. We won't need species name! 
-trait.table <- trait.table[,c(-1,-3)]
+trait.table <- read.delim("../output/GCMP_trait_table_genus.tsv")
+#Rename the variable "host_genus" to "host_genus_id" to match the mapping file above:
+trait.table <- rename(trait.table, host_genus_id = host_genus) 
 
 #R-Join the two datasets so that taxonomic info is added according to Huang Roy tree name
 trait.table.meta <- right_join(map.genus.unique, trait.table, by = "host_genus_id")
