@@ -1,0 +1,5 @@
+library(ape)
+library(phytools)
+modeltest_tree <- read.tree('../input/huang_roy_molecular_r2.newick')
+modeltest_X <- fastBM(modeltest_tree,nsim=2)
+write.csv(modeltest_X, '../output/modeltestdata.csv', row.names = TRUE)
