@@ -1,0 +1,156 @@
+[1] "Analyzing perc_dis vs. growth_rate_mm_per_year"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+[1] "About to filter table to tree tips..."
+   Pocillopora     Stylophora     Psammocora     Hydnophora     Turbinaria 
+     5.8304508      3.6871508     12.3816460      3.1096563      1.8720749 
+       Porites       Acropora      Montipora         Pavona     Goniastrea 
+    16.5166782      3.6431133      9.6682877      4.3694571      0.2880184 
+   Seriatopora Gardineroseris      Platygyra    Montastraea      Orbicella 
+     5.1219512      0.0000000      1.2297735      2.0548549      3.3152385 
+   Siderastrea       Merulina 
+     3.7179511      1.3114754 
+   Pocillopora     Stylophora     Psammocora     Hydnophora     Turbinaria 
+    0.21869633     0.23347364     0.10529500     0.23030714     0.09364883 
+       Porites       Acropora      Montipora         Pavona     Goniastrea 
+    0.09877855     0.16772478     0.31470800     0.07778307     0.07076280 
+   Seriatopora Gardineroseris      Platygyra    Montastraea      Orbicella 
+    0.18209733     0.04290700     0.09661880     0.18470300     0.12541125 
+   Siderastrea       Merulina 
+    0.01875400     0.13817800 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for perc_dis (x) vs.  growth_rate_mm_per_year (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.010542 -0.005999 -0.001739  0.004476  0.024954 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)  
+pic.X 0.008431   0.004727   1.783   0.0948 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.009006 on 15 degrees of freedom
+Multiple R-squared:  0.175,	Adjusted R-squared:  0.1199 
+F-statistic: 3.181 on 1 and 15 DF,  p-value: 0.09475
+
+[1] "Summary Spearman lm rank(pic.Y) ~ rank(pic.X) -1 PICs perc_dis (x) vs.  growth_rate_mm_per_year (y)"
+
+Call:
+lm(formula = pic_df$rank.pic.Y ~ pic_df$rank.pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.81925 -0.31563 -0.06811  0.36509  1.79111 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)  
+pic_df$rank.pic.X   0.3109     0.1750   1.777   0.0959 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.6126 on 15 degrees of freedom
+Multiple R-squared:  0.1739,	Adjusted R-squared:  0.1188 
+F-statistic: 3.157 on 1 and 15 DF,  p-value: 0.09588
+
+null device 
+          1 
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+        pic.X         pic.Y rank.pic.X    rank.pic.Y
+18 0.02325711 -0.0025401815 0.02162135  2.214383e-01
+19 0.09954482 -0.0059036625 0.19380199  3.382938e-01
+20 0.17055024  0.0013050340 0.29902214 -6.598521e-09
+21 0.23829675 -0.0085327590 0.49825066 -6.643342e-01
+22 0.72551169 -0.0032768150 0.72988856 -1.702502e-01
+23 0.01038336 -0.0056629812 0.05624310  4.440747e-01
+24 0.24386317 -0.0015250007 0.52675525  1.636447e-02
+25 0.04642805 -0.0003501374 0.01719086 -2.841003e-01
+26 0.46264496  0.0288550520 0.88562933  2.066468e+00
+27 0.17322541  0.0047559249 0.18393893  5.518168e-01
+28 0.29157898 -0.0010638920 0.05529827 -2.605636e-02
+29 0.89847804  0.0003147193 0.73622592  1.227043e-01
+30 0.06225598  0.0089741462 0.08626780 -5.127932e-01
+31 0.28477358  0.0115203995 0.35031637  7.006327e-01
+32 1.21295206  0.0096815225 3.05357679  5.551958e-01
+33 0.50215913  0.0122500964 0.50006101  5.000610e-01
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "perc_dis"               
+Ancestral character estimates using fastAnc:
+      18       19       20       21       22       23       24       25 
+6.160497 5.915565 5.157886 4.629013 6.051406 3.040996 2.522042 1.943637 
+      26       27       28       29       30       31       32       33 
+1.747563 1.551719 6.312226 7.992980 5.362222 5.162696 2.253924 6.152907 
+
+Variances on ancestral states:
+       18        19        20        21        22        23        24        25 
+27.012799  8.914144  3.514076  1.755199  7.683074  3.814762  2.361194  1.570136 
+       26        27        28        29        30        31        32        33 
+ 1.056483  1.011382 12.986098 11.041606  9.804801  8.924473  0.723574  6.426494 
+
+Lower & upper 95% CIs:
+       lower     upper
+18 -4.026375 16.347370
+19  0.063678 11.767451
+20  1.483696  8.832076
+21  2.032328  7.225699
+22  0.618608 11.484204
+23 -0.787161  6.869154
+24 -0.489729  5.533813
+25 -0.512342  4.399617
+26 -0.267030  3.762156
+27 -0.419404  3.522842
+28 -0.750875 13.375327
+29  1.480113 14.505847
+30 -0.775051 11.499495
+31 -0.692579 11.017972
+32  0.586687  3.921162
+33  1.184203 11.121611
+
+pdf 
+  2 
+[1] "FastAnc ML modelfit for" "growth_rate_mm_per_year"
+Ancestral character estimates using fastAnc:
+      18       19       20       21       22       23       24       25 
+0.130695 0.157447 0.204317 0.206752 0.150062 0.151286 0.140456 0.138395 
+      26       27       28       29       30       31       32       33 
+0.137047 0.126478 0.114123 0.103679 0.113960 0.129066 0.061942 0.203448 
+
+Variances on ancestral states:
+      18       19       20       21       22       23       24       25 
+0.010976 0.003622 0.001428 0.000713 0.003122 0.001550 0.000959 0.000638 
+      26       27       28       29       30       31       32       33 
+0.000429 0.000411 0.005276 0.004486 0.003984 0.003626 0.000294 0.002611 
+
+Lower & upper 95% CIs:
+       lower    upper
+18 -0.074645 0.336035
+19  0.039489 0.275406
+20  0.130255 0.278379
+21  0.154410 0.259094
+22  0.040551 0.259573
+23  0.074121 0.228452
+24  0.079747 0.201166
+25  0.088889 0.187901
+26  0.096438 0.177656
+27  0.086745 0.166210
+28 -0.028250 0.256496
+29 -0.027603 0.234961
+30 -0.009752 0.237671
+31  0.011039 0.247093
+32  0.028335 0.095549
+33  0.103292 0.303604
+
+pdf 
+  2 
