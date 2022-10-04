@@ -9,6 +9,8 @@ library(magrittr)
 library(ggmap)
 library(stringr)
 
+##For final mapping code go to line 161##
+
 #Bring in world map data
 world <- map_data("world")
 world
@@ -154,4 +156,108 @@ gcmp.stats <- ddply(gcmp, c("Ocean", "Political.Area"), summarise,
                     Sample.size = sum(N), 
                     NGen = length(Coral.Genus))
 View(gcmp.stats)
+
+
+######################
+######Final code!#####
+######################
+##What about making the pies families and ordered by the tree (how do we do this?)
+#Can we change the colours to make warm colours robust and cool colours complex?
+
+#First bring in the full dataset
+
+all.gcmp <- read.csv("~/Desktop/Desktop Misc/GCMP_decontaminated_1000_sample-metadata.csv", header = TRUE)
+View(all.gcmp)
+
+all.gcmp$reef_name <- as.factor(all.gcmp$reef_name)
+levels(all.gcmp$reef_name)
+
+all.gcmp <- all.gcmp %>% filter(host_genus_id != "Not applicable")
+all.gcmp <- all.gcmp %>% filter(host_genus_id != "Missing: Not collected")
+
+all.gcmp.group <- ddply(all.gcmp, c("family", "host_genus_id", "complex_robust", "ocean", "political_area", "site_name", "reef_name", "latitude", "longitude"), summarise,
+                      N = length(sample_name_mf)
+)
+View(all.gcmp.group)
+#family
+#complex_robust
+
+#remove outgroups
+#remove Missing data
+all.gcmp.group <- all.gcmp.group %>% filter(complex_robust != "outgroup")
+all.gcmp.group <- all.gcmp.group %>% filter(family != "Missing: Not collected")
+
+
+all.gcmp.group$family <- factor(all.gcmp.group$family, levels = c("Acroporidae", "Agariciidae", "Astrocoeniidae",
+                                                                      "Dendrophylliidae", "Discosomatidae", "Euphylliidae", "Poritidae",
+                                                                      "Siderastreidae",
+                                                                      "Coscinaraeidae", "Diploastreidae", "Fungiidae", "incertae sedis", "Lobophylliidae", 
+                                                                      "Merulinidae", "Montastreidae", "Mussidae", "Pocilloporidae", "Psammocoridae"))
+
+#First average the lat and long by political area (is this okay to do??)
+all.gcmp.group$latitude <- as.numeric(all.gcmp.group$latitude)
+all.gcmp.group$longitude <- as.numeric(all.gcmp.group$longitude)
+polarea.gcmp.all <- ddply(all.gcmp.group, c("ocean", "political_area"), summarise,
+                      Pol.lat = mean(latitude), 
+                      Pol.long = mean(longitude))
+#Get sample sizes
+family.gcmp.all <- ddply(all.gcmp.group, c("family", "political_area"), summarise,
+                    Sample.Size = sum(N))
+#Combine the two
+polarea.gcmp.all <- left_join(polarea.gcmp.all, family.gcmp.all, by = "political_area")
+
+#Make into long form as above
+polarea.gcmp.all.long <- polarea.gcmp.all %>% spread(family, Sample.Size)
+polarea.gcmp.all.long[is.na(polarea.gcmp.all.long)] <- 0 #set NAs to 0
+polarea.gcmp.all.long$Sample.Size <- rowSums(polarea.gcmp.all.long[,5:21]) #Add back in a sample size since we split it up
+View(polarea.gcmp.all.long)
+
+#Make a list of colours, using cool colours for complex and warm colours for robust
+#Since the families should already be in order of complex-robust, we should be able to just order the 16
+#different colours to match
+#8 cool colours
+#10 warm colours
+
+#clade.colors <- c("#7209B7", "#560BAD", "#480CA8", "#3A0CA3","#3F37C9", "#4361EE", "#4895EF", "#4CC9F0",
+#                  "#FFB950", "#FFAD33", "#FF931F", "#FF7E33", "#FA5E1F", "#EC3F13", "#B81702", "#A50104", "#8E0103", "#7A0103")
+
+##Okay need to manually apply the colours to the families using the scall_fill_manual 
+#Need to make warm colours opposite!
+
+#The two locations in the Caribbean/Central American Pacific are almost on top of each other
+#according to lat and long (and plotted on a small map)
+#Let's see if we can shuffle these a little, and make the pies bigger so it's more visible.
+
+#Change the lat long of Panama to be a little more into the Pacific
+#And the lat long of Colombia to the middle of the Caribbean
+
+polarea.gcmp.all.long.newcoord <- polarea.gcmp.all.long
+polarea.gcmp.all.long.newcoord$Pol.lat[polarea.gcmp.all.long.newcoord$political_area == "Panama"] <- 4.6
+polarea.gcmp.all.long.newcoord$Pol.long[polarea.gcmp.all.long.newcoord$political_area == "Panama"] <- -89.0
+
+polarea.gcmp.all.long.newcoord$Pol.lat[polarea.gcmp.all.long.newcoord$political_area == "Colombia"] <- 17.1
+polarea.gcmp.all.long.newcoord$Pol.long[polarea.gcmp.all.long.newcoord$political_area == "Colombia"] <- -78.0
+
+
+ggplot() + geom_map(data = world, map = world, aes(long, lat, map_id = region),
+                    color = "white", fill = "gray", size = 0.1) +
+  geom_scatterpie(data = polarea.gcmp.all.long.newcoord, aes(x=Pol.long, y = Pol.lat, group=political_area, color = mycolors, r = 8),
+                  cols=colnames(polarea.gcmp.all.long.newcoord[,5:21]), color= NA, alpha=0.8, show.legend = TRUE) +
+  #scale_fill_manual(values=sample(clade.colors)) +
+  scale_fill_manual(values = c("Acroporidae" = "#7209B7", "Agariciidae" = "#560BAD", "Astrocoeniidae" = "#480CA8", "Dendrophylliidae" = "#3A0CA3",
+                               "Discosomatidae" = "#3F37C9", "Euphylliidae" = "#4361EE", "Poritidae" = "#4895EF", "Siderastreidae" = "#4CC9F0",
+                               "Coscinaraeidae" = "#FFB950", "Diploastreidae" = "#FFAD33", "Fungiidae" = "#FF931F", "incertae sedis" = "#FF7E33", 
+                               "Lobophylliidae" = "#FA5E1F", "Merulinidae" = "#EC3F13", "Montastreidae" = "#B81702", "Mussidae" = "#A50104",
+                               "Pocilloporidae" = "#8E0103", "Psammocoridae" = "#7A0103")) +
+  labs(x = NULL, y = NULL, color = NULL)+
+  theme_void()
+
+
+ggsave("figure_1/worldmap_with_polarea_pies_newcoord_cladecolor.pdf", plot = last_plot())
+
+
+
+
+
+
 
