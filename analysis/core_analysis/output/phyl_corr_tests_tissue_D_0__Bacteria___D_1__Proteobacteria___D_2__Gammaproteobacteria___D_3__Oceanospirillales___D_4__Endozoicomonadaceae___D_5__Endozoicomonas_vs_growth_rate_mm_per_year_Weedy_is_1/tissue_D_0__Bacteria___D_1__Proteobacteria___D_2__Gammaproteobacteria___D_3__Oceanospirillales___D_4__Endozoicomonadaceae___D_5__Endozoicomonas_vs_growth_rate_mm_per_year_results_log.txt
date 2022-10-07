@@ -1,0 +1,75 @@
+[1] "Analyzing tissue_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Oceanospirillales___D_4__Endozoicomonadaceae___D_5__Endozoicomonas vs. growth_rate_mm_per_year"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+[1] "About to filter table to tree tips..."
+Pocillopora  Stylophora     Porites Seriatopora 
+   148.6522    634.4286    340.1538     62.7500 
+Pocillopora  Stylophora     Porites Seriatopora 
+ 0.21869633  0.23347364  0.09877855  0.18209733 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for tissue_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Oceanospirillales___D_4__Endozoicomonadaceae___D_5__Endozoicomonas (x) vs.  growth_rate_mm_per_year (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+         5          6          7 
+-0.0044839 -0.0032153  0.0009485 
+
+Coefficients:
+       Estimate Std. Error t value Pr(>|t|)
+pic.X 7.988e-05  4.041e-05   1.977    0.187
+
+Residual standard error: 0.003959 on 2 degrees of freedom
+Multiple R-squared:  0.6614,	Adjusted R-squared:  0.4921 
+F-statistic: 3.907 on 1 and 2 DF,  p-value: 0.1867
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+      pic.X        pic.Y  rank.pic.X   rank.pic.Y
+5  2.935135 -0.004249486 -0.02680643 7.471295e-02
+6 23.914250 -0.001305034  0.05980443 3.299260e-09
+7 94.946409  0.008532759  0.49825066 3.321671e-01
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                                        
+[2] "tissue_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Oceanospirillales___D_4__Endozoicomonadaceae___D_5__Endozoicomonas"
+Ancestral character estimates using fastAnc:
+       5        6        7 
+299.6458 263.4667 323.2263 
+
+Variances on ancestral states:
+        5         6         7 
+572434.66  53635.05  25112.79 
+
+Lower & upper 95% CIs:
+        lower     upper
+5 -1183.27868 1782.5703
+6  -190.45444  717.3879
+7    12.62482  633.8278
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "growth_rate_mm_per_year"
+Ancestral character estimates using fastAnc:
+       5        6        7 
+0.157426 0.209806 0.208388 
+
+Variances on ancestral states:
+       5        6        7 
+0.005522 0.000517 0.000242 
+
+Lower & upper 95% CIs:
+     lower    upper
+5 0.011772 0.303080
+6 0.165222 0.254391
+7 0.177880 0.238895
+
+null device 
+          1 

@@ -1,0 +1,9 @@
+[1] "Analyzing tissue_D_0__Bacteria vs. NA"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+[1] "About to filter table to tree tips..."

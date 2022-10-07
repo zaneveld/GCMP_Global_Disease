@@ -1,0 +1,107 @@
+[1] "Analyzing mucus_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Alteromonadales___D_4__Pseudoalteromonadaceae___D_5__Pseudoalteromonas vs. perc_dis"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+[1] "About to filter table to tree tips..."
+ Pocillopora   Stylophora   Hydnophora   Turbinaria      Porites     Acropora 
+  0.22222222   0.28571429   0.83333333   0.40000000  41.31818182   0.04545455 
+      Pavona   Goniastrea    Platygyra  Siderastrea 
+  0.84210526 490.00000000  11.25000000   1.66666667 
+Pocillopora  Stylophora  Hydnophora  Turbinaria     Porites    Acropora 
+  5.8304508   3.6871508   3.1096563   1.8720749  16.5166782   3.6431133 
+     Pavona  Goniastrea   Platygyra Siderastrea 
+  4.3694571   0.2880184   1.2297735   3.7179511 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for mucus_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Alteromonadales___D_4__Pseudoalteromonadaceae___D_5__Pseudoalteromonas (x) vs.  perc_dis (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.28194 -0.16423 -0.01732  0.15048  0.90771 
+
+Coefficients:
+       Estimate Std. Error t value Pr(>|t|)
+pic.X -0.003676   0.003706  -0.992     0.35
+
+Residual standard error: 0.376 on 8 degrees of freedom
+Multiple R-squared:  0.1095,	Adjusted R-squared:  -0.001812 
+F-statistic: 0.9837 on 1 and 8 DF,  p-value: 0.3503
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+          pic.X       pic.Y  rank.pic.X  rank.pic.Y
+11  3.048802777 -0.12989423 -0.02549743 -0.06965477
+12 10.309397505 -0.20212795 -0.32435947  0.32661990
+13  0.007145103 -0.24119705  0.11253537 -0.33760610
+14 49.160629736 -0.46264496 -0.78722608  0.49201630
+15 88.060761943 -0.17322541 -0.36787786  0.18393893
+16  1.198613134  0.31779926  0.10298555 -0.01101541
+17  2.510418822  0.89847804 -0.30676080 -0.42946512
+18  0.074627173 -0.01759570  0.21358895  0.03051271
+19  0.047129330  0.04297002  0.29579670  0.17747802
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                                           
+[2] "mucus_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Alteromonadales___D_4__Pseudoalteromonadaceae___D_5__Pseudoalteromonas"
+Ancestral character estimates using fastAnc:
+        11         12         13         14         15         16         17 
+ 38.106225  69.589932  11.878530 157.180740 175.691062  18.602910  19.918623 
+        18         19 
+ 10.242709   7.546742 
+
+Variances on ancestral states:
+        11         12         13         14         15         16         17 
+140521.131  61387.107  20520.394   6595.600   5915.654  67169.872  55975.143 
+        18         19 
+ 52404.990  50016.008 
+
+Lower & upper 95% CIs:
+         lower    upper
+11 -696.622280 772.8347
+12 -416.027933 555.2078
+13 -268.890318 292.6474
+14   -1.997326 316.3588
+15   24.941018 326.4411
+16 -489.373253 526.5791
+17 -443.799081 483.6363
+18 -438.443158 458.9286
+19 -430.792734 445.8862
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "perc_dis"               
+Ancestral character estimates using fastAnc:
+      11       12       13       14       15       16       17       18 
+4.931341 3.589978 4.562841 1.690972 1.506337 5.762280 7.763740 4.883409 
+      19 
+4.642087 
+
+Variances on ancestral states:
+       11        12        13        14        15        16        17        18 
+17.340166  7.575107  2.532196  0.813890  0.729986  8.288695  6.907276  6.466723 
+       19 
+ 6.171925 
+
+Lower & upper 95% CIs:
+       lower     upper
+11 -3.230398 13.093080
+12 -1.804513  8.984468
+13  1.443918  7.681765
+14 -0.077259  3.459203
+15 -0.168271  3.180946
+16  0.119421 11.405138
+17  2.612527 12.914952
+18 -0.100823  9.867640
+19 -0.227212  9.511385
+
+null device 
+          1 
+null device 
+          1 

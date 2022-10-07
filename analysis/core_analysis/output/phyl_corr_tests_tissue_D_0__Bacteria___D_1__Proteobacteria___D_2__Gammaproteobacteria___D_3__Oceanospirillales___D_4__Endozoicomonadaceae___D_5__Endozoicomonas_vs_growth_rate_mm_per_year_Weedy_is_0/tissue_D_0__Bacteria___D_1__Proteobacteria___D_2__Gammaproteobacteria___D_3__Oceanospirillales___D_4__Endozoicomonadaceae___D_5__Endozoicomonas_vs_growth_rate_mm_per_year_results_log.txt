@@ -1,0 +1,117 @@
+[1] "Analyzing tissue_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Oceanospirillales___D_4__Endozoicomonadaceae___D_5__Endozoicomonas vs. growth_rate_mm_per_year"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+[1] "About to filter table to tree tips..."
+    Psammocora     Hydnophora     Turbinaria       Acropora        Isopora 
+    244.750000     425.571429      44.909091      58.681818      79.666667 
+        Pavona     Goniastrea Gardineroseris      Platygyra      Orbicella 
+      3.708333       6.714286       1.750000     204.400000      11.750000 
+   Siderastrea       Merulina 
+      9.333333       6.500000 
+    Psammocora     Hydnophora     Turbinaria       Acropora        Isopora 
+    0.10529500     0.23030714     0.09364883     0.16772478     0.08651750 
+        Pavona     Goniastrea Gardineroseris      Platygyra      Orbicella 
+    0.07778307     0.07076280     0.04290700     0.09661880     0.12541125 
+   Siderastrea       Merulina 
+    0.01875400     0.13817800 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for tissue_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Oceanospirillales___D_4__Endozoicomonadaceae___D_5__Endozoicomonas (x) vs.  growth_rate_mm_per_year (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+       Min         1Q     Median         3Q        Max 
+-0.0103416 -0.0052989  0.0002593  0.0036158  0.0106536 
+
+Coefficients:
+       Estimate Std. Error t value Pr(>|t|)   
+pic.X 2.890e-04  8.392e-05   3.444  0.00629 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.006999 on 10 degrees of freedom
+Multiple R-squared:  0.5425,	Adjusted R-squared:  0.4968 
+F-statistic: 11.86 on 1 and 10 DF,  p-value: 0.006292
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+        pic.X         pic.Y  rank.pic.X  rank.pic.Y
+13  5.6019307  0.0018782933  0.11729279  0.15850123
+14 10.2443172 -0.0018844161  0.31287392 -0.04228189
+15 17.5901462  0.0015250007 -0.09428238  0.08062337
+16 34.5723771 -0.0003501374  0.93770233 -0.40554167
+17 62.9808979  0.0288550520  0.98403261  1.37764564
+18 36.3620984  0.0047559249  1.10363357  0.73575571
+19  0.8982825  0.0013245206  0.09870400  0.10548256
+20  1.8062978  0.0047979197 -0.01686750 -0.29034661
+21  4.1282744  0.0041488415 -0.43491441 -0.31065315
+22  0.5436292  0.0096815225 -0.27759789 -0.55519578
+23  2.1675947 -0.0083881696  0.10329332 -0.61975994
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                                        
+[2] "tissue_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Oceanospirillales___D_4__Endozoicomonadaceae___D_5__Endozoicomonas"
+Ancestral character estimates using fastAnc:
+        13         14         15         16         17         18         19 
+ 87.735649 149.448755 103.090045 125.594885 179.000410 164.452075  52.589528 
+        20         21         22         23 
+ 40.844745  40.161875   3.598951  63.482378 
+
+Variances on ancestral states:
+       13        14        15        16        17        18        19        20 
+80768.877 29747.324  7564.622  4564.796  2980.489  2842.215 41229.391 29180.190 
+       21        22        23 
+26510.590  2018.128 12930.343 
+
+Lower & upper 95% CIs:
+         lower     upper
+13 -469.293719 644.76502
+14 -188.600534 487.49804
+15  -67.380636 273.56072
+16   -6.829125 258.01889
+17   71.996462 286.00436
+18   59.959714 268.94444
+19 -345.388900 450.56795
+20 -293.966571 375.65606
+21 -278.966757 359.29051
+22  -84.451261  91.64916
+23 -159.392491 286.35725
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "growth_rate_mm_per_year"
+Ancestral character estimates using fastAnc:
+      13       14       15       16       17       18       19       20 
+0.095498 0.116190 0.130450 0.134023 0.135154 0.124960 0.083714 0.076685 
+      21       22       23 
+0.082508 0.060860 0.118369 
+
+Variances on ancestral states:
+      13       14       15       16       17       18       19       20 
+0.012434 0.004580 0.001165 0.000703 0.000459 0.000438 0.006347 0.004492 
+      21       22       23 
+0.004081 0.000311 0.001991 
+
+Lower & upper 95% CIs:
+       lower    upper
+13 -0.123059 0.314055
+14 -0.016447 0.248827
+15  0.063564 0.197336
+16  0.082065 0.185981
+17  0.093170 0.177138
+18  0.083961 0.165959
+19 -0.072438 0.239865
+20 -0.054682 0.208052
+21 -0.042705 0.207722
+22  0.026313 0.095408
+23  0.030921 0.205816
+
+null device 
+          1 

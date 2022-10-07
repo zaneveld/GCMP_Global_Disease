@@ -1,0 +1,8 @@
+[1] "Analyzing perc_dis vs. mucus_D_0__Bacteria;D_1__Cyanobacteria;D_2__Oxyphotobacteria;D_3__Synechococcales;D_4"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
