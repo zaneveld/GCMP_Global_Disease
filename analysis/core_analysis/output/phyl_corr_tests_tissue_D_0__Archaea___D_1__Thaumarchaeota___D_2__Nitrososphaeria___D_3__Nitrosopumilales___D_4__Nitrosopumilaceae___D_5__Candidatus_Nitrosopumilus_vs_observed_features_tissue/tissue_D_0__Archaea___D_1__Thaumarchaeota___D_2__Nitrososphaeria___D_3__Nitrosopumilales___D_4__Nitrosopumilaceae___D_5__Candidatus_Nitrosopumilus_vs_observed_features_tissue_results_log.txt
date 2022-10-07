@@ -1,0 +1,128 @@
+[1] "Analyzing tissue_D_0__Archaea___D_1__Thaumarchaeota___D_2__Nitrososphaeria___D_3__Nitrosopumilales___D_4__Nitrosopumilaceae___D_5__Candidatus_Nitrosopumilus vs. observed_features_tissue"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+[1] "About to filter table to tree tips..."
+   Pocillopora     Psammocora     Hydnophora     Turbinaria        Porites 
+      5.391304      38.500000       1.428571      13.454545      14.653846 
+      Acropora        Isopora      Montipora         Pavona     Goniastrea 
+      1.318182      13.666667       1.000000      11.625000      31.428571 
+Gardineroseris      Platygyra      Orbicella    Siderastrea       Merulina 
+     34.500000       0.400000       3.125000      33.000000       0.500000 
+   Pocillopora     Psammocora     Hydnophora     Turbinaria        Porites 
+      71.91304      263.50000       67.42857      208.69231      155.15385 
+      Acropora        Isopora      Montipora         Pavona     Goniastrea 
+      45.77273      161.00000      103.60000      268.70833      336.85714 
+Gardineroseris      Platygyra      Orbicella    Siderastrea       Merulina 
+     261.25000       64.60000       92.50000      399.66667       80.00000 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for tissue_D_0__Archaea___D_1__Thaumarchaeota___D_2__Nitrososphaeria___D_3__Nitrosopumilales___D_4__Nitrosopumilaceae___D_5__Candidatus_Nitrosopumilus (x) vs.  observed_features_tissue (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-31.883   0.261   2.875   5.665  23.283 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)   
+pic.X    4.695      1.243   3.776  0.00231 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 12.14 on 13 degrees of freedom
+Multiple R-squared:  0.5231,	Adjusted R-squared:  0.4864 
+F-statistic: 14.26 on 1 and 13 DF,  p-value: 0.002311
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+        pic.X       pic.Y  rank.pic.X  rank.pic.Y
+16 0.09026385  3.48028133 -0.04829002 -0.13238512
+17 1.02847339  7.52251576 -0.17221626 -0.31720064
+18 2.25957245 10.24826420  0.68325044  0.42237759
+19 0.52706641  4.60031310  0.19577958  0.02970184
+20 1.66067099 11.85869450  0.64269424  0.19704057
+21 2.85088309 26.23430976 -0.29520981 -0.98403263
+22 5.70736218 50.07868709 -2.02332821 -2.20726714
+23 0.31969891  3.96548442  0.03088598 -0.09694213
+24 0.07357969 -3.28470024 -0.12270432  0.12270432
+25 1.28541041 14.32179267  0.32989107  0.41375239
+26 1.17508551 10.43617077  0.36258252  0.40026670
+27 6.35005174 -2.07041760  1.66558734 -0.55519578
+28 0.59136118 -0.01945897 -0.36433921  0.18216960
+29 1.27551604 11.90220792  0.61975994  0.82634659
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                                           
+[2] "tissue_D_0__Archaea___D_1__Thaumarchaeota___D_2__Nitrososphaeria___D_3__Nitrosopumilales___D_4__Nitrosopumilaceae___D_5__Candidatus_Nitrosopumilus"
+Ancestral character estimates using fastAnc:
+       16        17        18        19        20        21        22        23 
+16.287562 15.340869 16.730529  7.152329  7.100013  9.166667 10.503299 16.874013 
+       24        25        26        27        28        29 
+15.229610 18.088730 16.300756 22.905385  8.193565  7.830801 
+
+Variances on ancestral states:
+       16        17        18        19        20        21        22        23 
+815.86336 292.14483 251.05951  80.18876  48.91913  32.05489  30.58205 388.71142 
+       24        25        26        27        28        29 
+331.33009 290.66457 261.29880  21.72283 162.16695 120.33699 
+
+Lower & upper 95% CIs:
+        lower    upper
+16 -39.696549 72.27167
+17 -18.159930 48.84167
+18 -14.325392 47.78645
+19 -10.399114 24.70377
+20  -6.608661 20.80869
+21  -1.930273 20.26361
+22  -0.335704 21.34230
+23 -21.768888 55.51691
+24 -20.447241 50.90646
+25 -15.327090 51.50455
+26 -15.382133 47.98365
+27  13.770265 32.04050
+28 -16.766013 33.15314
+29 -13.670049 29.33165
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for"  "observed_features_tissue"
+Ancestral character estimates using fastAnc:
+      16       17       18       19       20       21       22       23 
+187.2461 150.7447 159.2108 120.5670 124.0994 140.5758 152.4915 209.8578 
+      24       25       26       27       28       29 
+193.5674 228.4133 210.1171 263.7044 134.4319 118.3692 
+
+Variances on ancestral states:
+        16         17         18         19         20         21         22 
+34381.3958 12311.3103 10579.9289  3379.2440  2061.5069  1350.8290  1288.7616 
+        23         24         25         26         27         28         29 
+16380.7348 13962.6210 12248.9307 11011.4240   915.4242  6833.8968  5071.1356 
+
+Lower & upper 95% CIs:
+         lower    upper
+16 -176.181397 550.6737
+17  -66.729708 368.2192
+18  -42.392365 360.8141
+19    6.629671 234.5042
+20   35.107924 213.0909
+21   68.538733 212.6129
+22   82.128782 222.8541
+23  -40.997219 460.7128
+24  -38.033138 425.1679
+25   11.490524 445.3361
+26    4.443831 415.7903
+27  204.402679 323.0061
+28  -27.596135 296.4600
+29  -21.206086 257.9446
+
+null device 
+          1 
+null device 
+          1 

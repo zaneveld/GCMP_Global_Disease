@@ -1,0 +1,136 @@
+[1] "Analyzing perc_dis vs. tissue_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Vibrionales___D_4__Vibrionaceae"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+[1] "About to filter table to tree tips..."
+   Pocillopora     Stylophora     Psammocora     Hydnophora     Turbinaria 
+     5.8304508      3.6871508     12.3816460      3.1096563      1.8720749 
+       Porites       Acropora      Montipora         Pavona     Goniastrea 
+    16.5166782      3.6431133      9.6682877      4.3694571      0.2880184 
+   Seriatopora Gardineroseris      Platygyra    Montastraea      Orbicella 
+     5.1219512      0.0000000      1.2297735      2.0548549      3.3152385 
+   Siderastrea       Merulina 
+     3.7179511      1.3114754 
+   Pocillopora     Stylophora     Psammocora     Hydnophora     Turbinaria 
+    32.6956522      0.1428571      6.7500000      5.0000000      7.9230769 
+       Porites       Acropora      Montipora         Pavona     Goniastrea 
+     7.8076923      6.3181818      6.4000000      4.4583333     23.2857143 
+   Seriatopora Gardineroseris      Platygyra    Montastraea      Orbicella 
+     0.2500000      2.7500000      0.4000000      0.2500000      2.2500000 
+   Siderastrea       Merulina 
+     4.6666667      1.5000000 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for perc_dis (x) vs.  tissue_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Vibrionales___D_4__Vibrionaceae (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.2105 -0.2172  0.0236  0.2984  3.8863 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X 0.005323   0.832700   0.006    0.995
+
+Residual standard error: 1.586 on 15 degrees of freedom
+Multiple R-squared:  2.724e-06,	Adjusted R-squared:  -0.06666 
+F-statistic: 4.086e-05 on 1 and 15 DF,  p-value: 0.995
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+        pic.X        pic.Y  rank.pic.X    rank.pic.Y
+18 0.02325711 -0.096694401  0.02162135 -1.367960e-01
+19 0.09954482 -0.709163300  0.19380199 -2.178270e-02
+20 0.17055024  3.887194852 -0.29902214 -1.824035e+00
+21 0.23829675  0.017794666 -0.49825066 -2.491253e-01
+22 0.72551169  0.245752241  0.72988856  5.216360e-01
+23 0.01038336  0.518053857  0.05624310 -5.345357e-01
+24 0.24386317 -0.577213747  0.52675525 -2.949172e-01
+25 0.04642805  1.280743168  0.01719086  8.105307e-01
+26 0.46264496 -1.346718964  0.88562933 -3.995195e-08
+27 0.17322541 -4.209573760  0.18393893 -2.207267e+00
+28 0.29157898  0.173730174  0.05529827  3.023330e-01
+29 0.89847804 -0.007079095 -0.73622592  6.135216e-02
+30 0.06225598  0.031024231  0.08626780 -4.770533e-02
+31 0.28477358  0.175471830 -0.35031637 -2.547755e-01
+32 1.21295206  0.474229729 -3.05357679 -2.775979e-01
+33 0.50215913  0.006819014  0.50006101  8.334350e-02
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "perc_dis"               
+Ancestral character estimates using fastAnc:
+      18       19       20       21       22       23       24       25 
+6.160497 5.915565 5.157886 4.629013 6.051406 3.040996 2.522042 1.943637 
+      26       27       28       29       30       31       32       33 
+1.747563 1.551719 6.312226 7.992980 5.362222 5.162696 2.253924 6.152907 
+
+Variances on ancestral states:
+       18        19        20        21        22        23        24        25 
+27.012799  8.914144  3.514076  1.755199  7.683074  3.814762  2.361194  1.570136 
+       26        27        28        29        30        31        32        33 
+ 1.056483  1.011382 12.986098 11.041606  9.804801  8.924473  0.723574  6.426494 
+
+Lower & upper 95% CIs:
+       lower     upper
+18 -4.026375 16.347370
+19  0.063678 11.767451
+20  1.483696  8.832076
+21  2.032328  7.225699
+22  0.618608 11.484204
+23 -0.787161  6.869154
+24 -0.489729  5.533813
+25 -0.512342  4.399617
+26 -0.267030  3.762156
+27 -0.419404  3.522842
+28 -0.750875 13.375327
+29  1.480113 14.505847
+30 -0.775051 11.499495
+31 -0.692579 11.017972
+32  0.586687  3.921162
+33  1.184203 11.121611
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                     
+[2] "tissue_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Vibrionales___D_4__Vibrionaceae"
+Ancestral character estimates using fastAnc:
+       18        19        20        21        22        23        24        25 
+ 7.111838  8.130176 13.412963  4.134405  7.122560  4.177882  4.661242  5.729731 
+       26        27        28        29        30        31        32        33 
+ 7.811461  8.610038  6.481006  7.288319  5.751538  5.569987  3.649844  6.093347 
+
+Variances on ancestral states:
+        18         19         20         21         22         23         24 
+280.956590  92.714847  36.549441  18.255598  79.910646  39.676842  24.558474 
+        25         26         27         28         29         30         31 
+ 16.330781  10.988339  10.519253 135.066709 114.842301 101.978451  92.822272 
+        32         33 
+  7.525795  66.841121 
+
+Lower & upper 95% CIs:
+        lower     upper
+18 -25.741211 39.964887
+19 -10.742380 27.002731
+20   1.563561 25.262365
+21  -4.240003 12.508813
+22 -10.398420 24.643540
+23  -8.168071 16.523835
+24  -5.051833 14.374318
+25  -2.190896 13.650358
+26   1.314322 14.308599
+27   2.253092 14.966984
+28 -16.297762 29.259774
+29 -13.715923 28.292561
+30 -14.041401 25.544476
+31 -13.313499 24.453473
+32  -1.727059  9.026748
+33  -9.930911 22.117606
+
+null device 
+          1 

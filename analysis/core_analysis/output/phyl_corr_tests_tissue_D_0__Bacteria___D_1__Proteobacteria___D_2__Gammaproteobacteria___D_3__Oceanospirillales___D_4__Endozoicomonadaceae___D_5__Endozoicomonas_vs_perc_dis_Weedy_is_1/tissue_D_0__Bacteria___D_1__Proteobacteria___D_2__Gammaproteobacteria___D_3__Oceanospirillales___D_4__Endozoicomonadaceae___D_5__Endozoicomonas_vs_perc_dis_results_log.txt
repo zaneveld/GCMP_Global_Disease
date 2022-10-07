@@ -1,0 +1,94 @@
+[1] "Analyzing tissue_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Oceanospirillales___D_4__Endozoicomonadaceae___D_5__Endozoicomonas vs. perc_dis"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+[1] "About to filter table to tree tips..."
+Pocillopora  Stylophora     Porites Seriatopora 
+   148.6522    634.4286    340.1538     62.7500 
+Pocillopora  Stylophora     Porites Seriatopora 
+   5.830451    3.687151   16.516678    5.121951 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for tissue_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Oceanospirillales___D_4__Endozoicomonadaceae___D_5__Endozoicomonas (x) vs.  perc_dis (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+       5        6        7 
+ 0.43707 -0.10714  0.01347 
+
+Coefficients:
+       Estimate Std. Error t value Pr(>|t|)
+pic.X -0.002652   0.003250  -0.816      0.5
+
+Residual standard error: 0.3183 on 2 degrees of freedom
+Multiple R-squared:  0.2497,	Adjusted R-squared:  -0.1254 
+F-statistic: 0.6657 on 1 and 2 DF,  p-value: 0.5003
+
+[1] "Summary Spearman lm rank(pic.Y) ~ rank(pic.X) -1 PICs tissue_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Oceanospirillales___D_4__Endozoicomonadaceae___D_5__Endozoicomonas (x) vs.  perc_dis (y)"
+
+Call:
+lm(formula = pic_df$rank.pic.Y ~ pic_df$rank.pic.X - 1)
+
+Residuals:
+       1        2        3 
+ 0.07873 -0.15771  0.01469 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)
+pic_df$rank.pic.X  -0.3628     0.2489  -1.458    0.282
+
+Residual standard error: 0.1251 on 2 degrees of freedom
+Multiple R-squared:  0.5152,	Adjusted R-squared:  0.2727 
+F-statistic: 2.125 on 1 and 2 DF,  p-value: 0.2822
+
+null device 
+          1 
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+      pic.X      pic.Y rank.pic.X  rank.pic.Y
+5  2.935135  0.4292864 0.02680643  0.06900663
+6 23.914250 -0.1705502 0.05980443 -0.17941328
+7 94.946409 -0.2382967 0.49825066 -0.16608355
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                                        
+[2] "tissue_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Oceanospirillales___D_4__Endozoicomonadaceae___D_5__Endozoicomonas"
+Ancestral character estimates using fastAnc:
+       5        6        7 
+299.6458 263.4667 323.2263 
+
+Variances on ancestral states:
+        5         6         7 
+572434.66  53635.05  25112.79 
+
+Lower & upper 95% CIs:
+        lower     upper
+5 -1183.27868 1782.5703
+6  -190.45444  717.3879
+7    12.62482  633.8278
+
+pdf 
+  2 
+[1] "FastAnc ML modelfit for" "perc_dis"               
+Ancestral character estimates using fastAnc:
+        5         6         7 
+10.592057  5.300584  4.671532 
+
+Variances on ancestral states:
+        5         6         7 
+16.117085  1.510112  0.707059 
+
+Lower & upper 95% CIs:
+     lower     upper
+5 2.723424 18.460691
+6 2.892007  7.709162
+7 3.023431  6.319633
+
+pdf 
+  2 
