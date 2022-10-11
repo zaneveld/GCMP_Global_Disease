@@ -1,0 +1,159 @@
+---
+title: "GCMP Heat Map for Publication R Notebook"
+output: html_notebook
+---
+
+The following code is for running a heat map against the following:
+1) %disease (perc_dis)
+2) growth rate (growth_rate_mm_per_year)
+3) microbial alpha div (observed_features_tissue)
+4) microbial dominance (dominance_tissue)
+5) endozoicomonas dominance (endo_relabund)
+6) alpha vs gamma proteobacteria domination
+
+First load libraries
+```{r}
+library(phytools)
+library(RColorBrewer)
+library(dplyr)
+```
+
+
+Load in a tree file and trait table and filter the trait table into the columns intended for the heat map
+
+```{r}
+tree <- read.tree('../input/huang_roy_genus_tree.newick')
+meta <- read.csv('../input/GCMP_trait_table.csv', header = TRUE)
+```
+
+Bring in the growth data & append to the trait table
+```{r}
+growth <- read.csv("../input/GCMP_wGrowth.csv", header = TRUE)
+traits <- merge(meta, growth, all = TRUE, by = "host_genus_id")
+
+endo <- read.csv("../input/GCMP_endo.csv", header = TRUE)
+traits <- merge(traits, endo, all = TRUE, by = "host_genus_id")
+head(traits)
+```
+
+
+
+filter the trait table into the columns intended for the heat map
+```{r}
+library(dplyr)
+
+heatmap.traits <- traits %>% select("host_genus_id", "perc_dis", "growth_rate_mm_per_year", "observed_features_tissue", "dominance_tissue", "endo_relabund", "most_abundant_class_tissue")
+rownames(heatmap.traits) <- heatmap.traits$host_genus_id
+heatmap.traits <- heatmap.traits[,c(2:7)]
+
+#Remove rows that have all NAs
+heatmap.traits <- heatmap.traits[rowSums(is.na(heatmap.traits)) != ncol(heatmap.traits), ]
+head(heatmap.traits)
+
+#drop all rows in which microbiome data is unavailable
+library(tidyr)
+heatmap.traits.micro.only <- heatmap.traits %>% drop_na(observed_features_tissue)
+
+#fix the NAs int he endozoicomonas relative abundance to 0 
+#since microbiome data should be available any NAs here will equate to a rel abund of 0
+heatmap.traits.micro.only$endo_relabund[is.na(heatmap.traits.micro.only$endo_relabund)] <- 0
+
+#Prune the tree to micro only taxa
+genera.to.keep <- rownames(heatmap.traits.micro.only)
+
+#Prune tree to match trait table
+pruned.tree <- drop.tip(tree, setdiff(tree$tip.label, genera.to.keep))
+
+```
+
+
+Set the colors for the heat map
+```{r}
+#disease_color <- c("lightcoral","deepskyblue")
+disease_ramp_color_palette <- colorRampPalette(c("lemonchiffon1", "red"))(100)
+#disease_ramp_color_palette <- colorRampPalette(c("blue", "red"))(100)
+```
+
+
+Run the heat map codecode
+```{r}
+
+#don't use the most abundant class
+heatmap.traits.only <- heatmap.traits.micro.only[,c(1:5)]
+pdf(file="../output/heatmap_standardized.pdf")
+#phylo.heatmap(pruned.tree, heatmap.traits, standardize=TRUE, fsize=0.6, colors=disease_ramp_color_palette,length=1)
+phylo.heatmap(pruned.tree, heatmap.traits.only, split = c(1,0.5), standardize=TRUE, colors = disease_ramp_color_palette, fsize=0.3)
+dev.off()
+```
+Because this does not work even when standardizing across columns (since the traits are measured in different units)
+What about splitting it up into each variable & then manually adding together so that the variability can be seen?
+No need to standardize since all should have the same units
+
+```{r}
+heatmap.growth <- heatmap.traits.micro.only %>% select("growth_rate_mm_per_year")
+rownames(heatmap.growth) <- rownames(heatmap.traits.micro.only)
+heatmap.growth$growth_rate_mm_per_year2 <- heatmap.growth$growth_rate_mm_per_year #the code won't plot a single variable so have to duplicate (will remove in illustrator)
+
+pdf(file="../output/heatmap_growth.pdf")
+phylo.heatmap(pruned.tree, heatmap.growth, split = c(0.5, 1), standardize=FALSE, colors = disease_ramp_color_palette, fsize=0.5)
+dev.off()
+```
+
+```{r}
+heatmap.disease <- heatmap.traits.micro.only %>% select("perc_dis")
+rownames(heatmap.disease) <- rownames(heatmap.traits.micro.only) 
+heatmap.disease$perc_dis2 <- heatmap.disease$perc_dis # need more than 1 variable to plot, make dummy variable
+
+pdf(file="../output/heatmap_disease.pdf")
+phylo.heatmap(pruned.tree, heatmap.disease, split = c(0.5,1), standardize=FALSE, colors = disease_ramp_color_palette, fsize=0.5)
+dev.off()
+```
+
+```{r}
+#can add observed and endo in the same one bc their scale is the same
+heatmap.obs <- heatmap.traits.micro.only %>% select("observed_features_tissue", "endo_relabund")
+rownames(heatmap.obs) <- rownames(heatmap.traits.micro.only)
+
+#This needs to be standardized bc two variables with different units (observed = out of 1000 and endo relabund = out of 100)
+pdf(file="../output/heatmap_obs_endo_standardized.pdf")
+phylo.heatmap(pruned.tree, heatmap.obs, split = c(0.5,1), standardize=TRUE, colors = disease_ramp_color_palette, fsize=0.5)
+dev.off()
+```
+
+Dominance
+```{r}
+
+heatmap.dom <- heatmap.traits.micro.only %>% select("dominance_tissue")
+rownames(heatmap.dom) <- rownames(heatmap.traits.micro.only)
+heatmap.dom$dominance_tissue2 <- heatmap.dom$dominance_tissue
+
+pdf(file="../output/heatmap_dominance.pdf")
+phylo.heatmap(pruned.tree, heatmap.dom, split = c(1,0.5), standardize=TRUE, colors = disease_ramp_color_palette, fsize=0.3)
+dev.off()
+```
+
+Can we figure out which ones were dominated by proteobacteria/alpha?
+And plot? This will give "yes or no"
+```{r}
+#most_abundant
+heatmap.traits.micro.only$gamma_class <- ifelse(heatmap.traits.micro.only$most_abundant_class_tissue == "D_0__Bacteria;D_1__Proteobacteria;D_2__Gammaproteobacteria", 1, 0)
+heatmap.traits.micro.only$alpha_class <- ifelse(heatmap.traits.micro.only$most_abundant_class_tissue == "D_0__Bacteria;D_1__Proteobacteria;D_2__Alphaproteobacteria", 1, 0)
+
+
+heatmap.dom.class <- heatmap.traits.micro.only %>% select("gamma_class", "alpha_class")
+rownames(heatmap.dom.class) <- rownames(heatmap.traits.micro.only)
+
+pdf(file="../output/heatmap_domclass.pdf")
+phylo.heatmap(pruned.tree, heatmap.dom.class, split = c(0.5, 1), standardize=FALSE, colors = disease_ramp_color_palette, fsize=0.5)
+dev.off()
+```
+
+Okay now that we have each one saved, we can use illustrator to put them all together! 
+
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
