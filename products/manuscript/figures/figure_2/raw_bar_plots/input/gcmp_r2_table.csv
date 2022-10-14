@@ -1,0 +1,10 @@
+﻿diversity_cat,compartment,diversity_metric,R2
+alpha,mucus,richness,0.007605174
+alpha,mucus,evenness,0.042703236
+alpha,mucus,dominance,0.008318542
+alpha,tissue,richness,-0.023177511
+alpha,tissue,evenness,-0.025608882
+alpha,tissue,dominance,0.248639916
+alpha,skeleton,richness,-0.020209967
+alpha,skeleton,evenness,0.008082596
+alpha,skeleton,dominance,-0.023244761
