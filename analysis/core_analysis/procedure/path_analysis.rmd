@@ -1,0 +1,95 @@
+__-
+title: "R Notebook"
+output: html_notebook
+__-
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+library(ape)
+library(phylopath)
+```
+```{r}
+coral_disease_data <- read.table("../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata_and_growth_data.tsv", header=TRUE, sep="\t")
+coral_tree <- read.tree('../output/huang_roy_genus_tree.newick')
+rownames(coral_disease_data) <- coral_disease_data$X
+filtered_table <- subset(coral_disease_data, select = c("growth_rate_mm_per_year","tissue_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Oceanospirillales___D_4__Endozoicomonadaceae___D_5__Endozoicomonas","perc_dis"))
+
+# new column names:
+# GR = growth_rate_mm_per_year
+# EN = tissue...Endozoicomonas
+# DS = perc_dis
+
+colnames(filtered_table) <- c("GR","EN","DS")
+filtered_table
+```
+
+Defining models
+```{r}
+# __ is causation ( B <- A )
+models <- define_model_set(
+  EN__DS_plus_GR    = c(EN ~ DS + GR),
+  #two    = c(EN ~ DS + GR, GR ~ DS),
+  EN__GR__DS  = c(EN ~ GR, GR ~ DS),
+  GR__DS__EN   = c(GR ~ DS, DS ~ EN),
+  GR__DS_plus_EN  = c(GR ~ DS + EN),
+  #six   = c(GR ~ DS + EN, EN ~ DS),
+  DS__EN__GR  = c(DS ~ EN, EN ~ GR),
+  DS__GR__EN  = c(DS ~ GR, GR ~ EN),
+  #nine   = c(DS ~ GR + EN, EN ~ GR)
+  EN__GR    = c(EN ~ GR),
+  GR__EN = c(GR ~ EN),
+  GR__DS = c(GR ~ DS),
+  EN__DS  = c(EN ~ DS),
+  DS__EN = c(DS ~ EN),
+  DS__GR = c(DS ~ GR),
+  DS_and_EN__GR = c(EN ~ GR, DS ~ GR),
+  DS_and_GR__EN = c(DS ~ EN, GR ~ EN)
+)
+```
+Plot models
+```{r}
+plot_model_set(models)
+```
+Evaluation of hypotheses
+```{r}
+p_BM <- phylo_path(models, data = filtered_table, tree = coral_tree, model = "BM")
+p_PL <- phylo_path(models, data = filtered_table, tree = coral_tree, model = "lambda")
+```
+```{r}
+s_BM <- summary(p_BM)
+s_BM
+s_PL <- summary(p_PL)
+s_PL
+```
+Summary of support for each model
+```{r}
+plot(s_BM)
+plot(s_PL)
+```
+selecting and fitting a final model
+```{r}
+best_model_BM <- best(p_BM)
+best_model_BM
+plot(best_model_BM)
+
+best_model_PL <- best(p_PL)
+best_model_PL
+plot(best_model_PL)
+```
+
+```{r}
+average_model_BM <- average(p_BM, avg_method = "full")
+plot(average_model_BM, algorithm = "mds", curvature = 0.1)
+average_model_PL <- average(p_PL, avg_method = "full")
+plot(average_model_PL, algorithm = "mds", curvature = 0.1)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
