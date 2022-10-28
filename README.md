@@ -78,7 +78,7 @@ To recreate the analysis we will run the procedures in the following analysis fo
          KO_metagenome.qza
          pathway_abundance.qza
 8. core_analysis
-       - **input**:
+      - **input**:
          GCMP_EMP_map_r28_no_empty_samples.txt
          insertion-tree_silva_GCMP.qza
          Copied via the setup_input_data.py script:
@@ -86,7 +86,7 @@ To recreate the analysis we will run the procedures in the following analysis fo
            physeq.noncont-feature-table.qza --> physeq_feature_table.qza
            physeq.noncont_sample-metadata.txt --> physeq_metadata.txt
            physeq.noncont_tax.txt --> physeq_taxonomy.txt
-       - **output**:
+      - **output**:
            alpha_diversity_phylogenetic/ -- faith's pd .qza and .qzv files 
            beta_diversity_phylogenetic/ -- weighted and unweighted UniFrac bdeta diversity distance matrix .qza files
            adiv_trait_table_all.txt -- a tsv file with alpha diversity and most abundant taxa calculated separately for each species (by Huang Roy tree name)
