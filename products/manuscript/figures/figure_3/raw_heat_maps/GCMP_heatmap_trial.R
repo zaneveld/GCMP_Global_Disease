@@ -18,15 +18,15 @@ library(dplyr)
 
 #We are going to do everything across the 3 compartments: coral mucous, tissue, & skeleton
 
-tree <- read.tree('../input/huang_roy_genus_tree.newick')
-meta <- read.csv('../input/GCMP_trait_table.csv', header = TRUE)
+tree <- read.tree('input/huang_roy_genus_tree.newick')
+meta <- read.csv('input/GCMP_trait_table.csv', header = TRUE)
 
 #Bring in the growth data
-growth <- read.csv("../input/GCMP_wGrowth.csv", header = TRUE)
+growth <- read.csv("input/GCMP_wGrowth.csv", header = TRUE)
 traits <- merge(meta, growth, all = TRUE, by = "host_genus_id")
 
 #Bring in endozoicomonas data
-endo <- read.csv("../input/GCMP_endo.csv", header = TRUE)
+endo <- read.csv("input/GCMP_endo.csv", header = TRUE)
 traits <- merge(traits, endo, all = TRUE, by = "host_genus_id")
 
 
@@ -70,7 +70,7 @@ pruned.tree <- drop.tip(tree, setdiff(tree$tip.label, genera.to.keep))
 
 #Make a colour scheme for the heta map for each comp
 #disease_ramp_color_palette <- colorRampPalette(c("lemonchiffon1", "red"))(100)
-disease_ramp_color_palette <- colorRampPalette(c("#C9B8B8", "#601D1F"))(100)
+disease_ramp_color_palette <- colorRampPalette(c("#E7E1E1", "#601D1F"))(100)
 
 mucus_ramp_color_palette <- colorRampPalette(c("#C7F2F2", "#098F94"))(100)
 tissue_ramp_color_palette <- colorRampPalette(c("#F7D8CB", "#E98A5C")) (100)
@@ -117,7 +117,9 @@ dev.off()
 
 #In case we want to pull out the disease/growth rate data as a different colour
 heatmap.traits.disgr <- heatmap.traits.micro.only.st[,c(1:2)]
-pdf(file="../output/heatmap_disease_growth_only.pdf")
+pdf(file="output/heatmap_disease_growth_only.pdf")
 #phylo.heatmap(pruned.tree, heatmap.traits, standardize=TRUE, fsize=0.6, colors=disease_ramp_color_palette,length=1)
 phylo.heatmap(pruned.tree, heatmap.traits.disgr, split = c(1,0.5), standardize=FALSE, colors = disease_ramp_color_palette, fsize=0.3)
 dev.off()
+
+
