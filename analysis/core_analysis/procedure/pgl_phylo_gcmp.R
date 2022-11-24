@@ -16,18 +16,18 @@ library(remotes)
 #create this file only the first time then we append to it
 pgl.output = data.frame("Disease_Trait", "Diversity_Trait", "N_Microbes", "Compartment", "Package", "Model", "pVal", "R_Squared", "Adj_R_Squared", "x_Trait_Slope_95CI", "Intercept_95CI", "Parameters", "Estimated_Parameter_95CI", "AIC", "AICc", "Minimum_AIC", "Minimum_AICc")
 pgl.output
-write.table(pgl.output,file="../output/PGLS_gcmp_output_aust.csv",append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
+write.table(pgl.output,file="../output/GCMP_alpha_diversity_all_pgls.csv",append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
 
 #formula
 
-trait_table_input <-"../input/GCMP_trait_table_genus_australia_only.csv"
+trait_table_input <-"../input/GCMP_trait_table_with_abundances_and_adiv_and_metadata_and_growth_data_pcoa.csv"
 #Pick the columns to analyze from the various tissue compartments (mucus, skeleton, tissue, all)
 #x traits can be: observed_features_compartment, dominance_compartment, gini_index_compartment, simpson_e_compartment, faith_pd_compartment
-x_trait_column <-"dominance_all"
+x_trait_column <-"growth_rate_mm_per_year"
 
 #y trait disease can be: sum_dis, sum_healthy, sum_bbd, sum_wb, perc_healthy, perc_dis, perc_bbd, perc_wd
-y_trait_column<-"percent_skeletal_eroding_band"
-sample_column<-"n_samples_all"
+y_trait_column<-"perc_dis"
+sample_column<-"n_samples_skeleton"
 trait_table <- read.csv(trait_table_input,header=TRUE, row.names=1)
 
 #extract the compartment to be used, number of microbes, package
@@ -72,11 +72,13 @@ prune_tree_data <- name.check(tree.prune,trait_table.prune)
 prune_tree_data
 plot(tree.prune)
 
-trait_table.prune$host_genus<-rownames(trait_table.prune)
+trait_table_small$host_genus<-rownames(trait_table_small)
+#trait_table.prune$host_genus<-rownames(trait_table.prune)
 
 #analyze data using the package caper which combines the data and tree into one file
 
-comp.data <- comparative.data(tree.prune, trait_table.prune, names.col="host_genus", vcv.dim=2, warn.dropped = TRUE)
+comp.data <- comparative.data(tree.prune, trait_table_small, names.col="host_genus", vcv.dim=2, warn.dropped = TRUE)
+#comp.data <- comparative.data(tree.prune, trait_table.prune, names.col="host_genus", vcv.dim=2, warn.dropped = TRUE)
 model.formula <- as.formula(paste0(x_trait_column,'~',y_trait_column))
 
 #run data using the basic model
@@ -117,7 +119,7 @@ output_row.model.3 <- data.frame(y_trait_column, x_trait_column, n_microbe, comp
 print(output_row.model.3)
 
 #Write it to the csv file
-write.table(output_row.model.3, file="../output/PGLS_gcmp_output_aust.csv", append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
+write.table(output_row.model.3, file="../output/GCMP_alpha_diversity_all_pgls.csv", append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
 
 
 #run data setting lambda to ML
@@ -166,7 +168,7 @@ output_row.model.3l <- data.frame(y_trait_column, x_trait_column, n_microbe, com
 print(output_row.model.3l)
 
 #Write it to the csv file
-write.table(output_row.model.3l, file="../output/PGLS_gcmp_output_aust.csv", append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
+write.table(output_row.model.3l, file="../output/GCMP_alpha_diversity_all_pgls.csv", append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
 
 #run data setting delta to ML
 model.3d_formula<-"pgls(x_trait~y_trait, data=comp.data, lambda=1,kappa=1,delta=ML)"
@@ -210,7 +212,7 @@ output_row.model.3d <- data.frame(y_trait_column, x_trait_column, n_microbe, com
 print(output_row.model.3d)
 
 #Write it to the csv file
-write.table(output_row.model.3d, file="../output/PGLS_gcmp_output_aust.csv", append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
+write.table(output_row.model.3d, file="../output/GCMP_alpha_diversity_all_pgls.csv", append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
 
 #run data setting kappa to ML
 model.3k_formula<-"pgls(x_trait~y_trait, data=comp.data, lambda=1,kappa=ML,delta=1)"
@@ -276,13 +278,13 @@ output_row.model.3k <- data.frame(y_trait_column, x_trait_column, n_microbe, com
 print(output_row.model.3k)
 
 #Write it to the csv file
-write.table(output_row.model.3k, file="../output/PGLS_gcmp_output_aust.csv", append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
+write.table(output_row.model.3k, file="../output/GCMP_alpha_diversity_all_pgls.csv", append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
 
 
 #run phylomorphspace and PICs on 
 #create this file only the first time then we append to it
 pic.output = data.frame("Disease_Trait", "Diversity_Trait", "N_Microbes", "Compartment", "Model", "pVal", "R_Squared")
-write.table(pic.output,file="../output/PIC_gcmp_output_aust.csv",append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
+write.table(pic.output,file="../output/GCMP_alpha_diversity_all_pic.csv",append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
 
 
 #need to redefine the traits for some reason.
@@ -290,16 +292,16 @@ trait_table.prune<-trait_table_small[-which(rownames(trait_table_small)%in% tree
 
 #Pick the columns to analyze
 #y trait disease can be: sum_dis, sum_healthy, sum_bbd, sum_wb, perc_healthy, perc_dis, perc_bbd, perc_wd
-y_trait_column <-"percent_skeletal_eroding_band"
+y_trait_column <-"perc_wd"
 #x traits can be: observed_features_compartment, dominance_compartment, gini_index_compartment, simpson_e_compartment, faith_pd_compartment
-x_trait_column<-"dominance_all"
+x_trait_column<-"gini_index_skeleton"
 #trait_table <- read.csv(trait_table_input,header=TRUE,row.names=1)
 x_trait <-trait_table.prune[[x_trait_column]]
 y_trait <-trait_table.prune[[y_trait_column]]
 
 #make plots of the traits and save as a pdf 
 phylomorphospace(tree.prune,trait_table.prune[,c(x_trait_column,y_trait_column)],xlab=x_trait_column,ylab=y_trait_column)
-pdf(paste("../output/australia_graph/", x_trait_column,"_",y_trait_column,"_aust_phylomorphospace.pdf",sep=""))
+pdf(paste("../output/beta_diversity/", x_trait_column,"_",y_trait_column,"_beta_diversity_phylomorphospace.pdf",sep=""))
 phylomorphospace(tree.prune,trait_table.prune[,c(x_trait_column,y_trait_column)],xlab=x_trait_column,ylab=y_trait_column)
 points(x_trait,y_trait,pch=21,bg="grey",cex=1.4)
 dev.off()
@@ -353,13 +355,13 @@ ggplot(pic_df, aes(x_trait_positive,y_trait_positive)) +
   theme_classic()
 
 #Save raw PIC contrasts as a pdf
-pdf(paste("../output/australia_graph/",x_trait_column,"_",y_trait_column,"_aust_pic_scatter_YX.pdf",sep=""))
+pdf(paste("../output/beta_diversity/",x_trait_column,"_",y_trait_column,"_beta_diversity_pic_scatter_YX.pdf",sep=""))
 plot(x_trait_positive ~ y_trait_positive,xlab=x_trait_column,ylab=y_trait_column,bg='gray',pch=16)
 abline(a = 0, b = coef(pic_model))
 dev.off()
 
 #save the PIC contrasts with the 95% confidence interval as a pdf
-pdf(paste("../output/australia_graph/",x_trait_column,"_",y_trait_column,"_aust_pic_scatter_YX_confidence.pdf"))
+pdf(paste("../output/beta_diversity/",x_trait_column,"_",y_trait_column,"_beta_diversity_pic_scatter_YX_confidence.pdf"))
 ggplot(pic_df, aes(x_trait_positive,y_trait_positive)) +
   geom_smooth(method = "lm", se = TRUE, col = "black", formula = y~x -1)+
   geom_point(size = 3, col = "firebrick")+
@@ -380,21 +382,21 @@ output_row.pic <- data.frame(y_trait_column, x_trait_column, n_microbe, compartm
 print(output_row.pic)
 
 #Write it to the csv file
-write.table(output_row.pic, file="../output/PIC_gcmp_output_aust.csv", append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
+write.table(output_row.pic, file="../output/GCMP_alpha_diversity_all_pic.csv", append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
 
 
 # plot contMap
 x_trait_reconstruction<-contMap(tree.prune,x_trait)
 plot(x_trait_reconstruction,direction="rightwards")
 #save plot as pdf
-pdf(paste("../output/australia_graph/",x_trait_column,"_aust_contmap.pdf",sep=""))
+pdf(paste("../output/beta_diversity/",x_trait_column,"_beta_diversity_contmap.pdf",sep=""))
 plot(x_trait_reconstruction,direction="rightwards")
 dev.off()
 
 y_trait_reconstruction<-contMap(tree.prune,y_trait)
 plot(y_trait_reconstruction,direction="leftwards")
 #save plot as pdf
-pdf(paste("../output/australia_graph/",y_trait_column,"-aust_contmap.pdf",sep=""))
+pdf(paste("../output/beta_diversity/",y_trait_column,"_beta_diversity_contmap.pdf",sep=""))
 plot(y_trait_reconstruction,direction="leftwards")
 dev.off()
 
