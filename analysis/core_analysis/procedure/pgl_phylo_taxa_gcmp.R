@@ -14,21 +14,32 @@ library(ggplot2)
 library(remotes)
 
 #create this file only the first time then we append to it
-pgl.output = data.frame("Disease_Trait", "Diversity_Trait", "N_Microbes", "Compartment", "Package", "Model", "pVal", "R_Squared", "Adj_R_Squared", "x_Trait_Slope_95CI", "Intercept_95CI", "Parameters", "Estimated_Parameter_95CI", "AIC", "AICc", "Minimum_AIC", "Minimum_AICc")
+pgl.output = data.frame("Disease_Trait", "Diversity_Trait", "Filtered_column", "Filtered_Value", "N_Microbes", "Compartment", "Package", "Model", "pVal", "R_Squared", "Adj_R_Squared", "x_Trait_Slope_95CI", "Intercept_95CI", "Parameters", "Estimated_Parameter_95CI", "AIC", "AICc", "Minimum_AIC", "Minimum_AICc")
 pgl.output
-write.table(pgl.output,file="../output/GCMP_alpha_diversity_all_pgls.csv",append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
+write.table(pgl.output,file="../output/alpha_diversity_taxa/GCMP_taxa_alpha_diversity_compartments_pgls.csv",append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
+
+#no filtering this time
+#filter column and the value to filter by within the column
+filter_column <- "most_abundant_class_all"
+filter_value <- "D_0__Bacteria;D_1__Proteobacteria;D_2__Alphaproteobacteria"
+filter_value_last <-sub('.*\\;', '', filter_value)
 
 #formula
 
 trait_table_input <-"../input/GCMP_trait_table_with_abundances_and_adiv_and_metadata_and_growth_data_pcoa.csv"
 #Pick the columns to analyze from the various tissue compartments (mucus, skeleton, tissue, all)
 #x traits can be: observed_features_compartment, dominance_compartment, gini_index_compartment, simpson_e_compartment, faith_pd_compartment
-x_trait_column <-"growth_rate_mm_per_year"
+x_trait_column <-"gini_index_all"
 
 #y trait disease can be: sum_dis, sum_healthy, sum_bbd, sum_wb, perc_healthy, perc_dis, perc_bbd, perc_wd
-y_trait_column<-"perc_dis"
-sample_column<-"n_samples_skeleton"
+y_trait_column<-"perc_wb"
+sample_column<-"n_samples_all"
 trait_table <- read.csv(trait_table_input,header=TRUE, row.names=1)
+
+#filter trait table by the column and values listed
+if (!is.na(filter_column)){
+  trait_table <- subset(trait_table,trait_table[[filter_column]] == filter_value)
+}
 
 #extract the compartment to be used, number of microbes, package
 compartment <-str_extract(x_trait_column,"[^_]+$")
@@ -64,21 +75,21 @@ tree.prune_obj <-name.check(tree.prune,trait_table_small)
 tree.prune_obj
 
 #delete the extra rows from the object
-trait_table.prune<-trait_table_small[-which(rownames(trait_table_small)%in% tree.prune_obj$data_not_tree),]
-#trait_table.prune<-as.matrix(trait_table.prune)
-#tree.prune<-drop.tip(tree.prune_data, tree.prune_data_obj$data_not_tree)
+#trait_table.prune<-trait_table_small[-which(rownames(trait_table_small)%in% tree.prune_obj$data_not_tree),]
 
-prune_tree_data <- name.check(tree.prune,trait_table.prune)
-prune_tree_data
+#commented out parts that are not needed when you don't need to prune the table
+#prune_tree_data <- name.check(tree.prune,trait_table.prune)
+#prune_tree_data
 plot(tree.prune)
 
-trait_table_small$host_genus<-rownames(trait_table_small)
 #trait_table.prune$host_genus<-rownames(trait_table.prune)
+
+trait_table_small$host_genus<-rownames(trait_table_small)
 
 #analyze data using the package caper which combines the data and tree into one file
 
-comp.data <- comparative.data(tree.prune, trait_table_small, names.col="host_genus", vcv.dim=2, warn.dropped = TRUE)
 #comp.data <- comparative.data(tree.prune, trait_table.prune, names.col="host_genus", vcv.dim=2, warn.dropped = TRUE)
+comp.data <- comparative.data(tree.prune, trait_table_small, names.col="host_genus", vcv.dim=2, warn.dropped = TRUE)
 model.formula <- as.formula(paste0(x_trait_column,'~',y_trait_column))
 
 #run data using the basic model
@@ -115,11 +126,11 @@ model.3_rSquared.adj
 #estimated parameters (none for this model)
 estimated.param <- "NA"
 print(paste ("The pvalue for model 3 is ", model.3_pval, "R squared is ", model.3_rSquared, "Adjust R squared is", model.3_rSquared.adj, "and the AIC/AICc is ", model.3_aic, model.3_aicc))
-output_row.model.3 <- data.frame(y_trait_column, x_trait_column, n_microbe, compartment, package, model.3_formula, model.3_pval, model.3_rSquared, model.3_rSquared.adj,model.3_slope_output, model.3_intercept_output,model.3_param,estimated.param, model.3_aic, model.3_aicc)
+output_row.model.3 <- data.frame(y_trait_column, x_trait_column, filter_column, filter_value, n_microbe, compartment, package, model.3_formula, model.3_pval, model.3_rSquared, model.3_rSquared.adj,model.3_slope_output, model.3_intercept_output,model.3_param,estimated.param, model.3_aic, model.3_aicc)
 print(output_row.model.3)
 
 #Write it to the csv file
-write.table(output_row.model.3, file="../output/GCMP_alpha_diversity_all_pgls.csv", append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
+write.table(output_row.model.3, file="../output/alpha_diversity_taxa/GCMP_taxa_alpha_diversity_all_pgls.csv", append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
 
 
 #run data setting lambda to ML
@@ -164,11 +175,11 @@ lambda_output<-paste(lambda, "-/+", lambda.CI)
 print(paste ("The pvalue for model 3l is ", model.3l_pval, "R squared is ", model.3l_rSquared, "Adjust R squared is", model.3l_rSquared.adj, "the AIC/AICc is ", model.3l_aic, model.3_aicc, "and the estimated paramter value of lambda is", lambda))
 
 #create to output row for the data that allows lambda to be chosen.
-output_row.model.3l <- data.frame(y_trait_column, x_trait_column, n_microbe, compartment, package, model.3l_formula, model.3l_pval, model.3l_rSquared, model.3l_rSquared.adj, model.3l_slope_output, model.3l_intercept_output, model.3l_param, lambda_output, model.3l_aic, model.3l_aicc)
+output_row.model.3l <- data.frame(y_trait_column, x_trait_column, filter_column, filter_value, n_microbe, compartment, package, model.3l_formula, model.3l_pval, model.3l_rSquared, model.3l_rSquared.adj, model.3l_slope_output, model.3l_intercept_output, model.3l_param, lambda_output, model.3l_aic, model.3l_aicc)
 print(output_row.model.3l)
 
 #Write it to the csv file
-write.table(output_row.model.3l, file="../output/GCMP_alpha_diversity_all_pgls.csv", append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
+write.table(output_row.model.3l, file="../output/alpha_diversity_taxa/GCMP_taxa_alpha_diversity_all_pgls.csv", append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
 
 #run data setting delta to ML
 model.3d_formula<-"pgls(x_trait~y_trait, data=comp.data, lambda=1,kappa=1,delta=ML)"
@@ -208,11 +219,11 @@ delta_output<-paste(delta, "-/+", delta.CI)
 print(paste ("The pvalue for model 3d is ", model.3d_pval, "R squared is ", model.3d_rSquared, "Adjust R squared is", model.3d_rSquared.adj, "the AIC/AICc is ", model.3d_aic, model.3d_aicc, "and the estimated parameter of delta is", delta))
 
 #create the output row when delta is not fixed.
-output_row.model.3d <- data.frame(y_trait_column, x_trait_column, n_microbe, compartment, package, model.3d_formula, model.3d_pval, model.3d_rSquared, model.3d_rSquared.adj,model.3d_slope_output, model.3d_intercept_output, model.3d_param, delta_output, model.3d_aic, model.3d_aicc)
+output_row.model.3d <- data.frame(y_trait_column, x_trait_column, filter_column, filter_value, n_microbe, compartment, package, model.3d_formula, model.3d_pval, model.3d_rSquared, model.3d_rSquared.adj,model.3d_slope_output, model.3d_intercept_output, model.3d_param, delta_output, model.3d_aic, model.3d_aicc)
 print(output_row.model.3d)
 
 #Write it to the csv file
-write.table(output_row.model.3d, file="../output/GCMP_alpha_diversity_all_pgls.csv", append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
+write.table(output_row.model.3d, file="../output/alpha_diversity_taxa/GCMP_taxa_alpha_diversity_all_pgls.csv", append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
 
 #run data setting kappa to ML
 model.3k_formula<-"pgls(x_trait~y_trait, data=comp.data, lambda=1,kappa=ML,delta=1)"
@@ -274,34 +285,35 @@ aicc.df$min_model <- colnames(aicc.df)[aicc.df$min]
 aicc.df$min_model
 
 #create the output row for the data when kappa is not fixed.
-output_row.model.3k <- data.frame(y_trait_column, x_trait_column, n_microbe, compartment, package, model.3k_formula, model.3k_pval, model.3k_rSquared, model.3k_rSquared.adj, model.3k_slope_output, model.3k_intercept_output, model.3k_param, kappa_output, model.3k_aic, model.3k_aicc, aic.df$min_model, aicc.df$min_model)
+output_row.model.3k <- data.frame(y_trait_column, x_trait_column, filter_column, filter_value, n_microbe, compartment, package, model.3k_formula, model.3k_pval, model.3k_rSquared, model.3k_rSquared.adj, model.3k_slope_output, model.3k_intercept_output, model.3k_param, kappa_output, model.3k_aic, model.3k_aicc, aic.df$min_model, aicc.df$min_model)
 print(output_row.model.3k)
 
 #Write it to the csv file
-write.table(output_row.model.3k, file="../output/GCMP_alpha_diversity_all_pgls.csv", append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
+write.table(output_row.model.3k, file="../output/alpha_diversity_taxa/GCMP_taxa_alpha_diversity_all_pgls.csv", append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
 
 
 #run phylomorphspace and PICs on 
 #create this file only the first time then we append to it
-pic.output = data.frame("Disease_Trait", "Diversity_Trait", "N_Microbes", "Compartment", "Model", "pVal", "R_Squared")
-write.table(pic.output,file="../output/GCMP_alpha_diversity_all_pic.csv",append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
+pic.output = data.frame("Disease_Trait", "Diversity_Trait", "Filtered_Column", "Filtered_Value", "N_Microbes", "Compartment", "Model", "pVal", "R_Squared")
+write.table(pic.output,file="../output/beta_diversity_taxa/GCMP_taxa_beta_diversity_all_pic.csv",append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
 
 
 #need to redefine the traits for some reason.
+#comment out section if don't need to prune the trait table
 trait_table.prune<-trait_table_small[-which(rownames(trait_table_small)%in% tree.prune_obj$data_not_tree),]
-
+#trait_table.prune<-trait_table_small
 #Pick the columns to analyze
 #y trait disease can be: sum_dis, sum_healthy, sum_bbd, sum_wb, perc_healthy, perc_dis, perc_bbd, perc_wd
 y_trait_column <-"perc_wd"
 #x traits can be: observed_features_compartment, dominance_compartment, gini_index_compartment, simpson_e_compartment, faith_pd_compartment
-x_trait_column<-"gini_index_skeleton"
+x_trait_column<-"skeleton_weighted_unifrac_ordination_PC3"
 #trait_table <- read.csv(trait_table_input,header=TRUE,row.names=1)
 x_trait <-trait_table.prune[[x_trait_column]]
 y_trait <-trait_table.prune[[y_trait_column]]
 
 #make plots of the traits and save as a pdf 
 phylomorphospace(tree.prune,trait_table.prune[,c(x_trait_column,y_trait_column)],xlab=x_trait_column,ylab=y_trait_column)
-pdf(paste("../output/beta_diversity/", x_trait_column,"_",y_trait_column,"_beta_diversity_phylomorphospace.pdf",sep=""))
+pdf(paste("../output/beta_diversity_taxa/", filter_value_last,"_",x_trait_column,"_",y_trait_column,"_beta_diversity_phylomorphospace.pdf",sep=""))
 phylomorphospace(tree.prune,trait_table.prune[,c(x_trait_column,y_trait_column)],xlab=x_trait_column,ylab=y_trait_column)
 points(x_trait,y_trait,pch=21,bg="grey",cex=1.4)
 dev.off()
@@ -355,13 +367,13 @@ ggplot(pic_df, aes(x_trait_positive,y_trait_positive)) +
   theme_classic()
 
 #Save raw PIC contrasts as a pdf
-pdf(paste("../output/beta_diversity/",x_trait_column,"_",y_trait_column,"_beta_diversity_pic_scatter_YX.pdf",sep=""))
+pdf(paste("../output/beta_diversity_taxa/",filter_value_last,"_",x_trait_column,"_",y_trait_column,"_beta_diversity_pic_scatter_YX.pdf",sep=""))
 plot(x_trait_positive ~ y_trait_positive,xlab=x_trait_column,ylab=y_trait_column,bg='gray',pch=16)
 abline(a = 0, b = coef(pic_model))
 dev.off()
 
 #save the PIC contrasts with the 95% confidence interval as a pdf
-pdf(paste("../output/beta_diversity/",x_trait_column,"_",y_trait_column,"_beta_diversity_pic_scatter_YX_confidence.pdf"))
+pdf(paste("../output/beta_diversity_taxa/",filter_value_last,"_",x_trait_column,"_",y_trait_column,"_beta_diversity_pic_scatter_YX_confidence.pdf"))
 ggplot(pic_df, aes(x_trait_positive,y_trait_positive)) +
   geom_smooth(method = "lm", se = TRUE, col = "black", formula = y~x -1)+
   geom_point(size = 3, col = "firebrick")+
@@ -378,25 +390,25 @@ model_PIC <- "lm(y_trait_positive ~ x_trait_positive -1)"
 
 #save results to a table
 
-output_row.pic <- data.frame(y_trait_column, x_trait_column, n_microbe, compartment, model_PIC, pval_PIC, rSquared_PIC)
+output_row.pic <- data.frame(y_trait_column, x_trait_column, filter_column, filter_value, n_microbe, compartment, model_PIC, pval_PIC, rSquared_PIC)
 print(output_row.pic)
 
 #Write it to the csv file
-write.table(output_row.pic, file="../output/GCMP_alpha_diversity_all_pic.csv", append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
+write.table(output_row.pic, file="../output/beta_diversity_taxa/GCMP_taxa_beta_diversity_all_pic.csv", append=TRUE, sep=",", row.names=FALSE, col.names=FALSE)
 
 
 # plot contMap
 x_trait_reconstruction<-contMap(tree.prune,x_trait)
 plot(x_trait_reconstruction,direction="rightwards")
 #save plot as pdf
-pdf(paste("../output/beta_diversity/",x_trait_column,"_beta_diversity_contmap.pdf",sep=""))
+pdf(paste("../output/beta_diversity_taxa/",filter_value_last,"_",x_trait_column,"_beta_diversity_contmap.pdf",sep=""))
 plot(x_trait_reconstruction,direction="rightwards")
 dev.off()
 
 y_trait_reconstruction<-contMap(tree.prune,y_trait)
 plot(y_trait_reconstruction,direction="leftwards")
 #save plot as pdf
-pdf(paste("../output/beta_diversity/",y_trait_column,"_beta_diversity_contmap.pdf",sep=""))
+pdf(paste("../output/beta_diversity_taxa/",filter_value_last,"_",y_trait_column,"_beta_diversity_contmap.pdf",sep=""))
 plot(y_trait_reconstruction,direction="leftwards")
 dev.off()
 
