@@ -21,7 +21,7 @@ write.table(pgl.output,file="../output/alpha_diversity_taxa/GCMP_dominant_taxa_v
 
 
 #input the trait table
-trait.table.input <-"../input/GCMP_trait_table_with_abundances_and_adiv_and_metadata_and_growth_data_pcoa.csv"
+trait.table.input <-"../input/GCMP_trait_table_with_abundances_and_adiv_and_metadata.csv"
 trait.table <- read.csv(trait.table.input, header=TRUE, row.names = 1)
 trait.table.df <- data.frame(trait.table)
 
