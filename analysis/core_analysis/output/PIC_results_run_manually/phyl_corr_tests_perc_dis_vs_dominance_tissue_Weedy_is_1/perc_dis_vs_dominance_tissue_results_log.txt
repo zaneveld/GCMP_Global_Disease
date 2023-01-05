@@ -1,0 +1,82 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing perc_dis vs. dominance_tissue"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: Weedy"
+[1] "Including data only if filter column value is: 1"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+Pocillopora  Stylophora     Porites Seriatopora 
+   5.830451    3.687151   16.516678    5.121951 
+Pocillopora  Stylophora     Porites Seriatopora 
+  0.2313010   0.5364840   0.3232168   0.1770300 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for perc_dis (x) vs.  dominance_tissue (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+        5         6         7 
+ 0.026922 -0.004622 -0.045192 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X -0.06088    0.07184  -0.847    0.486
+
+Residual standard error: 0.03734 on 2 degrees of freedom
+Multiple R-squared:  0.2642,	Adjusted R-squared:  -0.1037 
+F-statistic: 0.7182 on 1 and 2 DF,  p-value: 0.486
+
+null device 
+          1 
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+      pic.X         pic.Y
+5 0.4292864  0.0007865158
+6 0.1705502 -0.0150056540
+7 0.2382967 -0.0596993977
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "perc_dis"               
+Ancestral character estimates using fastAnc:
+        5         6         7 
+10.592057  5.300584  4.671532 
+
+Variances on ancestral states:
+        5         6         7 
+16.117085  1.510112  0.707059 
+
+Lower & upper 95% CIs:
+     lower     upper
+5 2.723424 18.460691
+6 2.892007  7.709162
+7 3.023431  6.319633
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "dominance_tissue"       
+Ancestral character estimates using fastAnc:
+       5        6        7 
+0.312362 0.302667 0.340641 
+
+Variances on ancestral states:
+       5        6        7 
+0.226091 0.021184 0.009919 
+
+Lower & upper 95% CIs:
+      lower    upper
+5 -0.619599 1.244323
+6  0.017395 0.587939
+7  0.145439 0.535842
+
+null device 
+          1 
