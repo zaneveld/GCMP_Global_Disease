@@ -1,0 +1,156 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing observed_features_skeleton vs. perc_dis"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata_zeros.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: most_abundant_class_skeleton"
+[1] "Including data only if filter column value is: D_0__Bacteria;D_1__Proteobacteria;D_2__Alphaproteobacteria"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+    Psammocora      Physogyra    Diploastrea  Echinophyllia     Hydnophora 
+     273.83333      254.40000      312.40000      232.50000      195.42857 
+    Turbinaria        Porites        Galaxea      Montipora         Pavona 
+     256.00000      183.58621      240.92308       55.66667      187.06667 
+    Goniastrea      Alveopora    Seriatopora Gardineroseris       Mycedium 
+     277.00000      155.50000      116.16667      288.00000       48.00000 
+       Oxypora   Acanthastrea      Goniopora Stephanocoenia       Merulina 
+     261.00000      284.20000      149.50000       62.40000       47.00000 
+    Psammocora      Physogyra    Diploastrea  Echinophyllia     Hydnophora 
+    12.3816460      0.0000000      0.7042254      0.5535055      3.1096563 
+    Turbinaria        Porites        Galaxea      Montipora         Pavona 
+     1.8720749     16.5166782      3.6496350      9.6682877      4.3694571 
+    Goniastrea      Alveopora    Seriatopora Gardineroseris       Mycedium 
+     0.2880184      0.7490637      5.1219512      0.0000000      1.2048193 
+       Oxypora   Acanthastrea      Goniopora Stephanocoenia       Merulina 
+     1.1220196      0.0000000      0.1471257      2.1113244      1.3114754 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for observed_features_skeleton (x) vs.  perc_dis (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.83910 -0.07386  0.05405  0.19545  1.56223 
+
+Coefficients:
+       Estimate Std. Error t value Pr(>|t|)
+pic.X -0.013343   0.009422  -1.416    0.174
+
+Residual standard error: 0.5247 on 18 degrees of freedom
+Multiple R-squared:  0.1002,	Adjusted R-squared:  0.05025 
+F-statistic: 2.005 on 1 and 18 DF,  p-value: 0.1738
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+        pic.X       pic.Y
+21  2.0329932  0.02692452
+22  9.7040965 -0.04036906
+23  2.4220380  0.88845782
+24  1.6846639 -0.07494910
+25 12.0908016 -0.02597048
+26 17.1958891 -0.13042784
+27  4.7936017 -0.10723365
+28  6.2271364  0.12421807
+29 34.9971444  0.08172614
+30 14.1554301 -0.48965058
+31  0.1483908 -0.01582679
+32  4.0448247  0.14086472
+33  5.8148601 -0.41990044
+34  3.1650748  1.51999481
+35  6.9863713  0.10285400
+36  5.7051162 -0.17137976
+37 28.0188804 -1.21295206
+38  9.4652260 -0.10903428
+39  6.9802561 -0.62362405
+null device 
+          1 
+[1] "FastAnc ML modelfit for"    "observed_features_skeleton"
+Ancestral character estimates using fastAnc:
+      21       22       23       24       25       26       27       28 
+185.6235 207.2464 222.6249 231.8776 233.6252 217.1234 239.4689 245.3834 
+      29       30       31       32       33       34       35       36 
+152.4798 192.9413 139.0948 172.2288 192.8547 173.8902 162.6032 172.9737 
+      37       38       39 
+236.0332 168.9909 147.8836 
+
+Variances on ancestral states:
+        21         22         23         24         25         26         27 
+18963.8781  6210.3884  4898.8691  3722.3441  2465.5254  1819.9741  1677.4876 
+        28         29         30         31         32         33         34 
+  753.3012   996.2016   920.7268   994.6038  8343.2304  7084.6764  3963.0706 
+        35         36         37         38         39 
+ 7211.0272  5354.2816   520.0367  4969.5845  4989.8402 
+
+Lower & upper 95% CIs:
+        lower    upper
+21 -84.286874 455.5340
+22  52.786616 361.7062
+23  85.440753 359.8091
+24 112.296030 351.4592
+25 136.303221 330.9471
+26 133.507545 300.7393
+27 159.192926 319.7449
+28 191.588542 299.1782
+29  90.617029 214.3427
+30 133.468112 252.4146
+31  77.281632 200.9080
+32  -6.800161 351.2577
+33  27.880452 357.8289
+34  50.502474 297.2779
+35  -3.835582 329.0421
+36  29.554721 316.3927
+37 191.336779 280.7297
+38  30.820150 307.1616
+39   9.431519 286.3356
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "perc_dis"               
+Ancestral character estimates using fastAnc:
+      21       22       23       24       25       26       27       28 
+4.389018 4.675386 4.634411 2.654599 1.597157 1.289449 0.890472 0.847656 
+      29       30       31       32       33       34       35       36 
+1.415381 1.552350 1.395333 4.211620 5.001967 7.402069 3.914167 3.887717 
+      37       38       39 
+2.224299 4.063911 4.444984 
+
+Variances on ancestral states:
+       21        22        23        24        25        26        27        28 
+33.681128 11.030069  8.700722  6.611135  4.378940  3.232397  2.979331  1.337914 
+       29        30        31        32        33        34        35        36 
+ 1.769321  1.635273  1.766484 14.818141 12.582864  7.038681 12.807271  9.509566 
+       37        38        39 
+ 0.923620  8.826318  8.862293 
+
+Lower & upper 95% CIs:
+       lower     upper
+21 -6.985929 15.763965
+22 -1.834077 11.184850
+23 -1.146999 10.415820
+24 -2.384978  7.694176
+25 -2.504323  5.698636
+26 -2.234409  4.813307
+27 -2.492633  4.273576
+28 -1.419441  3.114753
+29 -1.191730  4.022491
+30 -0.954054  4.058755
+31 -1.209685  4.000352
+32 -3.333270 11.756510
+33 -1.950610 11.954545
+34  2.202088 12.602049
+35 -3.100133 10.928468
+36 -2.156449  9.931883
+37  0.340638  4.107960
+38 -1.759077  9.886898
+39 -1.389858 10.279826
+
+null device 
+          1 

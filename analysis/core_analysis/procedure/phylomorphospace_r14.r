@@ -3,18 +3,18 @@
 #the command line
 
 #See below for usage. 
-print("Usage: Rscript phylomorphospace_r14.r <path_to_trait_table> <path_to_tree> <x_trait_column> <y_trait_column>")
+print("Usage: Rscript phylomorphospace_r14.r <path_to_trait_table> <path_to_tree> <x_trait_column> <y_trait_column> <filter_column> <filter_value> <output_dir_suffix>")
 
 library(ggplot2)
 library(phytools)
 
+#Get user input and assign to variables
 args <- commandArgs(trailingOnly=TRUE)
 trait_table_fp <-args[1]
 tree_fp <- args[2]
 x_trait <-args[3]
 y_trait <-args[4]
 
-#Filtering is not accessible from the commandline, but can be set in the script
 #Example of how to filter results to just genera
 #with Gammaproteobacteria as the dominant class
 
@@ -25,18 +25,35 @@ filter_value <- NA
 
 filter_column <- args[5]
 filter_value <- args[6]
+user_specified_output_dir <- args[7]
 
+#Set output directory for all PICs 
+#(results of this analysis will be created in a subdirectory)
 output_dir_for_all_pics = "../output/PIC_results/"
+if (!is.na(user_specified_output_dir) & (user_specified_output_dir != 'None')){
+    output_dir_for_all_pics = paste0(args[7],"/")
+}
 dir.create(output_dir_for_all_pics, showWarnings = FALSE)
+#Allow users to add a special suffix to the output
+
+suffix <- args[8]
+
 
 output_dir <- paste0(output_dir_for_all_pics,"PIC_",x_trait,"_vs_",y_trait)
-if (!is.na(filter_column)){
+
+#Add filter column and value to directory name, if they were provided
+if (!is.na(filter_column) & (filter_column != 'None') & (filter_value != 'None')){
     output_dir <- paste0(output_dir,"_",filter_column,"_is_",gsub("\\;","_",filter_value))
+}
+
+#Add a special suffix to the output dir, if the user requested one
+if (!is.na(suffix)){
+    output_dir <- paste0(output_dir,"_",suffix)
 }
 output_dir <- paste0(output_dir,"/")
 
 print(paste("Outputting results to:",output_dir))
-dir.create(output_dir)
+dir.create(output_dir,showWarning = FALSE)
 
 #Output results to a log file as well as to the screen
 sink(paste0(output_dir,x_trait,"_vs_",y_trait,"_results_log.txt"),append=FALSE,split=TRUE)
@@ -56,7 +73,7 @@ print(tree)
 #Filter table to tree tips
 trait_table <- trait_table[rownames(trait_table) %in% tree$tip.label,]
 
-if (!is.na(filter_column)){
+if (!is.na(filter_column) & filter_column != 'None' & filter_value != 'None'){
     trait_table <- subset(trait_table,trait_table[[filter_column]] == filter_value)
 }
 
@@ -129,12 +146,6 @@ pdf(paste0(output_dir,x_trait,"_vs_",y_trait,"_phylomorphospace.pdf"))
 phylomorphospace(tree,cbind(X,Y),xlab=x_trait,ylab=y_trait,label="off",node.size=c(0,0))
 points(X,Y,pch=21,bg="firebrick",cex=1.4)
 dev.off()
-
-pdf(paste0(output_dir,x_trait,"_vs_",y_trait,"_rank_phylomorphospace.pdf",sep=""))
-phylomorphospace(tree,cbind(rank(X),rank(Y)),xlab=paste("rank ",x_trait),ylab=paste("rank ",y_trait),label="off",node.size=c(0,0))
-points(rank(X),rank(Y),pch=21,bg= "firebrick",cex=1.4)
-dev.off()
-
 
 #Save raw PIC contrasts as a pdf
 pdf(paste0(output_dir,x_trait,"_vs_",y_trait,"_pic_scatter_YX.pdf"))
