@@ -1,0 +1,145 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing perc_dis vs. dominance_tissue"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: Stress_tolerant"
+[1] "Including data only if filter column value is: 1"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+     Physogyra    Diploastrea        Favites  Echinophyllia    Lobophyllia 
+     0.0000000      0.7042254      0.5855291      0.5535055      3.1543052 
+       Galaxea     Goniastrea     Cyphastrea      Plerogyra      Platygyra 
+     3.6496350      0.2880184     21.6620717      0.0000000      1.2297735 
+  Acanthastrea    Montastraea      Orbicella       Diploria Stephanocoenia 
+     0.0000000      2.0548549      3.3152385      1.9323671      2.1113244 
+   Siderastrea       Leptoria 
+     3.7179511      3.7234043 
+     Physogyra    Diploastrea        Favites  Echinophyllia    Lobophyllia 
+    0.13265560     0.03906024     0.36144689     0.18236880     0.15159400 
+       Galaxea     Goniastrea     Cyphastrea      Plerogyra      Platygyra 
+    0.11905857     0.02732171     0.58240933     0.09638000     0.30550440 
+  Acanthastrea    Montastraea      Orbicella       Diploria Stephanocoenia 
+    0.06619133     0.11373850     0.07328175     0.02388667     0.43779840 
+   Siderastrea       Leptoria 
+    0.02558667     0.02788900 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for perc_dis (x) vs.  dominance_tissue (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.095561 -0.013528 -0.001061  0.005493  0.029370 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)  
+pic.X  0.01873    0.00819   2.287   0.0372 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.02854 on 15 degrees of freedom
+Multiple R-squared:  0.2585,	Adjusted R-squared:  0.2091 
+F-statistic:  5.23 on 1 and 15 DF,  p-value: 0.03715
+
+null device 
+          1 
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+         pic.X         pic.Y
+18 0.051351129  0.0036505544
+19 0.248809940  0.0004839818
+20 0.000000000  0.0000000000
+21 0.317855761  0.0120456532
+22 0.236467110  0.0052547080
+23 0.855721325  0.0213202170
+24 0.111496926 -0.0132400404
+25 0.245943095  0.0133710282
+26 0.422994327 -0.0050052167
+27 1.548314320  0.0268771379
+28 2.792704880  0.0774980112
+29 0.359197566  0.0360971081
+30 0.750928411 -0.0814963861
+31 0.207598356 -0.0180266507
+32 0.089974440 -0.0209120083
+33 0.003705216 -0.0050695743
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "perc_dis"               
+Ancestral character estimates using fastAnc:
+      18       19       20       21       22       23       24       25 
+2.582908 1.969522 0.012920 2.534896 2.874068 3.307827 2.555430 2.126392 
+      26       27       28       29       30       31       32       33 
+1.962639 5.097233 9.282196 2.184919 2.112304 1.405461 2.962744 3.127837 
+
+Variances on ancestral states:
+        18         19         20         21         22         23         24 
+103.829418  20.715514   0.433835   9.978115   7.828021   6.285033   6.173005 
+        25         26         27         28         29         30         31 
+  6.154298   5.291687   6.363920   5.835252   3.827464   2.152025   1.439939 
+        32         33 
+ 46.689077  42.528763 
+
+Lower & upper 95% CIs:
+        lower     upper
+18 -17.388849 22.554666
+19  -6.951280 10.890325
+20  -1.278056  1.303896
+21  -3.656383  8.726174
+22  -2.609738  8.357874
+23  -1.605887  8.221541
+24  -2.314294  7.425154
+25  -2.735948  6.988733
+26  -2.546080  6.471357
+27   0.152778 10.041688
+28   4.547567 14.016824
+29  -1.649606  6.019445
+30  -0.762973  4.987581
+31  -0.946488  3.757411
+32 -10.429819 16.355308
+33  -9.654123 15.909796
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "dominance_tissue"       
+Ancestral character estimates using fastAnc:
+      18       19       20       21       22       23       24       25 
+0.166293 0.122687 0.114571 0.120973 0.129653 0.140134 0.121171 0.122276 
+      26       27       28       29       30       31       32       33 
+0.149142 0.184454 0.265641 0.145639 0.185871 0.272480 0.193296 0.165597 
+
+Variances on ancestral states:
+      18       19       20       21       22       23       24       25 
+0.145783 0.029086 0.000609 0.014010 0.010991 0.008825 0.008667 0.008641 
+      26       27       28       29       30       31       32       33 
+0.007430 0.008935 0.008193 0.005374 0.003022 0.002022 0.065554 0.059713 
+
+Lower & upper 95% CIs:
+       lower    upper
+18 -0.582064 0.914650
+19 -0.211582 0.456957
+20  0.066198 0.162945
+21 -0.111019 0.352965
+22 -0.075829 0.335135
+23 -0.043987 0.324254
+24 -0.061302 0.303643
+25 -0.059920 0.304472
+26 -0.019803 0.318087
+27 -0.000818 0.369727
+28  0.088231 0.443051
+29  0.001957 0.289322
+30  0.078132 0.293610
+31  0.184350 0.360609
+32 -0.308534 0.695125
+33 -0.313352 0.644547
+
+null device 
+          1 

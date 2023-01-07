@@ -1,0 +1,133 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing mucus_unweighted_unifrac_ordination_PC1 vs. perc_dis"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata_and_growth_data_pcoa.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+ Pocillopora   Stylophora   Psammocora   Hydnophora   Turbinaria      Porites 
+-0.104604128 -0.021439895 -0.073514570  0.070379594  0.043031439  0.001397751 
+    Acropora    Montipora       Pavona   Goniastrea  Seriatopora    Platygyra 
+-0.105006370 -0.129453147 -0.007842314  0.037943371 -0.032390683  0.045280432 
+ Montastraea    Orbicella  Siderastrea     Merulina 
+-0.203368975 -0.104669273  0.187685622 -0.163965159 
+Pocillopora  Stylophora  Psammocora  Hydnophora  Turbinaria     Porites 
+  5.8304508   3.6871508  12.3816460   3.1096563   1.8720749  16.5166782 
+   Acropora   Montipora      Pavona  Goniastrea Seriatopora   Platygyra 
+  3.6431133   9.6682877   4.3694571   0.2880184   5.1219512   1.2297735 
+Montastraea   Orbicella Siderastrea    Merulina 
+  2.0548549   3.3152385   3.7179511   1.3114754 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for mucus_unweighted_unifrac_ordination_PC1 (x) vs.  perc_dis (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.89303 -0.18602 -0.08767  0.14858  0.73080 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X   -2.133      8.464  -0.252    0.805
+
+Residual standard error: 0.3854 on 14 degrees of freedom
+Multiple R-squared:  0.004515,	Adjusted R-squared:  -0.06659 
+F-statistic: 0.0635 on 1 and 14 DF,  p-value: 0.8047
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+          pic.X       pic.Y
+17 0.0045938759  0.04006991
+18 0.0024543047 -0.09954482
+19 0.0092922729 -0.17055024
+20 0.0018187458 -0.23829675
+21 0.0024781001  0.72551169
+22 0.0162465044  0.01038336
+23 0.0105708088 -0.24386317
+24 0.0349896720  0.04642805
+25 0.0056616694  0.46264496
+26 0.0013495711  0.17322541
+27 0.0002677048  0.25329641
+28 0.0025543167 -0.89847804
+29 0.0160617955 -0.12193152
+30 0.0069219092 -0.14467080
+31 0.0020374800 -0.50215913
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                
+[2] "mucus_unweighted_unifrac_ordination_PC1"
+Ancestral character estimates using fastAnc:
+       17        18        19        20        21        22        23        24 
+-0.024183 -0.072559 -0.062489 -0.037515 -0.078895 -0.101600 -0.073967 -0.046822 
+       25        26        27        28        29        30        31 
+ 0.009150  0.015580  0.005784  0.015366  0.011665 -0.013553 -0.082315 
+
+Variances on ancestral states:
+      17       18       19       20       21       22       23       24 
+0.016466 0.005432 0.002142 0.001070 0.004682 0.002325 0.001439 0.000957 
+      25       26       27       28       29       30       31 
+0.000644 0.000616 0.007923 0.006730 0.005995 0.005474 0.003920 
+
+Lower & upper 95% CIs:
+       lower     upper
+17 -0.275689  0.227322
+18 -0.217022  0.071903
+19 -0.153191  0.028213
+20 -0.101617  0.026588
+21 -0.213011  0.055221
+22 -0.196103 -0.007097
+23 -0.148317  0.000382
+24 -0.107451  0.013807
+25 -0.040583  0.058883
+26 -0.033079  0.064240
+27 -0.168678  0.180247
+28 -0.145431  0.176163
+29 -0.140097  0.163427
+30 -0.158562  0.131457
+31 -0.205036  0.040406
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "perc_dis"               
+Ancestral character estimates using fastAnc:
+      17       18       19       20       21       22       23       24 
+6.370443 5.948485 5.162796 4.630476 6.074612 3.046453 2.524320 1.944632 
+      25       26       27       28       29       30       31 
+1.747994 1.552064 6.631835 8.126205 5.836276 5.787442 6.363300 
+
+Variances on ancestral states:
+       17        18        19        20        21        22        23        24 
+16.589002  5.473105  2.157535  1.077638  4.717217  2.342148  1.449700  0.964015 
+       25        26        27        28        29        30        31 
+ 0.648648  0.620957  7.982296  6.780807  6.040161  5.514638  3.949669 
+
+Lower & upper 95% CIs:
+       lower     upper
+17 -1.612558 14.353444
+18  1.363131 10.533840
+19  2.283840  8.041752
+20  2.595813  6.665139
+21  1.817658 10.331566
+22  0.046854  6.046052
+23  0.164412  4.884229
+24  0.020221  3.869044
+25  0.169436  3.326552
+26  0.007568  3.096560
+27  1.094255 12.169414
+28  3.022369 13.230042
+29  1.019235 10.653317
+30  1.184721 10.390162
+31  2.468040 10.258560
+
+null device 
+          1 
