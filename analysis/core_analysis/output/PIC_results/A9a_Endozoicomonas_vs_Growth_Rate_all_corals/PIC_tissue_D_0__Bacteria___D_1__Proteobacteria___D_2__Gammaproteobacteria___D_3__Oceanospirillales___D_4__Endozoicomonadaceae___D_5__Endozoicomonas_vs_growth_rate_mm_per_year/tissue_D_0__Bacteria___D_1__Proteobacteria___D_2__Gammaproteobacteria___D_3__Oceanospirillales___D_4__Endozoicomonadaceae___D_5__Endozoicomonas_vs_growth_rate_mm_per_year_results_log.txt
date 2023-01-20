@@ -1,0 +1,153 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing tissue_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Oceanospirillales___D_4__Endozoicomonadaceae___D_5__Endozoicomonas vs. growth_rate_mm_per_year"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata_and_growth_data_pcoa_zeros.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+   Pocillopora     Stylophora     Psammocora     Hydnophora     Turbinaria 
+    148.652174     634.428571     244.750000     425.571429      44.909091 
+       Porites       Acropora        Isopora      Montipora         Pavona 
+    340.153846      58.681818      79.666667       0.000000       3.708333 
+    Goniastrea    Seriatopora Gardineroseris      Platygyra    Montastraea 
+      6.714286      62.750000       1.750000     204.400000       0.000000 
+     Orbicella    Siderastrea       Merulina 
+     11.750000       9.333333       6.500000 
+   Pocillopora     Stylophora     Psammocora     Hydnophora     Turbinaria 
+    0.21869633     0.23347364     0.10529500     0.23030714     0.09364883 
+       Porites       Acropora        Isopora      Montipora         Pavona 
+    0.09877855     0.16772478     0.08651750     0.31470800     0.07778307 
+    Goniastrea    Seriatopora Gardineroseris      Platygyra    Montastraea 
+    0.07076280     0.18209733     0.04290700     0.09661880     0.18470300 
+     Orbicella    Siderastrea       Merulina 
+    0.12541125     0.01875400     0.13817800 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for tissue_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Oceanospirillales___D_4__Endozoicomonadaceae___D_5__Endozoicomonas (x) vs.  growth_rate_mm_per_year (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.018058 -0.005683 -0.001947  0.004489  0.019140 
+
+Coefficients:
+       Estimate Std. Error t value Pr(>|t|)  
+pic.X 1.543e-04  6.619e-05    2.33   0.0332 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.008693 on 16 degrees of freedom
+Multiple R-squared:  0.2534,	Adjusted R-squared:  0.2067 
+F-statistic: 5.431 on 1 and 16 DF,  p-value: 0.0332
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+        pic.X         pic.Y
+19  4.1957069  0.0028614676
+20  9.1681806  0.0059036625
+21 23.9142495 -0.0013050340
+22 94.9464087  0.0085327590
+23 12.9959720 -0.0032768150
+24 10.4300523 -0.0056629812
+25 17.5901462  0.0015250007
+26 34.5723771 -0.0003501374
+27 62.9808979  0.0288550520
+28 36.3620984  0.0047559249
+29 10.4681328 -0.0003318903
+30 18.1139033  0.0003147193
+31  0.9943228  0.0077960334
+32  2.4930455  0.0091974341
+33  0.5436292  0.0096815226
+34  6.3007221 -0.0170863119
+35  2.1675947 -0.0083881696
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                                        
+[2] "tissue_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Oceanospirillales___D_4__Endozoicomonadaceae___D_5__Endozoicomonas"
+Ancestral character estimates using fastAnc:
+        19         20         21         22         23         24         25 
+131.338275 175.541190 248.748941 318.841028 164.217867  85.159739  91.349716 
+        26         27         28         29         30         31         32 
+120.465519 176.779843 162.671378 103.955751 155.609528  62.320918  50.534049 
+        33         34         35 
+  3.839958  43.988302  57.019273 
+
+Variances on ancestral states:
+        19         20         21         22         23         24         25 
+120724.648  39873.396  15719.666   7851.634  34367.777  17064.731  10562.461 
+        26         27         28         29         30         31         32 
+  7023.783   4726.028   4524.277  57828.815  49347.445  43282.503  38918.672 
+        33         34         35 
+  3236.264  24158.839  17927.631 
+
+Lower & upper 95% CIs:
+         lower    upper
+19 -549.672597 812.3491
+20 -215.837959 566.9203
+21    3.007877 494.4900
+22  145.166511 492.5155
+23 -199.137677 527.5734
+24 -170.879067 341.1985
+25 -110.087001 292.7864
+26  -43.798187 284.7292
+27   42.037459 311.5222
+28   30.836399 294.5064
+29 -367.377653 575.2892
+30 -279.790454 591.0095
+31 -345.446249 470.0881
+32 -336.131144 437.1992
+33 -107.660859 115.3408
+34 -260.656732 348.6333
+35 -205.413170 319.4517
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "growth_rate_mm_per_year"
+Ancestral character estimates using fastAnc:
+      19       20       21       22       23       24       25       26 
+0.126669 0.156816 0.204223 0.206724 0.149617 0.151182 0.140413 0.138376 
+      27       28       29       30       31       32       33       34 
+0.137039 0.126471 0.107995 0.101124 0.104870 0.117087 0.061663 0.177833 
+      35 
+0.151595 
+
+Variances on ancestral states:
+      19       20       21       22       23       24       25       26 
+0.011336 0.003744 0.001476 0.000737 0.003227 0.001602 0.000992 0.000660 
+      27       28       29       30       31       32       33       34 
+0.000444 0.000425 0.005430 0.004634 0.004064 0.003654 0.000304 0.002268 
+      35 
+0.001683 
+
+Lower & upper 95% CIs:
+       lower    upper
+19 -0.082011 0.335350
+20  0.036886 0.276745
+21  0.128921 0.279525
+22  0.153505 0.259943
+23  0.038275 0.260959
+24  0.072724 0.229639
+25  0.078687 0.202139
+26  0.088041 0.188711
+27  0.095750 0.178327
+28  0.086073 0.166869
+29 -0.036435 0.252424
+30 -0.032294 0.234543
+31 -0.020081 0.229821
+32 -0.001398 0.235572
+33  0.027497 0.095830
+34  0.084481 0.271185
+35  0.071179 0.232012
+
+null device 
+          1 
