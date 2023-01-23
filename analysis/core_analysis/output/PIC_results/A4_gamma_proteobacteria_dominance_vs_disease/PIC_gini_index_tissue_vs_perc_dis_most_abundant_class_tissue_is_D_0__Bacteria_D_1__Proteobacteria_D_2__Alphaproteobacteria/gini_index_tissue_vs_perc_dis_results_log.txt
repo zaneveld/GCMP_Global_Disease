@@ -1,0 +1,123 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing gini_index_tissue vs. perc_dis"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata_zeros.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: most_abundant_class_tissue"
+[1] "Including data only if filter column value is: D_0__Bacteria;D_1__Proteobacteria;D_2__Alphaproteobacteria"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+   Diploastrea        Favites  Echinophyllia     Turbinaria         Pavona 
+     0.9729161      0.9440053      0.9436762      0.9592007      0.9731284 
+    Goniastrea     Tubastraea Gardineroseris   Acanthastrea    Montastraea 
+     0.9183467      0.9293329      0.8585609      0.9198742      0.8998029 
+Stephanocoenia       Merulina       Leptoria 
+     0.9374499      0.8716643      0.7806375 
+   Diploastrea        Favites  Echinophyllia     Turbinaria         Pavona 
+     0.7042254      0.5855291      0.5535055      1.8720749      4.3694571 
+    Goniastrea     Tubastraea Gardineroseris   Acanthastrea    Montastraea 
+     0.2880184      0.9090909      0.0000000      0.0000000      2.0548549 
+Stephanocoenia       Merulina       Leptoria 
+     2.1113244      1.3114754      3.7234043 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for gini_index_tissue (x) vs.  perc_dis (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.82845 -0.14461 -0.02354  0.04214  1.16934 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X    1.371      8.468   0.162    0.874
+
+Residual standard error: 0.4583 on 11 degrees of freedom
+Multiple R-squared:  0.002378,	Adjusted R-squared:  -0.08831 
+F-statistic: 0.02622 on 1 and 11 DF,  p-value: 0.8743
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+          pic.X        pic.Y
+14 0.0004189386  0.035437259
+15 0.0075018744 -0.050790792
+16 0.0007969214 -0.144431379
+17 0.0065099911 -0.135378835
+18 0.0029238100  0.067991986
+19 0.0022310598  0.009594797
+20 0.0111078549 -0.370050988
+21 0.0402576067 -0.773244744
+22 0.0009476972 -0.040548681
+23 0.0076026568  0.245121514
+24 0.0010979961 -0.003730456
+25 0.0318037182  1.212952062
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "gini_index_tissue"      
+Ancestral character estimates using fastAnc:
+      14       15       16       17       18       19       20       21 
+0.929002 0.923480 0.917873 0.914581 0.922416 0.890451 0.887626 0.872093 
+      22       23       24       25 
+0.931569 0.944046 0.930367 0.916090 
+
+Variances on ancestral states:
+      14       15       16       17       18       19       20       21 
+0.032432 0.003867 0.003047 0.002641 0.002625 0.001876 0.001207 0.000797 
+      22       23       24       25 
+0.016840 0.000930 0.015396 0.000783 
+
+Lower & upper 95% CIs:
+      lower    upper
+14 0.576030 1.281974
+15 0.801600 1.045360
+16 0.809683 1.026063
+17 0.813858 1.015303
+18 0.821999 1.022834
+19 0.805561 0.975342
+20 0.819527 0.955725
+21 0.816769 0.927417
+22 0.677224 1.185913
+23 0.884264 1.003828
+24 0.687171 1.173562
+25 0.861255 0.970925
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "perc_dis"               
+Ancestral character estimates using fastAnc:
+      14       15       16       17       18       19       20       21 
+1.532712 1.065578 1.095579 1.007375 0.674426 1.247004 1.323109 1.833429 
+      22       23       24       25 
+1.749817 1.396830 1.845397 2.178994 
+
+Variances on ancestral states:
+       14        15        16        17        18        19        20        21 
+25.644392  3.057566  2.409266  2.088167  2.075538  1.483298  0.954531  0.629992 
+       22        23        24        25 
+13.315476  0.735629 12.173734  0.618914 
+
+Lower & upper 95% CIs:
+       lower     upper
+14 -8.392785 11.458209
+15 -2.361658  4.492813
+16 -1.946696  4.137854
+17 -1.824921  3.839671
+18 -2.149293  3.498144
+19 -1.140094  3.634102
+20 -0.591813  3.238031
+21  0.277737  3.389121
+22 -5.402297  8.901931
+23 -0.284239  3.077898
+24 -4.993215  8.684009
+25  0.637040  3.720948
+
+null device 
+          1 

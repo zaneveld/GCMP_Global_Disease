@@ -1,0 +1,168 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing observed_features_all vs. perc_dis"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata_zeros.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: most_abundant_class_all"
+[1] "Including data only if filter column value is: D_0__Bacteria;D_1__Proteobacteria;D_2__Gammaproteobacteria"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+ Pocillopora   Stylophora   Psammocora   Echinopora   Hydnophora  Lobophyllia 
+    70.80000     69.60000    210.21429    104.18750    119.35000    150.01961 
+     Porites   Pachyseris     Acropora    Montipora    Alveopora   Cyphastrea 
+   150.81818     97.20000     46.67742     68.86667    153.85714    105.84615 
+  Tubastraea  Coscinaraea   Herpolitha    Podabacia    Plerogyra    Platygyra 
+   206.44000    176.88889     90.00000    150.50000    152.63636     81.57143 
+   Goniopora  Montastraea    Orbicella     Diploria  Siderastrea Lithophyllon 
+    87.00000     41.00000     72.42857    233.75000    333.57143    124.00000 
+ Pocillopora   Stylophora   Psammocora   Echinopora   Hydnophora  Lobophyllia 
+   5.8304508    3.6871508   12.3816460    1.8768046    3.1096563    3.1543052 
+     Porites   Pachyseris     Acropora    Montipora    Alveopora   Cyphastrea 
+  16.5166782    2.9515109    3.6431133    9.6682877    0.7490637   21.6620717 
+  Tubastraea  Coscinaraea   Herpolitha    Podabacia    Plerogyra    Platygyra 
+   0.9090909    0.0000000    0.0000000    0.0000000    0.0000000    1.2297735 
+   Goniopora  Montastraea    Orbicella     Diploria  Siderastrea Lithophyllon 
+   0.1471257    2.0548549    3.3152385    1.9323671    3.7179511    0.0000000 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for observed_features_all (x) vs.  perc_dis (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.64110 -0.36656 -0.08632  0.20332  2.67048 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X  0.02403    0.02763    0.87    0.394
+
+Residual standard error: 0.886 on 22 degrees of freedom
+Multiple R-squared:  0.03323,	Adjusted R-squared:  -0.01072 
+F-statistic: 0.7561 on 1 and 22 DF,  p-value: 0.3939
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+        pic.X        pic.Y
+25  2.3593745  0.047126321
+26  5.1416476 -0.160338819
+27  0.1350424  0.241197050
+28  2.0873909  0.010017820
+29  8.6275189  0.724245421
+30  4.8463373  1.800597704
+31  6.5517361  0.000000000
+32  3.5925400  0.000000000
+33  3.3641097 -0.344820660
+34 11.4820074  0.313271728
+35 13.5543975 -0.554074564
+36  9.5043630 -0.138704029
+37  1.9677591 -1.593817510
+38  5.0867332  2.792704880
+39  0.5142429 -0.040417407
+40  6.5558729  0.326223903
+41  1.1281693 -0.077579952
+42  5.6896674 -0.482496143
+43  5.9258373  1.519994814
+44 14.8536116 -0.009118743
+45  0.1181284 -0.099302782
+46  7.4007361 -0.454945261
+47  1.8493296  0.502159131
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "observed_features_all"  
+Ancestral character estimates using fastAnc:
+       25        26        27        28        29        30        31        32 
+145.33319 120.29570  78.59883 126.75733 146.63924 180.01574 129.93114 132.06577 
+       33        34        35        36        37        38        39        40 
+127.00500 117.25873 124.75740 144.70266 110.11131  98.23603 107.76074 103.20175 
+       41        42        43        44        45        46        47 
+160.84324 158.67359 130.01272 168.16600 132.65652 118.25525  90.61258 
+
+Variances on ancestral states:
+       25        26        27        28        29        30        31        32 
+5250.5308 1546.6993  777.8182 1189.8200  685.3887  432.9417  434.6767  395.4096 
+       33        34        35        36        37        38        39        40 
+ 992.1096  524.4130  412.0630  461.2249  338.0609  336.6491  336.4214  279.1431 
+       41        42        43        44        45        46        47 
+2495.8108 1971.5112 1087.7449 1895.8448 1443.7492 1238.1867 1100.1865 
+
+Lower & upper 95% CIs:
+        lower    upper
+25   3.310515 287.3559
+26  43.212631 197.3788
+27  23.935617 133.2620
+28  59.149544 194.3651
+29  95.326579 197.9519
+30 139.233530 220.7980
+31  89.067290 170.7950
+32  93.091351 171.0402
+33  65.269368 188.7406
+34  72.374607 162.1429
+35  84.970703 164.5441
+36 102.609416 186.7959
+37  74.073902 146.1487
+38  62.273953 134.1981
+39  71.810826 143.7107
+40  70.454896 135.9486
+41  62.925381 258.7611
+42  71.646253 245.7009
+43  65.370001 194.6554
+44  82.825050 253.5069
+45  58.182989 207.1301
+46  49.287013 187.2235
+47  25.601223 155.6239
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "perc_dis"               
+Ancestral character estimates using fastAnc:
+      25       26       27       28       29       30       31       32 
+3.904111 3.404011 4.531663 3.125981 2.808387 5.214872 1.059843 0.750727 
+      33       34       35       36       37       38       39       40 
+2.872485 3.696607 4.055006 3.605850 5.294888 9.367940 4.350071 2.988400 
+      41       42       43       44       45       46       47 
+4.213910 4.743204 7.329813 4.016445 3.941180 4.093263 5.264375 
+
+Variances on ancestral states:
+       25        26        27        28        29        30        31        32 
+91.236946 26.876544 13.515920 20.675155 11.909799  7.523102  7.553250  6.870917 
+       33        34        35        36        37        38        39        40 
+17.239600  9.112572  7.160299  8.014570  5.874385  5.849853  5.845896  4.850588 
+       41        42        43        44        45        46        47 
+43.368977 34.258376 18.901426 32.943543 25.087610 21.515609 19.117621 
+
+Lower & upper 95% CIs:
+        lower     upper
+25 -14.817423 22.625645
+26  -6.757138 13.565159
+27  -2.674082 11.737408
+28  -5.786128 12.038089
+29  -3.955687  9.572460
+30  -0.161069 10.590814
+31  -4.326860  6.446545
+32  -4.386910  5.888364
+33  -5.265552 11.010522
+34  -2.220053  9.613266
+35  -1.189706  9.299718
+36  -1.942913  9.154613
+37   0.544411 10.045366
+38   4.627392 14.108488
+39  -0.388874  9.089015
+40  -1.328314  7.305114
+41  -8.693695 17.121515
+42  -6.728805 16.215212
+43  -1.191438 15.851064
+44  -7.233263 15.266152
+45  -5.875976 13.758337
+46  -4.998182 13.184707
+47  -3.305470 13.834220
+
+null device 
+          1 

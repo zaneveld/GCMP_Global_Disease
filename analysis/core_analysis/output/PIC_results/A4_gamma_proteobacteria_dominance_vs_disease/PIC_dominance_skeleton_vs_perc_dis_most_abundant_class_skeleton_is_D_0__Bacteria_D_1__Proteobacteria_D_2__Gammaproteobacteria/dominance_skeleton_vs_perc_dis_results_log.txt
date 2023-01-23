@@ -1,0 +1,93 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing dominance_skeleton vs. perc_dis"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata_zeros.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: most_abundant_class_skeleton"
+[1] "Including data only if filter column value is: D_0__Bacteria;D_1__Proteobacteria;D_2__Gammaproteobacteria"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+ Pachyseris    Acropora Coscinaraea  Herpolitha   Plerogyra Montastraea 
+ 0.08954067  0.16772478  0.07402333  0.06699800  0.03620650  0.18470300 
+Siderastrea 
+ 0.01875400 
+ Pachyseris    Acropora Coscinaraea  Herpolitha   Plerogyra Montastraea 
+   2.951511    3.643113    0.000000    0.000000    0.000000    2.054855 
+Siderastrea 
+   3.717951 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for dominance_skeleton (x) vs.  perc_dis (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+        8         9        10        11        12        13 
+-0.124975  0.049624 -0.006714  0.044949 -0.090260 -0.004765 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X    9.820      5.281    1.86    0.122
+
+Residual standard error: 0.07525 on 5 degrees of freedom
+Multiple R-squared:  0.4089,	Adjusted R-squared:  0.2906 
+F-statistic: 3.458 on 1 and 5 DF,  p-value: 0.122
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+          pic.X       pic.Y
+8  0.0002635881 -0.12238608
+9  0.0031207009  0.08026955
+10 0.0006837089  0.00000000
+11 0.0111878854  0.15481497
+12 0.0066132519 -0.02531693
+13 0.0048904312  0.04325987
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "dominance_skeleton"     
+Ancestral character estimates using fastAnc:
+       8        9       10       11       12       13 
+0.089366 0.092182 0.076815 0.099444 0.087139 0.103639 
+
+Variances on ancestral states:
+       8        9       10       11       12       13 
+0.004706 0.001271 0.000741 0.001054 0.001952 0.001568 
+
+Lower & upper 95% CIs:
+       lower    upper
+8  -0.045098 0.223829
+9   0.022311 0.162053
+10  0.023457 0.130172
+11  0.035815 0.163074
+12  0.000545 0.173733
+13  0.026020 0.181258
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "perc_dis"               
+Ancestral character estimates using fastAnc:
+       8        9       10       11       12       13 
+2.086581 0.778872 0.226568 0.877657 3.120415 3.190757 
+
+Variances on ancestral states:
+       8        9       10       11       12       13 
+1.110052 0.299734 0.174794 0.248575 0.460374 0.369889 
+
+Lower & upper 95% CIs:
+       lower    upper
+8   0.021544 4.151618
+9  -0.294188 1.851931
+10 -0.592877 1.046013
+11 -0.099546 1.854860
+12  1.790537 4.450292
+13  1.998714 4.382800
+
+null device 
+          1 
