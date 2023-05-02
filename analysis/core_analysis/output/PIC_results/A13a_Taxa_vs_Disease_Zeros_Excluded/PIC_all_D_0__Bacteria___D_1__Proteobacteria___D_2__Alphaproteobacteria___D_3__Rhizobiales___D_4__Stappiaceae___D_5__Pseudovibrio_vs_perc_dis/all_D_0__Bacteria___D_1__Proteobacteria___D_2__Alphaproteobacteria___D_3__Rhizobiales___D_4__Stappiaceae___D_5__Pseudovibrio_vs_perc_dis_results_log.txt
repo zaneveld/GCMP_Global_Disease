@@ -1,0 +1,139 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing all_D_0__Bacteria___D_1__Proteobacteria___D_2__Alphaproteobacteria___D_3__Rhizobiales___D_4__Stappiaceae___D_5__Pseudovibrio vs. perc_dis"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+  Pocillopora   Diploastrea Echinophyllia   Lobophyllia    Turbinaria 
+   0.03076923    0.01449275   76.69230769    0.04000000   29.47058824 
+      Porites    Pachyseris       Galaxea        Pavona    Goniastrea 
+  13.03896104    0.08000000   14.76190476    0.02739726    1.35714286 
+   Cyphastrea    Tubastraea     Platygyra  Acanthastrea     Orbicella 
+  76.76923077    0.24000000    0.14285714  127.28571429    0.04761905 
+ Lithophyllon 
+   6.00000000 
+  Pocillopora   Diploastrea Echinophyllia   Lobophyllia    Turbinaria 
+    5.8304508     0.7042254     0.5535055     3.1543052     1.8720749 
+      Porites    Pachyseris       Galaxea        Pavona    Goniastrea 
+   16.5166782     2.9515109     3.6496350     4.3694571     0.2880184 
+   Cyphastrea    Tubastraea     Platygyra  Acanthastrea     Orbicella 
+   21.6620717     0.9090909     1.2297735     0.0000000     3.3152385 
+ Lithophyllon 
+    0.0000000 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for all_D_0__Bacteria___D_1__Proteobacteria___D_2__Alphaproteobacteria___D_3__Rhizobiales___D_4__Stappiaceae___D_5__Pseudovibrio (x) vs.  perc_dis (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-1.1983 -0.5951 -0.1286  0.1291  2.2061 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X  0.05023    0.03628   1.385    0.188
+
+Residual standard error: 0.8912 on 14 degrees of freedom
+Multiple R-squared:  0.1204,	Adjusted R-squared:  0.05762 
+F-statistic: 1.917 on 1 and 14 DF,  p-value: 0.1878
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+        pic.X       pic.Y
+17  0.2712978 -0.13501941
+18  1.5440855 -0.27414515
+19  1.9018001  0.22712534
+20  4.9948542  0.37747211
+21  7.5592143 -0.81861863
+22 11.7962611 -0.24594309
+23 12.4667393 -0.42299433
+24  5.1657173  1.60900569
+25 11.6783543  2.79270488
+26  0.2233544 -0.17322541
+27  0.5607430  0.29116916
+28  0.1122542 -0.93483201
+29  7.4404624  0.24512151
+30  0.4640458 -0.06708697
+31  1.3002741  0.06182800
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                     
+[2] "all_D_0__Bacteria___D_1__Proteobacteria___D_2__Alphaproteobacteria___D_3__Rhizobiales___D_4__Stappiaceae___D_5__Pseudovibrio"
+Ancestral character estimates using fastAnc:
+       17        18        19        20        21        22        23        24 
+11.538561 14.363916 16.733361 28.565011 37.607319 56.559538 45.626040 29.841375 
+       25        26        27        28        29        30        31 
+34.691969  8.353038  9.788329 12.236417 14.776948  6.594881  7.183724 
+
+Variances on ancestral states:
+       17        18        19        20        21        22        23        24 
+4923.2422 1634.7672 1350.2773  637.0436  420.6257  383.1319  289.5035  367.6476 
+       25        26        27        28        29        30        31 
+ 314.9550  244.6854 2583.1394 1985.8085  152.3594 1910.0421 1071.5630 
+
+Lower & upper 95% CIs:
+         lower     upper
+17 -125.986446 149.06357
+18  -64.883301  93.61113
+19  -55.289034  88.75576
+20  -20.904845  78.03487
+21   -2.590635  77.80527
+22   18.194979  94.92410
+23   12.277028  78.97505
+24   -7.739935  67.42269
+25   -0.092095  69.47603
+26  -22.306109  39.01219
+27  -89.827876 109.40453
+28  -75.105909  99.57874
+29   -9.416103  38.97000
+30  -79.065014  92.25478
+31  -56.976361  71.34381
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "perc_dis"               
+Ancestral character estimates using fastAnc:
+      17       18       19       20       21       22       23       24 
+4.865919 3.459796 2.985532 3.109667 3.667956 2.371777 2.060557 5.205657 
+      25       26       27       28       29       30       31 
+9.329231 1.921058 5.736974 7.558991 1.575118 4.614096 3.677787 
+
+Variances on ancestral states:
+        17         18         19         20         21         22         23 
+103.141663  34.248285  28.288238  13.346029   8.812085   8.026592   6.065083 
+        24         25         26         27         28         29         30 
+  7.702197   6.598290   5.126146  54.116633  41.602582   3.191921  40.015280 
+        31 
+ 22.449188 
+
+Lower & upper 95% CIs:
+        lower     upper
+17 -15.039584 24.771421
+18  -8.010522 14.930115
+19  -7.439059 13.410123
+20  -4.050648 10.269982
+21  -2.150335  9.486247
+22  -3.181146  7.924701
+23  -2.766411  6.887525
+24  -0.233898 10.645212
+25   4.294552 14.363910
+26  -2.516577  6.358693
+27  -8.681572 20.155519
+28  -5.083021 20.201004
+29  -1.926607  5.076844
+30  -7.784399 17.012592
+31  -5.608806 12.964379
+
+null device 
+          1 

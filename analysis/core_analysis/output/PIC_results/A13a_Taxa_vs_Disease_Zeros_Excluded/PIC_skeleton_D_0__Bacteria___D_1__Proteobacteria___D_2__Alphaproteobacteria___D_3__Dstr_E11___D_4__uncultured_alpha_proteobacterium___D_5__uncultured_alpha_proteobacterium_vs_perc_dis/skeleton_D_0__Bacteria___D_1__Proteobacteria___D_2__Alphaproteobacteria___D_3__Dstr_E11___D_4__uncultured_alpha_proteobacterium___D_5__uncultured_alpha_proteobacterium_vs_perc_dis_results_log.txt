@@ -1,0 +1,154 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing skeleton_D_0__Bacteria___D_1__Proteobacteria___D_2__Alphaproteobacteria___D_3__Dstr_E11___D_4__uncultured_alpha_proteobacterium___D_5__uncultured_alpha_proteobacterium vs. perc_dis"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+   Pocillopora     Stylophora      Physogyra    Diploastrea        Favites 
+     0.1666667      0.6363636     96.6000000      1.1200000      4.8750000 
+ Echinophyllia     Hydnophora    Lobophyllia        Galaxea         Pavona 
+     0.2500000      0.2857143      0.8333333      0.3076923      4.0000000 
+    Goniastrea Gardineroseris      Platygyra    Montastraea      Orbicella 
+     4.8000000     22.2500000      4.8000000     10.5000000      0.3750000 
+      Diploria       Scolymia Stephanocoenia       Leptoria 
+    24.0000000      0.2500000      0.4000000      5.0000000 
+   Pocillopora     Stylophora      Physogyra    Diploastrea        Favites 
+     5.8304508      3.6871508      0.0000000      0.7042254      0.5855291 
+ Echinophyllia     Hydnophora    Lobophyllia        Galaxea         Pavona 
+     0.5535055      3.1096563      3.1543052      3.6496350      4.3694571 
+    Goniastrea Gardineroseris      Platygyra    Montastraea      Orbicella 
+     0.2880184      0.0000000      1.2297735      2.0548549      3.3152385 
+      Diploria       Scolymia Stephanocoenia       Leptoria 
+     1.9323671      0.2398082      2.1113244      3.7234043 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for skeleton_D_0__Bacteria___D_1__Proteobacteria___D_2__Alphaproteobacteria___D_3__Dstr_E11___D_4__uncultured_alpha_proteobacterium___D_5__uncultured_alpha_proteobacterium (x) vs.  perc_dis (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.93738 -0.15120  0.01047  0.26156  0.75329 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X -0.05439    0.03428  -1.587    0.131
+
+Residual standard error: 0.3835 on 17 degrees of freedom
+Multiple R-squared:  0.129,	Adjusted R-squared:  0.07775 
+F-statistic: 2.517 on 1 and 17 DF,  p-value: 0.131
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+        pic.X        pic.Y
+20 0.73013069 -0.001291689
+21 2.46292763 -0.260233599
+22 0.05285752 -0.241197050
+23 8.02683959 -0.144947943
+24 0.52318299  0.142807528
+25 0.74262965  0.010455224
+26 0.54565506 -0.140972244
+27 1.46944002 -0.097403921
+28 4.83971644  0.344905499
+29 0.09487339  0.422994327
+30 0.39087210 -0.180772529
+31 0.92700015 -0.355310987
+32 0.02107959  0.359197566
+33 0.04333685  0.750928411
+34 0.02416766 -0.207598356
+35 0.35823145  0.044706174
+36 0.76260518 -0.087159123
+37 5.06616149 -1.212952061
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                                                                
+[2] "skeleton_D_0__Bacteria___D_1__Proteobacteria___D_2__Alphaproteobacteria___D_3__Dstr_E11___D_4__uncultured_alpha_proteobacterium___D_5__uncultured_alpha_proteobacterium"
+Ancestral character estimates using fastAnc:
+       20        21        22        23        24        25        26        27 
+12.248601 19.614207  3.622630 29.243567 13.395803 10.946926  8.595569  7.701597 
+       28        29        30        31        32        33        34        35 
+11.312710  2.846954  5.773682  3.918480  4.140163  4.642786  4.757036  6.716102 
+       36        37 
+ 6.747541 12.976814 
+
+Variances on ancestral states:
+       20        21        22        23        24        25        26        27 
+916.03559 298.03953 122.60693 167.76673  90.18982  72.72922  60.81111  63.26992 
+       28        29        30        31        32        33        34        35 
+ 36.30202  51.10876  63.31856  31.79988  28.33004  18.91855  13.05193 449.63638 
+       36        37 
+357.27297  22.22270 
+
+Lower & upper 95% CIs:
+        lower    upper
+20 -47.072915 71.57012
+21 -14.222883 53.45130
+22 -18.080060 25.32532
+23   3.856707 54.63043
+24  -5.217987 32.00959
+25  -5.768234 27.66209
+26  -6.688801 23.87994
+27  -7.888712 23.29191
+28  -0.496517 23.12194
+29 -11.165163 16.85907
+30  -9.822619 21.36998
+31  -7.134231 14.97119
+32  -6.292128 14.57245
+33  -3.882323 13.16789
+34  -2.323945 11.83802
+35 -34.844975 48.27718
+36 -30.299725 43.79481
+37   3.737186 22.21644
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "perc_dis"               
+Ancestral character estimates using fastAnc:
+      20       21       22       23       24       25       26       27 
+2.586565 2.573534 4.392429 1.653929 1.658404 1.765391 1.835001 1.715963 
+      28       29       30       31       32       33       34       35 
+1.201755 1.809492 2.119806 1.959374 1.817555 1.986410 1.353437 2.596352 
+      36       37 
+2.729362 2.197384 
+
+Variances on ancestral states:
+       20        21        22        23        24        25        26        27 
+21.012391  6.836550  2.812407  3.848301  2.068810  1.668292  1.394910  1.451311 
+       28        29        30        31        32        33        34        35 
+ 0.832710  1.172353  1.452427  0.729438  0.649846  0.433961  0.299390 10.313939 
+       36        37 
+ 8.195271  0.509753 
+
+Lower & upper 95% CIs:
+       lower     upper
+20 -6.397933 11.571063
+21 -2.551238  7.698306
+22  1.105463  7.679394
+23 -2.191020  5.498878
+24 -1.160735  4.477542
+25 -0.766192  4.296973
+26 -0.479882  4.149885
+27 -0.645256  4.077182
+28 -0.586803  2.990313
+29 -0.312703  3.931687
+30 -0.242321  4.481932
+31  0.285393  3.633354
+32  0.237539  3.397570
+33  0.695245  3.277574
+34  0.280992  2.425882
+35 -3.698251  8.890956
+36 -2.881606  8.340329
+37  0.798002  3.596765
+
+null device 
+          1 

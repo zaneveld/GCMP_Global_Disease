@@ -1,0 +1,94 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing all_D_0__Bacteria___D_1__Bacteroidetes___D_2__Bacteroidia___D_3__Bacteroidales___D_4__Rikenellaceae___D_5__Rikenellaceae_RC9_gut_group vs. perc_dis"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+  Stylophora  Lobophyllia      Porites      Galaxea       Pavona  Coscinaraea 
+  0.16000000   0.06000000   0.01298701   0.16666667   0.01369863   3.88888889 
+   Ctenactis 
+453.66666667 
+ Stylophora Lobophyllia     Porites     Galaxea      Pavona Coscinaraea 
+   3.687151    3.154305   16.516678    3.649635    4.369457    0.000000 
+  Ctenactis 
+   0.000000 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for all_D_0__Bacteria___D_1__Bacteroidetes___D_2__Bacteroidia___D_3__Bacteroidales___D_4__Rikenellaceae___D_5__Rikenellaceae_RC9_gut_group (x) vs.  perc_dis (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+       8        9       10       11       12       13 
+-0.29517 -0.13602 -0.17641  0.11690 -0.64153 -0.04256 
+
+Coefficients:
+       Estimate Std. Error t value Pr(>|t|)
+pic.X -0.002671   0.007062  -0.378    0.721
+
+Residual standard error: 0.3358 on 5 degrees of freedom
+Multiple R-squared:  0.02781,	Adjusted R-squared:  -0.1666 
+F-statistic: 0.143 on 1 and 5 DF,  p-value: 0.7208
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+          pic.X      pic.Y
+8   3.740428425 -0.3051553
+9   8.908586393 -0.1598166
+10 15.863466372 -0.2187771
+11 43.772597212  0.0000000
+12  0.003959679 -0.6415418
+13  0.009049488 -0.0425842
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                               
+[2] "all_D_0__Bacteria___D_1__Bacteroidetes___D_2__Bacteroidia___D_3__Bacteroidales___D_4__Rikenellaceae___D_5__Rikenellaceae_RC9_gut_group"
+Ancestral character estimates using fastAnc:
+         8          9         10         11         12         13 
+ 38.875279  77.131655  91.881230 188.955610  15.176476   7.073379 
+
+Variances on ancestral states:
+        8         9        10        11        12        13 
+48107.271 16102.222 13724.453  8214.785 28386.045 20540.404 
+
+Lower & upper 95% CIs:
+        lower    upper
+8  -391.01877 468.7693
+9  -171.58163 325.8449
+10 -137.73553 321.4980
+11   11.31013 366.6011
+12 -315.04743 345.4004
+13 -273.83233 287.9791
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "perc_dis"               
+Ancestral character estimates using fastAnc:
+       8        9       10       11       12       13 
+5.921033 2.799964 2.394821 0.696635 7.854452 5.789290 
+
+Variances on ancestral states:
+        8         9        10        11        12        13 
+12.338582  4.129908  3.520056  2.106933  7.280470  5.268215 
+
+Lower & upper 95% CIs:
+       lower     upper
+8  -0.963726 12.805791
+9  -1.183183  6.783110
+10 -1.282494  6.072136
+11 -2.148359  3.541630
+12  2.565912 13.142991
+13  1.290581 10.287998
+
+null device 
+          1 

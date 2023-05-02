@@ -1,0 +1,191 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing tissue_D_0__Archaea___D_1__Thaumarchaeota___D_2__Nitrososphaeria___D_3__Nitrosopumilales___D_4__Nitrosopumilaceae___D_5__uncultured_archaeon vs. perc_dis"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+   Pocillopora     Leptastrea     Psammocora      Physogyra    Diploastrea 
+    0.39130435   107.00000000     0.75000000     1.40000000     1.40000000 
+       Favites  Echinophyllia     Hydnophora    Lobophyllia     Turbinaria 
+    3.00000000     1.75000000     0.85714286     0.64705882    10.18181818 
+       Porites     Pachyseris        Galaxea       Acropora         Pavona 
+    3.65384615     1.87500000     2.64285714     0.09090909     4.79166667 
+    Goniastrea      Alveopora     Tubastraea Gardineroseris    Coscinaraea 
+    1.57142857     2.00000000     3.28571429     2.25000000     2.66666667 
+     Orbicella       Diploria       Scolymia Stephanocoenia    Siderastrea 
+    3.75000000     3.00000000     9.25000000     2.20000000    12.00000000 
+      Leptoria 
+    8.00000000 
+   Pocillopora     Leptastrea     Psammocora      Physogyra    Diploastrea 
+     5.8304508      5.6652807     12.3816460      0.0000000      0.7042254 
+       Favites  Echinophyllia     Hydnophora    Lobophyllia     Turbinaria 
+     0.5855291      0.5535055      3.1096563      3.1543052      1.8720749 
+       Porites     Pachyseris        Galaxea       Acropora         Pavona 
+    16.5166782      2.9515109      3.6496350      3.6431133      4.3694571 
+    Goniastrea      Alveopora     Tubastraea Gardineroseris    Coscinaraea 
+     0.2880184      0.7490637      0.9090909      0.0000000      0.0000000 
+     Orbicella       Diploria       Scolymia Stephanocoenia    Siderastrea 
+     3.3152385      1.9323671      0.2398082      2.1113244      3.7179511 
+      Leptoria 
+     3.7234043 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for tissue_D_0__Archaea___D_1__Thaumarchaeota___D_2__Nitrososphaeria___D_3__Nitrosopumilales___D_4__Nitrosopumilaceae___D_5__uncultured_archaeon (x) vs.  perc_dis (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.80409 -0.20402  0.04453  0.17619  1.20410 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X  0.01254    0.04607   0.272    0.788
+
+Residual standard error: 0.5518 on 24 degrees of freedom
+Multiple R-squared:  0.003077,	Adjusted R-squared:  -0.03846 
+F-statistic: 0.07407 on 1 and 24 DF,  p-value: 0.7878
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+         pic.X       pic.Y
+27  0.47289658 -0.04473239
+28  1.45742074 -0.20136634
+29  3.74972466  0.40571451
+30 10.87383235 -0.05427455
+31  0.27873076 -1.80059770
+32  0.12041119  0.13779024
+33  0.21424545  0.13687602
+34  0.04164029 -0.14309808
+35  0.62496285 -0.09740392
+36  1.27360959 -0.34490550
+37  0.17938247 -0.42299433
+38  0.11248658  0.17760186
+39  0.60387322 -0.35013374
+40  0.77889744  0.37005099
+41  1.23211520  0.77324474
+42  0.06495775  0.39663311
+43  0.19034708 -0.93483201
+44  1.75535987  0.24512151
+45  0.16845626  0.04664258
+46  0.63857457  0.07637404
+47  0.13785719 -0.03573601
+48  0.70556130  1.21295206
+49  0.09237175  0.08407528
+50  0.06800376  0.06182800
+51  0.13348190 -0.20234933
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                                     
+[2] "tissue_D_0__Archaea___D_1__Thaumarchaeota___D_2__Nitrososphaeria___D_3__Nitrosopumilales___D_4__Nitrosopumilaceae___D_5__uncultured_archaeon"
+Ancestral character estimates using fastAnc:
+       27        28        29        30        31        32        33        34 
+ 8.887329 13.946080 16.396255 39.451346 12.598505  9.485088  5.420609  4.367372 
+       35        36        37        38        39        40        41        42 
+ 4.075981  5.748729  2.124984  3.869478  3.096938  3.269178  4.638544  5.753567 
+       43        44        45        46        47        48        49        50 
+ 5.438436  6.695015  5.191137  5.113024  3.930587  3.530354  3.317595  2.610717 
+       51 
+ 2.561237 
+
+Variances on ancestral states:
+       27        28        29        30        31        32        33        34 
+658.18597 208.12014 157.77613 108.41393  57.28155 125.75963  82.04701  55.80805 
+       35        36        37        38        39        40        41        42 
+ 54.61954  30.04158  42.42980  54.10945  26.81080  24.08295  18.09115 278.29614 
+       43        44        45        46        47        48        49        50 
+267.83005  21.71589 224.42139 192.39892 162.93464  18.26949 152.78738 138.98120 
+       51 
+165.66994 
+
+Lower & upper 95% CIs:
+        lower    upper
+27 -41.396737 59.17139
+28 -14.329605 42.22176
+29  -8.223103 41.01561
+30  19.043432 59.85926
+31  -2.235671 27.43268
+32 -12.494862 31.46504
+33 -12.333032 23.17425
+34 -10.274767 19.00951
+35 -10.409405 18.56137
+36  -4.994070 16.49153
+37 -10.642095 14.89206
+38 -10.548110 18.28707
+39  -7.051774 13.24565
+40  -6.349400 12.88776
+41  -3.698059 12.97515
+42 -26.943565 38.45070
+43 -26.637971 37.51484
+44  -2.438647 15.82868
+45 -24.171035 34.55331
+46 -22.073732 32.29978
+47 -21.088001 28.94917
+48  -4.847239 11.90795
+49 -20.909415 27.54460
+50 -20.495779 25.71721
+51 -22.666479 27.78895
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "perc_dis"               
+Ancestral character estimates using fastAnc:
+      27       28       29       30       31       32       33       34 
+4.398516 3.919997 3.595233 5.336818 5.944413 2.345364 1.889206 1.932467 
+      35       36       37       38       39       40       41       42 
+1.779684 1.213456 1.830008 2.180808 1.991724 1.850717 2.037171 4.694946 
+      43       44       45       46       47       48       49       50 
+7.128388 1.562236 3.958182 3.588059 3.169720 2.207616 3.043513 3.215154 
+      51 
+2.761420 
+
+Variances on ancestral states:
+       27        28        29        30        31        32        33        34 
+33.636351 10.635903  8.063091  5.540454  2.927352  6.426899  4.192982  2.852050 
+       35        36        37        38        39        40        41        42 
+ 2.791311  1.535264  2.168359  2.765243  1.370156  1.230750  0.924541 14.222222 
+       43        44        45        46        47        48        49        50 
+13.687356  1.109783 11.468972  9.832476  8.326715  0.933655  7.808143  7.102583 
+       51 
+ 8.466501 
+
+Lower & upper 95% CIs:
+       lower     upper
+27 -6.968867 15.765900
+28 -2.472098 10.312093
+29 -1.970301  9.160767
+30  0.723337  9.950299
+31  2.590949  9.297876
+32 -2.623497  7.314225
+33 -2.124241  5.902653
+34 -1.377583  5.242518
+35 -1.494931  5.054298
+36 -1.215097  3.642009
+37 -1.056160  4.716177
+38 -1.078480  5.440096
+39 -0.302528  4.285976
+40 -0.323690  4.025125
+41  0.152570  3.921771
+42 -2.696677 12.086569
+43 -0.122912 14.379688
+44 -0.502550  3.627023
+45 -2.679528 10.595893
+46 -2.557869  9.733988
+47 -2.486065  8.825506
+48  0.313749  4.101482
+49 -2.433325  8.520352
+50 -2.008378  8.438685
+51 -2.941642  8.464481
+
+null device 
+          1 

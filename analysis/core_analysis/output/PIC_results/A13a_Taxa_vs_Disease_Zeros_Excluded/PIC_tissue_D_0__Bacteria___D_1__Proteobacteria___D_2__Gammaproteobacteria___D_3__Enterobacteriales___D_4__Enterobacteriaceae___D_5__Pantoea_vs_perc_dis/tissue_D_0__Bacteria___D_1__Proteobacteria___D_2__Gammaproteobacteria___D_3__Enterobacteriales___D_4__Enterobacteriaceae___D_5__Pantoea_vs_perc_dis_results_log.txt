@@ -1,0 +1,102 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing tissue_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Enterobacteriales___D_4__Enterobacteriaceae___D_5__Pantoea vs. perc_dis"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+  Pocillopora   Diploastrea Echinophyllia   Lobophyllia       Porites 
+   0.13043478    0.44000000    0.25000000    0.05882353    0.03846154 
+     Acropora     Plerogyra      Mycedium   Montastraea 
+   0.13636364  288.00000000    9.00000000    0.50000000 
+  Pocillopora   Diploastrea Echinophyllia   Lobophyllia       Porites 
+    5.8304508     0.7042254     0.5535055     3.1543052    16.5166782 
+     Acropora     Plerogyra      Mycedium   Montastraea 
+    3.6431133     0.0000000     1.2048193     2.0548549 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for tissue_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Enterobacteriales___D_4__Enterobacteriaceae___D_5__Pantoea (x) vs.  perc_dis (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.60581 -0.32401 -0.16512 -0.01102  0.11380 
+
+Coefficients:
+       Estimate Std. Error t value Pr(>|t|)
+pic.X -0.009364   0.012544  -0.747     0.48
+
+Residual standard error: 0.3237 on 7 degrees of freedom
+Multiple R-squared:  0.07374,	Adjusted R-squared:  -0.05858 
+F-statistic: 0.5573 on 1 and 7 DF,  p-value: 0.4797
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+          pic.X       pic.Y
+10  2.712852401 -0.31651080
+11  6.740292207 -0.33178677
+12 24.739716770 -0.12390463
+13  0.263306578  0.11133612
+14  0.398025003 -0.05434763
+15  0.961912353 -0.07058478
+16  0.031092961 -0.42299433
+17  0.004607457 -0.60585421
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                                
+[2] "tissue_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Enterobacteriales___D_4__Enterobacteriaceae___D_5__Pantoea"
+Ancestral character estimates using fastAnc:
+       10        11        12        13        14        15        16        17 
+30.071908 57.180268 83.452161 33.653104 25.362777 20.267100  5.215852 13.279004 
+
+Variances on ancestral states:
+        10         11         12         13         14         15         16 
+11189.0848  3797.7290  2093.9199  1211.3566  1053.6985  1025.6601   653.7585 
+        17 
+ 7428.4496 
+
+Lower & upper 95% CIs:
+         lower     upper
+10 -177.253894 237.39771
+11  -63.606138 177.96667
+12   -6.236203 173.14052
+13  -34.563811 101.87002
+14  -38.260240  88.98579
+15  -42.503719  83.03792
+16  -44.898804  55.33051
+17 -155.650365 182.20837
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "perc_dis"               
+Ancestral character estimates using fastAnc:
+      10       11       12       13       14       15       16       17 
+6.581579 3.418824 1.878725 1.604806 1.638889 1.621347 1.795381 8.540822 
+
+Variances on ancestral states:
+       10        11        12        13        14        15        16        17 
+13.304772  4.515822  2.489849  1.440406  1.252937  1.219597  0.777374  8.833057 
+
+Lower & upper 95% CIs:
+       lower     upper
+10 -0.567659 13.730818
+11 -0.746267  7.583915
+12 -1.214008  4.971459
+13 -0.747525  3.957138
+14 -0.555031  3.832808
+15 -0.543186  3.785881
+16  0.067272  3.523490
+17  2.715611 14.366032
+
+null device 
+          1 

@@ -1,0 +1,100 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing mucus_D_0__Bacteria___D_1__Proteobacteria___D_2__Alphaproteobacteria___D_3__Rhizobiales___D_4__Stappiaceae___D_5__Pseudovibrio vs. perc_dis"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+Echinophyllia       Porites    Pachyseris       Galaxea        Pavona 
+ 249.25000000   45.50000000    0.25000000   38.25000000    0.05263158 
+   Goniastrea    Cyphastrea  Acanthastrea  Lithophyllon 
+   9.50000000  199.40000000  592.33333333    6.00000000 
+Echinophyllia       Porites    Pachyseris       Galaxea        Pavona 
+    0.5535055    16.5166782     2.9515109     3.6496350     4.3694571 
+   Goniastrea    Cyphastrea  Acanthastrea  Lithophyllon 
+    0.2880184    21.6620717     0.0000000     0.0000000 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for mucus_D_0__Bacteria___D_1__Proteobacteria___D_2__Alphaproteobacteria___D_3__Rhizobiales___D_4__Stappiaceae___D_5__Pseudovibrio (x) vs.  perc_dis (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.42798 -0.14396 -0.00499  0.45390  2.50760 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X 0.001035   0.017233    0.06    0.954
+
+Residual standard error: 1.133 on 7 degrees of freedom
+Multiple R-squared:  0.0005147,	Adjusted R-squared:  -0.1423 
+F-statistic: 0.003605 on 1 and 7 DF,  p-value: 0.9538
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+       pic.X       pic.Y
+10  5.554735 -0.23530166
+11 17.812890  0.40364972
+12 40.970981 -1.38558899
+13 42.143964 -0.06799199
+14 22.485742  2.53086600
+15  1.798351  0.66179143
+16  1.204895 -0.06708697
+17  3.365396  0.06182800
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                       
+[2] "mucus_D_0__Bacteria___D_1__Proteobacteria___D_2__Alphaproteobacteria___D_3__Rhizobiales___D_4__Stappiaceae___D_5__Pseudovibrio"
+Ancestral character estimates using fastAnc:
+       10        11        12        13        14        15        16        17 
+ 80.23627 140.90305 238.53087 321.58826 186.39308  45.68604  25.82417  21.13795 
+
+Variances on ancestral states:
+       10        11        12        13        14        15        16        17 
+70900.896 24172.659  7384.011  6268.872  6506.004 39878.084 26619.535 14477.172 
+
+Lower & upper 95% CIs:
+        lower    upper
+10 -441.65729 602.1298
+11 -163.82910 445.6352
+12   70.10754 406.9542
+13  166.40289 476.7736
+14   28.29987 344.4863
+15 -345.71612 437.0882
+16 -293.95952 345.6079
+17 -214.69145 256.9674
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "perc_dis"               
+Ancestral character estimates using fastAnc:
+      10       11       12       13       14       15       16       17 
+6.397077 3.827198 5.404225 3.067603 7.570456 7.860644 5.526723 3.939873 
+
+Variances on ancestral states:
+       10        11        12        13        14        15        16        17 
+147.46360  50.27563  15.35767  13.03835  13.53155  82.94064  55.36478  30.11042 
+
+Lower & upper 95% CIs:
+        lower    upper
+10 -17.404103 30.19826
+11 -10.070243 17.72464
+12  -2.276793 13.08524
+13  -4.009692 10.14490
+14   0.360547 14.78037
+15  -9.989419 25.71071
+16  -9.057149 20.11060
+17  -6.815229 14.69497
+
+null device 
+          1 
