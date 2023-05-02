@@ -1,0 +1,2 @@
+	analysis_label	pic_x_trait	pic_y_trait	R2	p	sig_marker	FDR_q	slope	pic_filter_column	pic_filter_value	results_dir	slope_std_error	T_stat	pic_suffix	trait_table	tree
+0	growth_rate_vs_disease_Endozoicomonas_present	growth_rate_mm_per_year	perc_dis	0.1318	0.183	n.s	0.183	19.42	None	None	" ../output/PIC_results/A11b_growth_rate_vs_disease_Endozoicomonas_present/PIC_growth_rate_mm_per_year_vs_perc_dis/"""	13.82	1.405		../output/trait_table_growth_rate_endos_present.tsv	../output/huang_roy_genus_tree.newick

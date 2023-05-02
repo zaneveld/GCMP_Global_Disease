@@ -1,0 +1,78 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing skeleton_D_0__Bacteria___D_1__Bacteroidetes___D_2__Bacteroidia___D_3__Bacteroidales___D_4__Rikenellaceae___D_5__Rikenellaceae_RC9_gut_group vs. perc_dis"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+ Stylophora Coscinaraea   Ctenactis 
+  0.3636364   9.6666667 882.0000000 
+ Stylophora Coscinaraea   Ctenactis 
+   3.687151    0.000000    0.000000 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for skeleton_D_0__Bacteria___D_1__Bacteroidetes___D_2__Bacteroidia___D_3__Bacteroidales___D_4__Rikenellaceae___D_5__Rikenellaceae_RC9_gut_group (x) vs.  perc_dis (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+       4        5 
+-0.21054  0.07007 
+
+Coefficients:
+        Estimate Std. Error t value Pr(>|t|)
+pic.X -0.0008254  0.0024800  -0.333    0.795
+
+Residual standard error: 0.2219 on 1 degrees of freedom
+Multiple R-squared:  0.09972,	Adjusted R-squared:  -0.8006 
+F-statistic: 0.1108 on 1 and 1 DF,  p-value: 0.7955
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+     pic.X      pic.Y
+4 28.25453 -0.2338626
+5 84.89591  0.0000000
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                                    
+[2] "skeleton_D_0__Bacteria___D_1__Bacteroidetes___D_2__Bacteroidia___D_3__Bacteroidales___D_4__Rikenellaceae___D_5__Rikenellaceae_RC9_gut_group"
+Ancestral character estimates using fastAnc:
+       4        5 
+246.7500 398.5303 
+
+Variances on ancestral states:
+        4         5 
+245946.78  94437.36 
+
+Lower & upper 95% CIs:
+      lower    upper
+4 -725.2732 1218.773
+5 -203.7907 1000.851
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "perc_dis"               
+Ancestral character estimates using fastAnc:
+       4        5 
+1.647812 0.391527 
+
+Variances on ancestral states:
+       4        5 
+1.680223 0.645163 
+
+Lower & upper 95% CIs:
+      lower    upper
+4 -0.892808 4.188431
+5 -1.182785 1.965840
+
+null device 
+          1 

@@ -1,0 +1,130 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing mucus_D_0__Bacteria___D_1__Tenericutes___D_2__Mollicutes___D_3__Entomoplasmatales___D_4__Spiroplasmataceae___D_5__Spiroplasma vs. growth_rate_mm_per_year"
+[1] "Trait table filepath: ../output/trait_table_growth_rate_endos_present.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+Pocillopora  Stylophora  Psammocora  Hydnophora  Turbinaria     Porites 
+ 0.00000000  0.28571429  0.00000000  0.83333333  0.00000000 13.09090909 
+   Acropora     Isopora      Pavona  Goniastrea Seriatopora   Platygyra 
+ 0.04545454  0.00000000  0.36842105  0.00000000  0.00000000  0.00000000 
+  Orbicella Siderastrea    Merulina 
+ 0.00000000  0.00000000  0.00000000 
+Pocillopora  Stylophora  Psammocora  Hydnophora  Turbinaria     Porites 
+ 0.21869633  0.23347364  0.10529500  0.23030714  0.09364883  0.09877855 
+   Acropora     Isopora      Pavona  Goniastrea Seriatopora   Platygyra 
+ 0.16772478  0.08651750  0.07778307  0.07076280  0.18209733  0.09661880 
+  Orbicella Siderastrea    Merulina 
+ 0.12541125  0.01875400  0.13817800 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for mucus_D_0__Bacteria___D_1__Tenericutes___D_2__Mollicutes___D_3__Entomoplasmatales___D_4__Spiroplasmataceae___D_5__Spiroplasma (x) vs.  growth_rate_mm_per_year (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+       Min         1Q     Median         3Q        Max 
+-0.0049628 -0.0013719  0.0006787  0.0063419  0.0277774 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X 0.006571   0.009746   0.674    0.512
+
+Residual standard error: 0.008954 on 13 degrees of freedom
+Multiple R-squared:  0.03378,	Adjusted R-squared:  -0.04054 
+F-statistic: 0.4546 on 1 and 13 DF,  p-value: 0.512
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+          pic.X         pic.Y
+16 0.1244289836 -0.0032831544
+17 0.0009613896  0.0067179698
+18 0.0170869795 -0.0013050340
+19 0.0474524440  0.0085327590
+20 0.0083814393  0.0018844161
+21 0.0255111661  0.0015250007
+22 0.0482129719 -0.0003501374
+23 0.1640054316  0.0288550520
+24 0.0000000000  0.0000000000
+25 0.3877536123  0.0013124451
+26 0.8031555438  0.0003147193
+27 0.0111257166  0.0053056137
+28 0.0213449336 -0.0030463894
+29 0.0046951510  0.0083881696
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                      
+[2] "mucus_D_0__Bacteria___D_1__Tenericutes___D_2__Mollicutes___D_3__Entomoplasmatales___D_4__Spiroplasmataceae___D_5__Spiroplasma"
+Ancestral character estimates using fastAnc:
+      16       17       18       19       20       21       22       23 
+1.631319 0.323653 0.116930 0.135132 0.251852 0.139570 0.168212 0.241482 
+      24       25       26       27       28       29 
+0.193647 2.441383 4.834712 1.319184 0.984101 0.211337 
+
+Variances on ancestral states:
+      16       17       18       19       20       21       22       23 
+7.207887 2.439123 0.935527 0.466635 2.146222 0.708382 0.432739 0.283683 
+      24       25       26       27       28       29 
+0.270664 3.482369 2.940012 2.670872 2.484227 1.231036 
+
+Lower & upper 95% CIs:
+       lower    upper
+16 -3.630793 6.893430
+17 -2.737415 3.384721
+18 -1.778833 2.012694
+19 -1.203757 1.474022
+20 -2.619546 3.123250
+21 -1.510072 1.789212
+22 -1.121133 1.457556
+23 -0.802452 1.285416
+24 -0.826051 1.213345
+25 -1.216194 6.098960
+26  1.474005 8.195418
+27 -1.884005 4.522374
+28 -2.105140 4.073341
+29 -1.963324 2.385997
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "growth_rate_mm_per_year"
+Ancestral character estimates using fastAnc:
+      16       17       18       19       20       21       22       23 
+0.114937 0.149441 0.203123 0.206396 0.141321 0.133871 0.135517 0.135801 
+      24       25       26       27       28       29 
+0.125479 0.093563 0.095109 0.084338 0.090315 0.119900 
+
+Variances on ancestral states:
+      16       17       18       19       20       21       22       23 
+0.009405 0.003183 0.001221 0.000609 0.002800 0.000924 0.000565 0.000370 
+      24       25       26       27       28       29 
+0.000353 0.004544 0.003836 0.003485 0.003242 0.001606 
+
+Lower & upper 95% CIs:
+       lower    upper
+16 -0.075144 0.305018
+17  0.038867 0.260014
+18  0.134643 0.271603
+19  0.158032 0.254760
+20  0.037598 0.245043
+21  0.074281 0.193460
+22  0.088943 0.182092
+23  0.098092 0.173511
+24  0.088645 0.162313
+25 -0.038559 0.225684
+26 -0.026289 0.216506
+27 -0.031369 0.200046
+28 -0.021276 0.201907
+29  0.041346 0.198455
+
+null device 
+          1 

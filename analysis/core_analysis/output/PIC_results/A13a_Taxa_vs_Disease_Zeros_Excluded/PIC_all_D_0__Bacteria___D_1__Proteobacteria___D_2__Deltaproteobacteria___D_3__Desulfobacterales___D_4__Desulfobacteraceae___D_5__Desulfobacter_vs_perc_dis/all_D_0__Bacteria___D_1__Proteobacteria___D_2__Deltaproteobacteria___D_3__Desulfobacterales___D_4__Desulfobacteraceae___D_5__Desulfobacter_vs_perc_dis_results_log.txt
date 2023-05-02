@@ -1,0 +1,111 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing all_D_0__Bacteria___D_1__Proteobacteria___D_2__Deltaproteobacteria___D_3__Desulfobacterales___D_4__Desulfobacteraceae___D_5__Desulfobacter vs. perc_dis"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+ Pocillopora   Stylophora   Leptastrea  Diploastrea      Favites      Porites 
+  0.09230769   0.04000000 127.00000000   0.01449275   0.09523810   1.02597403 
+     Galaxea     Acropora       Pavona   Goniastrea 
+  0.07142857   1.69354839   0.04109589   0.07142857 
+Pocillopora  Stylophora  Leptastrea Diploastrea     Favites     Porites 
+  5.8304508   3.6871508   5.6652807   0.7042254   0.5855291  16.5166782 
+    Galaxea    Acropora      Pavona  Goniastrea 
+  3.6496350   3.6431133   4.3694571   0.2880184 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for all_D_0__Bacteria___D_1__Proteobacteria___D_2__Deltaproteobacteria___D_3__Desulfobacterales___D_4__Desulfobacteraceae___D_5__Desulfobacter (x) vs.  perc_dis (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.26317 -0.04989 -0.00281  0.14740  0.66467 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X  0.02369    0.02906   0.815    0.438
+
+Residual standard error: 0.2863 on 8 degrees of freedom
+Multiple R-squared:  0.07674,	Adjusted R-squared:  -0.03867 
+F-statistic: 0.6649 on 1 and 8 DF,  p-value: 0.4384
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+         pic.X         pic.Y
+11 1.464780723 -0.2284682485
+12 3.899751357 -0.1498004224
+13 0.005886465  0.2411970499
+14 8.928371850  0.3589325378
+15 0.006471646 -0.0251429029
+16 0.004379498  0.0547237881
+17 0.023364635  0.6652241311
+18 0.056492074 -0.0485486235
+19 0.101463908 -0.0004079346
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                                   
+[2] "all_D_0__Bacteria___D_1__Proteobacteria___D_2__Deltaproteobacteria___D_3__Desulfobacterales___D_4__Desulfobacteraceae___D_5__Desulfobacter"
+Ancestral character estimates using fastAnc:
+       11        12        13        14        15        16        17        18 
+15.612055 30.755677  5.211424 37.388482 12.419211  1.807036  6.230986  2.730639 
+       19 
+ 2.377950 
+
+Variances on ancestral states:
+        11         12         13         14         15         16         17 
+1345.15485  430.92021  189.35518  371.16430  243.92041   73.33188  754.81682 
+        18         19 
+ 449.12877  425.60204 
+
+Lower & upper 95% CIs:
+        lower    upper
+11 -56.273596 87.49771
+12  -9.931214 71.44257
+13 -21.759428 32.18228
+14  -0.372142 75.14911
+15 -18.191974 43.03039
+16 -14.977235 18.59131
+17 -47.617916 60.07989
+18 -38.806972 44.26825
+19 -38.057095 42.81299
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "perc_dis"               
+Ancestral character estimates using fastAnc:
+      11       12       13       14       15       16       17       18 
+6.277737 3.915721 4.617454 3.562779 1.555857 0.593144 7.740944 5.362865 
+      19 
+5.035301 
+
+Variances on ancestral states:
+      11       12       13       14       15       16       17       18 
+9.839629 3.152124 1.385108 2.715018 1.784245 0.536413 5.521385 3.285317 
+      19 
+3.113223 
+
+Lower & upper 95% CIs:
+       lower     upper
+11  0.129573 12.425901
+12  0.435893  7.395548
+13  2.310718  6.924190
+14  0.333226  6.792332
+15 -1.062226  4.173940
+16 -0.842364  2.028653
+17  3.135409 12.346479
+18  1.810278  8.915452
+19  1.577013  8.493589
+
+null device 
+          1 

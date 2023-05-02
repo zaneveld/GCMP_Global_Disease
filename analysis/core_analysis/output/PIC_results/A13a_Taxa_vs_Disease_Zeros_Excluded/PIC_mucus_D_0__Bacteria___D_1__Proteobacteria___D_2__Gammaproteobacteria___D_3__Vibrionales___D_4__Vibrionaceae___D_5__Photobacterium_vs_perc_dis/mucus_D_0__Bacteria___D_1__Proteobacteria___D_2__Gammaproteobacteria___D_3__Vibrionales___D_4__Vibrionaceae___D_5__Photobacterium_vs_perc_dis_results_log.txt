@@ -1,0 +1,172 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing mucus_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Vibrionales___D_4__Vibrionaceae___D_5__Photobacterium vs. perc_dis"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+   Pocillopora     Stylophora    Diploastrea     Echinopora        Favites 
+     3.3333333      0.5714286      8.5789474      4.0909091      3.0000000 
+ Echinophyllia     Hydnophora    Lobophyllia     Turbinaria        Porites 
+     0.5000000      0.5000000      5.9333333      0.8000000      0.7272727 
+    Pachyseris        Galaxea       Acropora         Pavona     Tubastraea 
+     1.8750000      2.3125000      1.7727273      6.2105263      0.2857143 
+     Podabacia      Plerogyra      Platygyra      Goniopora       Diploria 
+     2.5000000      0.1666667     55.5000000      2.0000000      0.6666667 
+      Scolymia Stephanocoenia    Siderastrea 
+     2.0000000      4.4000000     18.3333333 
+   Pocillopora     Stylophora    Diploastrea     Echinopora        Favites 
+     5.8304508      3.6871508      0.7042254      1.8768046      0.5855291 
+ Echinophyllia     Hydnophora    Lobophyllia     Turbinaria        Porites 
+     0.5535055      3.1096563      3.1543052      1.8720749     16.5166782 
+    Pachyseris        Galaxea       Acropora         Pavona     Tubastraea 
+     2.9515109      3.6496350      3.6431133      4.3694571      0.9090909 
+     Podabacia      Plerogyra      Platygyra      Goniopora       Diploria 
+     0.0000000      0.0000000      1.2297735      0.1471257      1.9323671 
+      Scolymia Stephanocoenia    Siderastrea 
+     0.2398082      2.1113244      3.7179511 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for mucus_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Vibrionales___D_4__Vibrionaceae___D_5__Photobacterium (x) vs.  perc_dis (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.52066 -0.08513  0.06159  0.10887  0.45462 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X 0.005614   0.022185   0.253    0.803
+
+Residual standard error: 0.3968 on 21 degrees of freedom
+Multiple R-squared:  0.00304,	Adjusted R-squared:  -0.04443 
+F-statistic: 0.06403 on 1 and 21 DF,  p-value: 0.8027
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+         pic.X        pic.Y
+24  0.06990521  0.091774368
+25  0.14681257 -0.312072415
+26  0.31081196  0.241197050
+27  0.15970446  0.068196177
+28  0.58593820  0.119154111
+29  0.25072207 -0.104422003
+30  1.20275275  0.056725867
+31  0.23891615  0.097403921
+32  0.27170338 -0.344905499
+33  0.88367790  0.422994327
+34  1.65335353  0.006356582
+35  5.18044233 -0.396777787
+36 16.91735891  0.207598356
+37  0.38481523 -0.127266179
+38  0.05379242  0.454921814
+39  0.13090819  0.245121514
+40  0.11817909 -1.519994814
+41  0.21210218  0.098776137
+42  0.95898093 -0.002067450
+43  0.29169478  0.063215958
+44  0.02146287 -0.022901492
+45  0.03874633  0.061827997
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                          
+[2] "mucus_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Vibrionales___D_4__Vibrionaceae___D_5__Photobacterium"
+Ancestral character estimates using fastAnc:
+       24        25        26        27        28        29        30        31 
+ 4.125818  3.377764  2.191354  3.558489  4.078976  5.812778  6.030763  4.748396 
+       32        33        34        35        36        37        38        39 
+ 1.960457  3.709839  8.898257 13.466717 26.573117  4.589219  2.370909  0.597546 
+       40        41        42        43        44        45 
+ 1.644902  5.416760  6.232116  5.177820  4.482893  2.887648 
+
+Variances on ancestral states:
+        24         25         26         27         28         29         30 
+1666.53262  527.66509  253.76488  424.47997  326.16836  212.11710  148.01411 
+        31         32         33         34         35         36         37 
+ 141.23822   76.23269  107.82614  131.58770   88.33307   31.61396  701.49591 
+        38         39         40         41         42         43         44 
+ 619.21411   54.98386  352.18405  576.23170  506.17515  453.18192  450.63061 
+        45 
+ 359.23756 
+
+Lower & upper 95% CIs:
+        lower    upper
+24 -75.887629 84.13927
+25 -41.645322 48.40085
+26 -29.031445 33.41415
+27 -36.823218 43.94020
+28 -31.318883 39.47683
+29 -22.733133 34.35869
+30 -17.814803 29.87633
+31 -18.544967 28.04176
+32 -15.152564 19.07348
+33 -16.642677 24.06235
+34 -13.585233 31.38175
+35  -4.954475 31.88791
+36  15.552763 37.59347
+37 -47.322887 56.50132
+38 -46.401756 51.14357
+39 -13.936070 15.13116
+40 -35.137570 38.42737
+41 -41.632700 52.46622
+42 -37.864624 50.32885
+43 -36.546797 46.90244
+44 -37.124108 46.08989
+45 -34.261336 40.03663
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "perc_dis"               
+Ancestral character estimates using fastAnc:
+      24       25       26       27       28       29       30       31 
+3.150459 2.168383 4.324503 1.634508 1.277776 1.339693 1.509055 1.502870 
+      32       33       34       35       36       37       38       39 
+1.162623 1.740882 1.733493 1.855156 1.068350 3.758829 4.671151 1.488725 
+      40       41       42       43       44       45 
+7.309693 3.588284 3.638282 3.679286 3.629277 3.409799 
+
+Variances on ancestral states:
+       24        25        26        27        28        29        30        31 
+17.277307  5.470419  2.630836  4.400676  3.381459  2.199064  1.534495  1.464247 
+       32        33        34        35        36        37        38        39 
+ 0.790321  1.117857  1.364198  0.915768  0.327749  7.272561  6.419528  0.570030 
+       40        41        42        43        44        45 
+ 3.651169  5.973920  5.247628  4.698236  4.671786  3.724294 
+
+Lower & upper 95% CIs:
+       lower     upper
+24 -4.996473 11.297391
+25 -2.415847  6.752612
+26  1.145412  7.503594
+27 -2.477138  5.746155
+28 -2.326418  4.881970
+29 -1.566839  4.246224
+30 -0.918889  3.937000
+31 -0.868849  3.874590
+32 -0.579816  2.905063
+33 -0.331401  3.813166
+34 -0.555766  4.022751
+35 -0.020481  3.730793
+36 -0.053737  2.190438
+37 -1.526837  9.044496
+38 -0.294859  9.637161
+39  0.008919  2.968531
+40  3.564519 11.054868
+41 -1.202271  8.378838
+42 -0.851628  8.128191
+43 -0.569095  7.927668
+44 -0.607128  7.865683
+45 -0.372693  7.192292
+
+null device 
+          1 

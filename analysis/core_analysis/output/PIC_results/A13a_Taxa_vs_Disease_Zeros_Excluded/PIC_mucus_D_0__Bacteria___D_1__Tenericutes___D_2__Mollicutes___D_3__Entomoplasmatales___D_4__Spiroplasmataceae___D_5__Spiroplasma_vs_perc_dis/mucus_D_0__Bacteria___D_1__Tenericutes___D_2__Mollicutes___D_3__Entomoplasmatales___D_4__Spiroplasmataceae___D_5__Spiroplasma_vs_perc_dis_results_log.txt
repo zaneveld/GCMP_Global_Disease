@@ -1,0 +1,114 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing mucus_D_0__Bacteria___D_1__Tenericutes___D_2__Mollicutes___D_3__Entomoplasmatales___D_4__Spiroplasmataceae___D_5__Spiroplasma vs. perc_dis"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+ Stylophora Diploastrea  Echinopora  Hydnophora Lobophyllia     Porites 
+ 0.28571429  0.47368421  0.63636364  0.83333333 16.53333333 13.09090909 
+    Galaxea    Acropora      Pavona   Podabacia   Goniopora 
+ 1.25000000  0.04545455  0.36842105  0.50000000  4.66666667 
+ Stylophora Diploastrea  Echinopora  Hydnophora Lobophyllia     Porites 
+  3.6871508   0.7042254   1.8768046   3.1096563   3.1543052  16.5166782 
+    Galaxea    Acropora      Pavona   Podabacia   Goniopora 
+  3.6496350   3.6431133   4.3694571   0.0000000   0.1471257 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for mucus_D_0__Bacteria___D_1__Tenericutes___D_2__Mollicutes___D_3__Entomoplasmatales___D_4__Spiroplasmataceae___D_5__Spiroplasma (x) vs.  perc_dis (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.54618 -0.04804  0.00658  0.12318  1.24719 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X   0.3487     0.2176   1.603    0.143
+
+Residual standard error: 0.4673 on 9 degrees of freedom
+Multiple R-squared:  0.222,	Adjusted R-squared:  0.1356 
+F-statistic: 2.568 on 1 and 9 DF,  p-value: 0.1435
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+        pic.X         pic.Y
+12 0.07845983  0.1636739875
+13 0.19545423 -0.1719451485
+14 0.30775660  0.1463498364
+15 0.69000235  0.2137463093
+16 1.77962233  0.0744668492
+17 0.02525612  0.1580804224
+18 0.45823079  0.2435756590
+19 0.78223304  1.5199948141
+20 0.01875294 -0.0485486235
+21 0.07534455  0.0004079346
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                      
+[2] "mucus_D_0__Bacteria___D_1__Tenericutes___D_2__Mollicutes___D_3__Entomoplasmatales___D_4__Spiroplasmataceae___D_5__Spiroplasma"
+Ancestral character estimates using fastAnc:
+      12       13       14       15       16       17       18       19 
+3.136136 2.322542 2.552649 4.192135 5.392792 2.962005 3.640136 8.106783 
+      20       21 
+1.723976 1.518592 
+
+Variances on ancestral states:
+       12        13        14        15        16        17        18        19 
+57.012061 18.921539 15.725935  8.215332  6.444243  5.132013 30.869942 12.069337 
+       20        21 
+18.995812 18.059764 
+
+Lower & upper 95% CIs:
+        lower     upper
+12 -11.663105 17.935377
+13  -6.203242 10.848325
+14  -5.219915 10.325213
+15  -1.425696  9.809965
+16   0.417232 10.368353
+17  -1.478169  7.402178
+18  -7.249767 14.530038
+19   1.297557 14.916010
+20  -6.818524 10.266476
+21  -6.810778  9.847961
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "perc_dis"               
+Ancestral character estimates using fastAnc:
+      12       13       14       15       16       17       18       19 
+4.061733 2.364505 2.019826 2.037242 2.334645 2.417404 5.113120 7.857560 
+      20       21 
+4.363631 4.226754 
+
+Variances on ancestral states:
+       12        13        14        15        16        17        18        19 
+31.234793 10.366409  8.615656  4.500876  3.530562  2.811640 16.912496  6.612342 
+       20        21 
+10.407101  9.894275 
+
+Lower & upper 95% CIs:
+       lower     upper
+12 -6.892334 15.015800
+13 -3.946089  8.675099
+14 -3.733252  7.772904
+15 -2.120951  6.195434
+16 -1.348154  6.017443
+17 -0.869113  5.703921
+18 -2.947342 13.173582
+19  2.817523 12.897597
+20 -1.959337 10.686598
+21 -1.938458 10.391967
+
+null device 
+          1 
