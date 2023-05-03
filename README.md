@@ -4,7 +4,7 @@
 # GCMP Global Disease
 This project hold the workflow for the Global Coral Microbiome Project's global comparison of coral disease susceptibility and microbiome structure. This project combines microbiome, phylogenetic and trait data to test long-term correlations between coral disease and microbiome structure.
 
-![Workflow Diagram](https://github.com/zaneveld/GCMP_Global_Disease/blob/master/products/manuscript/figures/figure_1/Figure1_MapWorkflow_version3-01.png)
+![Workflow Diagram](https://github.com/zaneveld/GCMP_Global_Disease/blob/master/products/manuscript/figures/figure_1/Figure1_MapWorkflow_final.png)
 
 
 
