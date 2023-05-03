@@ -234,6 +234,8 @@ def pgls(trait_table,tree,x_trait,y_trait,filter_column,filter_value,output_dir=
     return results
 
 def parse_pgls_results(pgls_results_filepath):
+    """Parse PGLS results and return the result
+    """
     df = pd.read_csv(pgls_results_filepath,sep="\t")
     df = add_delta_AICc(df)
     df['results_dir'] = pgls_results_filepath
