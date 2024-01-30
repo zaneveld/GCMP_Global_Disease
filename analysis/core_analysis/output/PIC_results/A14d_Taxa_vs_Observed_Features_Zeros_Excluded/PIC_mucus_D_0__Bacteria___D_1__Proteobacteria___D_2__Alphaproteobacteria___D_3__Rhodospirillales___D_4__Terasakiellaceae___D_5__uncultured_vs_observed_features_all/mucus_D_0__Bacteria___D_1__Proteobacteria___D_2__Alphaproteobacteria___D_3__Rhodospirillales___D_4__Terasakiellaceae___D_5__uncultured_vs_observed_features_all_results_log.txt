@@ -1,0 +1,191 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing mucus_D_0__Bacteria___D_1__Proteobacteria___D_2__Alphaproteobacteria___D_3__Rhodospirillales___D_4__Terasakiellaceae___D_5__uncultured vs. observed_features_all"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+    Psammocora      Physogyra    Diploastrea    Caulastraea        Favites 
+    0.66666667    50.60000000     0.05263158   553.00000000   425.00000000 
+ Echinophyllia     Hydnophora    Lobophyllia     Turbinaria        Porites 
+    0.50000000    14.33333333     0.06666667     0.80000000     0.31818182 
+    Pachyseris        Galaxea       Acropora        Isopora      Montipora 
+    0.62500000     0.43750000     0.04545455     1.00000000     1.25000000 
+        Pavona     Tubastraea    Coscinaraea     Danafungia  Dendrophyllia 
+    0.15789474    11.00000000     5.00000000    43.00000000     3.00000000 
+     Orbicella       Diploria       Scolymia Stephanocoenia    Siderastrea 
+    1.80000000     5.33333333   107.25000000     3.40000000     0.66666667 
+  Lithophyllon 
+    4.00000000 
+    Psammocora      Physogyra    Diploastrea    Caulastraea        Favites 
+     210.21429      119.20000      239.60870      221.33333      145.57143 
+ Echinophyllia     Hydnophora    Lobophyllia     Turbinaria        Porites 
+     164.07692      119.35000      150.01961      207.31429      150.81818 
+    Pachyseris        Galaxea       Acropora        Isopora      Montipora 
+      97.20000      202.37209       46.67742      136.70000       68.86667 
+        Pavona     Tubastraea    Coscinaraea     Danafungia  Dendrophyllia 
+     191.43836      206.44000      176.88889       67.00000      217.83333 
+     Orbicella       Diploria       Scolymia Stephanocoenia    Siderastrea 
+      72.42857      233.75000      193.50000      106.33333      333.57143 
+  Lithophyllon 
+     124.00000 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for mucus_D_0__Bacteria___D_1__Proteobacteria___D_2__Alphaproteobacteria___D_3__Rhodospirillales___D_4__Terasakiellaceae___D_5__uncultured (x) vs.  observed_features_all (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-11.183  -5.434  -2.085   3.724  12.706 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X  0.10019    0.06575   1.524    0.141
+
+Residual standard error: 7.058 on 24 degrees of freedom
+Multiple R-squared:  0.08822,	Adjusted R-squared:  0.05023 
+F-statistic: 2.322 on 1 and 24 DF,  p-value: 0.1406
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+         pic.X       pic.Y
+27  2.15013453  -0.9181376
+28  5.07930837   1.4600944
+29  2.30832084 -10.9516706
+30  0.63017389  -4.8463373
+31  5.28713436  -7.7273502
+32  3.10352266   5.4779590
+33 13.26811724  -8.7587770
+34 28.16495654  -7.3879618
+35  7.10511252   7.1772188
+36 20.76832703  -8.2020458
+37  0.07047738   2.2862832
+38 46.54724023  12.6687655
+39 52.42357340  13.9770610
+40 71.26469905   4.5503138
+41  0.08004807   0.7723760
+42  0.27591225   3.7512754
+43  0.68106964  -2.5730792
+44  2.59634584  -0.2225439
+45  0.17246615  -5.3364232
+46  0.00902784  12.7065306
+47  0.03680455  -5.4307934
+48  0.02115701  -5.0054009
+49  0.01660557  -9.3143603
+50  0.06624349  -2.0787413
+51  0.09859817   9.2987315
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                               
+[2] "mucus_D_0__Bacteria___D_1__Proteobacteria___D_2__Alphaproteobacteria___D_3__Rhodospirillales___D_4__Terasakiellaceae___D_5__uncultured"
+Ancestral character estimates using fastAnc:
+        27         28         29         30         31         32         33 
+ 21.167967  45.782196  21.084450   8.099415  22.661530  59.766529  76.051406 
+        34         35         36         37         38         39         40 
+100.540410  74.988773  59.725105  24.336294 156.832340 261.987229 241.537427 
+        41         42         43         44         45         46         47 
+  7.149962   4.465195   4.748519   5.277395   5.053161   3.534018   2.359374 
+        48         49         50         51 
+  1.938704   0.998938   1.199627   0.849406 
+
+Variances on ancestral states:
+       27        28        29        30        31        32        33        34 
+54133.630 14878.908  7880.621  4533.520  5043.956 10660.112  6635.615  4416.286 
+       35        36        37        38        39        40        41        42 
+ 4359.716  2412.913  3406.296  4091.612  3274.962  2724.065 22484.658 21374.688 
+       43        44        45        46        47        48        49        50 
+ 1951.761  1387.643 18154.985 15635.082 13422.617 12738.586 11218.378 10286.200 
+       51 
+ 7984.880 
+
+Lower & upper 95% CIs:
+        lower     upper
+27 -434.85807 477.19401
+28 -193.29690 284.86129
+29 -152.91035 195.07925
+30 -123.87017 140.06900
+31 -116.53927 161.86233
+32 -142.59919 262.13225
+33  -83.60879 235.71160
+34  -29.71167 230.79249
+35  -54.42639 204.40393
+36  -36.55286 156.00307
+37  -90.05612 138.72871
+38   31.45955 282.20513
+39  149.82175 374.15271
+40  139.23999 343.83487
+41 -286.74979 301.04971
+42 -282.08847 291.01886
+43  -81.84180  91.33884
+44  -67.73472  78.28951
+45 -259.03809 269.14441
+46 -241.54501 248.61305
+47 -224.71842 229.43717
+48 -219.27738 223.15478
+49 -206.59808 208.59595
+50 -197.58534 199.98460
+51 -174.29258 175.99139
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "observed_features_all"  
+Ancestral character estimates using fastAnc:
+       27        28        29        30        31        32        33        34 
+165.67929 155.16867 146.22136 179.89517 113.10606 157.99797 172.95868 165.42530 
+       35        36        37        38        39        40        41        42 
+171.77850 205.94053 161.79097 150.19323 159.65952 146.51673 171.66517 177.62820 
+       43        44        45        46        47        48        49        50 
+210.03831 208.58638 170.97754 178.76652 162.44172 150.30953 149.96000 105.68076 
+       51 
+ 98.44141 
+
+Variances on ancestral states:
+       27        28        29        30        31        32        33        34 
+6159.1443 1692.8727  896.6308  515.8088  573.8846 1212.8721  754.9782  502.4703 
+       35        36        37        38        39        40        41        42 
+ 496.0340  274.5332  387.5570  465.5300  372.6143  309.9350 2558.2296 2431.9409 
+       43        44        45        46        47        48        49        50 
+ 222.0648  157.8814 2065.6138 1778.9076 1527.1807 1449.3540 1276.3897 1170.3296 
+       51 
+ 908.4931 
+
+Lower & upper 95% CIs:
+       lower    upper
+27  11.85806 319.5005
+28  74.52538 235.8120
+29  87.53153 204.9112
+30 135.38078 224.4096
+31  66.15252 160.0596
+32  89.73840 226.2575
+33 119.10402 226.8133
+34 121.49024 209.3604
+35 128.12574 215.4313
+36 173.46520 238.4159
+37 123.20549 200.3764
+38 107.90399 192.4825
+39 121.82521 197.4938
+40 112.01099 181.0225
+41  72.53044 270.7999
+42  80.97136 274.2850
+43 180.83070 239.2459
+44 183.95881 233.2140
+45  81.89745 260.0576
+46  96.09941 261.4336
+47  85.84657 239.0369
+48  75.69158 224.9275
+49  79.93587 219.9841
+50  38.62901 172.7325
+51  39.36462 157.5182
+
+null device 
+          1 

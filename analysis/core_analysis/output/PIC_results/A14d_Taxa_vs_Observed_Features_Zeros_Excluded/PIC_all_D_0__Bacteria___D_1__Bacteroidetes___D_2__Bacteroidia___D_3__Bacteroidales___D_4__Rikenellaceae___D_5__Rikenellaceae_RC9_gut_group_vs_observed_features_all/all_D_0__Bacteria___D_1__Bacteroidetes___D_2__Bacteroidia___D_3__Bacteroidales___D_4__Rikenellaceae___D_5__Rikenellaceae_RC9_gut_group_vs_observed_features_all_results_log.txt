@@ -1,0 +1,108 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing all_D_0__Bacteria___D_1__Bacteroidetes___D_2__Bacteroidia___D_3__Bacteroidales___D_4__Rikenellaceae___D_5__Rikenellaceae_RC9_gut_group vs. observed_features_all"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+       Stylophora       Lobophyllia           Porites           Galaxea 
+       0.16000000        0.06000000        0.01298701        0.16666667 
+          Isopora            Pavona       Coscinaraea         Ctenactis 
+       0.40000000        0.01369863        3.88888889      453.66666667 
+Pseudosiderastrea 
+       9.66666667 
+       Stylophora       Lobophyllia           Porites           Galaxea 
+         69.60000         150.01961         150.81818         202.37209 
+          Isopora            Pavona       Coscinaraea         Ctenactis 
+        136.70000         191.43836         176.88889          73.66667 
+Pseudosiderastrea 
+        151.16667 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for all_D_0__Bacteria___D_1__Bacteroidetes___D_2__Bacteroidia___D_3__Bacteroidales___D_4__Rikenellaceae___D_5__Rikenellaceae_RC9_gut_group (x) vs.  observed_features_all (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-4.105 -1.565 -1.494  1.109  6.313 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)  
+pic.X -0.19246    0.06605  -2.914   0.0225 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 3.141 on 7 degrees of freedom
+Multiple R-squared:  0.5481,	Adjusted R-squared:  0.4836 
+F-statistic: 8.492 on 1 and 7 DF,  p-value: 0.02253
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+         pic.X      pic.Y
+10  3.71445131  -2.235622
+11  8.90858639   4.598727
+12 15.86346637  -1.716050
+13 43.77259721 -10.045638
+14  0.17239408   0.999126
+15  0.60200340  -1.661732
+16  0.01810359  -1.470546
+17  0.01459505  -4.107802
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                               
+[2] "all_D_0__Bacteria___D_1__Bacteroidetes___D_2__Bacteroidia___D_3__Bacteroidales___D_4__Rikenellaceae___D_5__Rikenellaceae_RC9_gut_group"
+Ancestral character estimates using fastAnc:
+        10         11         12         13         14         15         16 
+ 38.371287  77.046695  91.820458 188.937932  14.412905   8.670908   5.720885 
+        17 
+  4.683218 
+
+Variances on ancestral states:
+       10        11        12        13        14        15        16        17 
+34527.886 12033.520 10271.625  6159.716 17720.412 11958.390 10086.329 10050.657 
+
+Lower & upper 95% CIs:
+        lower    upper
+10 -325.82966 402.5722
+11 -137.96021 292.0536
+12 -106.82363 290.4645
+13   35.10956 342.7663
+14 -246.49845 275.3243
+15 -205.66376 223.0056
+16 -191.12332 202.5651
+17 -191.81259 201.1790
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "observed_features_all"  
+Ancestral character estimates using fastAnc:
+      10       11       12       13       14       15       16       17 
+141.3350 118.0574 123.1877 124.6698 155.7549 162.5718 167.7047 168.0542 
+
+Variances on ancestral states:
+       10        11        12        13        14        15        16        17 
+2333.2014  813.1579  694.0989  416.2392 1197.4463  808.0811  681.5777  679.1672 
+
+Lower & upper 95% CIs:
+       lower    upper
+10  46.66069 236.0093
+11  62.16618 173.9486
+12  71.55005 174.8254
+13  84.68200 164.6576
+14  87.93077 223.5790
+15 106.85532 218.2882
+16 116.53488 218.8745
+17 116.97493 219.1334
+
+null device 
+          1 

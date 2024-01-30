@@ -1,0 +1,179 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing mucus_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Alteromonadales___D_4__Pseudoalteromonadaceae___D_5__Pseudoalteromonas vs. observed_features_all"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+   Pocillopora     Stylophora    Diploastrea        Favites  Echinophyllia 
+    0.22222222     0.28571429     0.15789474     0.75000000   209.75000000 
+    Hydnophora    Lobophyllia     Turbinaria        Porites     Pachyseris 
+    0.83333333     1.33333333     0.40000000    41.31818182     0.25000000 
+       Galaxea       Acropora        Isopora         Pavona     Goniastrea 
+    0.06250000     0.04545455     2.00000000     0.84210526   490.00000000 
+    Tubastraea      Ctenactis      Podabacia      Plerogyra      Platygyra 
+    0.57142857     5.00000000     1.00000000     2.33333333    11.25000000 
+      Scolymia Stephanocoenia    Siderastrea       Pectinia 
+    0.25000000     0.40000000     1.66666667    22.50000000 
+   Pocillopora     Stylophora    Diploastrea        Favites  Echinophyllia 
+      70.80000       69.60000      239.60870      145.57143      164.07692 
+    Hydnophora    Lobophyllia     Turbinaria        Porites     Pachyseris 
+     119.35000      150.01961      207.31429      150.81818       97.20000 
+       Galaxea       Acropora        Isopora         Pavona     Goniastrea 
+     202.37209       46.67742      136.70000      191.43836      274.64286 
+    Tubastraea      Ctenactis      Podabacia      Plerogyra      Platygyra 
+     206.44000       73.66667      150.50000      152.63636       81.57143 
+      Scolymia Stephanocoenia    Siderastrea       Pectinia 
+     193.50000      106.33333      333.57143       20.50000 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for mucus_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Alteromonadales___D_4__Pseudoalteromonadaceae___D_5__Pseudoalteromonas (x) vs.  observed_features_all (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-21.6474  -8.1260  -0.1426   4.1876  17.0735 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)    
+pic.X  0.30274    0.07856   3.853 0.000862 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 8.802 on 22 degrees of freedom
+Multiple R-squared:  0.403,	Adjusted R-squared:  0.3758 
+F-statistic: 14.85 on 1 and 22 DF,  p-value: 0.0008617
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+          pic.X       pic.Y
+25  0.399787487  -2.4969718
+26  1.815091356   5.7883874
+27  0.007145103  -0.1350424
+28  2.676521426   4.3728641
+29  0.493814802  -9.4853593
+30  4.550265007   1.9492577
+31  8.526623706  -9.9828602
+32  5.921171558  -7.9645144
+33 12.753560053  -4.4152534
+34 33.896908230   2.2862832
+35 20.706167539  23.3420982
+36 44.994956734  13.4792253
+37 92.890183562  30.9131286
+38  3.383471782 -20.6230661
+39  1.269012841   0.3443432
+40  2.523552653  -3.4645895
+41  0.043636065  -0.2225439
+42  0.033787934   5.6960841
+43  0.064998086  12.2108002
+44  0.018785885   4.8183028
+45  0.061225715  -4.1051866
+46  0.016605570  -9.3143603
+47  0.201891495   9.2987315
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                                           
+[2] "mucus_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Alteromonadales___D_4__Pseudoalteromonadaceae___D_5__Pseudoalteromonas"
+Ancestral character estimates using fastAnc:
+        25         26         27         28         29         30         31 
+ 11.393218  15.671843   2.838861  18.711959   5.558547  27.582746  44.049940 
+        32         33         34         35         36         37         38 
+ 61.560536  61.111265  91.236380  92.693351 125.728858 147.227077  33.486604 
+        39         40         41         42         43         44         45 
+  8.742724  15.700771   0.940891   5.892635   4.247319   2.891399   2.353919 
+        46         47 
+  0.886522   1.321601 
+
+Variances on ancestral states:
+       25        26        27        28        29        30        31        32 
+62600.081 19402.563  9512.679 15330.901  7900.929 12127.542  8066.055  5808.005 
+       33        34        35        36        37        38        39        40 
+ 5616.008  4079.462  3859.487  2468.714  2311.769  1145.817 26648.841 25505.900 
+       41        42        43        44        45        46        47 
+ 2065.606 21639.471 18801.379 16494.603 16056.721 13387.918 10726.034 
+
+Lower & upper 95% CIs:
+        lower     upper
+25 -478.99894 501.78538
+26 -257.34260 288.68628
+27 -188.32575 194.00347
+28 -223.97135 261.39527
+29 -168.66031 179.77740
+30 -188.26248 243.42798
+31 -131.98005 220.07993
+32  -87.81159 210.93266
+33  -85.77120 207.99372
+34  -33.95012 216.42288
+35  -29.07119 214.45789
+36   28.34400 223.11372
+37   52.98860 241.46556
+38  -32.85924  99.83245
+39 -311.21694 328.70239
+40 -297.32234 328.72388
+41  -88.13904  90.02082
+42 -282.43043 294.21570
+43 -264.50419 272.99883
+44 -248.83398 254.61678
+45 -246.00771 250.71555
+46 -225.89757 227.67061
+47 -201.66887 204.31207
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "observed_features_all"  
+Ancestral character estimates using fastAnc:
+       25        26        27        28        29        30        31        32 
+152.83473 126.11152  79.57388 133.43042 115.55951 150.03414 165.11082 155.90575 
+       33        34        35        36        37        38        39        40 
+161.45004 158.46551 124.88688 147.50748 155.92200 121.81400 169.38905 175.18141 
+       41        42        43        44        45        46        47 
+205.92893 171.00355 180.69845 166.72933 156.35873 151.97011 106.20816 
+
+Variances on ancestral states:
+        25         26         27         28         29         30         31 
+14238.0042  4412.9938  2163.6005  3486.9194  1797.0179  2758.3349  1834.5747 
+        32         33         34         35         36         37         38 
+ 1320.9951  1277.3266   927.8485   877.8165   561.4938   525.7976   260.6090 
+        39         40         41         42         43         44         45 
+ 6061.1154  5801.1605   469.8095  4921.7648  4276.2582  3751.5963  3652.0026 
+        46         47 
+ 3044.9997  2439.5706 
+
+Lower & upper 95% CIs:
+        lower    upper
+25 -81.038563 386.7080
+26  -4.092005 256.3150
+27 -11.594580 170.7423
+28  17.692135 249.1687
+29  32.472662 198.6464
+30  47.095231 252.9731
+31  81.160222 249.0614
+32  84.668575 227.1429
+33  91.400217 231.4999
+34  98.762720 218.1683
+35  66.816056 182.9577
+36 101.063591 193.9514
+37 110.978652 200.8653
+38  90.172951 153.4550
+39  16.796842 321.9813
+40  25.897325 324.4655
+41 163.445751 248.4121
+42  33.499178 308.5079
+43  52.527966 308.8689
+44  46.678792 286.7799
+45  37.912396 274.8051
+46  43.814337 260.1259
+47   9.399824 203.0165
+
+null device 
+          1 

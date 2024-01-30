@@ -1,0 +1,89 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing skeleton_D_0__Bacteria___D_1__Proteobacteria___D_2__Deltaproteobacteria___D_3__Desulfobacterales___D_4__Desulfobacteraceae___D_5__Desulfobacter vs. observed_features_all"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+ Pocillopora   Leptastrea      Favites      Porites     Acropora       Pavona 
+  0.25000000 254.00000000   0.25000000   2.24137931   5.83333333   0.06666667 
+Pocillopora  Leptastrea     Favites     Porites    Acropora      Pavona 
+   70.80000   327.00000   145.57143   150.81818    46.67742   191.43836 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for skeleton_D_0__Bacteria___D_1__Proteobacteria___D_2__Deltaproteobacteria___D_3__Desulfobacterales___D_4__Desulfobacteraceae___D_5__Desulfobacter (x) vs.  observed_features_all (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+      7       8       9      10      11 
+-0.8951  4.1522 -1.7888 -1.6590 -8.8447 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)  
+pic.X   0.8229     0.2660   3.094   0.0364 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 5.055 on 4 degrees of freedom
+Multiple R-squared:  0.7052,	Adjusted R-squared:  0.6315 
+F-statistic:  9.57 on 1 and 4 DF,  p-value: 0.03645
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+         pic.X     pic.Y
+7   3.43747829  1.933532
+8   8.62468218 11.249353
+9  16.57855007 11.853488
+10  0.03634805 -1.629115
+11  0.34115219 -8.563961
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                                        
+[2] "skeleton_D_0__Bacteria___D_1__Proteobacteria___D_2__Deltaproteobacteria___D_3__Desulfobacterales___D_4__Desulfobacteraceae___D_5__Desulfobacter"
+Ancestral character estimates using fastAnc:
+       7        8        9       10       11 
+38.22753 73.27963 87.16459 16.51369  9.22841 
+
+Variances on ancestral states:
+       7        8        9       10       11 
+9268.021 3270.746 2892.322 5448.177 3938.740 
+
+Lower & upper 95% CIs:
+        lower    upper
+7  -150.46277 226.9178
+8   -38.81363 185.3729
+9   -18.24482 192.5740
+10 -128.15736 161.1848
+11 -113.77998 132.2368
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "observed_features_all"  
+Ancestral character estimates using fastAnc:
+       7        8        9       10       11 
+151.9584 171.6747 188.3358 139.7447 128.6335 
+
+Variances on ancestral states:
+       7        8        9       10       11 
+8899.004 3140.517 2777.160 5231.251 3781.915 
+
+Lower & upper 95% CIs:
+        lower    upper
+7  -32.937285 336.8541
+8   61.835665 281.5137
+9   85.046170 291.6254
+10  -2.017002 281.5064
+11   8.098804 249.1681
+
+null device 
+          1 
