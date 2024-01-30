@@ -1,0 +1,193 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing all_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Cellvibrionales___D_4__Spongiibacteraceae___D_5__BD1_7_clade vs. observed_features_all"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+    Psammocora      Physogyra    Diploastrea    Caulastraea     Echinopora 
+    0.07142857     0.40000000     0.23188406     0.33333333     0.03125000 
+       Favites  Echinophyllia     Hydnophora    Lobophyllia     Turbinaria 
+    3.28571429     0.23076923     0.15000000     0.14000000     0.38235294 
+       Porites     Pachyseris        Galaxea       Acropora        Isopora 
+    0.20779221     0.20000000     0.40476190     0.01612903     0.70000000 
+        Pavona     Goniastrea      Alveopora     Cyphastrea     Tubastraea 
+    0.30136986     0.28571429     1.28571429     0.15384615     0.20000000 
+Gardineroseris      Podabacia      Platygyra   Acanthastrea       Diploria 
+    1.75000000     0.16666667     0.14285714     0.07142857     1.00000000 
+      Scolymia 
+    0.08333333 
+    Psammocora      Physogyra    Diploastrea    Caulastraea     Echinopora 
+     210.21429      119.20000      239.60870      221.33333      104.18750 
+       Favites  Echinophyllia     Hydnophora    Lobophyllia     Turbinaria 
+     145.57143      164.07692      119.35000      150.01961      207.31429 
+       Porites     Pachyseris        Galaxea       Acropora        Isopora 
+     150.81818       97.20000      202.37209       46.67742      136.70000 
+        Pavona     Goniastrea      Alveopora     Cyphastrea     Tubastraea 
+     191.43836      274.64286      153.85714      105.84615      206.44000 
+Gardineroseris      Podabacia      Platygyra   Acanthastrea       Diploria 
+     274.62500      150.50000       81.57143      168.78571      233.75000 
+      Scolymia 
+     193.50000 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for all_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Cellvibrionales___D_4__Spongiibacteraceae___D_5__BD1_7_clade (x) vs.  observed_features_all (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-36.500  -3.136  -0.015   6.575  14.898 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)  
+pic.X   20.378      8.526    2.39    0.025 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 9.956 on 24 degrees of freedom
+Multiple R-squared:  0.1923,	Adjusted R-squared:  0.1586 
+F-statistic: 5.713 on 1 and 24 DF,  p-value: 0.02505
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+         pic.X        pic.Y
+27 0.011504322  -0.03115532
+28 0.017002709  -1.46738561
+29 0.009268619  -5.81142398
+30 0.009562033  -5.65745910
+31 0.008802719  -8.39499457
+32 0.007726659  -5.92860818
+33 0.055851767   7.14902388
+34 0.186796073   8.20204575
+35 0.015117655  -1.55711534
+36 0.014762717   2.28628320
+37 0.036952882   7.34690627
+38 0.085251379  11.93292464
+39 0.068226708  -9.33382090
+40 0.182077861  13.47922530
+41 0.274174127 -30.91312860
+42 1.012739853  20.62306610
+43 0.026734775  -1.11035453
+44 0.005153365   3.46458954
+45 0.046416794   0.22254393
+46 0.032763906   7.24266376
+47 0.402136670  23.09243681
+48 0.035668669  -2.40901601
+49 0.018134337   9.31436032
+50 0.068928255   4.61937439
+51 0.070639305   9.29873152
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                               
+[2] "all_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Cellvibrionales___D_4__Spongiibacteraceae___D_5__BD1_7_clade"
+Ancestral character estimates using fastAnc:
+      27       28       29       30       31       32       33       34 
+0.393264 0.263557 0.161084 0.294886 0.291692 0.303330 0.297329 0.496798 
+      35       36       37       38       39       40       41       42 
+0.250929 0.211539 0.321586 0.354733 0.457201 0.628232 0.721022 1.520970 
+      43       44       45       46       47       48       49       50 
+0.467134 0.339785 0.292631 0.623347 1.016336 0.608322 0.404043 0.664270 
+      51 
+0.449062 
+
+Variances on ancestral states:
+      27       28       29       30       31       32       33       34 
+6.674176 1.807138 1.173740 1.263984 0.760345 0.470910 0.436281 0.282764 
+      35       36       37       38       39       40       41       42 
+0.438522 0.379596 0.409674 0.362187 0.319554 0.234976 0.223762 0.114230 
+      43       44       45       46       47       48       49       50 
+3.249028 2.648942 0.206512 1.806199 0.173799 1.558088 1.332762 1.514263 
+      51 
+1.031879 
+
+Lower & upper 95% CIs:
+       lower    upper
+27 -4.670283 5.456812
+28 -2.371268 2.898382
+29 -1.962366 2.284534
+30 -1.908684 2.498457
+31 -1.417385 2.000769
+32 -1.041678 1.648338
+33 -0.997282 1.591940
+34 -0.545443 1.539039
+35 -1.047003 1.548860
+36 -0.996043 1.419121
+37 -0.932927 1.576100
+38 -0.824835 1.534300
+39 -0.650771 1.565172
+40 -0.321865 1.578328
+41 -0.206126 1.648170
+42  0.858530 2.183410
+43 -3.065778 4.000046
+44 -2.850226 3.529797
+45 -0.598064 1.183326
+46 -2.010793 3.257487
+47  0.199227 1.833445
+48 -1.838216 3.054861
+49 -1.858685 2.666772
+50 -1.747617 3.076156
+51 -1.541935 2.440059
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "observed_features_all"  
+Ancestral character estimates using fastAnc:
+      27       28       29       30       31       32       33       34 
+169.0675 169.4188 177.1753 165.9574 177.4080 169.1801 174.0097 206.3503 
+      35       36       37       38       39       40       41       42 
+170.4975 162.4151 155.4613 156.4172 167.9006 165.6228 170.1742 124.5879 
+      43       44       45       46       47       48       49       50 
+168.8674 174.9659 205.9225 163.3119 231.4117 154.7769 151.4445 141.6520 
+      51 
+106.5367 
+
+Variances on ancestral states:
+        27         28         29         30         31         32         33 
+14416.0749  3903.3793  2535.2525  2730.1787  1642.3294  1017.1551   942.3579 
+        34         35         36         37         38         39         40 
+  610.7640   947.1982   819.9182   884.8872   782.3170   690.2306   507.5428 
+        41         42         43         44         45         46         47 
+  483.3203   246.7346  7017.8301  5721.6560   446.0620  3901.3505   375.4026 
+        48         49         50         51 
+ 3365.4370  2878.7371  3270.7759  2228.8369 
+
+Lower & upper 95% CIs:
+        lower    upper
+27 -66.263748 404.3987
+28  46.963781 291.8737
+29  78.486720 275.8638
+30  63.545185 268.3695
+31  97.977710 256.8383
+32 106.670073 231.6901
+33 113.841967 234.1775
+34 157.911529 254.7890
+35 110.175439 230.8197
+36 106.292008 218.5381
+37  97.157099 213.7655
+38 101.596185 211.2383
+39 116.406970 219.3942
+40 121.466570 209.7791
+41 127.084453 213.2639
+42  93.800585 155.3751
+43   4.673364 333.0615
+44  26.708273 323.2235
+45 164.526925 247.3180
+46  40.888762 285.7351
+47 193.436071 269.3873
+48  41.072577 268.4811
+49  46.282889 256.6060
+50  29.558185 253.7457
+51  14.003990 199.0694
+
+null device 
+          1 

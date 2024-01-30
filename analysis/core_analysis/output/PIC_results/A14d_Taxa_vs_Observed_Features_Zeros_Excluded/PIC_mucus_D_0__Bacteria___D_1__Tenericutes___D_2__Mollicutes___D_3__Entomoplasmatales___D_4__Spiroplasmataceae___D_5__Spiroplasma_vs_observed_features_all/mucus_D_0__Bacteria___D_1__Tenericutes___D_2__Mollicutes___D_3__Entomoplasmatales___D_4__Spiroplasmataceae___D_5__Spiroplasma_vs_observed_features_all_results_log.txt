@@ -1,0 +1,114 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing mucus_D_0__Bacteria___D_1__Tenericutes___D_2__Mollicutes___D_3__Entomoplasmatales___D_4__Spiroplasmataceae___D_5__Spiroplasma vs. observed_features_all"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+ Stylophora Diploastrea  Echinopora  Hydnophora Lobophyllia     Porites 
+ 0.28571429  0.47368421  0.63636364  0.83333333 16.53333333 13.09090909 
+    Galaxea    Acropora      Pavona   Podabacia   Goniopora 
+ 1.25000000  0.04545455  0.36842105  0.50000000  4.66666667 
+ Stylophora Diploastrea  Echinopora  Hydnophora Lobophyllia     Porites 
+   69.60000   239.60870   104.18750   119.35000   150.01961   150.81818 
+    Galaxea    Acropora      Pavona   Podabacia   Goniopora 
+  202.37209    46.67742   191.43836   150.50000    87.00000 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for mucus_D_0__Bacteria___D_1__Tenericutes___D_2__Mollicutes___D_3__Entomoplasmatales___D_4__Spiroplasmataceae___D_5__Spiroplasma (x) vs.  observed_features_all (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-12.556  -1.604   1.331   4.223   9.644 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X    1.258      2.886   0.436    0.673
+
+Residual standard error: 6.198 on 9 degrees of freedom
+Multiple R-squared:  0.02069,	Adjusted R-squared:  -0.08813 
+F-statistic: 0.1901 on 1 and 9 DF,  p-value: 0.6731
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+        pic.X       pic.Y
+12 0.07845983   0.2712148
+13 0.19545423   6.3221594
+14 0.30775660   1.1365213
+15 0.69000235 -11.6871578
+16 1.77962233   4.3087728
+17 0.02525612   1.9441872
+18 0.45823079  -1.6191378
+19 0.78223304   5.9258373
+20 0.01875294  -4.4926567
+21 0.07534455   9.7387319
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                      
+[2] "mucus_D_0__Bacteria___D_1__Tenericutes___D_2__Mollicutes___D_3__Entomoplasmatales___D_4__Spiroplasmataceae___D_5__Spiroplasma"
+Ancestral character estimates using fastAnc:
+      12       13       14       15       16       17       18       19 
+3.136136 2.322542 2.552649 4.192135 5.392792 2.962005 3.640136 8.106783 
+      20       21 
+1.723976 1.518592 
+
+Variances on ancestral states:
+       12        13        14        15        16        17        18        19 
+57.012061 18.921539 15.725935  8.215332  6.444243  5.132013 30.869942 12.069337 
+       20        21 
+18.995812 18.059764 
+
+Lower & upper 95% CIs:
+        lower     upper
+12 -11.663105 17.935377
+13  -6.203242 10.848325
+14  -5.219915 10.325213
+15  -1.425696  9.809965
+16   0.417232 10.368353
+17  -1.478169  7.402178
+18  -7.249767 14.530038
+19   1.297557 14.916010
+20  -6.818524 10.266476
+21  -6.810778  9.847961
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "observed_features_all"  
+Ancestral character estimates using fastAnc:
+      12       13       14       15       16       17       18       19 
+133.7253 130.9129 139.7416 159.1888 146.0275 128.1493 135.4674 121.3492 
+      20       21 
+143.4480 139.8368 
+
+Variances on ancestral states:
+       12        13        14        15        16        17        18        19 
+4365.2649 1448.7729 1204.0938  629.0266  493.4189  392.9449 2363.6310  924.1177 
+       20        21 
+1454.4598 1382.7890 
+
+Lower & upper 95% CIs:
+        lower    upper
+12   4.227758 263.2228
+13  56.309886 205.5159
+14  71.729446 207.7537
+15 110.031165 208.3463
+16 102.489904 189.5650
+17  89.296495 167.0020
+18  40.177758 230.7571
+19  61.766612 180.9319
+20  68.698707 218.1972
+21  66.952480 212.7211
+
+null device 
+          1 

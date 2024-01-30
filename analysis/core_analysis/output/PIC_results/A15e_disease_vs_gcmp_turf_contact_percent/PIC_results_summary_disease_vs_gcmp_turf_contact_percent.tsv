@@ -1,0 +1,2 @@
+	analysis_label	pic_x_trait	pic_y_trait	R2	p	sig_marker	FDR_q	slope	pic_filter_column	pic_filter_value	results_dir	slope_std_error	T_stat	pic_suffix	trait_table	tree
+0	disease_vs_gcmp_turf_contact_percent	turf_contact_percent	perc_dis	0.03698	0.357	n.s	0.357	0.1514	None	None	" ../output/PIC_results/A15e_disease_vs_gcmp_turf_contact_percent/PIC_turf_contact_percent_vs_perc_dis/"""	0.1611	0.94		../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata_zeros_depth.tsv	../output/huang_roy_genus_tree.newick

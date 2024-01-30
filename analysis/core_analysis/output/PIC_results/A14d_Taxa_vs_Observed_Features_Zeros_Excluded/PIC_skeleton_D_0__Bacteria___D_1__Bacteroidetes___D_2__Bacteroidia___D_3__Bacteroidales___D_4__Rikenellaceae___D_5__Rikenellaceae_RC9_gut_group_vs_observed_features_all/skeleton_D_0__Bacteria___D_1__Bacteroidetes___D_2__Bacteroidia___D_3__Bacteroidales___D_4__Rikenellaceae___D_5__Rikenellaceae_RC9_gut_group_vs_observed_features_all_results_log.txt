@@ -1,0 +1,81 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing skeleton_D_0__Bacteria___D_1__Bacteroidetes___D_2__Bacteroidia___D_3__Bacteroidales___D_4__Rikenellaceae___D_5__Rikenellaceae_RC9_gut_group vs. observed_features_all"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+       Stylophora       Coscinaraea         Ctenactis Pseudosiderastrea 
+        0.3636364         9.6666667       882.0000000        24.0000000 
+       Stylophora       Coscinaraea         Ctenactis Pseudosiderastrea 
+         69.60000         176.88889          73.66667         151.16667 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for skeleton_D_0__Bacteria___D_1__Bacteroidetes___D_2__Bacteroidia___D_3__Bacteroidales___D_4__Rikenellaceae___D_5__Rikenellaceae_RC9_gut_group (x) vs.  observed_features_all (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+     5      6      7 
+-1.147  6.224 -1.955 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X -0.09531    0.05211  -1.829    0.209
+
+Residual standard error: 4.684 on 2 degrees of freedom
+Multiple R-squared:  0.6258,	Adjusted R-squared:  0.4388 
+F-statistic: 3.345 on 1 and 2 DF,  p-value: 0.2089
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+      pic.X     pic.Y
+5  8.651916  -1.97204
+6 28.254531   3.53144
+7 84.895914 -10.04564
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                                    
+[2] "skeleton_D_0__Bacteria___D_1__Bacteroidetes___D_2__Bacteroidia___D_3__Bacteroidales___D_4__Rikenellaceae___D_5__Rikenellaceae_RC9_gut_group"
+Ancestral character estimates using fastAnc:
+       5        6        7 
+148.1522 226.1018 393.6242 
+
+Variances on ancestral states:
+        5         6         7 
+440467.32 150156.56  62680.83 
+
+Lower & upper 95% CIs:
+        lower     upper
+5 -1152.65500 1448.9593
+6  -533.39896  985.6026
+7   -97.08417  884.3325
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "observed_features_all"  
+Ancestral character estimates using fastAnc:
+       5        6        7 
+122.8685 105.1014 120.4838 
+
+Variances on ancestral states:
+        5         6         7 
+6392.6493 2179.2723  909.7078 
+
+Lower & upper 95% CIs:
+      lower    upper
+5 -33.84140 279.5785
+6  13.60334 196.5994
+7  61.36751 179.6000
+
+null device 
+          1 

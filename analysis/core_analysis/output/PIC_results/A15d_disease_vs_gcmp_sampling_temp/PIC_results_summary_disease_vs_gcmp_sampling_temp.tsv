@@ -1,0 +1,2 @@
+	analysis_label	pic_x_trait	pic_y_trait	R2	p	sig_marker	FDR_q	slope	pic_filter_column	pic_filter_value	results_dir	slope_std_error	T_stat	pic_suffix	trait_table	tree
+0	disease_vs_gcmp_sampling_temp	temperature	perc_dis	0.02556	0.435	n.s	0.435	-0.3386	None	None	" ../output/PIC_results/A15d_disease_vs_gcmp_sampling_temp/PIC_temperature_vs_perc_dis/"""	0.4267	-0.793		../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata_zeros_depth.tsv	../output/huang_roy_genus_tree.newick
