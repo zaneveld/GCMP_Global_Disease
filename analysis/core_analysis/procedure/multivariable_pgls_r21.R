@@ -35,8 +35,8 @@ print(paste0("Found x trait columns:",x_trait_columns))
 #for consistency with the X trait variable
 y_trait_column <- y_trait
 
-output_dir_for_all_pgls = "./PGLS_results/"
-
+output_dir_for_all_pgls = "../output/PIC_results/"
+#output_dir_for_all_pgls = ""
 #Create a function to make the overall directory holding all PIC/PGLS results
 create_overall_output_dir <- function(output_dir_for_all_pgls,user_specified_output_dir){
 	#Set output directory for all the PGLS models
@@ -47,17 +47,18 @@ create_overall_output_dir <- function(output_dir_for_all_pgls,user_specified_out
 	}
 	print("Creating output directory for all PGLS results")
 	dir.create(output_dir_for_all_pgls, showWarnings = FALSE)		
+	return(output_dir_for_all_pgls)
 }
 
-create_overall_output_dir(output_dir_for_all_pgls,user_specified_output_dir)
-
+output_dir_for_all_pgls <- create_overall_output_dir(output_dir_for_all_pgls,user_specified_output_dir)
+print(paste0("FINAL output dir for all PGLS:",output_dir_for_all_pgls))
 
 
 #create function to automatically name the output directory given 
 #command line arguments
 set_output_dir_name <- function(output_dir_for_all_pics,x_traits,y_trait,filter_column,
   filter_value){
-    output_dir <- paste0(output_dir_for_all_pics,"PIC_",x_traits,"_vs_",y_trait)
+    output_dir <- paste0(output_dir_for_all_pics,"PIC_",gsub(",","_and_",x_traits),"_vs_",y_trait)
 
     #Add filter column and value to directory name, if they were provided
     if (!is.na(filter_column) & (filter_column != 'None') & (filter_value != 'None')){
@@ -160,8 +161,8 @@ host_name <- rownames(trait_table)
 trait_table <- cbind(host_name = host_name, trait_table)
 
 #Record the filtered tree and trait table (as .tsv)
-write.tree(tree,paste0(output_dir,x_traits,"_vs_",y_trait,"_filtered_tree.newick"))
-write.table(trait_table,paste0(output_dir,x_traits,"_vs_",y_trait,"_filtered_table.tsv"),sep="\t", row.names=FALSE)
+write.tree(tree,paste0(output_dir,gsub(",","_and_",x_traits),"_vs_",y_trait,"_filtered_tree.newick"))
+write.table(trait_table,paste0(output_dir,gsub(",","_and_",x_traits),"_vs_",y_trait,"_filtered_table.tsv"),sep="\t", row.names=FALSE)
 
 
 package <- "caper"
