@@ -1,0 +1,117 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing tissue_D_0__Bacteria___D_1__Tenericutes___D_2__Mollicutes___D_3__Mycoplasmatales___D_4__Mycoplasmataceae___D_5__Mycoplasma vs. observed_features_all"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+ Psammocora Diploastrea  Hydnophora Lobophyllia     Porites     Galaxea 
+ 0.25000000  0.08000000  0.28571429  0.05882353  0.03846154  0.28571429 
+    Isopora      Pavona  Goniastrea   Alveopora  Tubastraea    Diploria 
+ 0.66666667  0.33333333  0.42857143  1.66666667  0.42857143  0.33333333 
+ Psammocora Diploastrea  Hydnophora Lobophyllia     Porites     Galaxea 
+   210.2143    239.6087    119.3500    150.0196    150.8182    202.3721 
+    Isopora      Pavona  Goniastrea   Alveopora  Tubastraea    Diploria 
+   136.7000    191.4384    274.6429    153.8571    206.4400    233.7500 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for tissue_D_0__Bacteria___D_1__Tenericutes___D_2__Mollicutes___D_3__Mycoplasmatales___D_4__Mycoplasmataceae___D_5__Mycoplasma (x) vs.  observed_features_all (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-7.229 -3.020 -1.653  1.034 25.646 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X    52.53      78.18   0.672    0.517
+
+Residual standard error: 9.147 on 10 degrees of freedom
+Multiple R-squared:  0.0432,	Adjusted R-squared:  -0.05249 
+F-statistic: 0.4515 on 1 and 10 DF,  p-value: 0.5169
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+         pic.X       pic.Y
+13 0.011570119 -1.46859163
+14 0.003367959  0.09054392
+15 0.019341547 -4.81571180
+16 0.019779237  0.62772445
+17 0.031160021  9.50436296
+18 0.024790596 26.94861704
+19 0.026549017 -0.25844298
+20 0.023934084  3.41251866
+21 0.035060778 -1.72527991
+22 0.061610973 -3.99293711
+23 0.069919093  1.19961186
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                   
+[2] "tissue_D_0__Bacteria___D_1__Tenericutes___D_2__Mollicutes___D_3__Mycoplasmatales___D_4__Mycoplasmataceae___D_5__Mycoplasma"
+Ancestral character estimates using fastAnc:
+      13       14       15       16       17       18       19       20 
+0.374226 0.245322 0.213999 0.236181 0.224265 0.331198 0.447638 0.322771 
+      21       22       23 
+0.601374 0.657598 0.827058 
+
+Variances on ancestral states:
+      13       14       15       16       17       18       19       20 
+0.155223 0.052431 0.021724 0.015588 0.014875 0.008832 0.075708 0.061350 
+      21       22       23 
+0.044638 0.040098 0.039028 
+
+Lower & upper 95% CIs:
+       lower    upper
+13 -0.397982 1.146434
+14 -0.203474 0.694118
+15 -0.074888 0.502886
+16 -0.008531 0.480893
+17 -0.014780 0.463310
+18  0.147005 0.515392
+19 -0.091659 0.986935
+20 -0.162699 0.808241
+21  0.187271 1.015477
+22  0.265116 1.050079
+23  0.439851 1.214266
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "observed_features_all"  
+Ancestral character estimates using fastAnc:
+      13       14       15       16       17       18       19       20 
+190.0869 206.4486 208.3081 201.8539 198.8918 198.0383 180.7687 179.5210 
+      21       22       23 
+176.5066 174.1567 164.5437 
+
+Variances on ancestral states:
+       13        14        15        16        17        18        19        20 
+9915.8739 3349.3481 1387.7742  995.8017  950.2152  564.1726 4836.3579 3919.1096 
+       21        22        23 
+2851.5377 2561.5332 2493.1567 
+
+Lower & upper 95% CIs:
+        lower    upper
+13  -5.086959 385.2607
+14  93.016448 319.8808
+15 135.292567 281.3237
+16 140.003507 263.7043
+17 138.473734 259.3099
+18 151.483743 244.5928
+19  44.462616 317.0748
+20  56.819500 302.2224
+21  71.843039 281.1702
+22  74.958015 273.3555
+23  66.677893 262.4094
+
+null device 
+          1 

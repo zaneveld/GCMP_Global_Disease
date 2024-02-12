@@ -1,0 +1,35 @@
+Coral_genus	Coral_family	Mean_disease_prevalance	SE	citation	doi									
+Acropora	Acropordae	10.77	0	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Anacropora 	Acropordae	0.03	0.00	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Astreopra 	Acropordae	0.04	0.00	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Isopora	Acropordae	2.37	0.1	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Monitporta 	Acropordae	4.22	0.11	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Pavona	Agariciidae	0.63	0.02	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Pachyseris	Agariciidae	0.21	0.01	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Turbinaria 	Dendrophylliidae	0.03	0	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Diploastrea	Diploastraeidae	0.32	0.01	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Euphyllia	Euphlliidae	0.06	0.00	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Galaxea	Euphlliidae	0.75	0.02	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Ctenactis	Fungiidae	0.11	0.01	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Fungia	Fungiidae	1.55	0.09	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Herpolitha	Fungiidae	0.04	0.00	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Lithophyllon	Fungiidae	0.21	0.01	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Pleuractis 	Fungiidae	0.04	0.00	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Sandalolitha 	Fungiidae	0.05	0	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Acanthastrea	Lobophylliidea	0.02	0.00	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Echinophyllia 	Lobophylliidea	0.01	0.00	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Lobophyllia	Lobophylliidea	0.42	0.00	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Astrea	Merulinidae	0.07	0.00	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Cyphastrea	Merulinidae	0.13	0.00	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Dipsastraea	Merulinidae	1.03	0.00	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Echinopora 	Merulinidae	0.06	0.00	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Favites	Merulinidae	0.31	0.01	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Goniastrea	Merulinidae	1.63	0.04	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Hydnophora 	Merulinidae	0.09	0.00	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Leptoria 	Merulinidae	0.02	0.00	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Merulina	Merulinidae	0.07	0.00	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Platygyra 	Merulinidae	0.84	0.02	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Pocillopora	Pocilloporidae	1.08	0.05	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Porites	Poritidae	7.92	0.15	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+Psammocora	Psammocoridae	0.06	0	Akmal et al 2020	https://doi.org/10.1007/s42974-020-00030-7									
+														

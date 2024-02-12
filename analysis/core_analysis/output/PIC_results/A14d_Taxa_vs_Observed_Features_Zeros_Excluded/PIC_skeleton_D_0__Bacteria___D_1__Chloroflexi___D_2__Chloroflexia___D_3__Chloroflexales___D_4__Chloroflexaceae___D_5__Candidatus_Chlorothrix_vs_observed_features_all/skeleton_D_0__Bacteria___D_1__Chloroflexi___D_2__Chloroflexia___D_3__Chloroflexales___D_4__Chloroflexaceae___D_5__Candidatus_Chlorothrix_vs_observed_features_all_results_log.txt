@@ -1,0 +1,166 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing skeleton_D_0__Bacteria___D_1__Chloroflexi___D_2__Chloroflexia___D_3__Chloroflexales___D_4__Chloroflexaceae___D_5__Candidatus_Chlorothrix vs. observed_features_all"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+   Pocillopora      Physogyra    Diploastrea     Echinopora        Favites 
+    0.12500000     5.20000000    52.60000000     0.08333333     0.62500000 
+    Hydnophora    Lobophyllia     Turbinaria        Porites        Galaxea 
+    4.71428571     2.94444444     2.00000000     4.51724138     0.76923077 
+        Pavona     Cyphastrea    Coscinaraea      Platygyra        Oxypora 
+    1.00000000     4.60000000     0.66666667     0.20000000     9.00000000 
+  Acanthastrea      Goniopora      Orbicella       Diploria Stephanocoenia 
+    7.20000000     0.50000000     3.75000000     6.00000000     0.40000000 
+      Leptoria 
+   12.00000000 
+   Pocillopora      Physogyra    Diploastrea     Echinopora        Favites 
+      70.80000      119.20000      239.60870      104.18750      145.57143 
+    Hydnophora    Lobophyllia     Turbinaria        Porites        Galaxea 
+     119.35000      150.01961      207.31429      150.81818      202.37209 
+        Pavona     Cyphastrea    Coscinaraea      Platygyra        Oxypora 
+     191.43836      105.84615      176.88889       81.57143      261.00000 
+  Acanthastrea      Goniopora      Orbicella       Diploria Stephanocoenia 
+     168.78571       87.00000       72.42857      233.75000      106.33333 
+      Leptoria 
+     156.50000 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for skeleton_D_0__Bacteria___D_1__Chloroflexi___D_2__Chloroflexia___D_3__Chloroflexales___D_4__Chloroflexaceae___D_5__Candidatus_Chlorothrix (x) vs.  observed_features_all (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-6.237 -4.447  1.448  4.756 20.218 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)  
+pic.X    2.959      1.195   2.477   0.0228 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 7.674 on 19 degrees of freedom
+Multiple R-squared:  0.2441,	Adjusted R-squared:  0.2043 
+F-statistic: 6.136 on 1 and 19 DF,  p-value: 0.02282
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+        pic.X      pic.Y
+22 0.24403237 -1.0711680
+23 0.67087476  6.7197540
+24 1.00495179 -1.3333661
+25 1.15195992  5.2381959
+26 5.19466685  9.1349716
+27 0.43226544 15.1398426
+28 0.06339595 -5.7040544
+29 0.16287965 -4.8718971
+30 0.98487618 18.0498625
+31 0.17840635 -4.3367728
+32 0.12938468  5.0867332
+33 0.68865812  3.1035385
+34 0.09382009  2.2542671
+35 3.09025077 11.4485472
+36 0.13695005 20.6230661
+37 0.09901929 -0.2532501
+38 0.03306126 -5.7464976
+39 0.37302095  5.9258373
+40 0.02713342  5.0710835
+41 0.01365216 -0.6468327
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                                 
+[2] "skeleton_D_0__Bacteria___D_1__Chloroflexi___D_2__Chloroflexia___D_3__Chloroflexales___D_4__Chloroflexaceae___D_5__Candidatus_Chlorothrix"
+Ancestral character estimates using fastAnc:
+       22        23        24        25        26        27        28        29 
+ 3.649120  6.233871  7.364865 10.640488 15.494955  9.644378  8.357384  7.812207 
+       30        31        32        33        34        35        36        37 
+ 6.706449  6.419921  5.148865  5.401544  5.138135  5.192127  2.387631  2.047936 
+       38        39        40        41 
+ 2.193909  2.420742  1.659671  1.331885 
+
+Variances on ancestral states:
+        22         23         24         25         26         27         28 
+242.522723  78.277164  61.524252  46.096577  28.592878  17.923604  17.094499 
+        29         30         31         32         33         34         35 
+ 16.886925  14.409007  15.194164  15.465316  15.064884  11.155823   5.937219 
+        36         37         38         39         40         41 
+  3.928981 112.027814  90.549595  50.184681 101.810937  96.242928 
+
+Lower & upper 95% CIs:
+        lower     upper
+22 -26.874236 34.172477
+23 -11.107108 23.574850
+24  -8.008865 22.738595
+25  -2.666826 23.947802
+26   5.014382 25.975527
+27   1.346468 17.942288
+28   0.253667 16.461101
+29  -0.242159 15.866573
+30  -0.733553 14.146452
+31  -1.220098 14.059941
+32  -2.559024 12.856754
+33  -2.205904 13.008992
+34  -1.408330 11.684601
+35   0.416311  9.967943
+36  -1.497414  6.272676
+37 -18.697330 22.793202
+38 -16.456971 20.844789
+39 -11.464123 16.305607
+40 -18.117004 21.436347
+41 -17.896398 20.560167
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "observed_features_all"  
+Ancestral character estimates using fastAnc:
+      22       23       24       25       26       27       28       29 
+150.0015 138.6558 147.7043 153.3830 169.6148 161.9517 178.5345 181.9299 
+      30       31       32       33       34       35       36       37 
+196.1005 132.4587 107.9305 127.9546 126.9010 130.0688 120.3888 157.0298 
+      38       39       40       41 
+157.4394 129.6681 158.3889 174.6782 
+
+Variances on ancestral states:
+       22        23        24        25        26        27        28        29 
+8699.4433 2807.8513 2206.9138 1653.5133 1025.6446  642.9310  613.1905  605.7447 
+       30        31        32        33        34        35        36        37 
+ 516.8602  545.0243  554.7506  540.3869  400.1664  212.9718  140.9350 4018.5085 
+       38        39        40        41 
+3248.0712 1800.1562 3652.0227 3452.2947 
+
+Lower & upper 95% CIs:
+       lower    upper
+22 -32.80931 332.8123
+23  34.79707 242.5146
+24  55.62784 239.7808
+25  73.68275 233.0833
+26 106.84447 232.3852
+27 112.25374 211.6496
+28 129.99963 227.0693
+29 133.69058 230.1692
+30 151.54073 240.6602
+31  86.70102 178.2164
+32  61.76635 154.0947
+33  82.39199 173.5172
+34  87.69289 166.1092
+35 101.46545 158.6722
+36  97.12045 143.6572
+37  32.78204 281.2775
+38  45.73537 269.1434
+39  46.50872 212.8275
+40  39.94220 276.8355
+41  59.51599 289.8404
+
+null device 
+          1 

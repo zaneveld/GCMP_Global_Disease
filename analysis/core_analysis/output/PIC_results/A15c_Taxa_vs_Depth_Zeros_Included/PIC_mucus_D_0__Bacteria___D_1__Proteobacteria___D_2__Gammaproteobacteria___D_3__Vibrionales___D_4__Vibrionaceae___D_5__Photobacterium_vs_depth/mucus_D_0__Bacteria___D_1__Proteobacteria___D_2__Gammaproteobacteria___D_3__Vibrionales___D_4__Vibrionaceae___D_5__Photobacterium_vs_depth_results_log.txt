@@ -1,0 +1,191 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing mucus_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Vibrionales___D_4__Vibrionaceae___D_5__Photobacterium vs. depth"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata_zeros_depth.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+   Pocillopora     Stylophora     Psammocora      Physogyra    Diploastrea 
+     3.3333333      0.5714286      0.0000000      0.0000000      8.5789474 
+    Echinopora        Favites  Echinophyllia     Hydnophora    Lobophyllia 
+     4.0909091      3.0000000      0.5000000      0.5000000      5.9333333 
+    Turbinaria        Porites     Pachyseris        Galaxea       Acropora 
+     0.8000000      0.7272727      1.8750000      2.3125000      1.7727273 
+     Montipora         Pavona     Goniastrea     Cyphastrea    Seriatopora 
+     0.0000000      6.2105263      0.0000000      0.0000000      0.0000000 
+    Tubastraea      Platygyra   Acanthastrea    Montastraea      Orbicella 
+     0.2857143     55.5000000      0.0000000      0.0000000      0.0000000 
+Stephanocoenia 
+     4.4000000 
+   Pocillopora     Stylophora     Psammocora      Physogyra    Diploastrea 
+      4.154800       2.055745       2.990533       2.984960       4.601323 
+    Echinopora        Favites  Echinophyllia     Hydnophora    Lobophyllia 
+      2.593967       1.843840       7.796480       2.409886       5.069444 
+    Turbinaria        Porites     Pachyseris        Galaxea       Acropora 
+      5.208769       3.764942       6.594436       4.321275       2.843768 
+     Montipora         Pavona     Goniastrea     Cyphastrea    Seriatopora 
+      1.877400       4.402013       1.997143       1.983333       1.900000 
+    Tubastraea      Platygyra   Acanthastrea    Montastraea      Orbicella 
+      5.347000       2.554000       7.890000       4.389120       5.365964 
+Stephanocoenia 
+      6.217920 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for mucus_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Vibrionales___D_4__Vibrionaceae___D_5__Photobacterium (x) vs.  depth (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.59497 -0.08914  0.01218  0.07061  0.25697 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X 0.009353   0.010546   0.887    0.384
+
+Residual standard error: 0.1921 on 24 degrees of freedom
+Multiple R-squared:  0.03173,	Adjusted R-squared:  -0.008611 
+F-statistic: 0.7866 on 1 and 24 DF,  p-value: 0.3839
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+         pic.X        pic.Y
+27  0.02721128  0.056012199
+28  0.01832352  0.060220809
+29  0.36452222  0.260379773
+30  0.09490489  0.025866759
+31  0.20945179  0.082452072
+32  0.36046815  0.142625432
+33  0.66367372 -0.002597859
+34  0.41453693  0.037368571
+35  0.41734886 -0.591064784
+36  0.42672995 -0.193293782
+37  0.88367790 -0.443525345
+38  1.25110924 -0.202913045
+39  0.00000000  0.000000000
+40  0.93254016 -0.054371701
+41  3.07441590 -0.060385360
+42  5.61371408  0.038725439
+43 16.91735891  0.228838697
+44  0.17383979  0.013808676
+45  0.01139736 -0.093503791
+46  0.13090819 -0.035185773
+47  0.08743150  0.128032860
+48  0.33074399  0.036804656
+49  0.08812236  0.226057632
+50  0.03874633 -0.201318082
+51  0.14774530  0.080540471
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                          
+[2] "mucus_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Vibrionales___D_4__Vibrionaceae___D_5__Photobacterium"
+Ancestral character estimates using fastAnc:
+       27        28        29        30        31        32        33        34 
+ 2.110556  1.820640  1.643072  0.690150  1.832076  2.302757  3.480606  3.197985 
+       35        36        37        38        39        40        41        42 
+ 3.312614  2.592696  2.967677  4.099281  1.778301  5.328731  9.123878 10.573613 
+       43        44        45        46        47        48        49        50 
+25.615068  2.290152  1.318209  0.566053  2.647754  2.790885  2.471378  2.219234 
+       51 
+ 1.507763 
+
+Variances on ancestral states:
+        27         28         29         30         31         32         33 
+1540.51903  475.97616  204.63920  102.63022  381.96866  287.67019  167.39339 
+        34         35         36         37         38         39         40 
+ 135.96732  113.61376  120.15204   94.52753   96.37461   99.23096   94.63098 
+        41         42         43         44         45         46         47 
+  61.18130   56.93156   27.89634  688.29907  627.23136   50.24792  590.61364 
+        48         49         50         51 
+ 435.09320  400.63609  326.74851  352.03457 
+
+Lower & upper 95% CIs:
+        lower    upper
+27 -74.818358 79.03947
+28 -40.940441 44.58172
+29 -26.395151 29.68129
+30 -19.165938 20.54624
+31 -36.474200 40.13835
+32 -30.940495 35.54601
+33 -21.877992 28.83920
+34 -19.656601 26.05257
+35 -17.578978 24.20421
+36 -18.891626 24.07702
+37 -16.088476 22.02383
+38 -15.142151 23.34071
+39 -17.746187 21.30279
+40 -13.737846 24.39531
+41  -6.206943 24.45470
+42  -4.215176 25.36240
+43  15.262940 35.96720
+44 -49.131339 53.71164
+45 -47.769183 50.40560
+46 -13.327557 14.45966
+47 -44.985232 50.28074
+48 -38.092535 43.67430
+49 -36.759778 41.70253
+50 -33.210092 37.64856
+51 -35.266902 38.28243
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "depth"                  
+Ancestral character estimates using fastAnc:
+      27       28       29       30       31       32       33       34 
+4.147876 3.551106 3.018563 2.287955 3.609331 3.845907 4.344303 4.435641 
+      35       36       37       38       39       40       41       42 
+4.531093 5.788384 6.175750 3.667518 3.671555 3.266346 2.516654 2.429288 
+      43       44       45       46       47       48       49       50 
+2.243756 4.517559 4.526362 5.255402 4.593232 4.287268 4.187090 5.035588 
+      51 
+3.076659 
+
+Variances on ancestral states:
+      27       28       29       30       31       32       33       34 
+5.477679 1.692446 0.727643 0.364926 1.358180 1.022879 0.595207 0.483464 
+      35       36       37       38       39       40       41       42 
+0.403981 0.427229 0.336115 0.342683 0.352839 0.336483 0.217545 0.202434 
+      43       44       45       46       47       48       49       50 
+0.099192 2.447410 2.230269 0.178668 2.100066 1.547077 1.424556 1.161831 
+      51 
+1.251742 
+
+Lower & upper 95% CIs:
+       lower    upper
+27 -0.439395 8.735147
+28  1.001263 6.100949
+29  1.346644 4.690482
+30  1.103937 3.471974
+31  1.325128 5.893534
+32  1.863612 5.828202
+33  2.832170 5.856436
+34  3.072822 5.798460
+35  3.285328 5.776859
+36  4.507274 7.069494
+37  5.039432 7.312068
+38  2.520151 4.814884
+39  2.507310 4.835800
+40  2.129406 4.403286
+41  1.602477 3.430831
+42  1.547433 3.311144
+43  1.626459 2.861053
+44  1.451295 7.583822
+45  1.599281 7.453443
+46  4.426926 6.083878
+47  1.752877 7.433586
+48  1.849390 6.725147
+49  1.847736 6.526443
+50  2.922938 7.148238
+51  0.883786 5.269532
+
+null device 
+          1 

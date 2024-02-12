@@ -1,0 +1,91 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing skeleton_D_0__Bacteria___D_1__Proteobacteria___D_2__Alphaproteobacteria___D_3__Rickettsiales___D_4__Midichloriaceae___D_5__MD3_55 vs. observed_features_all"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+    Hydnophora    Lobophyllia        Porites     Pachyseris    Montastraea 
+    0.28571429     0.16666667     0.03448276     0.11111111     0.50000000 
+Stephanocoenia 
+  544.80000000 
+    Hydnophora    Lobophyllia        Porites     Pachyseris    Montastraea 
+      119.3500       150.0196       150.8182        97.2000        41.0000 
+Stephanocoenia 
+      106.3333 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for skeleton_D_0__Bacteria___D_1__Proteobacteria___D_2__Alphaproteobacteria___D_3__Rickettsiales___D_4__Midichloriaceae___D_5__MD3_55 (x) vs.  observed_features_all (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+      7       8       9      10      11 
+  0.923 -10.242  -3.163  -2.330   0.991 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X -0.01918    0.17276  -0.111    0.917
+
+Residual standard error: 5.526 on 4 degrees of freedom
+Multiple R-squared:  0.003073,	Adjusted R-squared:  -0.2462 
+F-statistic: 0.01233 on 1 and 4 DF,  p-value: 0.9169
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+         pic.X       pic.Y
+7   7.32754133   0.7824408
+8   0.02993621 -10.2427700
+9   0.01227787  -3.1630837
+10 14.48112879  -2.6074389
+11 27.56626575   0.4622306
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                          
+[2] "skeleton_D_0__Bacteria___D_1__Proteobacteria___D_2__Alphaproteobacteria___D_3__Rickettsiales___D_4__Midichloriaceae___D_5__MD3_55"
+Ancestral character estimates using fastAnc:
+         7          8          9         10         11 
+104.042829   6.286482   4.962031 148.513816 178.049991 
+
+Variances on ancestral states:
+        7         8         9        10        11 
+27582.784  3806.964  3376.058 14290.057 13051.215 
+
+Lower & upper 95% CIs:
+        lower    upper
+7  -221.47525 429.5609
+8  -114.64669 127.2197
+9  -108.92153 118.8456
+10  -85.78660 382.8142
+11  -45.86416 401.9641
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "observed_features_all"  
+Ancestral character estimates using fastAnc:
+       7        8        9       10       11 
+112.0780 101.6395 108.8614 116.8266 113.2377 
+
+Variances on ancestral states:
+        7         8         9        10        11 
+3303.1556  455.9001  404.2973 1711.2951 1562.9385 
+
+Lower & upper 95% CIs:
+       lower    upper
+7  -0.569281 224.7252
+8  59.789903 143.4890
+9  69.451379 148.2714
+10 35.745723 197.9075
+11 35.751053 190.7244
+
+null device 
+          1 

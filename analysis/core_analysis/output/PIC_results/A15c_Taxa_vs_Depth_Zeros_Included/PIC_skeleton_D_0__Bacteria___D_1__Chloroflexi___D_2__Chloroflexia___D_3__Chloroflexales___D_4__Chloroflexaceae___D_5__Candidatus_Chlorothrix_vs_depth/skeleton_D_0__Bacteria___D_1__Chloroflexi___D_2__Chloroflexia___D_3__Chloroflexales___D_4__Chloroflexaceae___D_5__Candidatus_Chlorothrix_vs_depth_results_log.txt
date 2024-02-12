@@ -1,0 +1,191 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing skeleton_D_0__Bacteria___D_1__Chloroflexi___D_2__Chloroflexia___D_3__Chloroflexales___D_4__Chloroflexaceae___D_5__Candidatus_Chlorothrix vs. depth"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata_zeros_depth.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+   Pocillopora     Stylophora     Psammocora      Physogyra    Diploastrea 
+    0.12500000     0.00000000     0.00000000     5.20000000    52.60000000 
+    Echinopora        Favites  Echinophyllia     Hydnophora    Lobophyllia 
+    0.08333333     0.62500000     0.00000000     4.71428571     2.94444444 
+    Turbinaria        Porites     Pachyseris        Galaxea       Acropora 
+    2.00000000     4.51724138     0.00000000     0.76923077     0.00000000 
+     Montipora         Pavona     Goniastrea     Cyphastrea    Seriatopora 
+    0.00000000     1.00000000     0.00000000     4.60000000     0.00000000 
+    Tubastraea      Platygyra   Acanthastrea    Montastraea      Orbicella 
+    0.00000000     0.20000000     7.20000000     0.00000000     3.75000000 
+Stephanocoenia 
+    0.40000000 
+   Pocillopora     Stylophora     Psammocora      Physogyra    Diploastrea 
+      4.154800       2.055745       2.990533       2.984960       4.601323 
+    Echinopora        Favites  Echinophyllia     Hydnophora    Lobophyllia 
+      2.593967       1.843840       7.796480       2.409886       5.069444 
+    Turbinaria        Porites     Pachyseris        Galaxea       Acropora 
+      5.208769       3.764942       6.594436       4.321275       2.843768 
+     Montipora         Pavona     Goniastrea     Cyphastrea    Seriatopora 
+      1.877400       4.402013       1.997143       1.983333       1.900000 
+    Tubastraea      Platygyra   Acanthastrea    Montastraea      Orbicella 
+      5.347000       2.554000       7.890000       4.389120       5.365964 
+Stephanocoenia 
+      6.217920 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for skeleton_D_0__Bacteria___D_1__Chloroflexi___D_2__Chloroflexia___D_3__Chloroflexales___D_4__Chloroflexaceae___D_5__Candidatus_Chlorothrix (x) vs.  depth (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.51592 -0.05744  0.00000  0.07541  0.58937 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X 0.007898   0.036937   0.214    0.832
+
+Residual standard error: 0.2209 on 24 degrees of freedom
+Multiple R-squared:  0.001901,	Adjusted R-squared:  -0.03969 
+F-statistic: 0.04572 on 1 and 24 DF,  p-value: 0.8325
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+         pic.X        pic.Y
+27 0.181260662 -0.056012199
+28 0.593654852  0.060220809
+29 0.014951107  0.260379773
+30 0.000000000  0.000000000
+31 0.891716948  0.082452072
+32 0.858422714  0.142625432
+33 5.603000340 -0.002597859
+34 0.354343117  0.037368571
+35 0.214747670  0.591064784
+36 0.759859384  0.193293782
+37 0.478884749 -0.443525345
+38 0.474426796  0.202913045
+39 0.129384680 -0.514894753
+40 0.236262289 -0.054371701
+41 0.895042716  0.060385360
+42 0.079167774  0.038725439
+43 0.136950048 -0.228838697
+44 0.145215490 -0.013808676
+45 0.217374658 -0.093503791
+46 0.509087420 -0.035185773
+47 0.001978891 -0.128032860
+48 0.056728105  0.036804656
+49 0.028071557  0.226057632
+50 0.068125416 -0.201318082
+51 0.000000000  0.000000000
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                                 
+[2] "skeleton_D_0__Bacteria___D_1__Chloroflexi___D_2__Chloroflexia___D_3__Chloroflexales___D_4__Chloroflexaceae___D_5__Candidatus_Chlorothrix"
+Ancestral character estimates using fastAnc:
+       27        28        29        30        31        32        33        34 
+ 2.976848  4.908049  0.778365  0.231920  5.934999  8.872828 12.845661  9.388551 
+       35        36        37        38        39        40        41        42 
+ 7.143481  5.498102  3.078709  4.614223  4.365538  3.536394  2.269800  1.833638 
+       43        44        45        46        47        48        49        50 
+ 0.689092  1.780520  2.339227  1.040065  1.342651  0.844813  0.685135  0.484476 
+       51 
+ 0.268605 
+
+Variances on ancestral states:
+        27         28         29         30         31         32         33 
+165.951986  51.274400  22.044701  11.055812  41.147468  30.989191  18.032407 
+        34         35         36         37         38         39         40 
+ 14.647042  12.239011  12.943345  10.182952  10.381928  10.689627  10.194096 
+        41         42         43         44         45         46         47 
+  6.590738   6.132936   3.005125  74.146826  67.568324   5.412943  63.623690 
+        48         49         50         51 
+ 46.870295  43.158412  35.198893  37.922827 
+
+Lower & upper 95% CIs:
+        lower     upper
+27 -22.272333 28.226029
+28  -9.126755 18.942853
+29  -8.424185  9.980915
+30  -6.285135  6.748975
+31  -6.637674 18.507672
+32  -2.038087 19.783744
+33   4.522603 21.168719
+34   1.887346 16.889756
+35   0.286559 14.000403
+36  -1.553363 12.549567
+37  -3.175796  9.333214
+38  -1.701093 10.929539
+39  -2.042681 10.773758
+40  -2.721532  9.794320
+41  -2.761997  7.301597
+42  -3.020257  6.687532
+43  -2.708626  4.086810
+44 -15.096756 18.657796
+45 -13.771964 18.450418
+46  -3.520019  5.600148
+47 -14.291184 16.976485
+48 -12.573716 14.263342
+49 -12.191097 13.561367
+50 -11.143940 12.112893
+51 -11.801372 12.338581
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "depth"                  
+Ancestral character estimates using fastAnc:
+      27       28       29       30       31       32       33       34 
+4.147876 3.551106 3.018563 2.287955 3.609331 3.845907 4.344303 4.435641 
+      35       36       37       38       39       40       41       42 
+4.531093 5.788384 6.175750 3.667518 3.671555 3.266346 2.516654 2.429288 
+      43       44       45       46       47       48       49       50 
+2.243756 4.517559 4.526362 5.255402 4.593232 4.287268 4.187090 5.035588 
+      51 
+3.076659 
+
+Variances on ancestral states:
+      27       28       29       30       31       32       33       34 
+5.477679 1.692446 0.727643 0.364926 1.358180 1.022879 0.595207 0.483464 
+      35       36       37       38       39       40       41       42 
+0.403981 0.427229 0.336115 0.342683 0.352839 0.336483 0.217545 0.202434 
+      43       44       45       46       47       48       49       50 
+0.099192 2.447410 2.230269 0.178668 2.100066 1.547077 1.424556 1.161831 
+      51 
+1.251742 
+
+Lower & upper 95% CIs:
+       lower    upper
+27 -0.439395 8.735147
+28  1.001263 6.100949
+29  1.346644 4.690482
+30  1.103937 3.471974
+31  1.325128 5.893534
+32  1.863612 5.828202
+33  2.832170 5.856436
+34  3.072822 5.798460
+35  3.285328 5.776859
+36  4.507274 7.069494
+37  5.039432 7.312068
+38  2.520151 4.814884
+39  2.507310 4.835800
+40  2.129406 4.403286
+41  1.602477 3.430831
+42  1.547433 3.311144
+43  1.626459 2.861053
+44  1.451295 7.583822
+45  1.599281 7.453443
+46  4.426926 6.083878
+47  1.752877 7.433586
+48  1.849390 6.725147
+49  1.847736 6.526443
+50  2.922938 7.148238
+51  0.883786 5.269532
+
+null device 
+          1 

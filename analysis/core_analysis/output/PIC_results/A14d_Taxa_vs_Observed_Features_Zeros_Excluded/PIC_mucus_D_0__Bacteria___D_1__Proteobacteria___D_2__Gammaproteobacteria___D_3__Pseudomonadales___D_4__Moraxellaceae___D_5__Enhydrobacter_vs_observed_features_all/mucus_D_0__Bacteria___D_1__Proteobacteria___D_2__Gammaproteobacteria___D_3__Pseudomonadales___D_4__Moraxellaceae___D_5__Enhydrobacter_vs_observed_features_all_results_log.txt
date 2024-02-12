@@ -1,0 +1,124 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing mucus_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Pseudomonadales___D_4__Moraxellaceae___D_5__Enhydrobacter vs. observed_features_all"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+ Pocillopora   Stylophora  Diploastrea   Echinopora   Hydnophora  Lobophyllia 
+  0.11111111   0.28571429   0.26315789   0.18181818   0.83333333   0.06666667 
+     Porites   Cyphastrea    Platygyra    Goniopora  Montastraea    Orbicella 
+  0.04545455   0.20000000   0.25000000 142.00000000  12.66666667   0.40000000 
+    Scolymia 
+  0.50000000 
+Pocillopora  Stylophora Diploastrea  Echinopora  Hydnophora Lobophyllia 
+   70.80000    69.60000   239.60870   104.18750   119.35000   150.01961 
+    Porites  Cyphastrea   Platygyra   Goniopora Montastraea   Orbicella 
+  150.81818   105.84615    81.57143    87.00000    41.00000    72.42857 
+   Scolymia 
+  193.50000 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for mucus_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Pseudomonadales___D_4__Moraxellaceae___D_5__Enhydrobacter (x) vs.  observed_features_all (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-14.5853  -6.2228   0.4215   2.7169   6.6088 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X  -0.5230     0.5204  -1.005    0.337
+
+Residual standard error: 7.055 on 11 degrees of freedom
+Multiple R-squared:  0.08409,	Adjusted R-squared:  0.0008203 
+F-statistic:  1.01 on 1 and 11 DF,  p-value: 0.3365
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+          pic.X       pic.Y
+14  2.778827951   0.3725080
+15  0.172011487   4.8528832
+16  0.019649032  -0.1350424
+17  0.362496890 -14.7748626
+18  1.451468797 -10.4377427
+19  0.009804931 -10.6913613
+20  0.049188320   4.9355248
+21  0.013764673   1.9677590
+22  0.030443454  -5.0867332
+23  0.049653920  -0.5142429
+24  0.101228264   6.5558729
+25 13.181189449  -5.9258373
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                              
+[2] "mucus_D_0__Bacteria___D_1__Proteobacteria___D_2__Gammaproteobacteria___D_3__Pseudomonadales___D_4__Moraxellaceae___D_5__Enhydrobacter"
+Ancestral character estimates using fastAnc:
+       14        15        16        17        18        19        20        21 
+33.157474  7.358763  1.398885  3.466326  3.484636  2.376190  1.754349  1.323157 
+       22        23        24        25 
+ 0.743854  1.051802  0.733213 67.797800 
+
+Variances on ancestral states:
+        14         15         16         17         18         19         20 
+2369.92478  727.64670  272.05343  215.98644  167.54412  136.06328  155.49648 
+        21         22         23         24         25 
+ 114.64866  115.12101  114.67238   95.55646  423.36915 
+
+Lower & upper 95% CIs:
+       lower     upper
+14 -62.25900 128.57395
+15 -45.51209  60.22962
+16 -30.92944  33.72721
+17 -25.33877  32.27142
+18 -21.88538  28.85465
+19 -20.48646  25.23884
+20 -22.68650  26.19520
+21 -19.66337  22.30968
+22 -20.28586  21.77357
+23 -19.93689  22.04050
+24 -18.42637  19.89280
+25  27.46897 108.12663
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "observed_features_all"  
+Ancestral character estimates using fastAnc:
+       14        15        16        17        18        19        20        21 
+113.83317 110.37480  76.93553 135.56964 126.20448 127.45534 140.61932 111.40553 
+       22        23        24        25 
+ 98.79748 108.67854 103.54636 118.47678 
+
+Variances on ancestral states:
+       14        15        16        17        18        19        20        21 
+7709.1378 2366.9649  884.9637  702.5832  545.0049  442.6008  505.8151  372.9411 
+       22        23        24        25 
+ 374.4776  373.0182  310.8360 1377.1792 
+
+Lower & upper 95% CIs:
+       lower    upper
+14 -58.25815 285.9245
+15  15.01793 205.7317
+16  18.62878 135.2423
+17  83.61732 187.5220
+18  80.44761 171.9614
+19  86.22070 168.6900
+20  96.53827 184.7004
+21  73.55464 149.2564
+22  60.86869 136.7263
+23  70.82373 146.5334
+24  68.99050 138.1022
+25  45.74047 191.2131
+
+null device 
+          1 

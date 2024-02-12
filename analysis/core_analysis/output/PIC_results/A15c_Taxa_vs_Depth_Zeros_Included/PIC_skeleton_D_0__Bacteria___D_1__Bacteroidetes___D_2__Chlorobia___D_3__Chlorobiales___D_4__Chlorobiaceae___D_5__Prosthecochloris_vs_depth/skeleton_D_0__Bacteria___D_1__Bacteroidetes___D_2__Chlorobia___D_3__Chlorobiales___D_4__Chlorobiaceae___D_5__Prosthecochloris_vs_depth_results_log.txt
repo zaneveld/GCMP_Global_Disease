@@ -1,0 +1,191 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing skeleton_D_0__Bacteria___D_1__Bacteroidetes___D_2__Chlorobia___D_3__Chlorobiales___D_4__Chlorobiaceae___D_5__Prosthecochloris vs. depth"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata_zeros_depth.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+   Pocillopora     Stylophora     Psammocora      Physogyra    Diploastrea 
+      0.000000       0.000000       0.000000      12.400000      17.360000 
+    Echinopora        Favites  Echinophyllia     Hydnophora    Lobophyllia 
+     12.250000       2.375000       0.000000       8.857143       9.444444 
+    Turbinaria        Porites     Pachyseris        Galaxea       Acropora 
+      0.000000      11.482759       0.000000       3.615385       0.000000 
+     Montipora         Pavona     Goniastrea     Cyphastrea    Seriatopora 
+    116.666667       3.300000       0.200000       5.200000       0.000000 
+    Tubastraea      Platygyra   Acanthastrea    Montastraea      Orbicella 
+      0.000000      71.400000      43.000000       0.000000       0.000000 
+Stephanocoenia 
+      1.000000 
+   Pocillopora     Stylophora     Psammocora      Physogyra    Diploastrea 
+      4.154800       2.055745       2.990533       2.984960       4.601323 
+    Echinopora        Favites  Echinophyllia     Hydnophora    Lobophyllia 
+      2.593967       1.843840       7.796480       2.409886       5.069444 
+    Turbinaria        Porites     Pachyseris        Galaxea       Acropora 
+      5.208769       3.764942       6.594436       4.321275       2.843768 
+     Montipora         Pavona     Goniastrea     Cyphastrea    Seriatopora 
+      1.877400       4.402013       1.997143       1.983333       1.900000 
+    Tubastraea      Platygyra   Acanthastrea    Montastraea      Orbicella 
+      5.347000       2.554000       7.890000       4.389120       5.365964 
+Stephanocoenia 
+      6.217920 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for skeleton_D_0__Bacteria___D_1__Bacteroidetes___D_2__Chlorobia___D_3__Chlorobiales___D_4__Chlorobiaceae___D_5__Prosthecochloris (x) vs.  depth (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.51909 -0.13212  0.00000  0.05449  0.58283 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X 0.005305   0.008016   0.662    0.514
+
+Residual standard error: 0.2132 on 24 degrees of freedom
+Multiple R-squared:  0.01792,	Adjusted R-squared:  -0.023 
+F-statistic: 0.438 on 1 and 24 DF,  p-value: 0.5144
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+          pic.X        pic.Y
+27  0.286492607  0.056012199
+28  0.630074863  0.060220809
+29  0.000000000  0.000000000
+30  0.000000000  0.000000000
+31  0.939899980  0.082452072
+32  0.005028959  0.142625432
+33  0.731181871 -0.002597859
+34  1.711294103  0.037368571
+35  1.553090592  0.591064784
+36  5.078012763  0.193293782
+37  1.536045422 -0.443525345
+38  1.872507110 -0.202913045
+39  0.791529808 -0.514894753
+40  0.576673793 -0.054371701
+41  2.255355034 -0.060385360
+42  7.041132795  0.038725439
+43 22.242299025  0.228838697
+44  0.610496002  0.013808676
+45  0.709664336 -0.093503791
+46  0.000000000  0.000000000
+47  1.255121665 -0.128032860
+48  1.913765124 -0.036804656
+49  4.125583208 -0.226057632
+50  0.320189453 -0.201318082
+51  9.723408486 -0.080540471
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                      
+[2] "skeleton_D_0__Bacteria___D_1__Bacteroidetes___D_2__Chlorobia___D_3__Chlorobiales___D_4__Chlorobiaceae___D_5__Prosthecochloris"
+Ancestral character estimates using fastAnc:
+       27        28        29        30        31        32        33        34 
+ 9.063351  6.010980  0.896595  0.267148  6.805173  9.626552 11.452282 11.235641 
+       35        36        37        38        39        40        41        42 
+12.401146 16.548271  9.441287 11.020916  6.253062 12.159837 15.113963 16.192304 
+       43        44        45        46        47        48        49        50 
+32.859653 10.954214  7.845860  0.234719 12.377642 17.868881 20.986345  8.180641 
+       51 
+43.691578 
+
+Variances on ancestral states:
+        27         28         29         30         31         32         33 
+3282.01864 1014.04955  435.97622  218.64987  813.77006  612.87066  356.62541 
+        34         35         36         37         38         39         40 
+ 289.67334  242.04990  255.97946  201.38740  205.32253  211.40787  201.60779 
+        41         42         43         44         45         46         47 
+ 130.34449  121.29057   59.43211 1466.39562 1336.29314  107.05132 1258.28044 
+        48         49         50         51 
+ 926.94993  853.54033  696.12559  749.99660 
+
+Lower & upper 95% CIs:
+         lower     upper
+27 -103.222903 121.34960
+28  -56.403544  68.42550
+29  -40.028291  41.82148
+30  -28.715008  29.24930
+31  -49.107071  62.71742
+32  -38.895648  58.14875
+33  -25.561394  48.46596
+34  -22.123153  44.59443
+35  -18.092442  42.89473
+36  -14.810471  47.90701
+37  -18.373274  37.25585
+38  -17.064081  39.10591
+39  -22.245087  34.75121
+40  -15.669940  39.98961
+41   -7.263065  37.49099
+42   -5.393568  37.77817
+43   17.749577  47.96973
+44  -64.101136  86.00956
+45  -63.802613  79.49433
+46  -20.044541  20.51398
+47  -57.147965  81.90325
+48  -41.804990  77.54275
+49  -36.275863  78.24855
+50  -43.532376  59.89366
+51   -9.985111  97.36827
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "depth"                  
+Ancestral character estimates using fastAnc:
+      27       28       29       30       31       32       33       34 
+4.147876 3.551106 3.018563 2.287955 3.609331 3.845907 4.344303 4.435641 
+      35       36       37       38       39       40       41       42 
+4.531093 5.788384 6.175750 3.667518 3.671555 3.266346 2.516654 2.429288 
+      43       44       45       46       47       48       49       50 
+2.243756 4.517559 4.526362 5.255402 4.593232 4.287268 4.187090 5.035588 
+      51 
+3.076659 
+
+Variances on ancestral states:
+      27       28       29       30       31       32       33       34 
+5.477679 1.692446 0.727643 0.364926 1.358180 1.022879 0.595207 0.483464 
+      35       36       37       38       39       40       41       42 
+0.403981 0.427229 0.336115 0.342683 0.352839 0.336483 0.217545 0.202434 
+      43       44       45       46       47       48       49       50 
+0.099192 2.447410 2.230269 0.178668 2.100066 1.547077 1.424556 1.161831 
+      51 
+1.251742 
+
+Lower & upper 95% CIs:
+       lower    upper
+27 -0.439395 8.735147
+28  1.001263 6.100949
+29  1.346644 4.690482
+30  1.103937 3.471974
+31  1.325128 5.893534
+32  1.863612 5.828202
+33  2.832170 5.856436
+34  3.072822 5.798460
+35  3.285328 5.776859
+36  4.507274 7.069494
+37  5.039432 7.312068
+38  2.520151 4.814884
+39  2.507310 4.835800
+40  2.129406 4.403286
+41  1.602477 3.430831
+42  1.547433 3.311144
+43  1.626459 2.861053
+44  1.451295 7.583822
+45  1.599281 7.453443
+46  4.426926 6.083878
+47  1.752877 7.433586
+48  1.849390 6.725147
+49  1.847736 6.526443
+50  2.922938 7.148238
+51  0.883786 5.269532
+
+null device 
+          1 

@@ -1,0 +1,208 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing tissue_D_0__Archaea___D_1__Thaumarchaeota___D_2__Nitrososphaeria___D_3__Nitrosopumilales___D_4__Nitrosopumilaceae___D_5__uncultured_archaeon vs. observed_features_all"
+[1] "Trait table filepath: ../output/GCMP_trait_table_with_abundances_and_adiv_and_metadata.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+      Pocillopora        Leptastrea        Psammocora         Physogyra 
+       0.39130435      107.00000000        0.75000000        1.40000000 
+      Diploastrea           Favites     Echinophyllia        Hydnophora 
+       1.40000000        3.00000000        1.75000000        0.85714286 
+      Lobophyllia        Turbinaria           Porites        Pachyseris 
+       0.64705882       10.18181818        3.65384615        1.87500000 
+          Galaxea          Acropora           Isopora            Pavona 
+       2.64285714        0.09090909        0.66666667        4.79166667 
+       Goniastrea         Alveopora        Tubastraea    Gardineroseris 
+       1.57142857        2.00000000        3.28571429        2.25000000 
+      Coscinaraea     Dendrophyllia         Orbicella          Diploria 
+       2.66666667        5.50000000        3.75000000        3.00000000 
+         Scolymia    Stephanocoenia       Siderastrea          Leptoria 
+       9.25000000        2.20000000       12.00000000        8.00000000 
+Pseudosiderastrea 
+       0.50000000 
+      Pocillopora        Leptastrea        Psammocora         Physogyra 
+         70.80000         327.00000         210.21429         119.20000 
+      Diploastrea           Favites     Echinophyllia        Hydnophora 
+        239.60870         145.57143         164.07692         119.35000 
+      Lobophyllia        Turbinaria           Porites        Pachyseris 
+        150.01961         207.31429         150.81818          97.20000 
+          Galaxea          Acropora           Isopora            Pavona 
+        202.37209          46.67742         136.70000         191.43836 
+       Goniastrea         Alveopora        Tubastraea    Gardineroseris 
+        274.64286         153.85714         206.44000         274.62500 
+      Coscinaraea     Dendrophyllia         Orbicella          Diploria 
+        176.88889         217.83333          72.42857         233.75000 
+         Scolymia    Stephanocoenia       Siderastrea          Leptoria 
+        193.50000         106.33333         333.57143         156.50000 
+Pseudosiderastrea 
+        151.16667 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for tissue_D_0__Archaea___D_1__Thaumarchaeota___D_2__Nitrososphaeria___D_3__Nitrosopumilales___D_4__Nitrosopumilaceae___D_5__uncultured_archaeon (x) vs.  observed_features_all (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-25.470  -2.194   2.558   6.571  16.078 
+
+Coefficients:
+      Estimate Std. Error t value Pr(>|t|)
+pic.X   1.2364     0.8102   1.526    0.139
+
+Residual standard error: 9.723 on 27 degrees of freedom
+Multiple R-squared:  0.07941,	Adjusted R-squared:  0.04531 
+F-statistic: 2.329 on 1 and 27 DF,  p-value: 0.1386
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+         pic.X       pic.Y
+30  0.50836498  -0.4919979
+31  1.45742074   9.1551458
+32  3.74972466   7.4566955
+33 10.87383235  13.7816763
+34  0.27873076  -4.8463373
+35  0.12041119   5.5670594
+36  0.21424545  -8.6103750
+37  0.04164029   7.1213505
+38  0.62496285   7.1772188
+39  1.27360959  -8.2020458
+40  0.17938247   2.2862832
+41  0.11248658 -13.3114657
+42  0.60387322  16.8251271
+43  0.77889744 -24.5069457
+44  1.23211520   2.6930518
+45  0.11625166   0.9569907
+46  0.16120269   3.7512754
+47  0.28975206  -2.5730792
+48  1.75535987   0.2225439
+49  0.08214971   5.0523895
+50  0.29401658   5.8354327
+51  0.90118589  14.2939650
+52  0.13891368   7.2426638
+53  0.70556130 -23.0924368
+54  0.09116175   2.4090160
+55  0.06800376   9.3143603
+56  0.12046284   4.6193744
+57  0.05947191   9.2987315
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                                                                                                                     
+[2] "tissue_D_0__Archaea___D_1__Thaumarchaeota___D_2__Nitrososphaeria___D_3__Nitrosopumilales___D_4__Nitrosopumilaceae___D_5__uncultured_archaeon"
+Ancestral character estimates using fastAnc:
+       30        31        32        33        34        35        36        37 
+ 8.435547 13.880185 16.354462 39.440317 12.595323  9.463809  5.412255  4.363341 
+       38        39        40        41        42        43        44        45 
+ 4.073346  5.748245  2.124136  3.867216  3.096439  3.268792  4.638395  5.062740 
+       46        47        48        49        50        51        52        53 
+ 5.016558  6.205923  6.448362  4.361115  4.060661  5.560498  3.278689  3.515207 
+       54        55        56        57 
+ 2.817922  2.444679  2.186402  0.915971 
+
+Variances on ancestral states:
+       30        31        32        33        34        35        36        37 
+588.15188 186.54151 141.43188  97.19333  51.35354 112.74085  73.55553  50.03248 
+       38        39        40        41        42        43        44        45 
+ 48.96704  26.93266  38.03885  48.50976  24.03622  21.59067  16.21894 245.00615 
+       46        47        48        49        50        51        52        53 
+237.49689  21.77532  15.48208 194.41070 161.13830 159.44129 139.84220  16.37546 
+       54        55        56        57 
+130.74955 123.91091 136.27131  96.74388 
+
+Lower & upper 95% CIs:
+        lower    upper
+30 -39.098065 55.96916
+31 -12.889535 40.64990
+32  -6.954865 39.66379
+33  20.117329 58.76331
+34  -1.450308 26.64096
+35 -11.347371 30.27499
+36 -11.397592 22.22210
+37  -9.500452 18.22714
+38  -9.642039 17.78873
+39  -4.423505 15.92000
+40  -9.964290 14.21256
+41  -9.783978 17.51841
+42  -6.512804 12.70568
+43  -5.838497 12.37608
+44  -3.255064 12.53185
+45 -25.616498 35.74198
+46 -25.188873 35.22199
+47  -2.940228 15.35207
+48  -1.263705 14.16043
+49 -22.967407 31.68964
+50 -20.819631 28.94095
+51 -19.188434 30.30943
+52 -19.899270 26.45665
+53  -4.416249 11.44666
+54 -19.593849 25.22969
+55 -19.373116 24.26247
+56 -20.693718 25.06652
+57 -18.362288 20.19423
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "observed_features_all"  
+Ancestral character estimates using fastAnc:
+      30       31       32       33       34       35       36       37 
+167.5433 162.2739 175.3514 231.6722 204.5507 168.5920 177.7167 168.4476 
+      38       39       40       41       42       43       44       45 
+173.7544 206.3034 162.4272 153.1783 170.6822 178.0017 161.4489 170.8075 
+      46       47       48       49       50       51       52       53 
+177.2761 210.0262 208.5799 169.3753 176.3418 221.5747 169.9772 231.5665 
+      54       55       56       57 
+159.6340 153.0585 144.7395 107.4542 
+
+Variances on ancestral states:
+        30         31         32         33         34         35         36 
+11322.5724  3591.1298  2722.7197  1871.0787   988.6123  2170.3857  1416.0251 
+        37         38         39         40         41         42         43 
+  963.1804   942.6696   518.4833   732.2898   933.8664   462.7238   415.6441 
+        44         45         46         47         48         49         50 
+  312.2325  4716.6386  4572.0770   419.1990   298.0472  3742.6203  3102.0900 
+        51         52         53         54         55         56         57 
+ 3069.4207  2692.1166   315.2458  2517.0730  2385.4217  2623.3731  1862.4263 
+
+Lower & upper 95% CIs:
+       lower    upper
+30 -41.01557 376.1021
+31  44.81890 279.7290
+32  73.07925 277.6236
+33 146.89047 316.4539
+34 142.92398 266.1774
+35  77.28070 259.9033
+36 103.96166 251.4717
+37 107.61873 229.2765
+38 113.57666 233.9321
+39 161.67372 250.9330
+40 109.38788 215.4664
+41  93.28220 213.0744
+42 128.52062 212.8438
+43 138.04250 217.9609
+44 126.81553 196.0823
+45  36.19903 305.4160
+46  44.74653 309.8057
+47 169.89651 250.1560
+48 174.74233 242.4174
+49  49.46844 289.2821
+50  67.17681 285.5067
+51 112.98607 330.1633
+52  68.28138 271.6730
+53 196.76643 266.3667
+54  61.29994 257.9681
+55  57.33053 248.7864
+56  44.35052 245.1285
+57  22.86880 192.0397
+
+null device 
+          1 
