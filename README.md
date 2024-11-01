@@ -93,21 +93,5 @@ To recreate the analysis we will run the procedures in the following analysis fo
            adiv_trait_table_mucus.txt -- same but only for mucus
            adiv_trait_table_tissue.txt -- same but only for tissue
            adiv_trait_table_skeleton.txt -- same but only for skeleton
-9. coral_disease_vs_adiv 
-       - **input**:
-       - **output**:
-       - **products**:
-           phytools contmap plots of adiv (rightwards) vs. disease (leftwards)
-           phylomorphospace plots for adiv vs. disease
-           PIC results for corelations of adiv vs. disease
-           PIC plots for correlations of adiv vs. disease
-           heatmap of adiv vs. disease
-10. GDM
-       - **input**:
-           combined_meta.tsv --> merged by the R script from one_hot_encoding_metadata.tsv and GCMP_EMP_map_r28_no_empty_samples.txt
-           physeq.noncton-rooted-tree.qza --> physeq_rooted_tree.qza
-           physeq.noncont-feature-table.qza --> physeq_feature_table.qza
-           physeq.noncont_tax.txt --> physeq_taxonomy.txt
-       - **output**:
-       - **products**:
+
        
