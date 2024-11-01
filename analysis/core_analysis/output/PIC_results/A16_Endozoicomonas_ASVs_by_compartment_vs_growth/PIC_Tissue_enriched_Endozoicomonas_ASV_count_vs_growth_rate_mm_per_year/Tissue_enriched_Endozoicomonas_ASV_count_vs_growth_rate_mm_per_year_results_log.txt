@@ -1,0 +1,124 @@
+[1] "Phylogenetic Independent Contrast Analysis Report"
+[1] "--------------------------------------------------"
+[1] "Analyzing Tissue_enriched_Endozoicomonas_ASV_count vs. growth_rate_mm_per_year"
+[1] "Trait table filepath: ../output/GCMP_trait_table_growth_data_depth_endos_by_compartment.tsv"
+[1] "Tree filepath: ../output/huang_roy_genus_tree.newick"
+[1] "Filtering data based on column: None"
+[1] "Including data only if filter column value is: None"
+[1] "--------------------------------------------------"
+
+Phylogenetic tree with 145 tips and 144 internal nodes.
+
+Tip labels:
+  Discosoma, Ricordea, Letepsammia, Rhombopsammia, Stephanophyllia, Gardineria, ...
+
+Rooted; includes branch lengths.
+   Acropora  Goniastrea  Hydnophora   Montipora   Orbicella      Pavona 
+       2260          39        3598           9         115         187 
+  Platygyra Pocillopora     Porites  Psammocora Seriatopora  Stylophora 
+       1003        3305       13916        1691         398        6695 
+ Turbinaria 
+        621 
+   Acropora  Goniastrea  Hydnophora   Montipora   Orbicella      Pavona 
+ 0.16772478  0.07076280  0.23030714  0.31470800  0.12541125  0.07778307 
+  Platygyra Pocillopora     Porites  Psammocora Seriatopora  Stylophora 
+ 0.09661880  0.21869633  0.09877855  0.10529500  0.18209733  0.23347364 
+ Turbinaria 
+ 0.09364883 
+[1] "Calculating PICs"
+[1] "Summary lm pic.Y ~ pic.X -1 for Tissue_enriched_Endozoicomonas_ASV_count (x) vs.  growth_rate_mm_per_year (y)"
+
+Call:
+lm(formula = pic.Y ~ pic.X - 1)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.014224 -0.003916 -0.001657  0.003450  0.022485 
+
+Coefficients:
+       Estimate Std. Error t value Pr(>|t|)
+pic.X 1.052e-05  6.117e-06    1.72    0.113
+
+Residual standard error: 0.00949 on 11 degrees of freedom
+Multiple R-squared:  0.2119,	Adjusted R-squared:  0.1402 
+F-statistic: 2.957 on 1 and 11 DF,  p-value: 0.1135
+
+null device 
+          1 
+[1] "Dataframe for PIC analysis:"
+        pic.X         pic.Y
+14   76.10784 -0.0009052557
+15  155.21403  0.0067594671
+16   28.88555 -0.0013050340
+17 1045.82814  0.0085327590
+18   47.34690 -0.0018044321
+19  193.15131  0.0013620197
+20  605.57366  0.0288550520
+21  177.31713  0.0047559249
+22  375.46003 -0.0043096826
+23  815.67696  0.0003147193
+24   59.95669  0.0103418689
+25  187.60622 -0.0122500964
+null device 
+          1 
+[1] "FastAnc ML modelfit for"                 
+[2] "Tissue_enriched_Endozoicomonas_ASV_count"
+Ancestral character estimates using fastAnc:
+      14       15       16       17       18       19       20       21 
+3084.226 2291.579 3269.899 3464.084 2018.891 1155.243 1509.142 1313.402 
+      22       23       24       25 
+3575.249 5729.004 1937.224 1404.830 
+
+Variances on ancestral states:
+        14         15         16         17         18         19         20 
+24544372.4  8165976.7  3114210.5  1552898.3  7201722.9  2665047.8  1056722.0 
+        21         22         23         24         25 
+  973164.9 12860970.1 10004510.6  9375823.6  5851915.0 
+
+Lower & upper 95% CIs:
+        lower     upper
+14 -6626.0605 12794.512
+15 -3309.3510  7892.509
+16  -188.9376  6728.736
+17  1021.6238  5906.545
+18 -3240.9697  7278.753
+19 -2044.4524  4354.937
+20  -505.6786  3523.963
+21  -620.1210  3246.925
+22 -3453.7408 10604.240
+23  -470.4581 11928.466
+24 -4064.2892  7938.738
+25 -3336.5529  6146.214
+
+null device 
+          1 
+[1] "FastAnc ML modelfit for" "growth_rate_mm_per_year"
+Ancestral character estimates using fastAnc:
+      14       15       16       17       18       19       20       21 
+0.144554 0.153982 0.203800 0.206598 0.144465 0.133606 0.135446 0.125194 
+      22       23       24       25 
+0.138714 0.113929 0.157454 0.213008 
+
+Variances on ancestral states:
+      14       15       16       17       18       19       20       21 
+0.012817 0.004264 0.001626 0.000811 0.003761 0.001392 0.000552 0.000508 
+      22       23       24       25 
+0.006716 0.005224 0.004896 0.003056 
+
+Lower & upper 95% CIs:
+       lower    upper
+14 -0.077340 0.366449
+15  0.025993 0.281972
+16  0.124760 0.282840
+17  0.150784 0.262412
+18  0.024269 0.264661
+19  0.060489 0.206724
+20  0.089404 0.181488
+21  0.081010 0.169378
+22 -0.021909 0.299337
+23 -0.027737 0.255596
+24  0.020310 0.294597
+25  0.104660 0.321356
+
+null device 
+          1 
